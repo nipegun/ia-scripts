@@ -84,12 +84,7 @@
           # Posicionarse en la carpeta:
             cd ~/repos/cpp/whisper.cpp/
           # Descargar
-            ./models/download-ggml-model.sh tiny
-
-          # Notificar fin de la instalación del modelo
-            echo ""
-            echo -e "${cColorVerde}    Modelo tiny, instalado.${cFinColor}"
-            echo ""
+            ./models/download-ggml-model.sh tiny && echo -e "${cColorVerde}\n    Modelo tiny, instalado. \n${cFinColor}"
 
         ;;
 
@@ -101,12 +96,7 @@
           # Posicionarse en la carpeta:
             cd ~/repos/cpp/whisper.cpp/
           # Descargar
-            ./models/download-ggml-model.sh tiny.en
-
-          # Notificar fin de la instalación del modelo
-            echo ""
-            echo -e "${cColorVerde}    Modelo tiny.en, instalado.${cFinColor}"
-            echo ""
+            ./models/download-ggml-model.sh tiny.en && echo -e "${cColorVerde}\n    Modelo tiny.en, instalado. \n${cFinColor}"
 
         ;;
 
@@ -118,12 +108,7 @@
           # Posicionarse en la carpeta:
             cd ~/repos/cpp/whisper.cpp/
           # Descargar
-            ./models/download-ggml-model.sh tiny-q5_1
-
-          # Notificar fin de la instalación del modelo
-            echo ""
-            echo -e "${cColorVerde}    Modelo tiny-q5_1, instalado.${cFinColor}"
-            echo ""
+            ./models/download-ggml-model.sh tiny-q5_1 && echo -e "${cColorVerde}\n    Modelo tiny-q5_1, instalado. \n${cFinColor}"
 
         ;;
 
@@ -135,12 +120,7 @@
           # Posicionarse en la carpeta:
             cd ~/repos/cpp/whisper.cpp/
           # Descargar
-            ./models/download-ggml-model.sh tiny.en-q5_1
-
-          # Notificar fin de la instalación del modelo
-            echo ""
-            echo -e "${cColorVerde}    Modelo tiny.en-q5_1, instalado.${cFinColor}"
-            echo ""
+            ./models/download-ggml-model.sh tiny.en-q5_1 && echo -e "${cColorVerde}\n    Modelo tiny.en-q5_1, instalado. \n${cFinColor}"
 
         ;;
 
@@ -152,12 +132,7 @@
           # Posicionarse en la carpeta:
             cd ~/repos/cpp/whisper.cpp/
           # Descargar
-            ./models/download-ggml-model.sh tiny-q8_0
-
-          # Notificar fin de la instalación del modelo
-            echo ""
-            echo -e "${cColorVerde}    Modelo tiny-q8_0, instalado.${cFinColor}"
-            echo ""
+            ./models/download-ggml-model.sh tiny-q8_0 && echo -e "${cColorVerde}\n    Modelo tiny-q8_0, instalado. \n${cFinColor}"
 
         ;;
 
@@ -169,12 +144,7 @@
           # Posicionarse en la carpeta:
             cd ~/repos/cpp/whisper.cpp/
           # Descargar
-            ./models/download-ggml-model.sh base
-
-          # Notificar fin de la instalación del modelo
-            echo ""
-            echo -e "${cColorVerde}    Modelo base, instalado.${cFinColor}"
-            echo ""
+            ./models/download-ggml-model.sh base && echo -e "${cColorVerde}\n    Modelo base, instalado. \n${cFinColor}"
 
         ;;
 
@@ -186,12 +156,7 @@
           # Posicionarse en la carpeta:
             cd ~/repos/cpp/whisper.cpp/
           # Descargar
-            ./models/download-ggml-model.sh base.en
-
-          # Notificar fin de la instalación del modelo
-            echo ""
-            echo -e "${cColorVerde}    Modelo base.en, instalado.${cFinColor}"
-            echo ""
+            ./models/download-ggml-model.sh base.en && echo -e "${cColorVerde}\n    Modelo base.en, instalado. \n${cFinColor}"
 
         ;;
 
@@ -203,12 +168,7 @@
           # Posicionarse en la carpeta:
             cd ~/repos/cpp/whisper.cpp/
           # Descargar
-            ./models/download-ggml-model.sh base-q5_1
-
-          # Notificar fin de la instalación del modelo
-            echo ""
-            echo -e "${cColorVerde}    Modelo base-q5_1, instalado.${cFinColor}"
-            echo ""
+            ./models/download-ggml-model.sh base-q5_1 && echo -e "${cColorVerde}\n    Modelo base-q5_1, instalado. \n${cFinColor}"
 
         ;;
 
@@ -220,12 +180,7 @@
           # Posicionarse en la carpeta:
             cd ~/repos/cpp/whisper.cpp/
           # Descargar
-            ./models/download-ggml-model.sh base.en-q5_1
-
-          # Notificar fin de la instalación del modelo
-            echo ""
-            echo -e "${cColorVerde}    Modelo base.en-q5_1, instalado.${cFinColor}"
-            echo ""
+            ./models/download-ggml-model.sh base.en-q5_1 && echo -e "${cColorVerde}\n    Modelo base.en-q5_1, instalado. \n${cFinColor}"
 
         ;;
 
@@ -237,12 +192,7 @@
           # Posicionarse en la carpeta:
             cd ~/repos/cpp/whisper.cpp/
           # Descargar
-            ./models/download-ggml-model.sh base-q8_0
-
-          # Notificar fin de la instalación del modelo
-            echo ""
-            echo -e "${cColorVerde}    Modelo base-q8_0, instalado.${cFinColor}"
-            echo ""
+            ./models/download-ggml-model.sh base-q8_0 && echo -e "${cColorVerde}\n    Modelo base-q8_0, instalado. \n${cFinColor}"
 
         ;;
 
@@ -254,12 +204,7 @@
           # Posicionarse en la carpeta:
             cd ~/repos/cpp/whisper.cpp/
           # Descargar
-            ./models/download-ggml-model.sh small
-
-          # Notificar fin de la instalación del modelo
-            echo ""
-            echo -e "${cColorVerde}    Modelo small, instalado.${cFinColor}"
-            echo ""
+            ./models/download-ggml-model.sh small && echo -e "${cColorVerde}\n    Modelo small, instalado. \n${cFinColor}"
 
         ;;
 
@@ -271,12 +216,7 @@
           # Posicionarse en la carpeta:
             cd ~/repos/cpp/whisper.cpp/
           # Descargar
-            ./models/download-ggml-model.sh small.en
-
-          # Notificar fin de la instalación del modelo
-            echo ""
-            echo -e "${cColorVerde}    Modelo small.en, instalado.${cFinColor}"
-            echo ""
+            ./models/download-ggml-model.sh small.en && echo -e "${cColorVerde}\n    Modelo small.en, instalado. \n${cFinColor}"
 
         ;;
 
@@ -288,12 +228,7 @@
           # Posicionarse en la carpeta:
             cd ~/repos/cpp/whisper.cpp/
           # Descargar
-            ./models/download-ggml-model.sh small.en-tdrz
-
-          # Notificar fin de la instalación del modelo
-            echo ""
-            echo -e "${cColorVerde}    Modelo small.en-tdrz, instalado.${cFinColor}"
-            echo ""
+            ./models/download-ggml-model.sh small.en-tdrz && echo -e "${cColorVerde}\n    Modelo small.en-tdrz, instalado. \n${cFinColor}"
 
         ;;
 
@@ -305,12 +240,7 @@
           # Posicionarse en la carpeta:
             cd ~/repos/cpp/whisper.cpp/
           # Descargar
-            ./models/download-ggml-model.sh small-q5_1
-
-          # Notificar fin de la instalación del modelo
-            echo ""
-            echo -e "${cColorVerde}    Modelo small-q5_1, instalado.${cFinColor}"
-            echo ""
+            ./models/download-ggml-model.sh small-q5_1 && echo -e "${cColorVerde}\n    Modelo small-q5_1, instalado. \n${cFinColor}"
 
         ;;
 
@@ -322,12 +252,7 @@
           # Posicionarse en la carpeta:
             cd ~/repos/cpp/whisper.cpp/
           # Descargar
-            ./models/download-ggml-model.sh small.en-q5_1
-
-          # Notificar fin de la instalación del modelo
-            echo ""
-            echo -e "${cColorVerde}    Modelo small.en-q5_1, instalado.${cFinColor}"
-            echo ""
+            ./models/download-ggml-model.sh small.en-q5_1 && echo -e "${cColorVerde}\n    Modelo small.en-q5_1, instalado. \n${cFinColor}"
 
         ;;
 
@@ -339,12 +264,7 @@
           # Posicionarse en la carpeta:
             cd ~/repos/cpp/whisper.cpp/
           # Descargar
-            ./models/download-ggml-model.sh small-q8_0
-
-          # Notificar fin de la instalación del modelo
-            echo ""
-            echo -e "${cColorVerde}    Modelo small-q8_0, instalado.${cFinColor}"
-            echo ""
+            ./models/download-ggml-model.sh small-q8_0 && echo -e "${cColorVerde}\n    Modelo small-q8_0, instalado. \n${cFinColor}"
 
         ;;
 
@@ -356,12 +276,7 @@
           # Posicionarse en la carpeta:
             cd ~/repos/cpp/whisper.cpp/
           # Descargar
-            ./models/download-ggml-model.sh medium
-
-          # Notificar fin de la instalación del modelo
-            echo ""
-            echo -e "${cColorVerde}    Modelo medium, instalado.${cFinColor}"
-            echo ""
+            ./models/download-ggml-model.sh medium && echo -e "${cColorVerde}\n    Modelo medium, instalado. \n${cFinColor}"
 
         ;;
 
@@ -373,12 +288,7 @@
           # Posicionarse en la carpeta:
             cd ~/repos/cpp/whisper.cpp/
           # Descargar
-            ./models/download-ggml-model.sh medium.en
-
-          # Notificar fin de la instalación del modelo
-            echo ""
-            echo -e "${cColorVerde}    Modelo medium.en, instalado.${cFinColor}"
-            echo ""
+            ./models/download-ggml-model.sh medium.en && echo -e "${cColorVerde}\n    Modelo medium.en, instalado. \n${cFinColor}"
 
         ;;
 
@@ -390,12 +300,7 @@
           # Posicionarse en la carpeta:
             cd ~/repos/cpp/whisper.cpp/
           # Descargar
-            ./models/download-ggml-model.sh medium-q5_0
-
-          # Notificar fin de la instalación del modelo
-            echo ""
-            echo -e "${cColorVerde}    Modelo medium-q5_0, instalado.${cFinColor}"
-            echo ""
+            ./models/download-ggml-model.sh medium-q5_0 && echo -e "${cColorVerde}\n    Modelo medium-q5_0, instalado. \n${cFinColor}"
 
         ;;
 
@@ -407,12 +312,7 @@
           # Posicionarse en la carpeta:
             cd ~/repos/cpp/whisper.cpp/
           # Descargar
-            ./models/download-ggml-model.sh medium.en-q5_0
-
-          # Notificar fin de la instalación del modelo
-            echo ""
-            echo -e "${cColorVerde}    Modelo medium.en-q5_0, instalado.${cFinColor}"
-            echo ""
+            ./models/download-ggml-model.sh medium.en-q5_0 && echo -e "${cColorVerde}\n    Modelo medium.en-q5_0, instalado. \n${cFinColor}"
 
         ;;
 
@@ -424,12 +324,7 @@
           # Posicionarse en la carpeta:
             cd ~/repos/cpp/whisper.cpp/
           # Descargar
-            ./models/download-ggml-model.sh medium-q8_0
-
-          # Notificar fin de la instalación del modelo
-            echo ""
-            echo -e "${cColorVerde}    Modelo medium-q8_0, instalado.${cFinColor}"
-            echo ""
+            ./models/download-ggml-model.sh medium-q8_0 && echo -e "${cColorVerde}\n    Modelo medium-q8_0, instalado. \n${cFinColor}"
 
         ;;
 
@@ -441,12 +336,7 @@
           # Posicionarse en la carpeta:
             cd ~/repos/cpp/whisper.cpp/
           # Descargar
-            ./models/download-ggml-model.sh large-v1
-
-          # Notificar fin de la instalación del modelo
-            echo ""
-            echo -e "${cColorVerde}    Modelo large-v1, instalado.${cFinColor}"
-            echo ""
+            ./models/download-ggml-model.sh large-v1 && echo -e "${cColorVerde}\n    Modelo large-v1, instalado. \n${cFinColor}"
 
         ;;
 
@@ -458,12 +348,7 @@
           # Posicionarse en la carpeta:
             cd ~/repos/cpp/whisper.cpp/
           # Descargar
-            ./models/download-ggml-model.sh large-v2
-
-          # Notificar fin de la instalación del modelo
-            echo ""
-            echo -e "${cColorVerde}    Modelo large-v2, instalado.${cFinColor}"
-            echo ""
+            ./models/download-ggml-model.sh large-v2 && echo -e "${cColorVerde}\n    Modelo large-v2, instalado. \n${cFinColor}"
 
         ;;
 
@@ -475,12 +360,7 @@
           # Posicionarse en la carpeta:
             cd ~/repos/cpp/whisper.cpp/
           # Descargar
-            ./models/download-ggml-model.sh large-v2-q5_0
-
-          # Notificar fin de la instalación del modelo
-            echo ""
-            echo -e "${cColorVerde}    Modelo large-v2-q5_0, instalado.${cFinColor}"
-            echo ""
+            ./models/download-ggml-model.sh large-v2-q5_0 && echo -e "${cColorVerde}\n    Modelo large-v2-q5_0, instalado. \n${cFinColor}"
 
         ;;
 
@@ -492,12 +372,7 @@
           # Posicionarse en la carpeta:
             cd ~/repos/cpp/whisper.cpp/
           # Descargar
-            ./models/download-ggml-model.sh large-v2-q8_0
-
-          # Notificar fin de la instalación del modelo
-            echo ""
-            echo -e "${cColorVerde}    Modelo large-v2-q8_0, instalado.${cFinColor}"
-            echo ""
+            ./models/download-ggml-model.sh large-v2-q8_0 && echo -e "${cColorVerde}\n    Modelo large-v2-q8_0, instalado. \n${cFinColor}"
 
         ;;
 
@@ -509,12 +384,7 @@
           # Posicionarse en la carpeta:
             cd ~/repos/cpp/whisper.cpp/
           # Descargar
-            ./models/download-ggml-model.sh large-v3
-
-          # Notificar fin de la instalación del modelo
-            echo ""
-            echo -e "${cColorVerde}    Modelo large-v3, instalado.${cFinColor}"
-            echo ""
+            ./models/download-ggml-model.sh large-v3 && echo -e "${cColorVerde}\n    Modelo large-v3, instalado. \n${cFinColor}"
 
         ;;
 
@@ -526,12 +396,7 @@
           # Posicionarse en la carpeta:
             cd ~/repos/cpp/whisper.cpp/
           # Descargar
-            ./models/download-ggml-model.sh large-v3-q5_0
-
-          # Notificar fin de la instalación del modelo
-            echo ""
-            echo -e "${cColorVerde}    Modelo large-v3-q5_0, instalado.${cFinColor}"
-            echo ""
+            ./models/download-ggml-model.sh large-v3-q5_0 && echo -e "${cColorVerde}\n    Modelo large-v3-q5_0, instalado. \n${cFinColor}"
 
         ;;
 
@@ -543,12 +408,7 @@
           # Posicionarse en la carpeta:
             cd ~/repos/cpp/whisper.cpp/
           # Descargar
-            ./models/download-ggml-model.sh large-v3-turbo
-
-          # Notificar fin de la instalación del modelo
-            echo ""
-            echo -e "${cColorVerde}    Modelo large-v3-turbo, instalado.${cFinColor}"
-            echo ""
+            ./models/download-ggml-model.sh large-v3-turbo && echo -e "${cColorVerde}\n    Modelo large-v3-turbo, instalado. \n${cFinColor}"
 
         ;;
 
@@ -560,12 +420,7 @@
           # Posicionarse en la carpeta:
             cd ~/repos/cpp/whisper.cpp/
           # Descargar
-            ./models/download-ggml-model.sh large-v3-turbo-q5_0
-
-          # Notificar fin de la instalación del modelo
-            echo ""
-            echo -e "${cColorVerde}    Modelo large-v3-turbo-q5_0, instalado.${cFinColor}"
-            echo ""
+            ./models/download-ggml-model.sh large-v3-turbo-q5_0 && echo -e "${cColorVerde}\n    Modelo large-v3-turbo-q5_0, instalado. \n${cFinColor}"
 
         ;;
 
@@ -577,12 +432,7 @@
           # Posicionarse en la carpeta:
             cd ~/repos/cpp/whisper.cpp/
           # Descargar
-            ./models/download-ggml-model.sh large-v3-turbo-q8_0
-
-          # Notificar fin de la instalación del modelo
-            echo ""
-            echo -e "${cColorVerde}    Modelo large-v3-turbo-q8_0, instalado.${cFinColor}"
-            echo ""
+            ./models/download-ggml-model.sh large-v3-turbo-q8_0 && echo -e "${cColorVerde}\n    Modelo large-v3-turbo-q8_0, instalado. \n${cFinColor}"
 
         ;;
 
