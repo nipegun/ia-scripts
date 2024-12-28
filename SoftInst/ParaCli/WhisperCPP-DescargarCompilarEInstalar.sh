@@ -153,6 +153,8 @@
                 echo ""
                 echo -e "${cColorVerde}      Para hacer el reconocimiento del habla sobre un archivo .wav PCM lineal 16 bits 16 kHz (el único soportado):${cFinColor}"
                 echo ""
+                echo ""
+                echo ""
                 echo -e "${cColorVerde}        ~/repos/cpp/whisper.cpp/build/bin/whisper-cli --language es --output-srt --model /Ruta/Al/modelo.bin --file /Ruta/Al/Archivo.wav${cFinColor}"
                 echo ""
                 echo ""
