@@ -27,6 +27,21 @@
     #echo "$(tput setaf 1)Mensaje en color rojo. $(tput sgr 0)"
   cFinColor='\033[0m'
 
+# Comprobar que el script para descargar modelos está instalado
+  if [[ ! -f ~/repos/cpp/whisper.cpp/models/download-ggml-model.sh ]]; then
+    echo -e "${cColorRojo}  El script para descargar modelos no está disponible.${cFinColor}"
+    echo -e "${cColorRojo}  Probablemente no hayas descargado, compilado e instalado whisper.cpp.${cFinColor}"
+    echo ""
+    echo -e "${cColorRojo}  Para instalarlo, ejecuta como usuario con permisos sudo:${cFinColor}"
+    echo ""
+    echo -e "${cColorRojo}    curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCli/WhisperCPP-DescargarCompilarEInstalar.sh | bash${cFinColor}"
+    echo ""
+    echo -e "${cColorRojo}  O, si sólo tienes el usuario root:${cFinColor}"
+    echo ""
+    echo -e "${cColorRojo}    curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCli/WhisperCPP-DescargarCompilarEInstalar.sh | sed 's-sudo--g' | bash${cFinColor}"
+    exit 1
+  fi
+
 # Crear el menú
   # Comprobar si el paquete dialog está instalado. Si no lo está, instalarlo.
     if [[ $(dpkg-query -s dialog 2>/dev/null | grep installed) == "" ]]; then
