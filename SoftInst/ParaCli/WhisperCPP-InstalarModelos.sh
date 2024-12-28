@@ -79,7 +79,7 @@
         1)
 
           echo ""
-          echo "  Instalando el modelo tiny"
+          echo "  Instalando el modelo tiny..."
           echo ""
           # Posicionarse en la carpeta:
             cd ~/repos/cpp/whisper.cpp/
@@ -91,7 +91,7 @@
         2)
 
           echo ""
-          echo "  Instalando el modelo tiny.en"
+          echo "  Instalando el modelo tiny.en..."
           echo ""
           # Posicionarse en la carpeta:
             cd ~/repos/cpp/whisper.cpp/
@@ -103,7 +103,7 @@
         3)
 
           echo ""
-          echo "  Instalando el modelo tiny-q5_1"
+          echo "  Instalando el modelo tiny-q5_1..."
           echo ""
           # Posicionarse en la carpeta:
             cd ~/repos/cpp/whisper.cpp/
@@ -115,7 +115,7 @@
         4)
 
           echo ""
-          echo "  Instalando el modelo tiny.en-q5_1"
+          echo "  Instalando el modelo tiny.en-q5_1..."
           echo ""
           # Posicionarse en la carpeta:
             cd ~/repos/cpp/whisper.cpp/
@@ -127,7 +127,7 @@
         5)
 
           echo ""
-          echo "  Instalando el modelo tiny-q8_0"
+          echo "  Instalando el modelo tiny-q8_0..."
           echo ""
           # Posicionarse en la carpeta:
             cd ~/repos/cpp/whisper.cpp/
@@ -139,7 +139,7 @@
         6)
 
           echo ""
-          echo "  Instalando el modelo base"
+          echo "  Instalando el modelo base..."
           echo ""
           # Posicionarse en la carpeta:
             cd ~/repos/cpp/whisper.cpp/
@@ -151,7 +151,7 @@
         7)
 
           echo ""
-          echo "  Instalando el modelo base.en"
+          echo "  Instalando el modelo base.en..."
           echo ""
           # Posicionarse en la carpeta:
             cd ~/repos/cpp/whisper.cpp/
@@ -163,7 +163,7 @@
         8)
 
           echo ""
-          echo "  Instalando el modelo base-q5_1"
+          echo "  Instalando el modelo base-q5_1..."
           echo ""
           # Posicionarse en la carpeta:
             cd ~/repos/cpp/whisper.cpp/
@@ -175,7 +175,7 @@
         9)
 
           echo ""
-          echo "  Instalando el modelo base.en-q5_1"
+          echo "  Instalando el modelo base.en-q5_1..."
           echo ""
           # Posicionarse en la carpeta:
             cd ~/repos/cpp/whisper.cpp/
@@ -187,7 +187,7 @@
         10)
 
           echo ""
-          echo "  Instalando el modelo base-q8_0"
+          echo "  Instalando el modelo base-q8_0..."
           echo ""
           # Posicionarse en la carpeta:
             cd ~/repos/cpp/whisper.cpp/
@@ -199,7 +199,7 @@
         11)
 
           echo ""
-          echo "  Instalando el modelo small"
+          echo "  Instalando el modelo small..."
           echo ""
           # Posicionarse en la carpeta:
             cd ~/repos/cpp/whisper.cpp/
@@ -211,7 +211,7 @@
         12)
 
           echo ""
-          echo "  Instalando el modelo small.en"
+          echo "  Instalando el modelo small.en..."
           echo ""
           # Posicionarse en la carpeta:
             cd ~/repos/cpp/whisper.cpp/
@@ -223,7 +223,7 @@
         13)
 
           echo ""
-          echo "  Instalando el modelo small.en-tdrz"
+          echo "  Instalando el modelo small.en-tdrz..."
           echo ""
           # Posicionarse en la carpeta:
             cd ~/repos/cpp/whisper.cpp/
@@ -235,7 +235,7 @@
         14)
 
           echo ""
-          echo "  Instalando el modelo small-q5_1"
+          echo "  Instalando el modelo small-q5_1..."
           echo ""
           # Posicionarse en la carpeta:
             cd ~/repos/cpp/whisper.cpp/
@@ -247,7 +247,7 @@
         15)
 
           echo ""
-          echo "  Instalando el modelo small.en-q5_1"
+          echo "  Instalando el modelo small.en-q5_1..."
           echo ""
           # Posicionarse en la carpeta:
             cd ~/repos/cpp/whisper.cpp/
@@ -259,7 +259,7 @@
         16)
 
           echo ""
-          echo "  Instalando el modelo small-q8_0"
+          echo "  Instalando el modelo small-q8_0..."
           echo ""
           # Posicionarse en la carpeta:
             cd ~/repos/cpp/whisper.cpp/
@@ -271,7 +271,7 @@
         17)
 
           echo ""
-          echo "  Instalando el modelo medium"
+          echo "  Instalando el modelo medium..."
           echo ""
           # Posicionarse en la carpeta:
             cd ~/repos/cpp/whisper.cpp/
@@ -283,7 +283,7 @@
         18)
 
           echo ""
-          echo "  Instalando el modelo medium.en"
+          echo "  Instalando el modelo medium.en..."
           echo ""
           # Posicionarse en la carpeta:
             cd ~/repos/cpp/whisper.cpp/
@@ -295,7 +295,7 @@
         19)
 
           echo ""
-          echo "  Instalando el modelo medium-q5_0"
+          echo "  Instalando el modelo medium-q5_0..."
           echo ""
           # Posicionarse en la carpeta:
             cd ~/repos/cpp/whisper.cpp/
@@ -307,7 +307,7 @@
         20)
 
           echo ""
-          echo "  Instalando el modelo medium.en-q5_0"
+          echo "  Instalando el modelo medium.en-q5_0..."
           echo ""
           # Posicionarse en la carpeta:
             cd ~/repos/cpp/whisper.cpp/
@@ -319,7 +319,7 @@
         21)
 
           echo ""
-          echo "  Instalando el modelo medium-q8_0"
+          echo "  Instalando el modelo medium-q8_0..."
           echo ""
           # Posicionarse en la carpeta:
             cd ~/repos/cpp/whisper.cpp/
@@ -331,7 +331,7 @@
         22)
 
           echo ""
-          echo "  Instalando el modelo large-v1"
+          echo "  Instalando el modelo large-v1..."
           echo ""
           # Posicionarse en la carpeta:
             cd ~/repos/cpp/whisper.cpp/
@@ -343,7 +343,7 @@
         23)
 
           echo ""
-          echo "  Instalando el modelo large-v2"
+          echo "  Instalando el modelo large-v2..."
           echo ""
           # Posicionarse en la carpeta:
             cd ~/repos/cpp/whisper.cpp/
@@ -355,7 +355,7 @@
         24)
 
           echo ""
-          echo "  Instalando el modelo large-v2-q5_0"
+          echo "  Instalando el modelo large-v2-q5_0..."
           echo ""
           # Posicionarse en la carpeta:
             cd ~/repos/cpp/whisper.cpp/
@@ -367,7 +367,7 @@
         25)
 
           echo ""
-          echo "  Instalando el modelo large-v2-q8_0"
+          echo "  Instalando el modelo large-v2-q8_0..."
           echo ""
           # Posicionarse en la carpeta:
             cd ~/repos/cpp/whisper.cpp/
@@ -379,7 +379,7 @@
         26)
 
           echo ""
-          echo "  Instalando el modelo large-v3"
+          echo "  Instalando el modelo large-v3..."
           echo ""
           # Posicionarse en la carpeta:
             cd ~/repos/cpp/whisper.cpp/
@@ -391,7 +391,7 @@
         27)
 
           echo ""
-          echo "  Instalando el modelo large-v3-q5_0"
+          echo "  Instalando el modelo large-v3-q5_0..."
           echo ""
           # Posicionarse en la carpeta:
             cd ~/repos/cpp/whisper.cpp/
@@ -403,7 +403,7 @@
         28)
 
           echo ""
-          echo "  Instalando el modelo large-v3-turbo"
+          echo "  Instalando el modelo large-v3-turbo..."
           echo ""
           # Posicionarse en la carpeta:
             cd ~/repos/cpp/whisper.cpp/
@@ -415,7 +415,7 @@
         29)
 
           echo ""
-          echo "  Instalando el modelo large-v3-turbo-q5_0"
+          echo "  Instalando el modelo large-v3-turbo-q5_0..."
           echo ""
           # Posicionarse en la carpeta:
             cd ~/repos/cpp/whisper.cpp/
@@ -427,7 +427,7 @@
         30)
 
           echo ""
-          echo "  Instalando el modelo large-v3-turbo-q8_0"
+          echo "  Instalando el modelo large-v3-turbo-q8_0..."
           echo ""
           # Posicionarse en la carpeta:
             cd ~/repos/cpp/whisper.cpp/
