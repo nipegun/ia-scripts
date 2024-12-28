@@ -154,7 +154,7 @@
                 echo -e "${cColorVerde}    Para hacer el reconocimiento del habla sobre un archivo de audio/video:${cFinColor}"
                 echo ""
                 echo -e "${cColorVerde}      ~/repos/cpp/whisper.cpp/build/bin/whisper-cli --language es --output-srt --model [/Ruta/Al/modelo.bin] --file [/Ruta/Al/ArchivoDeAUdioVideo.mp4]${cFinColor}"
-
+                echo ""
 
             ;;
 
@@ -183,6 +183,7 @@
                 echo ""
                 echo -e "${cColorVerde}      Ajusta las capas a cargar en VRAM, dependiendo de la cantidad de VRAM que tengas.${cFinColor}"
                 echo ""
+
             ;;
 
             5)
@@ -260,6 +261,21 @@
               echo ""
               mkdir -p ~/.local/bin/
               cp ~/repos/cpp/whisper.cpp/build/bin/* ~/.local/bin/
+
+              # Notificar fin de la compilación
+                echo ""
+                echo -e "${cColorVerde}    Binarios copiados a ~/.local/bin/. Para ejecutar:${cFinColor}"
+                echo ""
+                echo -e "${cColorVerde}      Para uso sólo con CPU:${cFinColor}"
+                echo ""
+                echo -e "${cColorVerde}        whisper-cli --language es --output-srt --model [/Ruta/Al/modelo.bin] --file [/Ruta/Al/ArchivoDeAUdioVideo.mp4]${cFinColor}"
+                echo ""
+                echo -e "${cColorVerde}      Para uso con CPU y tarjeta gráfica nVidia con soporte CUDA:${cFinColor}"
+                echo ""
+                echo -e "${cColorVerde}        whisper-cli --gpu-layers 10 --language es --output-srt --model [/Ruta/Al/modelo.bin] --file [/Ruta/Al/ArchivoDeAUdioVideo.mp4]${cFinColor}"
+                echo ""
+                echo -e "${cColorVerde}        Ajusta las capas a cargar en VRAM, dependiendo de la cantidad de VRAM que tengas.${cFinColor}"
+                echo ""
 
             ;;
 
