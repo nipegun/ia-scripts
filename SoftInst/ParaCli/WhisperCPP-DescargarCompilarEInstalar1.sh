@@ -149,7 +149,7 @@
                 echo ""
                 echo -e "${cColorVerde}    Compilación para uso con CPU x86, finalizada. Los binarios están en:${cFinColor}"
                 echo ""
-                echo -e "${cColorVerde}      /home/$USER/repos/cpp/whisper.cpp/build/bin/${cFinColor}"
+                echo -e "${cColorVerde}      ~/repos/cpp/whisper.cpp/build/bin/${cFinColor}"
                 echo ""
 
             ;;
@@ -171,7 +171,7 @@
                 echo ""
                 echo -e "${cColorVerde}    Compilación para uso con CPU x86 y tarjeta nVidia con CUDA, finalizada. Los binarios están en:${cFinColor}"
                 echo ""
-                echo -e "${cColorVerde}      /home/$USER/repos/cpp/whisper.cpp/build/bin/${cFinColor}"
+                echo -e "${cColorVerde}      ~/repos/cpp/whisper.cpp/build/bin/${cFinColor}"
                 echo ""
 
             ;;
@@ -193,7 +193,7 @@
                 echo ""
                 echo -e "${cColorVerde}    Compilación para uso con CPU ARM de 32 bits, finalizada. Los binarios están en:${cFinColor}"
                 echo ""
-                echo -e "${cColorVerde}      /home/$USER/repos/cpp/whisper.cpp/build/bin/${cFinColor}"
+                echo -e "${cColorVerde}      ~/repos/cpp/whisper.cpp/build/bin/${cFinColor}"
                 echo ""
 
             ;;
@@ -215,7 +215,7 @@
                 echo ""
                 echo -e "${cColorVerde}    Compilación para uso con CPU ARM de 64 bits, finalizada. Los binarios están en:${cFinColor}"
                 echo ""
-                echo -e "${cColorVerde}      /home/$USER/repos/cpp/whisper.cpp/build/bin/${cFinColor}"
+                echo -e "${cColorVerde}      ~/repos/cpp/whisper.cpp/build/bin/${cFinColor}"
                 echo ""
 
             ;;
@@ -235,7 +235,7 @@
                 echo ""
                 echo -e "${cColorVerde}    Compilación para WebAssembly, finalizada. Los binarios están en:${cFinColor}"
                 echo ""
-                echo -e "${cColorVerde}      /home/$USER/repos/cpp/whisper.cpp/build/bin/${cFinColor}"
+                echo -e "${cColorVerde}      ~/repos/cpp/whisper.cpp/build/bin/${cFinColor}"
                 echo ""
 
             ;;
@@ -243,9 +243,10 @@
             8)
 
               echo ""
-              echo "      Copiando binarios a /home/$USER/.local/bin/..."
+              echo "      Copiando binarios a ~/.local/bin/..."
               echo ""
-              cp /home/$USER/repos/cpp/whisper.cpp/build/bin/* /home/'"$USER"'/.local/bin/
+              mkdir -p ~/.local/bin/
+              cp ~/repos/cpp/whisper.cpp/build/bin/* ~/.local/bin/
 
             ;;
 
