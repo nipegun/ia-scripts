@@ -75,7 +75,7 @@
           sudo apt-get -y install dialog
           echo ""
         fi
-      menu=(dialog --checklist "Marca como quieres instalar la herramienta:" 22 90 16)
+      menu=(dialog --checklist "Marca como quieres instalar la herramienta:" 22 94 16)
         opciones=(
           1 "Clonar el repo de OpenAIWhisper"                                                on
           2 "  Crear el entorno virtual de python e instalar dentro"                         on
