@@ -166,7 +166,7 @@
                 echo ""
                 echo -e "${cColorVerde}      ...o bien pipear la salida de una conversión de audio hacia whisper:${cFinColor}"
                 echo ""
-                echo -e "${cColorVerde}        ffmpeg -i /Ruta/Al/ArchivoDeEntrada.mp3 -ar 16000 -ac 1 -c:a pcm_s16le -f wav - | ~/repos/cpp/whisper.cpp/build/bin/whisper-cli --language es --output-srt --model /Ruta/Al/modelo.bin -f - ${cFinColor}"
+                echo -e "${cColorVerde}        ffmpeg -i /Ruta/Al/ArchivoDeEntrada.mp3 -ar 16000 -ac 1 -c:a pcm_s16le -f wav - | ~/repos/cpp/whisper.cpp/build/bin/whisper-cli --language es --output-srt --model /Ruta/Al/modelo.bin -f -${cFinColor}"
                 echo ""
 
 
@@ -208,7 +208,7 @@
                 echo ""
                 echo -e "${cColorVerde}      ...o bien pipear la salida de una conversión de audio hacia whisper:${cFinColor}"
                 echo ""
-                echo -e "${cColorVerde}        ffmpeg -i /Ruta/Al/ArchivoDeEntrada.mp3 -ar 16000 -ac 1 -c:a pcm_s16le -f wav - | ~/repos/cpp/whisper.cpp/build/bin/whisper-cli --gpu-layers 10 --language es --output-srt --model /Ruta/Al/modelo.bin -f - ${cFinColor}"
+                echo -e "${cColorVerde}        ffmpeg -i /Ruta/Al/ArchivoDeEntrada.mp3 -ar 16000 -ac 1 -c:a pcm_s16le -f wav - | ~/repos/cpp/whisper.cpp/build/bin/whisper-cli --gpu-layers 10 --language es --output-srt --model /Ruta/Al/modelo.bin -f -${cFinColor}"
                 echo ""
 
             ;;
@@ -320,11 +320,11 @@
                 echo ""
                 echo -e "${cColorVerde}            ...o bien pipear la salida de una conversión de audio hacia whisper:${cFinColor}"
                 echo ""
-                echo -e "${cColorVerde}              ffmpeg -i /Ruta/Al/ArchivoDeEntrada.mp3 -ar 16000 -ac 1 -c:a pcm_s16le -f wav - | whisper-cli --language es --output-srt --model /Ruta/Al/modelo.bin -f - ${cFinColor}"
+                echo -e "${cColorVerde}              ffmpeg -i /Ruta/Al/ArchivoDeEntrada.mp3 -ar 16000 -ac 1 -c:a pcm_s16le -f wav - | whisper-cli --language es --output-srt --model /Ruta/Al/modelo.bin -f -${cFinColor}"
                 echo ""
                 echo -e "${cColorVerde}                o${cFinColor}"
                 echo ""
-                echo -e "${cColorVerde}              ffmpeg -i /Ruta/Al/ArchivoDeEntrada.mp3 -ar 16000 -ac 1 -c:a pcm_s16le -f wav - | whisper-cli --gpu-layers 10 --language es --output-srt --model /Ruta/Al/modelo.bin -f - ${cFinColor}"
+                echo -e "${cColorVerde}              ffmpeg -i /Ruta/Al/ArchivoDeEntrada.mp3 -ar 16000 -ac 1 -c:a pcm_s16le -f wav - | whisper-cli --gpu-layers 10 --language es --output-srt --model /Ruta/Al/modelo.bin -f -${cFinColor}"
                 echo ""
 
             ;;
