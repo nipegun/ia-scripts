@@ -84,7 +84,7 @@
           5 "  Compilar para uso con CPU ARM de 32 bits"                        off
           6 "  Compilar para uso con CPU ARM de 64 bits"                        off
           7 "  Compilar para WebAssembly"                                       off
-          8 "    Copiar binarios a /home/$USER/.local/bin/ "                    off
+          8 "    Copiar binarios a ~/.local/bin/ "                              on
           9 "  Instalar modelos "                                               off
         )
       choices=$("${menu[@]}" "${opciones[@]}" 2>&1 >/dev/tty)
