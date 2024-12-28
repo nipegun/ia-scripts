@@ -151,6 +151,10 @@
                 echo ""
                 echo -e "${cColorVerde}      ~/repos/cpp/whisper.cpp/build/bin/${cFinColor}"
                 echo ""
+                echo -e "${cColorVerde}    Para hacer el reconocimiento del habla sobre un archivo de audio/video:${cFinColor}"
+                echo ""
+                echo -e "${cColorVerde}      ~/repos/cpp/whisper.cpp/build/bin/whisper-cli --language es --output-srt --model [/Ruta/Al/modelo.bin] --file [/Ruta/Al/ArchivoDeAUdioVideo.mp4]${cFinColor}"
+
 
             ;;
 
@@ -173,7 +177,12 @@
                 echo ""
                 echo -e "${cColorVerde}      ~/repos/cpp/whisper.cpp/build/bin/${cFinColor}"
                 echo ""
-
+                echo -e "${cColorVerde}    Para hacer el reconocimiento del habla sobre un archivo de audio/video, usando también CUDA:${cFinColor}"
+                echo ""
+                echo -e "${cColorVerde}      ~/repos/cpp/whisper.cpp/build/bin/whisper-cli --gpu-layers 10 --language es --output-srt --model [/Ruta/Al/modelo.bin] --file [/Ruta/Al/ArchivoDeAUdioVideo.mp4]${cFinColor}"
+                echo ""
+                echo -e "${cColorVerde}      Ajusta las capas a cargar en VRAM, dependiendo de la cantidad de VRAM que tengas.${cFinColor}"
+                echo ""
             ;;
 
             5)
@@ -194,6 +203,8 @@
                 echo -e "${cColorVerde}    Compilación para uso con CPU ARM de 32 bits, finalizada. Los binarios están en:${cFinColor}"
                 echo ""
                 echo -e "${cColorVerde}      ~/repos/cpp/whisper.cpp/build/bin/${cFinColor}"
+                echo ""
+                echo -e "${cColorVerde}      Para ejecutarlos, muévelos a un sistema con procesador ARM de 32 bits${cFinColor}"
                 echo ""
 
             ;;
@@ -216,6 +227,8 @@
                 echo -e "${cColorVerde}    Compilación para uso con CPU ARM de 64 bits, finalizada. Los binarios están en:${cFinColor}"
                 echo ""
                 echo -e "${cColorVerde}      ~/repos/cpp/whisper.cpp/build/bin/${cFinColor}"
+                echo ""
+                echo -e "${cColorVerde}      Para ejecutarlos, muévelos a un sistema con procesador ARM de 64 bits${cFinColor}"
                 echo ""
 
             ;;
