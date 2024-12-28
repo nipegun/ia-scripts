@@ -119,7 +119,7 @@
             2)
 
               echo ""
-              echo "    Preparar para compilar..."
+              echo "  Preparar para compilar..."
               echo ""
               
               # Instalar paquetes necesarios
@@ -137,7 +137,7 @@
             3)
 
               echo ""
-              echo "  Compilando para uso únicamente con CPU x86..."
+              echo "    Compilando para uso únicamente con CPU x86..."
               echo ""
               # Posicionarse en la carpeta
                 cd ~/repos/cpp/whisper.cpp/
@@ -157,7 +157,7 @@
             4)
 
               echo ""
-              echo "  Compilando para uso con CPU x86 y tarjeta nVidia con soporte CUDA..."
+              echo "    Compilando para uso con CPU x86 y tarjeta nVidia con soporte CUDA..."
               echo ""
               # Instalar el CUDA toolkit
                 sudo apt-get -y install nvidia-cuda-toolkit
@@ -179,7 +179,7 @@
             5)
 
               echo ""
-              echo "  Compilando para uso con CPU ARM de 32 bits..."
+              echo "    Compilando para uso con CPU ARM de 32 bits..."
               echo ""
               # Instalar el toolchain
                 sudo apt-get -y install arm-linux-gnueabihf-gcc
@@ -201,7 +201,7 @@
             6)
 
               echo ""
-              echo "  Compilando para uso con CPU ARM de 64 bits..."
+              echo "    Compilando para uso con CPU ARM de 64 bits..."
               echo ""
               # Instalar el toolchain
                 sudo apt-get -y install gcc-aarch64-linux-gnu
@@ -223,7 +223,7 @@
             7)
 
               echo ""
-              echo "  Compilando para WebAssembly (wasm)..."
+              echo "    Compilando para WebAssembly (wasm)..."
               echo ""
               # Posicionarse en la carpeta
                 cd ~/repos/cpp/whisper.cpp/
@@ -243,7 +243,7 @@
             8)
 
               echo ""
-              echo "  Copiando binarios a /home/$USER/.local/bin/..."
+              echo "      Copiando binarios a /home/$USER/.local/bin/..."
               echo ""
               cp /home/$USER/repos/cpp/whisper.cpp/build/bin/* /home/'"$USER"'/.local/bin/
 
