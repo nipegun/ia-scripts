@@ -8,20 +8,14 @@
 # ----------
 # Script de NiPeGun para instalar modelos de whisper para whisper.cpp en Debian
 #
-# Ejecución remota con sudo:
-#   curl -sL x | sudo bash
+# Ejecución remota:
+#   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCli/WhisperCPP-InstalarModelos.sh | bash
 #
 # Ejecución remota como root:
-#   curl -sL x | bash
-#
-# Ejecución remota sin caché:
-#   curl -sL -H 'Cache-Control: no-cache, no-store' x | bash
-#
-# Ejecución remota con parámetros:
-#   curl -sL x | bash -s Parámetro1 Parámetro2
+#   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCli/WhisperCPP-InstalarModelos.sh | sed 's-sudo--g' | bash
 #
 # Bajar y editar directamente el archivo en nano
-#   curl -sL x | nano -
+#   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCli/WhisperCPP-InstalarModelos.sh | nano -
 # ----------
 
 # Definir constantes de color
@@ -39,8 +33,8 @@
       echo ""
       echo -e "${cColorRojo}  El paquete dialog no está instalado. Iniciando su instalación...${cFinColor}"
       echo ""
-      apt-get -y update
-      apt-get -y install dialog
+      sudo apt-get -y update
+      sudo apt-get -y install dialog
       echo ""
     fi
   menu=(dialog --checklist "Marca los modelos de whisper que quieras instalar:" 22 96 16)
