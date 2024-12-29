@@ -50,25 +50,31 @@
   menu=(dialog --checklist "Marca los modelos que quieras instalar:" 22 96 16)
     opciones=(
 
-      1 "llama3.2   1b-instruct-q4_0 (0,9 GB en disco) (3,4 GB en VRAM)" off
-      2 "llama3.2   1b-instruct-q8_0 (1,5 GB en disco) (3,8 GB en VRAM)" off
-      3 "llama3.2   1b-instruct-fp16 (2,7 GB en disco) (7,2 GB en VRAM)" off
+      1 "llama3.3   70b-instruct-q4_0 (0,9 GB en disco) (3,4 GB en VRAM)" off
+      2 "llama3.3   70b-instruct-q8_0 (1,5 GB en disco) (3,8 GB en VRAM)" off
+      3 "llama3.3   70b-instruct-fp16 (2,7 GB en disco) (7,2 GB en VRAM)" off
 
-      4 "llama3.2   3b-instruct-q4_0 (2,0 GB en disco) ( 4,9 GB en VRAM)" off
-      5 "llama3.2   3b-instruct-q8_0 (3,6 GB en disco) ( 9,8 GB en VRAM)" off
-      6 "llama3.2   3b-instruct-fp16 (6,6 GB en disco) (14,0 GB en VRAM)" off
-      
-      7 "llama3.1   8b-instruct-q4_0 ( 4,8 GB en disco) ( 7,5 GB en VRAM)" off
-      8 "llama3.1   8b-instruct-q8_0 ( 8,6 GB en disco) (11,0 GB en VRAM)" off
-      9 "llama3.1   8b-instruct-fp16 (16,2 GB en disco) (15,8 GB en VRAM)?" off
 
-     10 "llama3.1  70b-instruct-q4_0 ( 40,0 GB en disco) (x,x GB en VRAM)" off
-     11 "llama3.1  70b-instruct-q8_0 ( 75,0 GB en disco) (x,x GB en VRAM)" off
-     12 "llama3.1  70b-instruct-fp16 (142,0 GB en disco) (x,x GB en VRAM)" off
+      4 "llama3.2   1b-instruct-q4_0 (0,9 GB en disco) (3,4 GB en VRAM)" off
+      5 "llama3.2   1b-instruct-q8_0 (1,5 GB en disco) (3,8 GB en VRAM)" off
+      6 "llama3.2   1b-instruct-fp16 (2,7 GB en disco) (7,2 GB en VRAM)" off
 
-     13 "llama3.1 405b-instruct-q4_0 (230,0 GB en disco) (x,x GB en VRAM)" off
-     14 "llama3.1 405b-instruct-q8_0 (433,0 GB en disco) (x,x GB en VRAM)" off
-     15 "llama3.1 405b-instruct-fp16 (815,0 GB en disco) (x,x GB en VRAM)" off
+      7 "llama3.2   3b-instruct-q4_0 (2,0 GB en disco) ( 4,9 GB en VRAM)" off
+      8 "llama3.2   3b-instruct-q8_0 (3,6 GB en disco) ( 9,8 GB en VRAM)" off
+      9 "llama3.2   3b-instruct-fp16 (6,6 GB en disco) (14,0 GB en VRAM)" off
+
+
+     10 "llama3.1   8b-instruct-q4_0 ( 4,8 GB en disco) ( 7,5 GB en VRAM)" off
+     11 "llama3.1   8b-instruct-q8_0 ( 8,6 GB en disco) (11,0 GB en VRAM)" off
+     12 "llama3.1   8b-instruct-fp16 (16,2 GB en disco) (15,8 GB en VRAM)?" off
+
+     13 "llama3.1  70b-instruct-q4_0 ( 40,0 GB en disco) (x,x GB en VRAM)" off
+     14 "llama3.1  70b-instruct-q8_0 ( 75,0 GB en disco) (x,x GB en VRAM)" off
+     15 "llama3.1  70b-instruct-fp16 (142,0 GB en disco) (x,x GB en VRAM)" off
+
+     16 "llama3.1 405b-instruct-q4_0 (230,0 GB en disco) (x,x GB en VRAM)" off
+     17 "llama3.1 405b-instruct-q8_0 (433,0 GB en disco) (x,x GB en VRAM)" off
+     18 "llama3.1 405b-instruct-fp16 (815,0 GB en disco) (x,x GB en VRAM)" off
 
     )
   choices=$("${menu[@]}" "${opciones[@]}" 2>&1 >/dev/tty)
@@ -78,6 +84,87 @@
         case $choice in
 
           1)
+
+            echo ""
+            echo "  Instalando llama3.3:70b-instruct-q4_0..."
+            echo ""
+
+            # Definir el espacio libre necesario
+              vGBsLibresNecesarios=0.9
+              vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
+
+            # Obtener el espacio libre en la partición raíz en kilobytes
+              vEspacioLibre=$(df / | grep '/' | tail -1 | sed -E 's/\s+/ /g' | cut -d ' ' -f 4)
+              vGBsLibres=$(echo "scale=2; $vEspacioLibre/1024/1024" | bc)
+
+            # Comprobar si hay espacio libre disponible
+              if [ "$vEspacioLibre" -ge "$vEspacioNecesario" ]; then
+                ollama pull llama3.3:70b-instruct-q4_0
+              else
+                echo ""
+                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo llama3.3:70b-instruct-q4_0.${cFinColor}"
+                echo ""
+                echo -e "${cColorRojo}      Hacen falta $vGBsLibresNecesarios GB y hay sólo $vGBsLibres GB.${cFinColor}"
+                echo ""
+              fi
+
+          ;;
+
+          2)
+
+            echo ""
+            echo "  Instalando llama3.3:70b-instruct-q8_0..."
+            echo ""
+
+            # Definir el espacio libre necesario
+              vGBsLibresNecesarios=0.9
+              vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
+
+            # Obtener el espacio libre en la partición raíz en kilobytes
+              vEspacioLibre=$(df / | grep '/' | tail -1 | sed -E 's/\s+/ /g' | cut -d ' ' -f 4)
+              vGBsLibres=$(echo "scale=2; $vEspacioLibre/1024/1024" | bc)
+
+            # Comprobar si hay espacio libre disponible
+              if [ "$vEspacioLibre" -ge "$vEspacioNecesario" ]; then
+                ollama pull llama3.3:70b-instruct-q8_0
+              else
+                echo ""
+                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo llama3.3:70b-instruct-q8_0.${cFinColor}"
+                echo ""
+                echo -e "${cColorRojo}      Hacen falta $vGBsLibresNecesarios GB y hay sólo $vGBsLibres GB.${cFinColor}"
+                echo ""
+              fi
+
+          ;;
+
+          3)
+
+            echo ""
+            echo "  Instalando llama3.3:70b-instruct-fp16..."
+            echo ""
+
+            # Definir el espacio libre necesario
+              vGBsLibresNecesarios=0.9
+              vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
+
+            # Obtener el espacio libre en la partición raíz en kilobytes
+              vEspacioLibre=$(df / | grep '/' | tail -1 | sed -E 's/\s+/ /g' | cut -d ' ' -f 4)
+              vGBsLibres=$(echo "scale=2; $vEspacioLibre/1024/1024" | bc)
+
+            # Comprobar si hay espacio libre disponible
+              if [ "$vEspacioLibre" -ge "$vEspacioNecesario" ]; then
+                ollama pull llama3.3:70b-instruct-fp16
+              else
+                echo ""
+                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo llama3.3:70b-instruct-fp16.${cFinColor}"
+                echo ""
+                echo -e "${cColorRojo}      Hacen falta $vGBsLibresNecesarios GB y hay sólo $vGBsLibres GB.${cFinColor}"
+                echo ""
+              fi
+
+          ;;
+
+          4)
 
             echo ""
             echo "  Instalando llama3.2:1b-instruct-q4_0..."
@@ -104,7 +191,7 @@
 
           ;;
 
-          2)
+          5)
 
             echo ""
             echo "  Instalando llama3.2:1b-instruct-q8_0..."
@@ -131,7 +218,7 @@
 
           ;;
 
-          3)
+          6)
 
             echo ""
             echo "  Instalando llama3.2:1b-instruct-fp16..."
@@ -158,7 +245,7 @@
 
           ;;
 
-          4)
+          7)
 
             echo ""
             echo "  Instalando llama3.2:3b-instruct-q4_0..."
@@ -185,7 +272,7 @@
 
           ;;
 
-          5)
+          8)
 
             echo ""
             echo "  Instalando llama3.2:3b-instruct-q8_0..."
@@ -212,7 +299,7 @@
 
           ;;
 
-          6)
+          9)
 
             echo ""
             echo "  Instalando llama3.2:3b-instruct-fp16..."
@@ -239,7 +326,7 @@
 
           ;;
 
-          7)
+         10)
 
             echo ""
             echo "  Instalando llama3.1:8b-instruct-q4_0 ..."
@@ -266,7 +353,7 @@
 
           ;;
 
-          8)
+         11)
 
             echo ""
             echo "  Instalando llama3.1:8b-instruct-q8_0..."
@@ -293,7 +380,7 @@
 
           ;;
 
-          9)
+         12)
 
             echo ""
             echo "  Instalando llama3.1:8b-instruct-fp16..."
@@ -320,7 +407,7 @@
 
           ;;
 
-         10)
+         13)
 
             echo ""
             echo "  Instalando llama3.1:70b-instruct-q4_0..."
@@ -347,7 +434,7 @@
 
           ;;
 
-         11)
+         14)
 
             echo ""
             echo "  Instalando llama3.1:70b-instruct-q8_0..."
@@ -374,7 +461,7 @@
 
           ;;
 
-         12)
+         15)
 
             echo ""
             echo "  Instalando llama3.1:70b-instruct-fp16..."
@@ -401,7 +488,7 @@
 
           ;;
 
-         13)
+         16)
 
             echo ""
             echo "  Instalando llama3.1:405b-instruct-q4_0..."
@@ -428,7 +515,7 @@
 
           ;;
 
-         14)
+         17)
 
             echo ""
             echo "  Instalando llama3.1:405b-instruct-q8_0..."
@@ -455,7 +542,7 @@
 
           ;;
 
-         15)
+         18)
 
             echo ""
             echo "  llama3.1:405b-instruct-fp16..."
