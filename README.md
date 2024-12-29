@@ -1,6 +1,6 @@
 # ia-scripts
 
-Los "ia-scripts" son scripts en bash que, o he ido creado para paliar necesidades que han ido surgiendo en el dia a dia de trabajar con la inteligenica artificial en Debian, o he ido descargando de internet (externos) porque me han parecido útiles.
+Los "ia-scripts" son una combinación de scripts para bash y/o puthon que, o he ido creado para paliar necesidades que han ido surgiendo en el dia a dia de trabajar con la inteligenica artificial en Debian, o he ido descargando de internet (externos) porque me han parecido útiles.
 
 Si bien están pensados para ser ejecutados en Debian es probable que puedan ser ejecutados sin errores en derivados como Ubuntu, Mint u otros.
 
