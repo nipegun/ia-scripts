@@ -68,13 +68,9 @@
      11 "llama3.1   8b-instruct-q8_0 ( 8,6 GB en disco) (11,0 GB en VRAM)" off
      12 "llama3.1   8b-instruct-fp16 (16,2 GB en disco) (15,8 GB en VRAM)?" off
 
-     13 "llama3.1  70b-instruct-q4_0 ( 40,0 GB en disco) (x,x GB en VRAM)" off
-     14 "llama3.1  70b-instruct-q8_0 ( 75,0 GB en disco) (x,x GB en VRAM)" off
-     15 "llama3.1  70b-instruct-fp16 (142,0 GB en disco) (x,x GB en VRAM)" off
-
-     16 "llama3.1 405b-instruct-q4_0 (230,0 GB en disco) (x,x GB en VRAM)" off
-     17 "llama3.1 405b-instruct-q8_0 (433,0 GB en disco) (x,x GB en VRAM)" off
-     18 "llama3.1 405b-instruct-fp16 (815,0 GB en disco) (x,x GB en VRAM)" off
+     13 "llama3.1 405b-instruct-q4_0 (230,0 GB en disco) (x,x GB en VRAM)" off
+     14 "llama3.1 405b-instruct-q8_0 (433,0 GB en disco) (x,x GB en VRAM)" off
+     15 "llama3.1 405b-instruct-fp16 (815,0 GB en disco) (x,x GB en VRAM)" off
 
     )
   choices=$("${menu[@]}" "${opciones[@]}" 2>&1 >/dev/tty)
@@ -410,87 +406,6 @@
          13)
 
             echo ""
-            echo "  Instalando llama3.1:70b-instruct-q4_0..."
-            echo ""
-
-            # Definir el espacio libre necesario
-              vGBsLibresNecesarios=40
-              vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
-
-            # Obtener el espacio libre en la partición raíz en kilobytes
-              vEspacioLibre=$(df / | grep '/' | tail -1 | sed -E 's/\s+/ /g' | cut -d ' ' -f 4)
-              vGBsLibres=$(echo "scale=2; $vEspacioLibre/1024/1024" | bc)
-
-            # Comprobar si hay espacio libre disponible
-              if [ "$vEspacioLibre" -ge "$vEspacioNecesario" ]; then
-                ollama pull llama3.1:70b-instruct-q4_0
-              else
-                echo ""
-                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo llama3.1:70b-instruct-q4_0.${cFinColor}"
-                echo ""
-                echo -e "${cColorRojo}      Hacen falta $vGBsLibresNecesarios GB y hay sólo $vGBsLibres GB.${cFinColor}"
-                echo ""
-              fi
-
-          ;;
-
-         14)
-
-            echo ""
-            echo "  Instalando llama3.1:70b-instruct-q8_0..."
-            echo ""
-
-            # Definir el espacio libre necesario
-              vGBsLibresNecesarios=75
-              vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
-
-            # Obtener el espacio libre en la partición raíz en kilobytes
-              vEspacioLibre=$(df / | grep '/' | tail -1 | sed -E 's/\s+/ /g' | cut -d ' ' -f 4)
-              vGBsLibres=$(echo "scale=2; $vEspacioLibre/1024/1024" | bc)
-
-            # Comprobar si hay espacio libre disponible
-              if [ "$vEspacioLibre" -ge "$vEspacioNecesario" ]; then
-                ollama pull llama3.1:70b-instruct-q8_0
-              else
-                echo ""
-                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo llama3.1:70b-instruct-q8_0.${cFinColor}"
-                echo ""
-                echo -e "${cColorRojo}      Hacen falta $vGBsLibresNecesarios GB y hay sólo $vGBsLibres GB.${cFinColor}"
-                echo ""
-              fi
-
-          ;;
-
-         15)
-
-            echo ""
-            echo "  Instalando llama3.1:70b-instruct-fp16..."
-            echo ""
-
-            # Definir el espacio libre necesario
-              vGBsLibresNecesarios=142
-              vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
-
-            # Obtener el espacio libre en la partición raíz en kilobytes
-              vEspacioLibre=$(df / | grep '/' | tail -1 | sed -E 's/\s+/ /g' | cut -d ' ' -f 4)
-              vGBsLibres=$(echo "scale=2; $vEspacioLibre/1024/1024" | bc)
-
-            # Comprobar si hay espacio libre disponible
-              if [ "$vEspacioLibre" -ge "$vEspacioNecesario" ]; then
-                ollama pull llama3.1:70b-instruct-fp16
-              else
-                echo ""
-                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo llama3.1:70b-instruct-fp16.${cFinColor}"
-                echo ""
-                echo -e "${cColorRojo}      Hacen falta $vGBsLibresNecesarios GB y hay sólo $vGBsLibres GB.${cFinColor}"
-                echo ""
-              fi
-
-          ;;
-
-         16)
-
-            echo ""
             echo "  Instalando llama3.1:405b-instruct-q4_0..."
             echo ""
 
@@ -515,7 +430,7 @@
 
           ;;
 
-         17)
+         14)
 
             echo ""
             echo "  Instalando llama3.1:405b-instruct-q8_0..."
@@ -542,7 +457,7 @@
 
           ;;
 
-         18)
+         15)
 
             echo ""
             echo "  llama3.1:405b-instruct-fp16..."
