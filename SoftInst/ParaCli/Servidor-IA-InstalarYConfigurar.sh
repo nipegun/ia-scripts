@@ -89,7 +89,8 @@ elif [ $cVerSO == "12" ]; then
       echo ""
       echo -e "${cColorRojo}    El paquete dialog no está instalado. Iniciando su instalación...${cFinColor}"
       echo ""
-      apt-get -y update && apt-get -y install dialog
+      apt-get -y update
+      apt-get -y install dialog
       echo ""
     fi
 
@@ -128,7 +129,8 @@ elif [ $cVerSO == "12" ]; then
                 echo ""
                 echo -e "${cColorRojo}      El paquete curl no está instalado. Iniciando su instalación...${cFinColor}"
                 echo ""
-                apt-get -y update && apt-get -y install curl
+                apt-get -y update
+                apt-get -y install curl
                 echo ""
               fi
             # Comprobar si el paquete pciutils está instalado. Si no lo está, instalarlo.
@@ -136,7 +138,8 @@ elif [ $cVerSO == "12" ]; then
                 echo ""
                 echo -e "${cColorRojo}      El paquete pciutils no está instalado. Iniciando su instalación...${cFinColor}"
                 echo ""
-                apt-get -y update && apt-get -y install pciutils
+                apt-get -y update
+                apt-get -y install pciutils
                 echo ""
               fi
             # Correr el script de instalación
