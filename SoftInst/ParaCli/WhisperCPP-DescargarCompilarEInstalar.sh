@@ -126,6 +126,7 @@
                 sudo apt-get -y install libsdl2-dev
                 sudo apt-get -y install build-essential
                 sudo apt-get -y install portaudio19-dev
+                sudo apt-get -y install cmake
                 # BLAS / OpenBLAS
                   sudo apt-get -y install libopenblas-dev
                 # Para poder correr los scripts .py de whisper.cpp
