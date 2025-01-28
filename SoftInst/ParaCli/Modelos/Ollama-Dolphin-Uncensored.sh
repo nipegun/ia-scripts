@@ -49,7 +49,18 @@
 
       1 "dolphin-mistral 7b-v2.8-q4_0 ( 4,3 GB en disco) ( 7,4 GB en VRAM)" off
       2 "dolphin-mistral 7b-v2.8-q8_0 ( 7,9 GB en disco) (10,7 GB en VRAM)" off
-      3 "dolphin-mistral 7b-v2.8-fp16 (14,2 GB en disco) (15,4 GB en VRAM)?" off
+      3 "dolphin-mistral 7b-v2.8-fp16 (14,2 GB en disco) (15,4 GB en VRAM)" off
+
+      4 "dolphin-mixtral 8x7b-v2.5-q8_0  (xx,x GB en disco) (xx,x GB en VRAM)" off
+      5 "dolphin-mixtral 8x7b-v2.5-fp16  (xx,x GB en disco) (xx,x GB en VRAM)" off
+      4 "dolphin-mixtral 8x7b-v2.6-q8_0  (xx,x GB en disco) (xx,x GB en VRAM)" off
+      5 "dolphin-mixtral 8x7b-v2.6-fp16  (xx,x GB en disco) (xx,x GB en VRAM)" off
+      4 "dolphin-mixtral 8x7b-v2.7-q8_0  (xx,x GB en disco) (xx,x GB en VRAM)" off
+      5 "dolphin-mixtral 8x7b-v2.7-fp16  (xx,x GB en disco) (xx,x GB en VRAM)" off
+      6 "dolphin-mixtral 8x22b-v2.9-q8_0 (xx,x GB en disco) (xx,x GB en VRAM)" off
+      7 "dolphin-mixtral 8x22b-v2.9-fp16 (xx,x GB en disco) (xx,x GB en VRAM)" off
+
+      7 "dolphin-phi 2.7b-v2.6-q8_0 (xx,x GB en disco) (xx,x GB en VRAM)" off
 
     )
   choices=$("${menu[@]}" "${opciones[@]}" 2>&1 >/dev/tty)
