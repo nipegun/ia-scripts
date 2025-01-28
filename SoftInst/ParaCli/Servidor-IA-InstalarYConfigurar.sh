@@ -8,14 +8,11 @@
 # ----------
 # Script de NiPeGun para instalar y configurar un servidor de inteligencia artificial en Debian
 #
-# Ejecución remota:
+# Ejecución remota (puede requerir permisos sudo):
 #   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCli/Servidor-IA-InstalarYConfigurar.sh | bash
 #
-# Ejecución remota sin caché:
-#   curl -sL -H 'Cache-Control: no-cache, no-store' https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCli/Servidor-IA-InstalarYConfigurar.sh | bash
-#
-# Ejecución remota con parámetros:
-#   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCli/Servidor-IA-InstalarYConfigurar.sh | bash -s Parámetro1 Parámetro2
+# Ejecución remota como root:
+#   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCli/Servidor-IA-InstalarYConfigurar.sh | sed 's-sudo--g' | bash
 # ----------
 
 # Indicar cuál es el usuario no root
@@ -37,14 +34,6 @@
   # Para el color rojo también:
     #echo "$(tput setaf 1)Mensaje en color rojo. $(tput sgr 0)"
   cFinColor='\033[0m'
-
-# Comprobar si el script está corriendo como root
-  if [ $(id -u) -ne 0 ]; then
-    echo ""
-    echo -e "${cColorRojo}  Este script está preparado para ejecutarse como root y no lo has ejecutado como root...${cFinColor}"
-    echo ""
-    exit
-  fi
 
 # Determinar la versión de Debian
   if [ -f /etc/os-release ]; then             # Para systemd y freedesktop.org.
@@ -84,32 +73,32 @@ elif [ $cVerSO == "12" ]; then
 
   vFechaDeEjec=$(date +a%Ym%md%d@%T)
 
-  # Comprobar si el paquete dialog está instalado. Si no lo está, instalarlo.
-    if [[ $(dpkg-query -s dialog 2>/dev/null | grep installed) == "" ]]; then
-      echo ""
-      echo -e "${cColorRojo}    El paquete dialog no está instalado. Iniciando su instalación...${cFinColor}"
-      echo ""
-      apt-get -y update
-      apt-get -y install dialog
-      echo ""
-    fi
-
-  menu=(dialog --checklist "Marca las opciones que quieras instalar:" 22 96 16)
-    opciones=(
-      1 "Instalar Ollama" off
-      2 "  Instalar Open WebUI" off
-      3 "  Instalar modelos LLM para Ollama" off
-      4 "Instalar TextGeneration WebUI" off
-      5 "  Instalar modelos LLM para TextGeneration WebUI" off
-      6 "Instalar LMStudio" off
-      7 "  Instalar modelos LLM para LMStudio" off
-      8 "Instalar AnythingLLM" off
-      9 "Instalar FlowiseAI" off
-     10 "Instalar LibreChat" off
-     11 "Instalar LiteLLM" off 
-    )
-  choices=$("${menu[@]}" "${opciones[@]}" 2>&1 >/dev/tty)
-  echo ""
+  # Crear el menú
+    # Comprobar si el paquete dialog está instalado. Si no lo está, instalarlo.
+      if [[ $(dpkg-query -s dialog 2>/dev/null | grep installed) == "" ]]; then
+        echo ""
+        echo -e "${cColorRojo}    El paquete dialog no está instalado. Iniciando su instalación...${cFinColor}"
+        echo ""
+        sudo apt-get -y update
+        sudo apt-get -y install dialog
+        echo ""
+      fi
+    menu=(dialog --checklist "Marca las opciones que quieras instalar:" 22 96 16)
+      opciones=(
+        1 "Instalar Ollama"                                  off
+        2 "  Instalar Open WebUI"                            off
+        3 "  Instalar modelos LLM para Ollama"               off
+        4 "Instalar TextGeneration WebUI"                    off
+        5 "  Instalar modelos LLM para TextGeneration WebUI" off
+        6 "Instalar LMStudio"                                off
+        7 "  Instalar modelos LLM para LMStudio"             off
+        8 "Instalar AnythingLLM"                             off
+        9 "Instalar FlowiseAI"                               off
+       10 "Instalar LibreChat"                               off
+       11 "Instalar LiteLLM"                                 off 
+      )
+    choices=$("${menu[@]}" "${opciones[@]}" 2>&1 >/dev/tty)
+    echo ""
 
     for choice in $choices
       do
@@ -129,8 +118,8 @@ elif [ $cVerSO == "12" ]; then
                 echo ""
                 echo -e "${cColorRojo}      El paquete curl no está instalado. Iniciando su instalación...${cFinColor}"
                 echo ""
-                apt-get -y update
-                apt-get -y install curl
+                sudo apt-get -y update
+                sudo apt-get -y install curl
                 echo ""
               fi
             # Comprobar si el paquete pciutils está instalado. Si no lo está, instalarlo.
@@ -138,18 +127,18 @@ elif [ $cVerSO == "12" ]; then
                 echo ""
                 echo -e "${cColorRojo}      El paquete pciutils no está instalado. Iniciando su instalación...${cFinColor}"
                 echo ""
-                apt-get -y update
-                apt-get -y install pciutils
+                sudo apt-get -y update
+                sudo apt-get -y install pciutils
                 echo ""
               fi
             # Correr el script de instalación
-              curl -fsSL https://ollama.com/install.sh | sh
+              curl -sL https://ollama.com/install.sh | sudo bash
 
             # Permitir las conexiones desde fuera
               # Meter Environment="OLLAMA_HOST=0.0.0.0:11434" antes de [Install] en /etc/systemd/system/ollama.service
 
             # Activar e iniciar el servicio
-              systemctl enable ollama --now
+              sudo systemctl enable ollama --now
 
             # Notificar fin de la instalación
               echo ""
