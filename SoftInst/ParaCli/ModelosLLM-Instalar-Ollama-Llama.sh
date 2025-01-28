@@ -15,12 +15,6 @@
 #   curl -sL -H 'Cache-Control: no-cache, no-store' https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCli/ModelosLLM-Instalar-Ollama-Llama.sh | bash
 # ----------
 
-# Notas:
-#
-#   Para monitorizar el uso de RAM que hace un modelo:
-#     watch -n 2 "ps aux | grep 'ollama' | grep -v 'grep' | awk '{sum += \$6} END {print sum / 1024 \" MB\"}'"
-
-
 # Definir constantes de color
   cColorAzul="\033[0;34m"
   cColorAzulClaro="\033[1;34m"
@@ -57,27 +51,27 @@
   menu=(dialog --checklist "Marca los modelos que quieras instalar:" 22 96 16)
     opciones=(
 
-      1 "llama3.3   70b-instruct-q4_0 (x GB en disco) (x GB en VRAM)" off
-      2 "llama3.3   70b-instruct-q8_0 (x GB en disco) (x GB en VRAM)" off
-      3 "llama3.3   70b-instruct-fp16 (x GB en disco) (x GB en VRAM)" off
+      1 "llama3.3   70b-instruct-q4_0 (x GB en disco) (x,x GB en RAM/VRAM)" off
+      2 "llama3.3   70b-instruct-q8_0 (x GB en disco) (x,x GB en RAM/VRAM)" off
+      3 "llama3.3   70b-instruct-fp16 (x GB en disco) (x,x GB en RAM/VRAM)" off
 
 
-      4 "llama3.2   1b-instruct-q4_0 (0,9 GB en disco) (3,4 GB en VRAM)" off
-      5 "llama3.2   1b-instruct-q8_0 (1,5 GB en disco) (3,8 GB en VRAM)" off
-      6 "llama3.2   1b-instruct-fp16 (2,7 GB en disco) (7,2 GB en VRAM)" off
+      4 "llama3.2   1b-instruct-q4_0 (0,9 GB en disco) (1,2 GB en RAM/VRAM)" off
+      5 "llama3.2   1b-instruct-q8_0 (1,5 GB en disco) (1,7 GB en RAM/VRAM)" off
+      6 "llama3.2   1b-instruct-fp16 (2,7 GB en disco) (2,8 GB en RAM/VRAM)" off
 
-      7 "llama3.2   3b-instruct-q4_0 (2,0 GB en disco) ( 4,9 GB en VRAM)" off
-      8 "llama3.2   3b-instruct-q8_0 (3,6 GB en disco) ( 9,8 GB en VRAM)" off
-      9 "llama3.2   3b-instruct-fp16 (6,6 GB en disco) (14,0 GB en VRAM)" off
+      7 "llama3.2   3b-instruct-q4_0 (2,0 GB en disco) (2,9 GB en RAM/VRAM)" off
+      8 "llama3.2   3b-instruct-q8_0 (3,6 GB en disco) (4,4 GB en RAM/VRAM)" off
+      9 "llama3.2   3b-instruct-fp16 (6,6 GB en disco) (7,3 GB en RAM/VRAM)" off
 
 
-     10 "llama3.1   8b-instruct-q4_0 ( 4,8 GB en disco) ( 7,5 GB en VRAM)" off
-     11 "llama3.1   8b-instruct-q8_0 ( 8,6 GB en disco) (11,0 GB en VRAM)" off
-     12 "llama3.1   8b-instruct-fp16 (16,2 GB en disco) (15,8 GB en VRAM)?" off
+     10 "llama3.1   8b-instruct-q4_0 ( 4,8 GB en disco) ( 5,7 GB en RAM/VRAM)" off
+     11 "llama3.1   8b-instruct-q8_0 ( 8,6 GB en disco) ( 9,4 GB en RAM/VRAM)" off
+     12 "llama3.1   8b-instruct-fp16 (16,2 GB en disco) (16,7 GB en RAM/VRAM)" off
 
-     13 "llama3.1 405b-instruct-q4_0 (230,0 GB en disco) (x,x GB en VRAM)" off
-     14 "llama3.1 405b-instruct-q8_0 (433,0 GB en disco) (x,x GB en VRAM)" off
-     15 "llama3.1 405b-instruct-fp16 (815,0 GB en disco) (x,x GB en VRAM)" off
+     13 "llama3.1 405b-instruct-q4_0 (230,0 GB en disco) (x,x GB en RAM/VRAM)" off
+     14 "llama3.1 405b-instruct-q8_0 (433,0 GB en disco) (x,x GB en RAM/VRAM)" off
+     15 "llama3.1 405b-instruct-fp16 (815,0 GB en disco) (x,x GB en RAM/VRAM)" off
 
     )
   choices=$("${menu[@]}" "${opciones[@]}" 2>&1 >/dev/tty)
