@@ -161,7 +161,7 @@ elif [ $cVerSO == "12" ]; then
             echo ""
             apt-get -y install python3-venv
             python3 -m venv --system-site-packages /opt/open-webui
-            /opt/open-webui/bin/pip3 install open-webui 
+            /opt/open-webui/bin/pip3 install open-webui
 
             # Crear el servicio
               echo ""
