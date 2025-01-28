@@ -15,6 +15,12 @@
 #   curl -sL -H 'Cache-Control: no-cache, no-store' https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCli/ModelosLLM-Instalar-Ollama-Llama.sh | bash
 # ----------
 
+# Notas:
+#
+#   Para monitorizar el uso de RAM que hace un modelo:
+#     watch -n 2 "ps aux | grep 'ollama' | grep -v 'grep' | awk '{sum += \$6} END {print sum / 1024 \" MB\"}'"
+
+
 # Definir constantes de color
   cColorAzul="\033[0;34m"
   cColorAzulClaro="\033[1;34m"
@@ -42,7 +48,8 @@
     echo ""
     echo -e "${cColorRojo}    El paquete dialog no está instalado. Iniciando su instalación...${cFinColor}"
     echo ""
-    apt-get -y update && apt-get -y install dialog
+    apt-get -y update
+    apt-get -y install dialog
     echo ""
   fi
 
@@ -50,9 +57,9 @@
   menu=(dialog --checklist "Marca los modelos que quieras instalar:" 22 96 16)
     opciones=(
 
-      1 "llama3.3   70b-instruct-q4_0 (0,9 GB en disco) (3,4 GB en VRAM)" off
-      2 "llama3.3   70b-instruct-q8_0 (1,5 GB en disco) (3,8 GB en VRAM)" off
-      3 "llama3.3   70b-instruct-fp16 (2,7 GB en disco) (7,2 GB en VRAM)" off
+      1 "llama3.3   70b-instruct-q4_0 (x GB en disco) (x GB en VRAM)" off
+      2 "llama3.3   70b-instruct-q8_0 (x GB en disco) (x GB en VRAM)" off
+      3 "llama3.3   70b-instruct-fp16 (x GB en disco) (x GB en VRAM)" off
 
 
       4 "llama3.2   1b-instruct-q4_0 (0,9 GB en disco) (3,4 GB en VRAM)" off
