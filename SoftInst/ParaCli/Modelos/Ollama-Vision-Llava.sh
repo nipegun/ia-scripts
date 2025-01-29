@@ -46,8 +46,8 @@
       3 "llava 7b-v1.6-mistral-q8_0 ( 8,4 GB en disco) ( 9,1 GB en RAM/VRAM)" off
       4 "llava 7b-v1.6-mistral-fp16 (15,9 GB en disco) (15,7 GB en RAM/VRAM)" off
       5 "llava 7b-v1.6-vicuna-q8_0  ( 7,9 GB en disco) (11,7 GB en RAM/VRAM)" off
-      6 "llava 7b-v1.6-vicuna-fp16  (14,9 GB en disco) (xx,x GB en RAM/VRAM)" off
-      7 "llava 13b-v1.5-q8_0        (14,9 GB en disco) (xx,x GB en RAM/VRAM)" off
+      6 "llava 7b-v1.6-vicuna-fp16  (14,9 GB en disco) (17,8 GB en RAM/VRAM)" off
+      7 "llava 13b-v1.5-q8_0        (14,9 GB en disco) (20,3 GB en RAM/VRAM)" off
       8 "llava 13b-v1.5-fp16        (26,9 GB en disco) (xx,x GB en RAM/VRAM)" off
       9 "llava 13b-v1.6-vicuna-q8_0 (14,9 GB en disco) (xx,x GB en RAM/VRAM)" off
      10 "llava 13b-v1.6-vicuna-fp16 (26,9 GB en disco) (xx,x GB en RAM/VRAM)" off
