@@ -41,10 +41,10 @@
     fi
   menu=(dialog --checklist "Marca los modelos que quieras instalar:" 22 96 16)
     opciones=(
-      1 "phi3 3.8b-mini-128k-instruct-q8_0 (x,x GB en disco) (x,x GB en VRAM)" off
-      2 "phi3 3.8b-mini-128k-instruct-fp16 (x,x GB en disco) (x,x GB en VRAM)" off
-      3 "phi4 14b-q8_0                     (x,x GB en disco) (x,x GB en VRAM)" off
-      4 "phi4 14b-fp16                     (x,x GB en disco) (x,x GB en VRAM)" off
+      1 "phi3 3.8b-mini-128k-instruct-q8_0 ( 4,2 GB en disco) ( 7,1 GB en RAM/VRAM)" off
+      2 "phi3 3.8b-mini-128k-instruct-fp16 ( 7,7 GB en disco) (10,5 GB en RAM/VRAM)" off
+      3 "phi4 14b-q8_0                     (15,1 GB en disco) (16,7 GB en RAM/VRAM)" off
+      4 "phi4 14b-fp16                     (29,1 GB en disco) (29,8 GB en RAM/VRAM)" off
     )
   choices=$("${menu[@]}" "${opciones[@]}" 2>&1 >/dev/tty)
 
@@ -59,7 +59,7 @@
             echo ""
 
             # Definir el espacio libre necesario
-              vGBsLibresNecesarios=x
+              vGBsLibresNecesarios=4.2
               vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
 
             # Obtener el espacio libre en la partición raíz en kilobytes
@@ -86,7 +86,7 @@
             echo ""
 
             # Definir el espacio libre necesario
-              vGBsLibresNecesarios=x
+              vGBsLibresNecesarios=7.7
               vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
 
             # Obtener el espacio libre en la partición raíz en kilobytes
@@ -113,7 +113,7 @@
             echo ""
 
             # Definir el espacio libre necesario
-              vGBsLibresNecesarios=x
+              vGBsLibresNecesarios=15.1
               vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
 
             # Obtener el espacio libre en la partición raíz en kilobytes
@@ -140,7 +140,7 @@
             echo ""
 
             # Definir el espacio libre necesario
-              vGBsLibresNecesarios=x
+              vGBsLibresNecesarios=29.1
               vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
 
             # Obtener el espacio libre en la partición raíz en kilobytes
