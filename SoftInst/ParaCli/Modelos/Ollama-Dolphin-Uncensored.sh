@@ -47,27 +47,26 @@
   menu=(dialog --checklist "Marca los modelos que quieras instalar:" 22 96 16)
     opciones=(
 
-      1 "dolphin-mistral 7b-v2.8-q4_0 ( 4,2 GB en disco) ( 5,1 GB en VRAM)" off
-      2 "dolphin-mistral 7b-v2.8-q8_0 ( 7,8 GB en disco) ( 8,6 GB en VRAM)" off
-      3 "dolphin-mistral 7b-v2.8-fp16 (14,3 GB en disco) (15,1 GB en VRAM)" off
+      1 "dolphin-mistral 7b-v2.8-q4_0    ( 4,2 GB en disco) ( 5,1 GB en RAM/VRAM)" off
+      2 "dolphin-mistral 7b-v2.8-q8_0    ( 7,8 GB en disco) ( 8,6 GB en RAM/VRAM)" off
+      3 "dolphin-mistral 7b-v2.8-fp16    (14,3 GB en disco) (15,1 GB en RAM/VRAM)" off
 
-      4 "dolphin-mixtral 8x7b-v2.5-q4_0  (26,9 GB en disco) (xx,x GB en VRAM)" off
-      5 "dolphin-mixtral 8x7b-v2.5-q8_0  (49,2 GB en disco) (48,2 GB en VRAM)" off
-      6 "dolphin-mixtral 8x7b-v2.5-fp16  (xx,x GB en disco) (xx,x GB en VRAM)" off
+      4 "dolphin-mixtral 8x7b-v2.7-q4_0  (xx,x GB en disco) (xx,x GB en VRAM)" off
+      5 "dolphin-mixtral 8x7b-v2.7-q8_0  (xx,x GB en disco) (xx,x GB en VRAM)" off
+      6 "dolphin-mixtral 8x7b-v2.7-fp16  (xx,x GB en disco) (xx,x GB en VRAM)" off
 
-      7 "dolphin-mixtral 8x7b-v2.6-q4_0  (xx,x GB en disco) (xx,x GB en VRAM)" off
-      8 "dolphin-mixtral 8x7b-v2.6-q8_0  (xx,x GB en disco) (xx,x GB en VRAM)" off
-      9 "dolphin-mixtral 8x7b-v2.6-fp16  (xx,x GB en disco) (xx,x GB en VRAM)" off
+      7 "dolphin-mixtral 8x22b-v2.9-q4_0 (xx,x GB en disco) (xx,x GB en VRAM)" off
+      8 "dolphin-mixtral 8x22b-v2.9-q8_0 (xx,x GB en disco) (xx,x GB en VRAM)" off
+      9 "dolphin-mixtral 8x22b-v2.9-fp16 (xx,x GB en disco) (xx,x GB en VRAM)" off
 
-     10 "dolphin-mixtral 8x7b-v2.7-q4_0  (xx,x GB en disco) (xx,x GB en VRAM)" off
-     11 "dolphin-mixtral 8x7b-v2.7-q8_0  (xx,x GB en disco) (xx,x GB en VRAM)" off
-     12 "dolphin-mixtral 8x7b-v2.7-fp16  (xx,x GB en disco) (xx,x GB en VRAM)" off
+     10 "dolphin-phi 2.7b-v2.6-q8_0 (xx,x GB en disco) (xx,x GB en VRAM)" off
 
-     13 "dolphin-mixtral 8x22b-v2.9-q4_0 (xx,x GB en disco) (xx,x GB en VRAM)" off
-     14 "dolphin-mixtral 8x22b-v2.9-q8_0 (xx,x GB en disco) (xx,x GB en VRAM)" off
-     15 "dolphin-mixtral 8x22b-v2.9-fp16 (xx,x GB en disco) (xx,x GB en VRAM)" off
-
-     16 "dolphin-phi 2.7b-v2.6-q8_0 (xx,x GB en disco) (xx,x GB en VRAM)" off
+     11 "dolphin-llama3 8b-256k-v2.9-q4_0 (xx,x GB en disco) (xx,x GB en VRAM)" off
+     12 "dolphin-llama3 8b-256k-v2.9-q8_0 (xx,x GB en disco) (xx,x GB en VRAM)" off
+     13 "dolphin-llama3 8b-256k-v2.9-fp16 (xx,x GB en disco) (xx,x GB en VRAM)" off
+     14 "dolphin-llama3 70b-v2.9-q4_0     (xx,x GB en disco) (xx,x GB en VRAM)" off
+     15 "dolphin-llama3 70b-v2.9-q8_0     (xx,x GB en disco) (xx,x GB en VRAM)" off
+     16 "dolphin-llama3 70b-v2.9-fp16     (xx,x GB en disco) (xx,x GB en VRAM)" off
 
     )
   choices=$("${menu[@]}" "${opciones[@]}" 2>&1 >/dev/tty)
