@@ -48,10 +48,10 @@
   menu=(dialog --checklist "Marca los modelos que quieras instalar:" 22 96 16)
     opciones=(
 
-      1 "llama3.2-vision 11b-instruct-q8_0 (x,x GB en disco) (x,x GB en RAM/VRAM)" off
-      2 "llama3.2-vision 11b-instruct-fp16 (x,x GB en disco) (x,x GB en RAM/VRAM)" off
-      3 "llama3.2-vision 90b-instruct-q8_0 (x,x GB en disco) (x,x GB en RAM/VRAM)" off
-      4 "llama3.2-vision 90b-instruct-fp16 (x,x GB en disco) (x,x GB en RAM/VRAM)" off
+      1 "llama3.2-vision 11b-instruct-q8_0 ( 12,9 GB en disco) (12,6 GB en RAM/VRAM)" off
+      2 "llama3.2-vision 11b-instruct-fp16 ( 21,9 GB en disco) (21,5 GB en RAM/VRAM)" off
+      3 "llama3.2-vision 90b-instruct-q8_0 ( 93,9 GB en disco) (xx,x GB en RAM/VRAM)" off
+      4 "llama3.2-vision 90b-instruct-fp16 (175,9 GB en disco) (xx,x GB en RAM/VRAM)" off
 
     )
   choices=$("${menu[@]}" "${opciones[@]}" 2>&1 >/dev/tty)
@@ -67,7 +67,7 @@
             echo ""
 
             # Definir el espacio libre necesario
-              vGBsLibresNecesarios=x
+              vGBsLibresNecesarios=12.6
               vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
 
             # Obtener el espacio libre en la partición raíz en kilobytes
@@ -94,7 +94,7 @@
             echo ""
 
             # Definir el espacio libre necesario
-              vGBsLibresNecesarios=x
+              vGBsLibresNecesarios=21.5
               vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
 
             # Obtener el espacio libre en la partición raíz en kilobytes
@@ -121,7 +121,7 @@
             echo ""
 
             # Definir el espacio libre necesario
-              vGBsLibresNecesarios=x
+              vGBsLibresNecesarios=93.9
               vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
 
             # Obtener el espacio libre en la partición raíz en kilobytes
@@ -148,7 +148,7 @@
             echo ""
 
             # Definir el espacio libre necesario
-              vGBsLibresNecesarios=x
+              vGBsLibresNecesarios=175.9
               vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
 
             # Obtener el espacio libre en la partición raíz en kilobytes
