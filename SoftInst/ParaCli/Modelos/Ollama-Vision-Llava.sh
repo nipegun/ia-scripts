@@ -48,8 +48,8 @@
       5 "llava 7b-v1.6-vicuna-q8_0  ( 7,9 GB en disco) (11,7 GB en RAM/VRAM)" off
       6 "llava 7b-v1.6-vicuna-fp16  (14,9 GB en disco) (17,8 GB en RAM/VRAM)" off
       7 "llava 13b-v1.5-q8_0        (14,9 GB en disco) (20,3 GB en RAM/VRAM)" off
-      8 "llava 13b-v1.5-fp16        (26,9 GB en disco) (xx,x GB en RAM/VRAM)" off
-      9 "llava 13b-v1.6-vicuna-q8_0 (14,9 GB en disco) (xx,x GB en RAM/VRAM)" off
+      8 "llava 13b-v1.5-fp16        (26,9 GB en disco) (32,1 GB en RAM/VRAM)" off
+      9 "llava 13b-v1.6-vicuna-q8_0 (14,9 GB en disco) (20,4 GB en RAM/VRAM)" off
      10 "llava 13b-v1.6-vicuna-fp16 (26,9 GB en disco) (xx,x GB en RAM/VRAM)" off
      11 "llava 34b-v1.6-q8_0        (37,9 GB en disco) (xx,x GB en RAM/VRAM)" off
      12 "llava 34b-v1.6-fp16        (67,9 GB en disco) (xx,x GB en RAM/VRAM)" off
@@ -67,7 +67,7 @@
             echo ""
 
             # Definir el espacio libre necesario
-              vGBsLibresNecesarios=x
+              vGBsLibresNecesarios=7.9
               vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
 
             # Obtener el espacio libre en la partición raíz en kilobytes
@@ -94,7 +94,7 @@
             echo ""
 
             # Definir el espacio libre necesario
-              vGBsLibresNecesarios=x
+              vGBsLibresNecesarios=14.9
               vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
 
             # Obtener el espacio libre en la partición raíz en kilobytes
@@ -121,7 +121,7 @@
             echo ""
 
             # Definir el espacio libre necesario
-              vGBsLibresNecesarios=x
+              vGBsLibresNecesarios=8.4
               vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
 
             # Obtener el espacio libre en la partición raíz en kilobytes
@@ -148,7 +148,7 @@
             echo ""
 
             # Definir el espacio libre necesario
-              vGBsLibresNecesarios=x
+              vGBsLibresNecesarios=15.9
               vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
 
             # Obtener el espacio libre en la partición raíz en kilobytes
@@ -175,7 +175,7 @@
             echo ""
 
             # Definir el espacio libre necesario
-              vGBsLibresNecesarios=x
+              vGBsLibresNecesarios=7.9
               vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
 
             # Obtener el espacio libre en la partición raíz en kilobytes
@@ -202,7 +202,7 @@
             echo ""
 
             # Definir el espacio libre necesario
-              vGBsLibresNecesarios=x
+              vGBsLibresNecesarios=14.9
               vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
 
             # Obtener el espacio libre en la partición raíz en kilobytes
@@ -229,7 +229,7 @@
             echo ""
 
             # Definir el espacio libre necesario
-              vGBsLibresNecesarios=x
+              vGBsLibresNecesarios=14.9
               vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
 
             # Obtener el espacio libre en la partición raíz en kilobytes
@@ -256,7 +256,7 @@
             echo ""
 
             # Definir el espacio libre necesario
-              vGBsLibresNecesarios=x
+              vGBsLibresNecesarios=26.9
               vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
 
             # Obtener el espacio libre en la partición raíz en kilobytes
@@ -284,7 +284,7 @@
             echo ""
 
             # Definir el espacio libre necesario
-              vGBsLibresNecesarios=x
+              vGBsLibresNecesarios=14.9
               vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
 
             # Obtener el espacio libre en la partición raíz en kilobytes
@@ -311,7 +311,7 @@
             echo ""
 
             # Definir el espacio libre necesario
-              vGBsLibresNecesarios=x
+              vGBsLibresNecesarios=26.9
               vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
 
             # Obtener el espacio libre en la partición raíz en kilobytes
@@ -338,7 +338,7 @@
             echo ""
 
             # Definir el espacio libre necesario
-              vGBsLibresNecesarios=x
+              vGBsLibresNecesarios=37.9
               vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
 
             # Obtener el espacio libre en la partición raíz en kilobytes
@@ -365,7 +365,7 @@
             echo ""
 
             # Definir el espacio libre necesario
-              vGBsLibresNecesarios=x
+              vGBsLibresNecesarios=67.9
               vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
 
             # Obtener el espacio libre en la partición raíz en kilobytes
