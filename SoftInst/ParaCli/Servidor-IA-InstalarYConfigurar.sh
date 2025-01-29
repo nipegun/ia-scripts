@@ -328,15 +328,22 @@ elif [ $cVerSO == "12" ]; then
             echo ""
             # Obtener el enlace de descarga
               #vEnlace=$(curl -sL )
-              vEnlace="https://releases.lmstudio.ai/linux/x86/0.2.27/beta/LM_Studio-0.2.27.AppImage"
+              vEnlace="https://installers.lmstudio.ai/linux/x64/0.3.8-4/LM-Studio-0.3.8-4-x64.AppImage"
             echo ""
             echo "    Descargando paquete AppImage..."
             echo ""
             curl -L -o /tmp/LMStudio.AppImage $vEnlace
             chmod +x /tmp/LMStudio.AppImage
-            mkdir -p /home/$vUsuarioNoRoot/IA/LMStudio 2> /dev/null
-            mv /tmp/LMStudio.AppImage /home/$vUsuarioNoRoot/IA/LMStudio
-            chown $vUsuarioNoRoot:$vUsuarioNoRoot /home/$vUsuarioNoRoot/IA/ -R
+            mkdir -p /home/$USER/IA/LMStudio 2> /dev/null
+            mv /tmp/LMStudio.AppImage /home/$USER/IA/LMStudio
+            chown $USER:$USER /home/$USER/IA/ -R
+
+            # Notificar fin de la instalación
+              echo ""
+              echo "    La instalación de LMStudio ha finalizado. Para lanzarlo, ejecuta:"
+              echo ""
+              echo "      /home/$USER/IA/LMStudio/LMStudio.AppImage"
+              echo ""
 
           ;;
 
