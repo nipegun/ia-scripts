@@ -42,8 +42,8 @@
   menu=(dialog --checklist "Marca los modelos que quieras instalar:" 22 96 16)
     opciones=(
 
-      1 "monotykamary/whiterabbitneo-v1.5a:7b (4,2 GB en disco) (xxx,x GB en RAM/VRAM)" off
-      2 "jimscard/whiterabbit-neo:13b         (xxx,x GB en disco) (xxx,x GB en RAM/VRAM)" off
+      1 "monotykamary/whiterabbitneo-v1.5a:7b (4,2 GB en disco) ( 8,2 GB en RAM/VRAM)" off
+      2 "jimscard/whiterabbit-neo:13b         (9,3 GB en disco) (15,5 GB en RAM/VRAM)" off
 
     )
   choices=$("${menu[@]}" "${opciones[@]}" 2>&1 >/dev/tty)
@@ -59,7 +59,7 @@
             echo ""
 
             # Definir el espacio libre necesario
-              vGBsLibresNecesarios=x
+              vGBsLibresNecesarios=4.2
               vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
 
             # Obtener el espacio libre en la partición raíz en kilobytes
@@ -86,7 +86,7 @@
             echo ""
 
             # Definir el espacio libre necesario
-              vGBsLibresNecesarios=x
+              vGBsLibresNecesarios=9.3
               vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
 
             # Obtener el espacio libre en la partición raíz en kilobytes
