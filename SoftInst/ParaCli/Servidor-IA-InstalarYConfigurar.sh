@@ -159,8 +159,9 @@ elif [ $cVerSO == "12" ]; then
             echo ""
             echo "  Instalando Open WebUI..."
             echo ""
-            apt-get -y install python3-venv
-            python3 -m venv --system-site-packages /opt/open-webui
+            sudo apt-get -y update
+            sudo apt-get -y install python3-venv
+            sudo python3 -m venv --system-site-packages /opt/open-webui
             /opt/open-webui/bin/pip3 install open-webui
 
             # Crear el servicio
@@ -185,8 +186,8 @@ elif [ $cVerSO == "12" ]; then
               echo ""
               echo "  Activando e iniciando el servicio..."
               echo ""
-              systemctl daemon-reload
-              systemctl enable --now open-webui.service 
+              sudo systemctl daemon-reload
+              sudo systemctl enable --now open-webui.service 
 
             # Notificar fin de la instalación de Open WebUI
               echo ""
@@ -209,10 +210,11 @@ elif [ $cVerSO == "12" ]; then
                 echo ""
                 echo -e "${cColorRojo}    El paquete curl no está instalado. Iniciando su instalación...${cFinColor}"
                 echo ""
-                apt-get -y update && apt-get -y install curl
+                sudo apt-get -y update
+                sudo apt-get -y install curl
                 echo ""
               fi
-            curl -sL -H 'Cache-Control: no-cache, no-store' https://raw.githubusercontent.com/nipegun/d-scripts/master/SoftInst/ParaCLI/IA-ModelosLLM-Instalar-Ollama.sh | bash
+            curl -sL -H 'Cache-Control: no-cache, no-store' https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCli/ModelosLLM-Instalar-Ollama.sh | bash
 
           ;;
 
@@ -227,7 +229,8 @@ elif [ $cVerSO == "12" ]; then
                 echo ""
                 echo -e "${cColorRojo}    El paquete wget no está instalado. Iniciando su instalación...${cFinColor}"
                 echo ""
-                apt-get -y update && apt-get -y install wget
+                sudo apt-get -y update
+                sudo apt-get -y install wget
                 echo ""
               fi
 
@@ -235,24 +238,24 @@ elif [ $cVerSO == "12" ]; then
               wget -q --tries=10 --timeout=20 --spider https://github.com
               if [[ $? -eq 0 ]]; then
                 # Borrar carpeta vieja
-                  rm /root/SoftInst/text-generation-webui -R 2> /dev/null
-                  mkdir /root/SoftInst/ 2> /dev/null
-                  cd /root/SoftInst/
+                  rm $HOME/IA/text-generation-webui -R 2> /dev/null
+                  mkdir $HOME/IA/ 2> /dev/null
+                  cd $HOME/IA/
                 # Comprobar si el paquete git está instalado. Si no lo está, instalarlo.
                   if [[ $(dpkg-query -s git 2>/dev/null | grep installed) == "" ]]; then
                     echo ""
                     echo -e "${cColorRojo}    El paquete git no está instalado. Iniciando su instalación...${cFinColor}"
                     echo ""
-                    apt-get -y update && apt-get -y install git
+                    sudo apt-get -y update
+                    sudo apt-get -y install git
                     echo ""
                   fi
                 git clone --depth=1 https://github.com/oobabooga/text-generation-webui
-                rm /root/SoftInst/text-generation-webui/.git -R 2> /dev/null
-                find /root/SoftInst/text-generation-webui/ -type f -iname "*.sh" -exec chmod +x {} \;
-                mv /root/SoftInst/text-generation-webui/ /opt
+                find $HOME/IA/text-generation-webui/ -type f -iname "*.sh" -exec chmod +x {} \;
+                sudo mv $HOME/IA/text-generation-webui/ /opt
               fi
 
-            # Instalar ROCm SDK 5.6 (Para tarjetas AMD a partir de Radeon RX 6800 XT)
+            # Instalar ROCm SDK 6.1 (Para tarjetas AMD a partir de Radeon RX 6800 XT)
 
             # Instalar el paquete
               chmod +x /opt/text-generation-webui/start_linux.sh
@@ -314,10 +317,11 @@ elif [ $cVerSO == "12" ]; then
                 echo ""
                 echo -e "${cColorRojo}    El paquete curl no está instalado. Iniciando su instalación...${cFinColor}"
                 echo ""
-                apt-get -y update && apt-get -y install curl
+                sudo apt-get -y update
+                sudo apt-get -y install curl
                 echo ""
               fi
-            curl -sL -H 'Cache-Control: no-cache, no-store' https://raw.githubusercontent.com/nipegun/d-scripts/master/SoftInst/ParaCLI/IA-ModelosLLM-Instalar-TextGenerationWebUI.sh | bash
+            curl -sL -H 'Cache-Control: no-cache, no-store' https://raw.githubusercontent.com/nipegun/ia-scripts/master/SoftInst/ParaCLI/ModelosLLM-Instalar-TextGenerationWebUI.sh | bash
 
           ;;
 
@@ -357,10 +361,11 @@ elif [ $cVerSO == "12" ]; then
                 echo ""
                 echo -e "${cColorRojo}    El paquete curl no está instalado. Iniciando su instalación...${cFinColor}"
                 echo ""
-                apt-get -y update && apt-get -y install curl
+                sudo apt-get -y update
+                sudo apt-get -y install curl
                 echo ""
               fi
-            curl -sL -H 'Cache-Control: no-cache, no-store' https://raw.githubusercontent.com/nipegun/d-scripts/master/SoftInst/ParaCLI/IA-ModelosLLM-Instalar-LMStudio.sh | bash
+            curl -sL -H 'Cache-Control: no-cache, no-store' https://raw.githubusercontent.com/nipegun/ia-scripts/master/SoftInst/ParaCLI/ModelosLLM-Instalar-LMStudio.sh | bash
 
           ;;
 
@@ -387,25 +392,26 @@ elif [ $cVerSO == "12" ]; then
                   echo ""
                   echo -e "${cColorRojo}    El paquete curl no está instalado. Iniciando su instalación...${cFinColor}"
                   echo ""
-                  apt-get -y update && apt-get -y install curl
+                  sudo apt-get -y update
+                  sudo apt-get -y install curl
                   echo ""
                 fi
-              curl -sL https://raw.githubusercontent.com/nipegun/d-scripts/master/SoftInst/ParaCLI/Node.js-InstalarYConfigurar.sh | bash
+              curl -sL https://raw.githubusercontent.com/nipegun/d-scripts/master/SoftInst/ParaCLI/NodeJS-InstalarYConfigurar.sh | sudo bash
 
             # Instalar FlowiseAI con NPM
               echo ""
               echo "    Continuando con la instalación de FlowiseAI..."
               echo ""
-              # Hacer la instalación global (-g) em ña carpeta /opt/flowise/
-                npm install -g flowise --prefix /opt/flowise/
+              # Hacer la instalación global (-g) en la carpeta /opt/flowise/
+                sudo npm install -g flowise --prefix /opt/flowise/
 
             # Agregar el usuario mattermost
               echo ""
               echo "    Agregando el usuario y grupo flowise..."
               echo ""
-              mkdir -p /opt/flowise/ 2> /dev/null
-              useradd -d /opt/flowise/ -s /bin/false flowise
-              chown flowise:flowise /opt/flowise -R 2> /dev/null
+              sudo mkdir -p /opt/flowise/ 2> /dev/null
+              sudo useradd -d /opt/flowise/ -s /bin/false flowise
+              sudo chown flowise:flowise /opt/flowise -R 2> /dev/null
 
             # Crear el servicio de systemd para flowiseai
               echo "[Unit]"                                                                                                                 > /etc/systemd/system/flowise.service
@@ -465,33 +471,36 @@ elif [ $cVerSO == "12" ]; then
                   echo ""
                   echo -e "${cColorRojo}    El paquete curl no está instalado. Iniciando su instalación...${cFinColor}"
                   echo ""
-                  apt-get -y update && apt-get -y install curl
+                  sudo apt-get -y update
+                  sudo apt-get -y install curl
                   echo ""
                 fi
-              curl -sL https://raw.githubusercontent.com/nipegun/d-scripts/master/SoftInst/ParaCLI/Node.js-InstalarYConfigurar.sh | bash
+              curl -sL https://raw.githubusercontent.com/nipegun/d-scripts/master/SoftInst/ParaCLI/Node.js-InstalarYConfigurar.sh | sudo bash
 
             # Instalar MongoDB
               echo ""
               echo "    Instalando MongoDB..."
               echo ""
-              curl -sL https://raw.githubusercontent.com/nipegun/d-scripts/master/SoftInst/ParaCLI/Servidor-BBDD-MongoDB-Instalar.sh | bash
+              curl -sL https://raw.githubusercontent.com/nipegun/d-scripts/master/SoftInst/ParaCLI/Servidor-BBDD-MongoDB-Instalar.sh | sudo bash
 
             # Clonar repositorio
-              mkdir -p /root/SoftInst/ 2> /dev/null
-              rm -rf /root/SoftInst/LibreChat/
-              cd /root/SoftInst/
+              mkdir -p $HOME/IA/ 2> /dev/null
+              rm -rf $HOME/IA/LibreChat/
+              cd $HOME/IA/
               # Comprobar si el paquete git está instalado. Si no lo está, instalarlo.
                 if [[ $(dpkg-query -s git 2>/dev/null | grep installed) == "" ]]; then
                   echo ""
                   echo -e "${cColorRojo}    El paquete git no está instalado. Iniciando su instalación...${cFinColor}"
                   echo ""
-                  apt-get -y update && apt-get -y install git
+                  sudo apt-get -y update
+                  sudo apt-get -y install git
                   echo ""
                 fi
               git clone https://github.com/danny-avila/LibreChat.git
 
             # Preparar carpeta final
-              mv /root/SoftInst/LibreChat/ /opt/librechat/
+              sudo mv $HOME/IA/LibreChat/ /opt/
+              sudo mv /opt/LibreChat/ /opt/librechat/
 
             # Compilar
               cd /opt/librechat/
@@ -504,9 +513,9 @@ elif [ $cVerSO == "12" ]; then
                 npm run frontend
               # Especificar el directorio de datos donde MongoDB guardará los archivos
                 mkdir -p /opt/librechat/mongodb/
-                chown mongodb:mongodb /opt/librechat/mongodb/
+                sudo chown mongodb:mongodb /opt/librechat/mongodb/
                 cd /usr/bin
-                ./mongod --dbpath=/opt/librechat/mongodb
+                sudo ./mongod --dbpath=/opt/librechat/mongodb
 
             # Agregar ollama como endpoint
               cd /opt/librechat/
