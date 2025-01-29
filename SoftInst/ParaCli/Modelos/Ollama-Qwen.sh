@@ -42,13 +42,13 @@
   menu=(dialog --checklist "Marca los modelos que quieras instalar:" 22 96 16)
     opciones=(
 
-      1 "qwen2.5 0.5b (x,x GB en disco) (x,x GB en RAM/VRAM)" off
-      2 "qwen2.5 1.5b (x,x GB en disco) (x,x GB en RAM/VRAM)" off
-      3 "qwen2.5 3b   (x,x GB en disco) (x,x GB en RAM/VRAM)" off
-      4 "qwen2.5 7b   (x,x GB en disco) (x,x GB en RAM/VRAM)" off
-      5 "qwen2.5 14b  (x,x GB en disco) (x,x GB en RAM/VRAM)" off
-      6 "qwen2.5 32b  (x,x GB en disco) (x,x GB en RAM/VRAM)" off
-      7 "qwen2.5 72b  (x,x GB en disco) (x,x GB en RAM/VRAM)" off
+      1 "qwen2.5 0.5b ( 0,5 GB en disco) ( 0,7 GB en RAM/VRAM)" off
+      2 "qwen2.5 1.5b ( 1,1 GB en disco) ( 1,4 GB en RAM/VRAM)" off
+      3 "qwen2.5 3b   ( 2,1 GB en disco) ( 2,4 GB en RAM/VRAM)" off
+      4 "qwen2.5 7b   ( 4,8 GB en disco) ( 5,2 GB en RAM/VRAM)" off
+      5 "qwen2.5 14b  ( 9,1 GB en disco) (10,4 GB en RAM/VRAM)" off
+      6 "qwen2.5 32b  (19,1 GB en disco) (21,2 GB en RAM/VRAM)" off
+      7 "qwen2.5 72b  (47,1 GB en disco) (46,4 GB en RAM/VRAM)" off
 
     )
   choices=$("${menu[@]}" "${opciones[@]}" 2>&1 >/dev/tty)
