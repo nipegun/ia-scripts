@@ -68,7 +68,7 @@
           1)
 
             echo ""
-            echo "  Instalando qwen2.5:0.5-instruct-q4_0..."
+            echo "  Instalando qwen2.5:0.5b..."
             echo ""
 
             # Definir el espacio libre necesario
@@ -81,10 +81,10 @@
 
             # Comprobar si hay espacio libre disponible
               if [ "$vEspacioLibre" -ge "$vEspacioNecesario" ]; then
-                ollama pull qwen2.5:0.5-instruct-q4_0
+                ollama pull qwen2.5:0.5b
               else
                 echo ""
-                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo qwen2.5:0.5-instruct-q4_0.${cFinColor}"
+                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo qwen2.5:0.5b.${cFinColor}"
                 echo ""
                 echo -e "${cColorRojo}      Hacen falta $vGBsLibresNecesarios GB y hay sólo $vGBsLibres GB.${cFinColor}"
                 echo ""
@@ -95,7 +95,7 @@
           2)
 
             echo ""
-            echo "  Instalando qwen2.5:0.5-instruct-q8_0..."
+            echo "  Instalando qwen2.5:1.5b..."
             echo ""
 
             # Definir el espacio libre necesario
@@ -108,10 +108,10 @@
 
             # Comprobar si hay espacio libre disponible
               if [ "$vEspacioLibre" -ge "$vEspacioNecesario" ]; then
-                ollama pull qwen2.5:0.5-instruct-q8_0
+                ollama pull qwen2.5:1.5b
               else
                 echo ""
-                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo qwen2.5:0.5-instruct-q8_0.${cFinColor}"
+                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo qwen2.5:1.5b.${cFinColor}"
                 echo ""
                 echo -e "${cColorRojo}      Hacen falta $vGBsLibresNecesarios GB y hay sólo $vGBsLibres GB.${cFinColor}"
                 echo ""
@@ -122,7 +122,7 @@
           3)
 
             echo ""
-            echo "  Instalando qwen2.5:0.5-instruct-fp16..."
+            echo "  Instalando qwen2.5:3b..."
             echo ""
 
             # Definir el espacio libre necesario
@@ -135,10 +135,10 @@
 
             # Comprobar si hay espacio libre disponible
               if [ "$vEspacioLibre" -ge "$vEspacioNecesario" ]; then
-                ollama pull qwen2.5:0.5-instruct-fp16
+                ollama pull qwen2.5:3b
               else
                 echo ""
-                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo qwen2.5:0.5-instruct-fp16.${cFinColor}"
+                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo qwen2.5:3b.${cFinColor}"
                 echo ""
                 echo -e "${cColorRojo}      Hacen falta $vGBsLibresNecesarios GB y hay sólo $vGBsLibres GB.${cFinColor}"
                 echo ""
@@ -149,7 +149,7 @@
           4)
 
             echo ""
-            echo "  Instalando qwen2.5:1.5-instruct-q4_0..."
+            echo "  Instalando qwen2.5:7b..."
             echo ""
 
             # Definir el espacio libre necesario
@@ -162,10 +162,10 @@
 
             # Comprobar si hay espacio libre disponible
               if [ "$vEspacioLibre" -ge "$vEspacioNecesario" ]; then
-                ollama pull qwen2.5:1.5-instruct-q4_0
+                ollama pull qwen2.5:7b
               else
                 echo ""
-                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo qwen2.5:1.5-instruct-q4_0.${cFinColor}"
+                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo qwen2.5:7b.${cFinColor}"
                 echo ""
                 echo -e "${cColorRojo}      Hacen falta $vGBsLibresNecesarios GB y hay sólo $vGBsLibres GB.${cFinColor}"
                 echo ""
@@ -176,7 +176,7 @@
           5)
 
             echo ""
-            echo "  Instalando qwen2.5:1.5-instruct-q8_0..."
+            echo "  Instalando qwen2.5:14b..."
             echo ""
 
             # Definir el espacio libre necesario
@@ -189,10 +189,10 @@
 
             # Comprobar si hay espacio libre disponible
               if [ "$vEspacioLibre" -ge "$vEspacioNecesario" ]; then
-                ollama pull qwen2.5:1.5-instruct-q8_0
+                ollama pull qwen2.5:14b
               else
                 echo ""
-                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo qwen2.5:1.5-instruct-q8_0.${cFinColor}"
+                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo qwen2.5:14b.${cFinColor}"
                 echo ""
                 echo -e "${cColorRojo}      Hacen falta $vGBsLibresNecesarios GB y hay sólo $vGBsLibres GB.${cFinColor}"
                 echo ""
@@ -203,7 +203,7 @@
           6)
 
             echo ""
-            echo "  Instalando qwen2.5:1.5-instruct-fp16..."
+            echo "  Instalando qwen2.5:32b..."
             echo ""
 
             # Definir el espacio libre necesario
@@ -216,10 +216,10 @@
 
             # Comprobar si hay espacio libre disponible
               if [ "$vEspacioLibre" -ge "$vEspacioNecesario" ]; then
-                ollama pull qwen2.5:1.5-instruct-fp16
+                ollama pull qwen2.5:32b
               else
                 echo ""
-                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo qwen2.5:1.5-instruct-fp16.${cFinColor}"
+                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo qwen2.5:32b.${cFinColor}"
                 echo ""
                 echo -e "${cColorRojo}      Hacen falta $vGBsLibresNecesarios GB y hay sólo $vGBsLibres GB.${cFinColor}"
                 echo ""
@@ -230,7 +230,7 @@
           7)
 
             echo ""
-            echo "  Instalando qwen2.5:3b-instruct-q4_0..."
+            echo "  Instalando qwen2.5:72b..."
             echo ""
 
             # Definir el espacio libre necesario
@@ -243,10 +243,10 @@
 
             # Comprobar si hay espacio libre disponible
               if [ "$vEspacioLibre" -ge "$vEspacioNecesario" ]; then
-                ollama pull qwen2.5:3b-instruct-q4_0
+                ollama pull qwen2.5:72b
               else
                 echo ""
-                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo qwen2.5:3b-instruct-q4_0.${cFinColor}"
+                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo qwen2.5:72b.${cFinColor}"
                 echo ""
                 echo -e "${cColorRojo}      Hacen falta $vGBsLibresNecesarios GB y hay sólo $vGBsLibres GB.${cFinColor}"
                 echo ""
