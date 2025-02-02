@@ -46,6 +46,14 @@
       2 "deepseek-v3 671b-q8_0   (xxx,x GB en disco) (xxx,x GB en RAM/VRAM)" off
       3 "deepseek-v3 671b-fp16   (xxx,x GB en disco) (xxx,x GB en RAM/VRAM)" off
 
+      4 "deepseek-v2:236b-chat-q4_K_M (xxx,x GB en disco) (xxx,x GB en RAM/VRAM)" off
+      5 "deepseek-v2:236b-chat-q8_0   (xxx,x GB en disco) (xxx,x GB en RAM/VRAM)" off
+      6 "deepseek-v2:236b-chat-fp16   (xxx,x GB en disco) (xxx,x GB en RAM/VRAM)" off
+
+      7 "deepseek-v2:16b-lite-chat-q4_K_M (xxx,x GB en disco) (xxx,x GB en RAM/VRAM)" off
+      8 "deepseek-v2:16b-lite-chat-q8_0   (xxx,x GB en disco) (xxx,x GB en RAM/VRAM)" off
+      9 "deepseek-v2:16b-lite-chat-fp16   (xxx,x GB en disco) (xxx,x GB en RAM/VRAM)" off
+
     )
   choices=$("${menu[@]}" "${opciones[@]}" 2>&1 >/dev/tty)
 
