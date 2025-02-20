@@ -105,7 +105,7 @@
           echo ""
         fi
       #menu=(dialog --timeout 5 --checklist "Marca las opciones que quieras instalar:" 22 96 16)
-      menu=(dialog --checklist "Marca las opciones que quieras instalar:" 22 100 1)
+      menu=(dialog --checklist "Marca las opciones que quieras instalar:" 22 104 1)
         opciones=(
           1 "Compilar con los valores por defecto"                                                       off
           2 "Configurar y compilar para uso únicamente con procesador Intel Core i7-7700K"               off
