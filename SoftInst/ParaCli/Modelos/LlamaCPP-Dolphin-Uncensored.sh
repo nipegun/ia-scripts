@@ -40,6 +40,20 @@ vCarpetaDeModelosGGUF="/Particiones/local-lvm/IA/Modelos/GGUF/"
     fi
   menu=(dialog --checklist "Marca los modelos que quieras instalar:" 22 96 1)
     opciones=(
+
+                sudo curl -L https://huggingface.co/bartowski/cognitivecomputations_Dolphin3.0-Mistral-24B-GGUF/resolve/main/cognitivecomputations_Dolphin3.0-Mistral-24B-Q8_0.gguf -O 25,2 disco 24,8GB RAM
+                sudo curl -L https://huggingface.co/bartowski/cognitivecomputations_Dolphin3.0-R1-Mistral-24B-GGUF/resolve/main/cognitivecomputations_Dolphin3.0-R1-Mistral-24B-Q8_0.gguf -O 25,2 disco 24,8GB RAM
+
+                sudo curl -L https://huggingface.co/bartowski/Dolphin3.0-Llama3.2-1B-GGUF/resolve/main/Dolphin3.0-Llama3.2-1B-Q8_0.gguf -O      1,4 disco 1,5 RAM  # caca
+                sudo curl -L https://huggingface.co/bartowski/Dolphin3.0-Llama3.2-3B-GGUF/resolve/main/Dolphin3.0-Llama3.2-3B-Q8_0.gguf -O     3,5   3,8
+                sudo curl -L https://huggingface.co/bartowski/Dolphin3.0-Llama3.1-8B-GGUF/resolve/main/Dolphin3.0-Llama3.1-8B-Q8_0.gguf -O 
+
+                sudo curl -L https://huggingface.co/bartowski/Dolphin3.0-Qwen2.5-0.5B-GGUF/resolve/main/Dolphin3.0-Qwen2.5-0.5B-Q8_0.gguf -O          0,6 disco 0,7 RAM
+                sudo curl -L https://huggingface.co/bartowski/Dolphin3.0-Qwen2.5-1.5B-GGUF/resolve/main/Dolphin3.0-Qwen2.5-1.5B-Q8_0.gguf -O         1,7   1,8
+                sudo curl -L https://huggingface.co/bartowski/Dolphin3.0-Qwen2.5-3b-GGUF/resolve/main/Dolphin3.0-Qwen2.5-3b-Q8_0.gguf -O              3,4 3,4
+
+
+
       1 "cognitivecomputations/Dolphin3.0-Mistral-24B      (Qx_x) (x,x GB en disco) (x,x GB en RAM/VRAM)" off
 
       2 "cognitivecomputations/Dolphin3.0-R1-Mistral-24B   (Qx_x) (x,x GB en disco) (x,x GB en RAM/VRAM)" off
