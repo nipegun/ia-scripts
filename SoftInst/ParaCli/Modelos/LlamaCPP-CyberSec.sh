@@ -22,11 +22,14 @@
   cFinColor='\033[0m'
 
 vCarpetaDeModelosGGUF="/Particiones/local-lvm/IA/Modelos/GGUF/"
-
+      
 # Indicar inicio de ejecución del script
   echo ""
   echo -e "${cColorAzulClaro}  Iniciando el script de instalación de modelos LLM de Llama para Ollama...${cFinColor}"
   echo ""
+
+sudo mkdir -p "$vCarpetaDeModelosGGUF"
+sudo chown $USER:$USER "$vCarpetaDeModelosGGUF"
 
 # Crear el menú
   # Comprobar si el paquete dialog está instalado. Si no lo está, instalarlo.
@@ -63,8 +66,7 @@ vCarpetaDeModelosGGUF="/Particiones/local-lvm/IA/Modelos/GGUF/"
       do
         case $choice in
 
-      sudo mkdir -p "$vCarpetaDeModelosGGUF"
-      sudo chown $USER:$USER "$vCarpetaDeModelosGGUF"
+
       cd "$vCarpetaDeModelosGGUF"
       sudo curl -L https://huggingface.co/TheBloke/WhiteRabbitNeo-13B-GGUF/resolve/main/whiterabbitneo-13b.Q8_0.gguf -O
       sudo curl -L https://huggingface.co/TheBloke/WhiteRabbitNeo-33B-v1-GGUF/resolve/main/whiterabbitneo-33b-v1.Q8_0.gguf -O
@@ -88,7 +90,7 @@ vCarpetaDeModelosGGUF="/Particiones/local-lvm/IA/Modelos/GGUF/"
           1)
 
             echo ""
-            echo "  Instalando llama3.3:70b-instruct-q4_0..."
+            echo "  Instalando whiterabbitneo-13b.Q8_0.gguf..."
             echo ""
 
             # Definir el espacio libre necesario
@@ -101,8 +103,8 @@ vCarpetaDeModelosGGUF="/Particiones/local-lvm/IA/Modelos/GGUF/"
 
             # Comprobar si hay espacio libre disponible
               if [ "$vEspacioLibre" -ge "$vEspacioNecesario" ]; then
-                mkdir -p ~/Soft/IA/Modelos/GGUF/
-                cd ~/Soft/IA/Modelos/GGUF/
+                mkdir -p ~/IA/Modelos/GGUF/
+                cd ~/IA/Modelos/GGUF/
                 
               else
                 echo ""
@@ -117,7 +119,7 @@ vCarpetaDeModelosGGUF="/Particiones/local-lvm/IA/Modelos/GGUF/"
           2)
 
             echo ""
-            echo "  Instalando llama3.3:70b-instruct-q8_0..."
+            echo "  Instalando whiterabbitneo-33b-v1.Q8_0.gguf..."
             echo ""
 
             # Definir el espacio libre necesario
@@ -130,8 +132,8 @@ vCarpetaDeModelosGGUF="/Particiones/local-lvm/IA/Modelos/GGUF/"
 
             # Comprobar si hay espacio libre disponible
               if [ "$vEspacioLibre" -ge "$vEspacioNecesario" ]; then
-                mkdir -p ~/Soft/IA/Modelos/GGUF/
-                cd ~/Soft/IA/Modelos/GGUF/
+                mkdir -p ~/IA/Modelos/GGUF/
+                cd ~/IA/Modelos/GGUF/
                 curl -L https://huggingface.co/TheBloke/WhiteRabbitNeo-13B-GGUF/resolve/main/whiterabbitneo-13b.fp16.gguf -O
               else
                 echo ""
@@ -146,7 +148,7 @@ vCarpetaDeModelosGGUF="/Particiones/local-lvm/IA/Modelos/GGUF/"
           3)
 
             echo ""
-            echo "  Instalando llama3.3:70b-instruct-fp16..."
+            echo "  Instalando WhiteRabbitNeo-2.5-Qwen-2.5-Coder-7B-Q4_K_M.gguf..."
             echo ""
 
             # Definir el espacio libre necesario
@@ -159,8 +161,8 @@ vCarpetaDeModelosGGUF="/Particiones/local-lvm/IA/Modelos/GGUF/"
 
             # Comprobar si hay espacio libre disponible
               if [ "$vEspacioLibre" -ge "$vEspacioNecesario" ]; then
-                mkdir -p ~/Soft/IA/Modelos/GGUF/
-                cd ~/Soft/IA/Modelos/GGUF/
+                mkdir -p ~/IA/Modelos/GGUF/
+                cd ~/IA/Modelos/GGUF/
               else
                 echo ""
                 echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo llama3.3:70b-instruct-fp16.${cFinColor}"
@@ -174,7 +176,7 @@ vCarpetaDeModelosGGUF="/Particiones/local-lvm/IA/Modelos/GGUF/"
           4)
 
             echo ""
-            echo "  Instalando llama3.2:1b-instruct-q4_0..."
+            echo "  Instalando WhiteRabbitNeo-2.5-Qwen-2.5-Coder-7B-Q8_0.gguf..."
             echo ""
 
             # Definir el espacio libre necesario
@@ -187,8 +189,8 @@ vCarpetaDeModelosGGUF="/Particiones/local-lvm/IA/Modelos/GGUF/"
 
             # Comprobar si hay espacio libre disponible
               if [ "$vEspacioLibre" -ge "$vEspacioNecesario" ]; then
-                mkdir -p ~/Soft/IA/Modelos/GGUF/
-                cd ~/Soft/IA/Modelos/GGUF/
+                mkdir -p ~/IA/Modelos/GGUF/
+                cd ~/IA/Modelos/GGUF/
               else
                 echo ""
                 echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo llama3.2:1b-instruct-q4_0.${cFinColor}"
@@ -202,7 +204,7 @@ vCarpetaDeModelosGGUF="/Particiones/local-lvm/IA/Modelos/GGUF/"
           5)
 
             echo ""
-            echo "  Instalando llama3.2:1b-instruct-q8_0..."
+            echo "  Instalando WhiteRabbitNeo-2.5-Qwen-2.5-Coder-7B-f16.gguf..."
             echo ""
 
             # Definir el espacio libre necesario
@@ -215,8 +217,8 @@ vCarpetaDeModelosGGUF="/Particiones/local-lvm/IA/Modelos/GGUF/"
 
             # Comprobar si hay espacio libre disponible
               if [ "$vEspacioLibre" -ge "$vEspacioNecesario" ]; then
-                mkdir -p ~/Soft/IA/Modelos/GGUF/
-                cd ~/Soft/IA/Modelos/GGUF/
+                mkdir -p ~/IA/Modelos/GGUF/
+                cd ~/IA/Modelos/GGUF/
               else
                 echo ""
                 echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo llama3.2:1b-instruct-q8_0.${cFinColor}"
@@ -230,7 +232,7 @@ vCarpetaDeModelosGGUF="/Particiones/local-lvm/IA/Modelos/GGUF/"
           6)
 
             echo ""
-            echo "  Instalando llama3.2:1b-instruct-fp16..."
+            echo "  Instalando Llama-3.1-WhiteRabbitNeo-2-8B-Q4_K_M.gguf..."
             echo ""
 
             # Definir el espacio libre necesario
@@ -243,8 +245,8 @@ vCarpetaDeModelosGGUF="/Particiones/local-lvm/IA/Modelos/GGUF/"
 
             # Comprobar si hay espacio libre disponible
               if [ "$vEspacioLibre" -ge "$vEspacioNecesario" ]; then
-                mkdir -p ~/Soft/IA/Modelos/GGUF/
-                cd ~/Soft/IA/Modelos/GGUF/
+                mkdir -p ~/IA/Modelos/GGUF/
+                cd ~/IA/Modelos/GGUF/
               else
                 echo ""
                 echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo llama3.2:1b-instruct-fp16.${cFinColor}"
@@ -258,7 +260,7 @@ vCarpetaDeModelosGGUF="/Particiones/local-lvm/IA/Modelos/GGUF/"
           7)
 
             echo ""
-            echo "  Instalando llama3.2:3b-instruct-q4_0..."
+            echo "  Instalando Llama-3.1-WhiteRabbitNeo-2-8B-Q8_0.gguf..."
             echo ""
 
             # Definir el espacio libre necesario
@@ -271,8 +273,8 @@ vCarpetaDeModelosGGUF="/Particiones/local-lvm/IA/Modelos/GGUF/"
 
             # Comprobar si hay espacio libre disponible
               if [ "$vEspacioLibre" -ge "$vEspacioNecesario" ]; then
-                mkdir -p ~/Soft/IA/Modelos/GGUF/
-                cd ~/Soft/IA/Modelos/GGUF/
+                mkdir -p ~/IA/Modelos/GGUF/
+                cd ~/IA/Modelos/GGUF/
               else
                 echo ""
                 echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo llama3.2:3b-instruct-q4_0.${cFinColor}"
@@ -286,7 +288,7 @@ vCarpetaDeModelosGGUF="/Particiones/local-lvm/IA/Modelos/GGUF/"
           8)
 
             echo ""
-            echo "  Instalando llama3.2:3b-instruct-q8_0..."
+            echo "  Instalando Llama-3.1-WhiteRabbitNeo-2-8B-f16.gguf..."
             echo ""
 
             # Definir el espacio libre necesario
@@ -313,7 +315,7 @@ vCarpetaDeModelosGGUF="/Particiones/local-lvm/IA/Modelos/GGUF/"
           9)
 
             echo ""
-            echo "  Instalando llama3.2:3b-instruct-fp16..."
+            echo "  Instalando Llama-3.1-WhiteRabbitNeo-2-70B-Q4_K_M.gguf..."
             echo ""
 
             # Definir el espacio libre necesario
@@ -340,7 +342,7 @@ vCarpetaDeModelosGGUF="/Particiones/local-lvm/IA/Modelos/GGUF/"
          10)
 
             echo ""
-            echo "  Instalando llama3.1:8b-instruct-q4_0 ..."
+            echo "  Instalando Trinity-13B.Q4_K_M.gguf..."
             echo ""
 
             # Definir el espacio libre necesario
@@ -367,7 +369,7 @@ vCarpetaDeModelosGGUF="/Particiones/local-lvm/IA/Modelos/GGUF/"
          11)
 
             echo ""
-            echo "  Instalando llama3.1:8b-instruct-q8_0..."
+            echo "  Instalando Trinity-13B.Q8_0.gguf..."
             echo ""
 
             # Definir el espacio libre necesario
@@ -394,7 +396,7 @@ vCarpetaDeModelosGGUF="/Particiones/local-lvm/IA/Modelos/GGUF/"
          12)
 
             echo ""
-            echo "  Instalando llama3.1:8b-instruct-fp16..."
+            echo "  Instalando Trinity-13B.i1-Q6_K.gguf..."
             echo ""
 
             # Definir el espacio libre necesario
@@ -411,87 +413,6 @@ vCarpetaDeModelosGGUF="/Particiones/local-lvm/IA/Modelos/GGUF/"
               else
                 echo ""
                 echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo llama3.1:8b-instruct-fp16.${cFinColor}"
-                echo ""
-                echo -e "${cColorRojo}      Hacen falta $vGBsLibresNecesarios GB y hay sólo $vGBsLibres GB.${cFinColor}"
-                echo ""
-              fi
-
-          ;;
-
-         13)
-
-            echo ""
-            echo "  Instalando llama3.1:405b-instruct-q4_0..."
-            echo ""
-
-            # Definir el espacio libre necesario
-              vGBsLibresNecesarios=230
-              vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
-
-            # Obtener el espacio libre en la partición raíz en kilobytes
-              vEspacioLibre=$(df / | grep '/' | tail -1 | sed -E 's/\s+/ /g' | cut -d ' ' -f 4)
-              vGBsLibres=$(echo "scale=2; $vEspacioLibre/1024/1024" | bc)
-
-            # Comprobar si hay espacio libre disponible
-              if [ "$vEspacioLibre" -ge "$vEspacioNecesario" ]; then
-                ollama pull llama3.1:405b-instruct-q4_0
-              else
-                echo ""
-                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo llama3.1:405b-instruct-q4_0.${cFinColor}"
-                echo ""
-                echo -e "${cColorRojo}      Hacen falta $vGBsLibresNecesarios GB y hay sólo $vGBsLibres GB.${cFinColor}"
-                echo ""
-              fi
-
-          ;;
-
-         14)
-
-            echo ""
-            echo "  Instalando llama3.1:405b-instruct-q8_0..."
-            echo ""
-
-            # Definir el espacio libre necesario
-              vGBsLibresNecesarios=433
-              vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
-
-            # Obtener el espacio libre en la partición raíz en kilobytes
-              vEspacioLibre=$(df / | grep '/' | tail -1 | sed -E 's/\s+/ /g' | cut -d ' ' -f 4)
-              vGBsLibres=$(echo "scale=2; $vEspacioLibre/1024/1024" | bc)
-
-            # Comprobar si hay espacio libre disponible
-              if [ "$vEspacioLibre" -ge "$vEspacioNecesario" ]; then
-                ollama pull llama3.1:405b-instruct-q8_0
-              else
-                echo ""
-                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo llama3.1:405b-instruct-q8_0.${cFinColor}"
-                echo ""
-                echo -e "${cColorRojo}      Hacen falta $vGBsLibresNecesarios GB y hay sólo $vGBsLibres GB.${cFinColor}"
-                echo ""
-              fi
-
-          ;;
-
-         15)
-
-            echo ""
-            echo "  llama3.1:405b-instruct-fp16..."
-            echo ""
-
-            # Definir el espacio libre necesario
-              vGBsLibresNecesarios=815
-              vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
-
-            # Obtener el espacio libre en la partición raíz en kilobytes
-              vEspacioLibre=$(df / | grep '/' | tail -1 | sed -E 's/\s+/ /g' | cut -d ' ' -f 4)
-              vGBsLibres=$(echo "scale=2; $vEspacioLibre/1024/1024" | bc)
-
-            # Comprobar si hay espacio libre disponible
-              if [ "$vEspacioLibre" -ge "$vEspacioNecesario" ]; then
-                ollama pull llama3.1:405b-instruct-fp16
-              else
-                echo ""
-                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo llama3.1:405b-instruct-fp16.${cFinColor}"
                 echo ""
                 echo -e "${cColorRojo}      Hacen falta $vGBsLibresNecesarios GB y hay sólo $vGBsLibres GB.${cFinColor}"
                 echo ""
