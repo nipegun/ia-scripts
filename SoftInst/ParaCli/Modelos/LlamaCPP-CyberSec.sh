@@ -42,22 +42,22 @@ vCarpetaDeModelosGGUF="/Particiones/local-lvm/IA/Modelos/GGUF/"
     opciones=(
       1 "x                                                   (Q8_0)      (x,x GB en disco) (x,x GB en RAM/VRAM)" off
 
-      2 "TheBloke/WhiteRabbitNeo-13B-GGUF                    (Q8_0)      (x,x GB en disco) (x,x GB en RAM/VRAM)" off
-      3 "TheBloke/WhiteRabbitNeo-33B-v1-GGUF                 (Q8_0)      (x,x GB en disco) (x,x GB en RAM/VRAM)" off
+      2 "TheBloke/WhiteRabbitNeo-13B-GGUF                    (Q8_0)      (13,9 GB en disco) (x,x GB en RAM/VRAM)" off
+      3 "TheBloke/WhiteRabbitNeo-33B-v1-GGUF                 (Q8_0)      (35,4 GB en disco) (x,x GB en RAM/VRAM)" off
 
-      4 "bartowski/WhiteRabbitNeo-2.5-Qwen-2.5-Coder-7B-GGUF (7B-Q4_K_M) (x,x GB en disco) (x,x GB en RAM/VRAM)" off
-      5 "bartowski/WhiteRabbitNeo-2.5-Qwen-2.5-Coder-7B-GGUF (7B-Q8_0)   (x,x GB en disco) (x,x GB en RAM/VRAM)" off
-      6 "bartowski/WhiteRabbitNeo-2.5-Qwen-2.5-Coder-7B-GGUF (7B-f16)    (x,x GB en disco) (x,x GB en RAM/VRAM)" off
+      4 "bartowski/WhiteRabbitNeo-2.5-Qwen-2.5-Coder-7B-GGUF (7B-Q4_K_M) ( 4,8 GB en disco) (x,x GB en RAM/VRAM)" off
+      5 "bartowski/WhiteRabbitNeo-2.5-Qwen-2.5-Coder-7B-GGUF (7B-Q8_0)   ( 8,2 GB en disco) (x,x GB en RAM/VRAM)" off
+      6 "bartowski/WhiteRabbitNeo-2.5-Qwen-2.5-Coder-7B-GGUF (7B-f16)    (15,3 GB en disco) (x,x GB en RAM/VRAM)" off
 
-      7 "bartowski/Llama-3.1-WhiteRabbitNeo-2-8B-GGUF        (7B-Q4_K_M) (x,x GB en disco) (x,x GB en RAM/VRAM)" off
-      8 "bartowski/Llama-3.1-WhiteRabbitNeo-2-8B-GGUF        (7B-Q8_0)   (x,x GB en disco) (x,x GB en RAM/VRAM)" off
-      9 "bartowski/Llama-3.1-WhiteRabbitNeo-2-8B-GGUF        (7B-f16)    (x,x GB en disco) (x,x GB en RAM/VRAM)" off
+      7 "bartowski/Llama-3.1-WhiteRabbitNeo-2-8B-GGUF        (7B-Q4_K_M) ( 5,1 GB en disco) (x,x GB en RAM/VRAM)" off
+      8 "bartowski/Llama-3.1-WhiteRabbitNeo-2-8B-GGUF        (7B-Q8_0)   ( 8,6 GB en disco) (x,x GB en RAM/VRAM)" off
+      9 "bartowski/Llama-3.1-WhiteRabbitNeo-2-8B-GGUF        (7B-f16)    (16,2 GB en disco) (x,x GB en RAM/VRAM)" off
 
-     10 "bartowski/Llama-3.1-WhiteRabbitNeo-2-70B-GGUF       (Q4_K_M)    (x,x GB en disco) (x,x GB en RAM/VRAM)" off
+     10 "bartowski/Llama-3.1-WhiteRabbitNeo-2-70B-GGUF       (Q4_K_M)    (42,9 GB en disco) (x,x GB en RAM/VRAM)" off
 
-     11 "mradermacher/Trinity-13B-GGUF                       (Q4_K_M)    (x,x GB en disco) (x,x GB en RAM/VRAM)" off
-     12 "mradermacher/Trinity-13B-GGUF                       (Q8_0)      (x,x GB en disco) (x,x GB en RAM/VRAM)" off
-     13 "mradermacher/Trinity-13B-i1-GGUF                    (i1-Q6_K)   (x,x GB en disco) (x,x GB en RAM/VRAM)" off
+     11 "mradermacher/Trinity-13B-GGUF                       (Q4_K_M)    ( 8,1 GB en disco) (x,x GB en RAM/VRAM)" off
+     12 "mradermacher/Trinity-13B-i1-GGUF                    (i1-Q6_K)   (10,8 GB en disco) (x,x GB en RAM/VRAM)" off
+     13 "mradermacher/Trinity-13B-GGUF                       (Q8_0)      (13,9 GB en disco) (x,x GB en RAM/VRAM)" off
 
     )
   choices=$("${menu[@]}" "${opciones[@]}" 2>&1 >/dev/tty)
@@ -113,7 +113,7 @@ vCarpetaDeModelosGGUF="/Particiones/local-lvm/IA/Modelos/GGUF/"
             echo ""
 
             # Definir el espacio libre necesario
-              vGBsLibresNecesarios=0
+              vGBsLibresNecesarios=13.9
               vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
 
             # Obtener el espacio libre en la partición raíz en kilobytes
@@ -143,7 +143,7 @@ vCarpetaDeModelosGGUF="/Particiones/local-lvm/IA/Modelos/GGUF/"
             echo ""
 
             # Definir el espacio libre necesario
-              vGBsLibresNecesarios=0
+              vGBsLibresNecesarios=35.4
               vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
 
             # Obtener el espacio libre en la partición raíz en kilobytes
@@ -173,7 +173,7 @@ vCarpetaDeModelosGGUF="/Particiones/local-lvm/IA/Modelos/GGUF/"
             echo ""
 
             # Definir el espacio libre necesario
-              vGBsLibresNecesarios=0
+              vGBsLibresNecesarios=4.8
               vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
 
             # Obtener el espacio libre en la partición raíz en kilobytes
@@ -203,7 +203,7 @@ vCarpetaDeModelosGGUF="/Particiones/local-lvm/IA/Modelos/GGUF/"
             echo ""
 
             # Definir el espacio libre necesario
-              vGBsLibresNecesarios=0
+              vGBsLibresNecesarios=8.2
               vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
 
             # Obtener el espacio libre en la partición raíz en kilobytes
@@ -233,7 +233,7 @@ vCarpetaDeModelosGGUF="/Particiones/local-lvm/IA/Modelos/GGUF/"
             echo ""
 
             # Definir el espacio libre necesario
-              vGBsLibresNecesarios=0
+              vGBsLibresNecesarios=15.3
               vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
 
             # Obtener el espacio libre en la partición raíz en kilobytes
@@ -263,7 +263,7 @@ vCarpetaDeModelosGGUF="/Particiones/local-lvm/IA/Modelos/GGUF/"
             echo ""
 
             # Definir el espacio libre necesario
-              vGBsLibresNecesarios=0
+              vGBsLibresNecesarios=5.1
               vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
 
             # Obtener el espacio libre en la partición raíz en kilobytes
@@ -293,7 +293,7 @@ vCarpetaDeModelosGGUF="/Particiones/local-lvm/IA/Modelos/GGUF/"
             echo ""
 
             # Definir el espacio libre necesario
-              vGBsLibresNecesarios=0
+              vGBsLibresNecesarios=8.6
               vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
 
             # Obtener el espacio libre en la partición raíz en kilobytes
@@ -323,7 +323,7 @@ vCarpetaDeModelosGGUF="/Particiones/local-lvm/IA/Modelos/GGUF/"
             echo ""
 
             # Definir el espacio libre necesario
-              vGBsLibresNecesarios=0
+              vGBsLibresNecesarios=16.2
               vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
 
             # Obtener el espacio libre en la partición raíz en kilobytes
@@ -353,7 +353,7 @@ vCarpetaDeModelosGGUF="/Particiones/local-lvm/IA/Modelos/GGUF/"
             echo ""
 
             # Definir el espacio libre necesario
-              vGBsLibresNecesarios=0
+              vGBsLibresNecesarios=42.9
               vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
 
             # Obtener el espacio libre en la partición raíz en kilobytes
@@ -383,7 +383,7 @@ vCarpetaDeModelosGGUF="/Particiones/local-lvm/IA/Modelos/GGUF/"
             echo ""
 
             # Definir el espacio libre necesario
-              vGBsLibresNecesarios=0
+              vGBsLibresNecesarios=8.1
               vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
 
             # Obtener el espacio libre en la partición raíz en kilobytes
@@ -409,41 +409,11 @@ vCarpetaDeModelosGGUF="/Particiones/local-lvm/IA/Modelos/GGUF/"
          12)
 
             echo ""
-            echo "  Instalando Trinity-13B.Q8_0.gguf..."
-            echo ""
-
-            # Definir el espacio libre necesario
-              vGBsLibresNecesarios=0
-              vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
-
-            # Obtener el espacio libre en la partición raíz en kilobytes
-              vEspacioLibre=$(df / | grep '/' | tail -1 | sed -E 's/\s+/ /g' | cut -d ' ' -f 4)
-              vGBsLibres=$(echo "scale=2; $vEspacioLibre/1024/1024" | bc)
-
-            # Comprobar si hay espacio libre disponible
-              if [ "$vEspacioLibre" -ge "$vEspacioNecesario" ]; then
-                sudo mkdir -p "$vCarpetaDeModelosGGUF"
-                sudo chown $USER:$USER "$vCarpetaDeModelosGGUF"
-                cd "$vCarpetaDeModelosGGUF"
-                sudo curl -L https://huggingface.co/mradermacher/Trinity-13B-GGUF/resolve/main/Trinity-13B.Q8_0.gguf -O
-              else
-                echo ""
-                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo llama3.1:8b-instruct-q8_0.${cFinColor}"
-                echo ""
-                echo -e "${cColorRojo}      Hacen falta $vGBsLibresNecesarios GB y hay sólo $vGBsLibres GB.${cFinColor}"
-                echo ""
-              fi
-
-          ;;
-
-         13)
-
-            echo ""
             echo "  Instalando Trinity-13B.i1-Q6_K.gguf..."
             echo ""
 
             # Definir el espacio libre necesario
-              vGBsLibresNecesarios=0
+              vGBsLibresNecesarios=10.8
               vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
 
             # Obtener el espacio libre en la partición raíz en kilobytes
@@ -459,6 +429,36 @@ vCarpetaDeModelosGGUF="/Particiones/local-lvm/IA/Modelos/GGUF/"
               else
                 echo ""
                 echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo llama3.1:8b-instruct-fp16.${cFinColor}"
+                echo ""
+                echo -e "${cColorRojo}      Hacen falta $vGBsLibresNecesarios GB y hay sólo $vGBsLibres GB.${cFinColor}"
+                echo ""
+              fi
+
+          ;;
+
+         13)
+
+            echo ""
+            echo "  Instalando Trinity-13B.Q8_0.gguf..."
+            echo ""
+
+            # Definir el espacio libre necesario
+              vGBsLibresNecesarios=13.9
+              vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
+
+            # Obtener el espacio libre en la partición raíz en kilobytes
+              vEspacioLibre=$(df / | grep '/' | tail -1 | sed -E 's/\s+/ /g' | cut -d ' ' -f 4)
+              vGBsLibres=$(echo "scale=2; $vEspacioLibre/1024/1024" | bc)
+
+            # Comprobar si hay espacio libre disponible
+              if [ "$vEspacioLibre" -ge "$vEspacioNecesario" ]; then
+                sudo mkdir -p "$vCarpetaDeModelosGGUF"
+                sudo chown $USER:$USER "$vCarpetaDeModelosGGUF"
+                cd "$vCarpetaDeModelosGGUF"
+                sudo curl -L https://huggingface.co/mradermacher/Trinity-13B-GGUF/resolve/main/Trinity-13B.Q8_0.gguf -O
+              else
+                echo ""
+                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo llama3.1:8b-instruct-q8_0.${cFinColor}"
                 echo ""
                 echo -e "${cColorRojo}      Hacen falta $vGBsLibresNecesarios GB y hay sólo $vGBsLibres GB.${cFinColor}"
                 echo ""
