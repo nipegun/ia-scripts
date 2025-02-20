@@ -38,25 +38,27 @@ vCarpetaDeModelosGGUF="/Particiones/local-lvm/IA/Modelos/GGUF/"
       sudo apt-get -y install dialog
       echo ""
     fi
-  menu=(dialog --checklist "Marca los modelos que quieras instalar:" 22 96 16)
+  menu=(dialog --checklist "Marca los modelos que quieras instalar:" 22 96 1)
     opciones=(
-      1 "TheBloke/WhiteRabbitNeo-13B-GGUF    (Q8_0)                      (x,x GB en disco) (x,x GB en RAM/VRAM)" off
-      2 "TheBloke/WhiteRabbitNeo-13B-GGUF    (fp16)                      (x,x GB en disco) (x,x GB en RAM/VRAM)" off
-      3 "TheBloke/WhiteRabbitNeo-33B-v1-GGUF (Q8_0)                      (x,x GB en disco) (x,x GB en RAM/VRAM)" off
+      1 "x                                                   (Q8_0)      (x,x GB en disco) (x,x GB en RAM/VRAM)" off
+
+      2 "TheBloke/WhiteRabbitNeo-13B-GGUF                    (Q8_0)      (x,x GB en disco) (x,x GB en RAM/VRAM)" off
+      3 "TheBloke/WhiteRabbitNeo-33B-v1-GGUF                 (Q8_0)      (x,x GB en disco) (x,x GB en RAM/VRAM)" off
 
       4 "bartowski/WhiteRabbitNeo-2.5-Qwen-2.5-Coder-7B-GGUF (7B-Q4_K_M) (x,x GB en disco) (x,x GB en RAM/VRAM)" off
       5 "bartowski/WhiteRabbitNeo-2.5-Qwen-2.5-Coder-7B-GGUF (7B-Q8_0)   (x,x GB en disco) (x,x GB en RAM/VRAM)" off
       6 "bartowski/WhiteRabbitNeo-2.5-Qwen-2.5-Coder-7B-GGUF (7B-f16)    (x,x GB en disco) (x,x GB en RAM/VRAM)" off
 
-      7 "bartowski/Llama-3.1-WhiteRabbitNeo-2-8B-GGUF (7B-Q4_K_M)        (x,x GB en disco) (x,x GB en RAM/VRAM)" off
-      8 "bartowski/Llama-3.1-WhiteRabbitNeo-2-8B-GGUF (7B-Q8_0)          (x,x GB en disco) (x,x GB en RAM/VRAM)" off
-      9 "bartowski/Llama-3.1-WhiteRabbitNeo-2-8B-GGUF (7B-f16)           (x,x GB en disco) (x,x GB en RAM/VRAM)" off
+      7 "bartowski/Llama-3.1-WhiteRabbitNeo-2-8B-GGUF        (7B-Q4_K_M) (x,x GB en disco) (x,x GB en RAM/VRAM)" off
+      8 "bartowski/Llama-3.1-WhiteRabbitNeo-2-8B-GGUF        (7B-Q8_0)   (x,x GB en disco) (x,x GB en RAM/VRAM)" off
+      9 "bartowski/Llama-3.1-WhiteRabbitNeo-2-8B-GGUF        (7B-f16)    (x,x GB en disco) (x,x GB en RAM/VRAM)" off
 
-     10 "bartowski/Llama-3.1-WhiteRabbitNeo-2-70B-GGUF (Q4_K_M)          (x,x GB en disco) (x,x GB en RAM/VRAM)" off
+     10 "bartowski/Llama-3.1-WhiteRabbitNeo-2-70B-GGUF       (Q4_K_M)    (x,x GB en disco) (x,x GB en RAM/VRAM)" off
 
-     11 "mradermacher/Trinity-13B-GGUF    (Q4_K_M)                       (x,x GB en disco) (x,x GB en RAM/VRAM)" off
-     12 "mradermacher/Trinity-13B-GGUF    (Q8_0)                         (x,x GB en disco) (x,x GB en RAM/VRAM)" off
-     13 "mradermacher/Trinity-13B-i1-GGUF (i1-Q6_K)                      (x,x GB en disco) (x,x GB en RAM/VRAM)" off
+     11 "mradermacher/Trinity-13B-GGUF                       (Q4_K_M)    (x,x GB en disco) (x,x GB en RAM/VRAM)" off
+     12 "mradermacher/Trinity-13B-GGUF                       (Q8_0)      (x,x GB en disco) (x,x GB en RAM/VRAM)" off
+     13 "mradermacher/Trinity-13B-i1-GGUF                    (i1-Q6_K)   (x,x GB en disco) (x,x GB en RAM/VRAM)" off
+
     )
   choices=$("${menu[@]}" "${opciones[@]}" 2>&1 >/dev/tty)
 
@@ -94,10 +96,20 @@ vCarpetaDeModelosGGUF="/Particiones/local-lvm/IA/Modelos/GGUF/"
 
           ;;
 
+
+
+
+
+
+
+
+
+
+
           2)
 
             echo ""
-            echo "  Instalando whiterabbitneo-13b.fp16.gguf..."
+            echo "  Instalando whiterabbitneo-13b.Q8_0.gguf..."
             echo ""
 
             # Definir el espacio libre necesario
@@ -113,7 +125,7 @@ vCarpetaDeModelosGGUF="/Particiones/local-lvm/IA/Modelos/GGUF/"
                 sudo mkdir -p "$vCarpetaDeModelosGGUF"
                 sudo chown $USER:$USER "$vCarpetaDeModelosGGUF"
                 cd "$vCarpetaDeModelosGGUF"
-  *              sudo curl -L https://huggingface.co/TheBloke/WhiteRabbitNeo-13B-GGUF/resolve/main/whiterabbitneo-13b.fp16.gguf -O
+                sudo curl -L https://huggingface.co/TheBloke/WhiteRabbitNeo-13B-GGUF/resolve/main/whiterabbitneo-13b.Q8_0.gguf -O
               else
                 echo ""
                 echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo llama3.3:70b-instruct-q4_0.${cFinColor}"
