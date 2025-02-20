@@ -57,8 +57,6 @@ vCarpetaDeModelosGGUF="/Particiones/local-lvm/IA/Modelos/GGUF/"
 
      11 "bartowski/cognitivecomputations_Dolphin3.0-Mistral-24B-GGUF    (Q8_0)      (25,2 GB en disco) (24,9 GB en RAM/VRAM)" off
      12 "bartowski/cognitivecomputations_Dolphin3.0-R1-Mistral-24B-GGUF (Q8_0)      (25,2 GB en disco) (24,9 GB en RAM/VRAM)" off
-     13 "x                                                              (Qx_x)      ( x,x GB en disco) ( x,x GB en RAM/VRAM)" off
-
     )
   choices=$("${menu[@]}" "${opciones[@]}" 2>&1 >/dev/tty)
 
@@ -69,11 +67,11 @@ vCarpetaDeModelosGGUF="/Particiones/local-lvm/IA/Modelos/GGUF/"
           1)
 
             echo ""
-            echo "  Instalando x..."
+            echo "  Instalando Dolphin3.0-Qwen2.5-0.5B-GGUF..."
             echo ""
 
             # Definir el espacio libre necesario
-              vGBsLibresNecesarios=0
+              vGBsLibresNecesarios=0.6
               vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
 
             # Obtener el espacio libre en la partición raíz en kilobytes
@@ -99,11 +97,11 @@ vCarpetaDeModelosGGUF="/Particiones/local-lvm/IA/Modelos/GGUF/"
           2)
 
             echo ""
-            echo "  Instalando x..."
+            echo "  Instalando Dolphin3.0-Qwen2.5-1.5B-GGUF..."
             echo ""
 
             # Definir el espacio libre necesario
-              vGBsLibresNecesarios=0
+              vGBsLibresNecesarios=1.7
               vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
 
             # Obtener el espacio libre en la partición raíz en kilobytes
@@ -129,11 +127,11 @@ vCarpetaDeModelosGGUF="/Particiones/local-lvm/IA/Modelos/GGUF/"
           3)
 
             echo ""
-            echo "  Instalando x..."
+            echo "  Instalando Dolphin3.0-Qwen2.5-3b-GGUF..."
             echo ""
 
             # Definir el espacio libre necesario
-              vGBsLibresNecesarios=0
+              vGBsLibresNecesarios=3.4
               vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
 
             # Obtener el espacio libre en la partición raíz en kilobytes
@@ -159,11 +157,11 @@ vCarpetaDeModelosGGUF="/Particiones/local-lvm/IA/Modelos/GGUF/"
           4)
 
             echo ""
-            echo "  Instalando x..."
+            echo "  Instalando Dolphin3.0-Llama3.2-1B-GGUF..."
             echo ""
 
             # Definir el espacio libre necesario
-              vGBsLibresNecesarios=0
+              vGBsLibresNecesarios=1.4
               vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
 
             # Obtener el espacio libre en la partición raíz en kilobytes
@@ -189,11 +187,11 @@ vCarpetaDeModelosGGUF="/Particiones/local-lvm/IA/Modelos/GGUF/"
           5)
 
             echo ""
-            echo "  Instalando x..."
+            echo "  Instalando Dolphin3.0-Llama3.2-3B-GGUF..."
             echo ""
 
             # Definir el espacio libre necesario
-              vGBsLibresNecesarios=0
+              vGBsLibresNecesarios=3.5
               vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
 
             # Obtener el espacio libre en la partición raíz en kilobytes
@@ -219,11 +217,11 @@ vCarpetaDeModelosGGUF="/Particiones/local-lvm/IA/Modelos/GGUF/"
           6)
 
             echo ""
-            echo "  Instalando x..."
+            echo "  Instalando Dolphin3.0-Llama3.1-8B-GGUF..."
             echo ""
 
             # Definir el espacio libre necesario
-              vGBsLibresNecesarios=0
+              vGBsLibresNecesarios=8.5
               vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
 
             # Obtener el espacio libre en la partición raíz en kilobytes
@@ -369,11 +367,11 @@ vCarpetaDeModelosGGUF="/Particiones/local-lvm/IA/Modelos/GGUF/"
          11)
 
             echo ""
-            echo "  Instalando x..."
+            echo "  Instalando Dolphin3.0-Mistral-24B-GGUF..."
             echo ""
 
             # Definir el espacio libre necesario
-              vGBsLibresNecesarios=8.1
+              vGBsLibresNecesarios=25.2
               vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
 
             # Obtener el espacio libre en la partición raíz en kilobytes
@@ -399,11 +397,11 @@ vCarpetaDeModelosGGUF="/Particiones/local-lvm/IA/Modelos/GGUF/"
          12)
 
             echo ""
-            echo "  Instalando x..."
+            echo "  Instalando Dolphin3.0-R1-Mistral-24B-GGUF..."
             echo ""
 
             # Definir el espacio libre necesario
-              vGBsLibresNecesarios=10.8
+              vGBsLibresNecesarios=25.2
               vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
 
             # Obtener el espacio libre en la partición raíz en kilobytes
@@ -416,36 +414,6 @@ vCarpetaDeModelosGGUF="/Particiones/local-lvm/IA/Modelos/GGUF/"
                 sudo chown $USER:$USER "$vCarpetaDeModelosGGUF"
                 cd "$vCarpetaDeModelosGGUF"
                 sudo curl -L https://huggingface.co/bartowski/cognitivecomputations_Dolphin3.0-R1-Mistral-24B-GGUF/resolve/main/cognitivecomputations_Dolphin3.0-R1-Mistral-24B-Q8_0.gguf -O
-              else
-                echo ""
-                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo x.${cFinColor}"
-                echo ""
-                echo -e "${cColorRojo}      Hacen falta $vGBsLibresNecesarios GB y hay sólo $vGBsLibres GB.${cFinColor}"
-                echo ""
-              fi
-
-          ;;
-
-         13)
-
-            echo ""
-            echo "  Instalando x..."
-            echo ""
-
-            # Definir el espacio libre necesario
-              vGBsLibresNecesarios=13.9
-              vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
-
-            # Obtener el espacio libre en la partición raíz en kilobytes
-              vEspacioLibre=$(df / | grep '/' | tail -1 | sed -E 's/\s+/ /g' | cut -d ' ' -f 4)
-              vGBsLibres=$(echo "scale=2; $vEspacioLibre/1024/1024" | bc)
-
-            # Comprobar si hay espacio libre disponible
-              if [ "$vEspacioLibre" -ge "$vEspacioNecesario" ]; then
-                sudo mkdir -p "$vCarpetaDeModelosGGUF"
-                sudo chown $USER:$USER "$vCarpetaDeModelosGGUF"
-                cd "$vCarpetaDeModelosGGUF"
-                sudo curl -L x.gguf -O
               else
                 echo ""
                 echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo x.${cFinColor}"
