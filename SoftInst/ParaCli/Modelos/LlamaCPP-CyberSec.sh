@@ -42,22 +42,22 @@ vCarpetaDeModelosGGUF="/Particiones/local-lvm/IA/Modelos/GGUF/"
     fi
   menu=(dialog --checklist "Marca los modelos que quieras instalar:" 22 96 1)
     opciones=(
-      1 "x                                                   (Qx_x)      ( x,x GB en disco) ( x,x GB en RAM/VRAM)" off
-      2 "x                                                   (Q8_0)      ( x,x GB en disco) ( x,x GB en RAM/VRAM)" off
-      3 "x                                                   (Q8_0)      ( x,x GB en disco) ( x,x GB en RAM/VRAM)" off
+      1 "bartowski/Dolphin3.0-Qwen2.5-0.5B-GGUF                         (Q8_0)      ( 0,6 GB en disco) ( 0,7 GB en RAM/VRAM)" off
+      2 "bartowski/Dolphin3.0-Qwen2.5-1.5B-GGUF                         (Q8_0)      ( 1,7 GB en disco) ( 1,8 GB en RAM/VRAM)" off
+      3 "bartowski/Dolphin3.0-Qwen2.5-3b-GGUF                           (Q8_0)      ( 3,4 GB en disco) ( 3,4 GB en RAM/VRAM)" off
 
-      4 "x                                                   (Qx_x)      ( x,x GB en disco) ( x,x GB en RAM/VRAM)" off 
-      5 "x                                                   (Qx_x)      ( x,x GB en disco) ( x,x GB en RAM/VRAM)" off 
-      6 "x                                                   (Qx_x)      ( x,x GB en disco) ( x,x GB en RAM/VRAM)" off 
+      4 "bartowski/Dolphin3.0-Llama3.2-1B-GGUF                          (Q8_0)      ( 1,4 GB en disco) ( 1,5 GB en RAM/VRAM)" off 
+      5 "bartowski/Dolphin3.0-Llama3.2-3B-GGUF                          (Q8_0)      ( 3,5 GB en disco) ( 3,8 GB en RAM/VRAM)" off 
+      6 "bartowski/Dolphin3.0-Llama3.1-8B-GGUF                          (Q8_0)      ( 8,5 GB en disco) ( 8,8 GB en RAM/VRAM)" off 
 
-      7 "bartowski/Llama-3.1-WhiteRabbitNeo-2-8B-GGUF        (7B-Q4_K_M) ( 5,1 GB en disco) ( 5,4 GB en RAM/VRAM)" off # Va bien
-      8 "bartowski/Llama-3.1-WhiteRabbitNeo-2-8B-GGUF        (7B-Q8_0)   ( 8,6 GB en disco) ( 8,9 GB en RAM/VRAM)" off # Va bien
-      9 "bartowski/Llama-3.1-WhiteRabbitNeo-2-8B-GGUF        (7B-f16)    (16,2 GB en disco) (15,9 GB en RAM/VRAM)" off # Va bien
-     10 "bartowski/Llama-3.1-WhiteRabbitNeo-2-70B-GGUF       (Q4_K_M)    (42,9 GB en disco) (42,1 GB en RAM/VRAM)" off # Va bien
+      7 "bartowski/Llama-3.1-WhiteRabbitNeo-2-8B-GGUF                   (7B-Q4_K_M) ( 5,1 GB en disco) ( 5,4 GB en RAM/VRAM)" off
+      8 "bartowski/Llama-3.1-WhiteRabbitNeo-2-8B-GGUF                   (7B-Q8_0)   ( 8,6 GB en disco) ( 8,9 GB en RAM/VRAM)" off
+      9 "bartowski/Llama-3.1-WhiteRabbitNeo-2-8B-GGUF                   (7B-f16)    (16,2 GB en disco) (15,9 GB en RAM/VRAM)" off
+     10 "bartowski/Llama-3.1-WhiteRabbitNeo-2-70B-GGUF                  (Q4_K_M)    (42,9 GB en disco) (42,1 GB en RAM/VRAM)" off
 
-     11 "x                                                   (Qx_x)      ( x,x GB en disco) ( x,x GB en RAM/VRAM)" off
-     12 "x                                                   (Qx_x)      ( x,x GB en disco) ( x,x GB en RAM/VRAM)" off
-     13 "x                                                   (Qx_x)      ( x,x GB en disco) ( x,x GB en RAM/VRAM)" off
+     11 "bartowski/cognitivecomputations_Dolphin3.0-Mistral-24B-GGUF    (Q8_0)      (25,2 GB en disco) (24,9 GB en RAM/VRAM)" off
+     12 "bartowski/cognitivecomputations_Dolphin3.0-R1-Mistral-24B-GGUF (Q8_0)      (25,2 GB en disco) (24,9 GB en RAM/VRAM)" off
+     13 "x                                                              (Qx_x)      ( x,x GB en disco) ( x,x GB en RAM/VRAM)" off
 
     )
   choices=$("${menu[@]}" "${opciones[@]}" 2>&1 >/dev/tty)
@@ -85,7 +85,7 @@ vCarpetaDeModelosGGUF="/Particiones/local-lvm/IA/Modelos/GGUF/"
                 sudo mkdir -p "$vCarpetaDeModelosGGUF"
                 sudo chown $USER:$USER "$vCarpetaDeModelosGGUF"
                 cd "$vCarpetaDeModelosGGUF"
-                sudo curl -L x.gguf -O
+                sudo curl -L https://huggingface.co/bartowski/Dolphin3.0-Qwen2.5-0.5B-GGUF/resolve/main/Dolphin3.0-Qwen2.5-0.5B-Q8_0.gguf -O
               else
                 echo ""
                 echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo x.${cFinColor}"
@@ -115,7 +115,7 @@ vCarpetaDeModelosGGUF="/Particiones/local-lvm/IA/Modelos/GGUF/"
                 sudo mkdir -p "$vCarpetaDeModelosGGUF"
                 sudo chown $USER:$USER "$vCarpetaDeModelosGGUF"
                 cd "$vCarpetaDeModelosGGUF"
-                sudo curl -L x.gguf -O
+                sudo curl -L https://huggingface.co/bartowski/Dolphin3.0-Qwen2.5-1.5B-GGUF/resolve/main/Dolphin3.0-Qwen2.5-1.5B-Q8_0.gguf -O
               else
                 echo ""
                 echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo x.${cFinColor}"
@@ -145,7 +145,7 @@ vCarpetaDeModelosGGUF="/Particiones/local-lvm/IA/Modelos/GGUF/"
                 sudo mkdir -p "$vCarpetaDeModelosGGUF"
                 sudo chown $USER:$USER "$vCarpetaDeModelosGGUF"
                 cd "$vCarpetaDeModelosGGUF"
-                sudo curl -L x.gguf -O
+                sudo curl -L https://huggingface.co/bartowski/Dolphin3.0-Qwen2.5-3b-GGUF/resolve/main/Dolphin3.0-Qwen2.5-3b-Q8_0.gguf -O
               else
                 echo ""
                 echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo x.${cFinColor}"
@@ -175,7 +175,7 @@ vCarpetaDeModelosGGUF="/Particiones/local-lvm/IA/Modelos/GGUF/"
                 sudo mkdir -p "$vCarpetaDeModelosGGUF"
                 sudo chown $USER:$USER "$vCarpetaDeModelosGGUF"
                 cd "$vCarpetaDeModelosGGUF"
-                sudo curl -L x.gguf -O
+                sudo curl -L https://huggingface.co/bartowski/Dolphin3.0-Llama3.2-1B-GGUF/resolve/main/Dolphin3.0-Llama3.2-1B-Q8_0.gguf -O
               else
                 echo ""
                 echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo x.${cFinColor}"
@@ -205,7 +205,7 @@ vCarpetaDeModelosGGUF="/Particiones/local-lvm/IA/Modelos/GGUF/"
                 sudo mkdir -p "$vCarpetaDeModelosGGUF"
                 sudo chown $USER:$USER "$vCarpetaDeModelosGGUF"
                 cd "$vCarpetaDeModelosGGUF"
-                sudo curl -L x.gguf -O
+                sudo curl -L https://huggingface.co/bartowski/Dolphin3.0-Llama3.2-3B-GGUF/resolve/main/Dolphin3.0-Llama3.2-3B-Q8_0.gguf -O
               else
                 echo ""
                 echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo x.${cFinColor}"
@@ -235,7 +235,7 @@ vCarpetaDeModelosGGUF="/Particiones/local-lvm/IA/Modelos/GGUF/"
                 sudo mkdir -p "$vCarpetaDeModelosGGUF"
                 sudo chown $USER:$USER "$vCarpetaDeModelosGGUF"
                 cd "$vCarpetaDeModelosGGUF"
-                sudo curl -L x.gguf -O
+                sudo curl -L https://huggingface.co/bartowski/Dolphin3.0-Llama3.1-8B-GGUF/resolve/main/Dolphin3.0-Llama3.1-8B-Q8_0.gguf -O
               else
                 echo ""
                 echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo x.${cFinColor}"
@@ -385,7 +385,7 @@ vCarpetaDeModelosGGUF="/Particiones/local-lvm/IA/Modelos/GGUF/"
                 sudo mkdir -p "$vCarpetaDeModelosGGUF"
                 sudo chown $USER:$USER "$vCarpetaDeModelosGGUF"
                 cd "$vCarpetaDeModelosGGUF"
-                sudo curl -L x.gguf -O
+                sudo curl -L https://huggingface.co/bartowski/cognitivecomputations_Dolphin3.0-Mistral-24B-GGUF/resolve/main/cognitivecomputations_Dolphin3.0-Mistral-24B-Q8_0.gguf -O
               else
                 echo ""
                 echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo x.${cFinColor}"
@@ -415,7 +415,7 @@ vCarpetaDeModelosGGUF="/Particiones/local-lvm/IA/Modelos/GGUF/"
                 sudo mkdir -p "$vCarpetaDeModelosGGUF"
                 sudo chown $USER:$USER "$vCarpetaDeModelosGGUF"
                 cd "$vCarpetaDeModelosGGUF"
-                sudo curl -L x.gguf -O
+                sudo curl -L https://huggingface.co/bartowski/cognitivecomputations_Dolphin3.0-R1-Mistral-24B-GGUF/resolve/main/cognitivecomputations_Dolphin3.0-R1-Mistral-24B-Q8_0.gguf -O
               else
                 echo ""
                 echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo x.${cFinColor}"
