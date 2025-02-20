@@ -105,15 +105,15 @@
           echo ""
         fi
       #menu=(dialog --timeout 5 --checklist "Marca las opciones que quieras instalar:" 22 96 16)
-      menu=(dialog --checklist "Marca las opciones que quieras instalar:" 22 96 16)
+      menu=(dialog --checklist "Marca las opciones que quieras instalar:" 22 96 1)
         opciones=(
-          1 "Configurar y compilar para uso en procesadores genéricos" off
-          2 "Configurar y compilar para uso con i7-7700K"                      off
-          3 "Configurar y compilar para uso con Ryzen 9 5950x" off
-          4 "Compilar para uso prioridad nVidia y, si no, CPU genérico" off
-          5 "Compilando únicamente para uso con CUDA (tarjetas nVidia)" off
-          6 "Compilar para uso prioridad AMD y, si no, CPU genérico" off
-          7 "Compilando únicamente para uso con ROCm (tarjetas AMD)" off
+          1 "Compilar con los valores por defecto"                                                       off
+          2 "Configurar y compilar para uso únicamente con procesador Intel Core i7-7700K"               off
+          3 "Configurar y compilar para uso únicamente con procesador AMD Ryzen 9 5950x"                 off
+          4 "Configurar y compilar para uso prioritario con CUDA (tarjetas nVidia) y secundario con CPU" off
+          5 "Configurar y compilar únicamente para uso con CUDA (tarjetas nVidia)"                       off
+          6 "Configurar y compilar para uso prioritario con ROCm (tarjetas AMD) y secundario con CPU"    off
+          7 "Configurar y compilar únicamente para uso con ROCm (tarjetas AMD)"                          off
         )
       choices=$("${menu[@]}" "${opciones[@]}" 2>&1 >/dev/tty)
       #clear
