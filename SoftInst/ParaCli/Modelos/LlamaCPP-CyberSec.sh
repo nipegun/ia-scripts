@@ -9,7 +9,7 @@
 # Script de NiPeGun para instalar y configurar los diferentes modelos para ciberseguridad en LlamaCPP para Debian
 #
 # Ejecución remota:
-#   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCli/Modelos/LlamaCPP-CyberSec | bash
+#   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCli/Modelos/LlamaCPP-CyberSec.sh | bash
 # ----------
 
 vCarpetaDeModelosGGUF="/Particiones/local-lvm/IA/Modelos/GGUF/"
