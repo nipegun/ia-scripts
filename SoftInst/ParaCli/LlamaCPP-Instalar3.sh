@@ -105,7 +105,7 @@
           echo ""
         fi
       #menu=(dialog --timeout 5 --checklist "Marca las opciones que quieras instalar:" 22 96 16)
-      menu=(dialog --checklist "Marca las opciones que quieras instalar:" 22 96 1)
+      menu=(dialog --checklist "Marca las opciones que quieras instalar:" 22 100 1)
         opciones=(
           1 "Compilar con los valores por defecto"                                                       off
           2 "Configurar y compilar para uso únicamente con procesador Intel Core i7-7700K"               off
@@ -114,6 +114,7 @@
           5 "Configurar y compilar únicamente para uso con CUDA (tarjetas nVidia)"                       off
           6 "Configurar y compilar para uso prioritario con ROCm (tarjetas AMD) y secundario con CPU"    off
           7 "Configurar y compilar únicamente para uso con ROCm (tarjetas AMD)"                          off
+          8 "Abortar compilación e interrumpir script"                                                   off
         )
       choices=$("${menu[@]}" "${opciones[@]}" 2>&1 >/dev/tty)
       #clear
@@ -234,6 +235,15 @@
               # Para ejecutar: ~/IA/LlamaCPP/llama-cli -m ~/IA/Modelos/GGUF/Llama-3.2-3B-Instruct-Q8_0.gguf -ngl 100
               #   -ngl 100 indica que se usarán todas las capas en la GPU.
               # Si llama.cpp no tiene CPU activada, este comando fallará si la GPU no puede manejar la carga, lo cual confirma que la CPU está deshabilitada.
+
+            ;;
+
+            8)
+
+              echo ""
+              echo "  Abortando compilación e interrumpiendo el script..."
+              echo ""
+              exit
 
             ;;
 
