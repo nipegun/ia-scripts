@@ -126,7 +126,7 @@
             1)
 
               echo ""
-              echo "  Compilando para uso con procesadores genéricos..."
+              echo "    Compilando para uso con procesadores genéricos..."
               echo ""
               cd ~/repos/ia/llama.cpp/build
               cmake ..
@@ -137,10 +137,10 @@
             2)
 
               echo ""
-              echo "  Compilando para uso con i7-7700K..."
+              echo "    Compilando para uso con i7-7700K..."
               echo ""
               cd ~/repos/ia/llama.cpp/build
-              cmake .. -DLLAMA_AVX2=ON -DLLAMA_FMA=ON -DCMAKE_CXX_FLAGS="-march=skylake -mtune=skylake -O3"
+              cmake .. -DCMAKE_CXX_FLAGS="-march=skylake -mtune=skylake -O3"
               cmake --build . --config Release -- -j$(nproc)
 
             ;;
@@ -148,7 +148,7 @@
             3)
 
               echo ""
-              echo "  Compilando para uso con Ryzen 9 5950x..."
+              echo "    Compilando para uso con Ryzen 9 5950x..."
               echo ""
               cd ~/repos/ia/llama.cpp/build
               cmake .. -DLLAMA_AVX2=ON -DLLAMA_FMA=ON -DCMAKE_CXX_FLAGS="-march=znver3 -mtune=znver3 -O3"
@@ -159,7 +159,7 @@
             4)
 
               echo ""
-              echo "  Compilando para uso prioritario de CUDA (tarjetas nVidia) y secundario CPU genérico..."
+              echo "    Compilando para uso prioritario de CUDA (tarjetas nVidia) y secundario CPU genérico..."
               echo ""
               sudo apt -y update
               sudo apt -y install -y build-essential cmake libcuda1 libncurses-dev
@@ -175,7 +175,7 @@
             5)
 
               echo ""
-              echo "  Compilando únicamente para uso con CUDA (tarjetas nVidia)..."
+              echo "    Compilando únicamente para uso con CUDA (tarjetas nVidia)..."
               echo ""
               sudo apt -y update
               sudo apt -y install -y build-essential cmake libcuda1 libncurses-dev
@@ -199,7 +199,7 @@
             6)
 
               echo ""
-              echo "  Compilando para uso prioritario de ROCm (tarjetas AMD) y secundario CPU genérico......"
+              echo "    Compilando para uso prioritario de ROCm (tarjetas AMD) y secundario CPU genérico......"
               echo ""
               sudo apt -y update
               sudo apt -y install -y build-essential cmake libcuda1 libncurses-dev
@@ -215,7 +215,7 @@
             7)
 
               echo ""
-              echo "  Compilando únicamente para uso con ROCm (tarjetas AMD)..."
+              echo "    Compilando únicamente para uso con ROCm (tarjetas AMD)..."
               echo ""
               sudo apt -y update
               sudo apt -y install -y build-essential cmake
@@ -241,7 +241,7 @@
             8)
 
               echo ""
-              echo "  Abortando compilación e interrumpiendo el script..."
+              echo "    Abortando compilación e interrumpiendo el script..."
               echo ""
               exit
 
