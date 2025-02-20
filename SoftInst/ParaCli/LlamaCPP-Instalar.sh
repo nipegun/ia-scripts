@@ -272,7 +272,7 @@
       echo ""
       echo "        ~/IA/LlamaCPP/llama-cli -m ~/IA/Modelos/GGUF/Llama-3.2-3B-Instruct-Q8_0.gguf -p 'Hazme un script de python que diga hola?' -n 128 -no-cnv"
       echo ""
-      echo "    Para indicarle cuanda VRAM usar (en el caso de haber compilado con soporte cuda):"
+      echo "    Para indicarle cuanta VRAM usar (en el caso de haber compilado con soporte CUDA):"
       echo ""
       echo "      ~/IA/LlamaCPP/llama-cli -m ~/IA/Modelos/GGUF/Llama-3.2-3B-Instruct-Q8_0.gguf -ngl 100 --n-gpu-layers 32"
       echo ""
