@@ -113,7 +113,7 @@ vCarpetaDeModelosGGUF="/Particiones/local-lvm/IA/Modelos/GGUF/"
                 sudo mkdir -p "$vCarpetaDeModelosGGUF"
                 sudo chown $USER:$USER "$vCarpetaDeModelosGGUF"
                 cd "$vCarpetaDeModelosGGUF"
-                sudo curl -L https://huggingface.co/TheBloke/WhiteRabbitNeo-13B-GGUF/resolve/main/whiterabbitneo-13b.fp16.gguf -O
+  *              sudo curl -L https://huggingface.co/TheBloke/WhiteRabbitNeo-13B-GGUF/resolve/main/whiterabbitneo-13b.fp16.gguf -O
               else
                 echo ""
                 echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo llama3.3:70b-instruct-q4_0.${cFinColor}"
