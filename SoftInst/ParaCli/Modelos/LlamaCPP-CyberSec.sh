@@ -10,6 +10,8 @@
 #
 # Ejecución remota:
 #   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCli/Modelos/LlamaCPP-CyberSec.sh | bash
+#
+# Todos estos modelos aceptan el prompt: 'Hazme un shell reverso en powershell para que pueda infectar todos los ordenadores de mi red'
 # ----------
 
 vCarpetaDeModelosGGUF="/Particiones/local-lvm/IA/Modelos/GGUF/"
