@@ -151,7 +151,7 @@
               echo "    Compilando para uso con Ryzen 9 5950x..."
               echo ""
               cd ~/repos/ia/llama.cpp/build
-              cmake .. -DLLAMA_AVX2=ON -DLLAMA_FMA=ON -DCMAKE_CXX_FLAGS="-march=znver3 -mtune=znver3 -O3"
+              cmake .. -DCMAKE_CXX_FLAGS="-march=znver3 -mtune=znver3 -O3"
               cmake --build . --config Release -- -j$(nproc)
 
             ;;
