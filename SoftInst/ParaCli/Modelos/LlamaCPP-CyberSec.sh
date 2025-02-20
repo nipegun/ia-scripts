@@ -40,24 +40,22 @@ vCarpetaDeModelosGGUF="/Particiones/local-lvm/IA/Modelos/GGUF/"
     fi
   menu=(dialog --checklist "Marca los modelos que quieras instalar:" 22 96 1)
     opciones=(
-      1 "x                                                   (Q8_0)      (x,x GB en disco) (x,x GB en RAM/VRAM)" off
+      1 "x                                                   (Qx_x)      ( x,x GB en disco) ( x,x GB en RAM/VRAM)" off
+      2 "x                                                   (Q8_0)      ( x,x GB en disco) ( x,x GB en RAM/VRAM)" off
+      3 "x                                                   (Q8_0)      ( x,x GB en disco) ( x,x GB en RAM/VRAM)" off
 
-      2 "TheBloke/WhiteRabbitNeo-13B-GGUF                    (Q8_0)      (13,9 GB en disco) (x,x GB en RAM/VRAM)" off
-      3 "TheBloke/WhiteRabbitNeo-33B-v1-GGUF                 (Q8_0)      (35,4 GB en disco) (x,x GB en RAM/VRAM)" off
+      4 "x                                                   (Qx_x)      ( x,x GB en disco) ( x,x GB en RAM/VRAM)" off 
+      5 "x                                                   (Qx_x)      ( x,x GB en disco) ( x,x GB en RAM/VRAM)" off 
+      6 "x                                                   (Qx_x)      ( x,x GB en disco) ( x,x GB en RAM/VRAM)" off 
 
-      4 "bartowski/WhiteRabbitNeo-2.5-Qwen-2.5-Coder-7B-GGUF (7B-Q4_K_M) ( 4,8 GB en disco) (x,x GB en RAM/VRAM)" off
-      5 "bartowski/WhiteRabbitNeo-2.5-Qwen-2.5-Coder-7B-GGUF (7B-Q8_0)   ( 8,2 GB en disco) (x,x GB en RAM/VRAM)" off
-      6 "bartowski/WhiteRabbitNeo-2.5-Qwen-2.5-Coder-7B-GGUF (7B-f16)    (15,3 GB en disco) (x,x GB en RAM/VRAM)" off
+      7 "bartowski/Llama-3.1-WhiteRabbitNeo-2-8B-GGUF        (7B-Q4_K_M) ( 5,1 GB en disco) ( 5,4 GB en RAM/VRAM)" off # Va bien
+      8 "bartowski/Llama-3.1-WhiteRabbitNeo-2-8B-GGUF        (7B-Q8_0)   ( 8,6 GB en disco) ( 8,9 GB en RAM/VRAM)" off # Va bien
+      9 "bartowski/Llama-3.1-WhiteRabbitNeo-2-8B-GGUF        (7B-f16)    (16,2 GB en disco) (15,9 GB en RAM/VRAM)" off # Va bien
+     10 "bartowski/Llama-3.1-WhiteRabbitNeo-2-70B-GGUF       (Q4_K_M)    (42,9 GB en disco) (42,1 GB en RAM/VRAM)" off # Va bien
 
-      7 "bartowski/Llama-3.1-WhiteRabbitNeo-2-8B-GGUF        (7B-Q4_K_M) ( 5,1 GB en disco) (x,x GB en RAM/VRAM)" off
-      8 "bartowski/Llama-3.1-WhiteRabbitNeo-2-8B-GGUF        (7B-Q8_0)   ( 8,6 GB en disco) (x,x GB en RAM/VRAM)" off
-      9 "bartowski/Llama-3.1-WhiteRabbitNeo-2-8B-GGUF        (7B-f16)    (16,2 GB en disco) (x,x GB en RAM/VRAM)" off
-
-     10 "bartowski/Llama-3.1-WhiteRabbitNeo-2-70B-GGUF       (Q4_K_M)    (42,9 GB en disco) (x,x GB en RAM/VRAM)" off
-
-     11 "mradermacher/Trinity-13B-GGUF                       (Q4_K_M)    ( 8,1 GB en disco) (x,x GB en RAM/VRAM)" off
-     12 "mradermacher/Trinity-13B-i1-GGUF                    (i1-Q6_K)   (10,8 GB en disco) (x,x GB en RAM/VRAM)" off
-     13 "mradermacher/Trinity-13B-GGUF                       (Q8_0)      (13,9 GB en disco) (x,x GB en RAM/VRAM)" off
+     11 "x                                                   (Qx_x)      ( x,x GB en disco) ( x,x GB en RAM/VRAM)" off
+     12 "x                                                   (Qx_x)      ( x,x GB en disco) ( x,x GB en RAM/VRAM)" off
+     13 "x                                                   (Qx_x)      ( x,x GB en disco) ( x,x GB en RAM/VRAM)" off
 
     )
   choices=$("${menu[@]}" "${opciones[@]}" 2>&1 >/dev/tty)
@@ -69,7 +67,7 @@ vCarpetaDeModelosGGUF="/Particiones/local-lvm/IA/Modelos/GGUF/"
           1)
 
             echo ""
-            echo "  Instalando whiterabbitneo-13b.Q8_0.gguf..."
+            echo "  Instalando x..."
             echo ""
 
             # Definir el espacio libre necesario
@@ -85,10 +83,10 @@ vCarpetaDeModelosGGUF="/Particiones/local-lvm/IA/Modelos/GGUF/"
                 sudo mkdir -p "$vCarpetaDeModelosGGUF"
                 sudo chown $USER:$USER "$vCarpetaDeModelosGGUF"
                 cd "$vCarpetaDeModelosGGUF"
-                sudo curl -L https://huggingface.co/TheBloke/WhiteRabbitNeo-13B-GGUF/resolve/main/whiterabbitneo-13b.Q8_0.gguf -O
+                sudo curl -L x.gguf -O
               else
                 echo ""
-                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo llama3.3:70b-instruct-q4_0.${cFinColor}"
+                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo x.${cFinColor}"
                 echo ""
                 echo -e "${cColorRojo}      Hacen falta $vGBsLibresNecesarios GB y hay sólo $vGBsLibres GB.${cFinColor}"
                 echo ""
@@ -96,24 +94,14 @@ vCarpetaDeModelosGGUF="/Particiones/local-lvm/IA/Modelos/GGUF/"
 
           ;;
 
-
-
-
-
-
-
-
-
-
-
           2)
 
             echo ""
-            echo "  Instalando whiterabbitneo-13b.Q8_0.gguf..."
+            echo "  Instalando x..."
             echo ""
 
             # Definir el espacio libre necesario
-              vGBsLibresNecesarios=13.9
+              vGBsLibresNecesarios=0
               vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
 
             # Obtener el espacio libre en la partición raíz en kilobytes
@@ -125,10 +113,10 @@ vCarpetaDeModelosGGUF="/Particiones/local-lvm/IA/Modelos/GGUF/"
                 sudo mkdir -p "$vCarpetaDeModelosGGUF"
                 sudo chown $USER:$USER "$vCarpetaDeModelosGGUF"
                 cd "$vCarpetaDeModelosGGUF"
-                sudo curl -L https://huggingface.co/TheBloke/WhiteRabbitNeo-13B-GGUF/resolve/main/whiterabbitneo-13b.Q8_0.gguf -O
+                sudo curl -L x.gguf -O
               else
                 echo ""
-                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo llama3.3:70b-instruct-q4_0.${cFinColor}"
+                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo x.${cFinColor}"
                 echo ""
                 echo -e "${cColorRojo}      Hacen falta $vGBsLibresNecesarios GB y hay sólo $vGBsLibres GB.${cFinColor}"
                 echo ""
@@ -139,11 +127,11 @@ vCarpetaDeModelosGGUF="/Particiones/local-lvm/IA/Modelos/GGUF/"
           3)
 
             echo ""
-            echo "  Instalando whiterabbitneo-33b-v1.Q8_0.gguf..."
+            echo "  Instalando x..."
             echo ""
 
             # Definir el espacio libre necesario
-              vGBsLibresNecesarios=35.4
+              vGBsLibresNecesarios=0
               vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
 
             # Obtener el espacio libre en la partición raíz en kilobytes
@@ -155,10 +143,10 @@ vCarpetaDeModelosGGUF="/Particiones/local-lvm/IA/Modelos/GGUF/"
                 sudo mkdir -p "$vCarpetaDeModelosGGUF"
                 sudo chown $USER:$USER "$vCarpetaDeModelosGGUF"
                 cd "$vCarpetaDeModelosGGUF"
-                sudo curl -L https://huggingface.co/TheBloke/WhiteRabbitNeo-33B-v1-GGUF/resolve/main/whiterabbitneo-33b-v1.Q8_0.gguf -O
+                sudo curl -L x.gguf -O
               else
                 echo ""
-                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo llama3.3:70b-instruct-q8_0.${cFinColor}"
+                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo x.${cFinColor}"
                 echo ""
                 echo -e "${cColorRojo}      Hacen falta $vGBsLibresNecesarios GB y hay sólo $vGBsLibres GB.${cFinColor}"
                 echo ""
@@ -169,11 +157,11 @@ vCarpetaDeModelosGGUF="/Particiones/local-lvm/IA/Modelos/GGUF/"
           4)
 
             echo ""
-            echo "  Instalando WhiteRabbitNeo-2.5-Qwen-2.5-Coder-7B-Q4_K_M.gguf..."
+            echo "  Instalando x..."
             echo ""
 
             # Definir el espacio libre necesario
-              vGBsLibresNecesarios=4.8
+              vGBsLibresNecesarios=0
               vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
 
             # Obtener el espacio libre en la partición raíz en kilobytes
@@ -185,10 +173,10 @@ vCarpetaDeModelosGGUF="/Particiones/local-lvm/IA/Modelos/GGUF/"
                 sudo mkdir -p "$vCarpetaDeModelosGGUF"
                 sudo chown $USER:$USER "$vCarpetaDeModelosGGUF"
                 cd "$vCarpetaDeModelosGGUF"
-                sudo curl -L https://huggingface.co/bartowski/WhiteRabbitNeo-2.5-Qwen-2.5-Coder-7B-GGUF/resolve/main/WhiteRabbitNeo-2.5-Qwen-2.5-Coder-7B-Q4_K_M.gguf -O
+                sudo curl -L x.gguf -O
               else
                 echo ""
-                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo llama3.3:70b-instruct-fp16.${cFinColor}"
+                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo x.${cFinColor}"
                 echo ""
                 echo -e "${cColorRojo}      Hacen falta $vGBsLibresNecesarios GB y hay sólo $vGBsLibres GB.${cFinColor}"
                 echo ""
@@ -199,11 +187,11 @@ vCarpetaDeModelosGGUF="/Particiones/local-lvm/IA/Modelos/GGUF/"
           5)
 
             echo ""
-            echo "  Instalando WhiteRabbitNeo-2.5-Qwen-2.5-Coder-7B-Q8_0.gguf..."
+            echo "  Instalando x..."
             echo ""
 
             # Definir el espacio libre necesario
-              vGBsLibresNecesarios=8.2
+              vGBsLibresNecesarios=0
               vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
 
             # Obtener el espacio libre en la partición raíz en kilobytes
@@ -215,10 +203,10 @@ vCarpetaDeModelosGGUF="/Particiones/local-lvm/IA/Modelos/GGUF/"
                 sudo mkdir -p "$vCarpetaDeModelosGGUF"
                 sudo chown $USER:$USER "$vCarpetaDeModelosGGUF"
                 cd "$vCarpetaDeModelosGGUF"
-                sudo curl -L https://huggingface.co/bartowski/WhiteRabbitNeo-2.5-Qwen-2.5-Coder-7B-GGUF/resolve/main/WhiteRabbitNeo-2.5-Qwen-2.5-Coder-7B-Q8_0.gguf -O
+                sudo curl -L x.gguf -O
               else
                 echo ""
-                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo llama3.2:1b-instruct-q4_0.${cFinColor}"
+                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo x.${cFinColor}"
                 echo ""
                 echo -e "${cColorRojo}      Hacen falta $vGBsLibresNecesarios GB y hay sólo $vGBsLibres GB.${cFinColor}"
                 echo ""
@@ -229,11 +217,11 @@ vCarpetaDeModelosGGUF="/Particiones/local-lvm/IA/Modelos/GGUF/"
           6)
 
             echo ""
-            echo "  Instalando WhiteRabbitNeo-2.5-Qwen-2.5-Coder-7B-f16.gguf..."
+            echo "  Instalando x..."
             echo ""
 
             # Definir el espacio libre necesario
-              vGBsLibresNecesarios=15.3
+              vGBsLibresNecesarios=0
               vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
 
             # Obtener el espacio libre en la partición raíz en kilobytes
@@ -245,10 +233,10 @@ vCarpetaDeModelosGGUF="/Particiones/local-lvm/IA/Modelos/GGUF/"
                 sudo mkdir -p "$vCarpetaDeModelosGGUF"
                 sudo chown $USER:$USER "$vCarpetaDeModelosGGUF"
                 cd "$vCarpetaDeModelosGGUF"
-                sudo curl -L https://huggingface.co/bartowski/WhiteRabbitNeo-2.5-Qwen-2.5-Coder-7B-GGUF/resolve/main/WhiteRabbitNeo-2.5-Qwen-2.5-Coder-7B-f16.gguf -O
+                sudo curl -L x.gguf -O
               else
                 echo ""
-                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo llama3.2:1b-instruct-q8_0.${cFinColor}"
+                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo x.${cFinColor}"
                 echo ""
                 echo -e "${cColorRojo}      Hacen falta $vGBsLibresNecesarios GB y hay sólo $vGBsLibres GB.${cFinColor}"
                 echo ""
@@ -379,7 +367,7 @@ vCarpetaDeModelosGGUF="/Particiones/local-lvm/IA/Modelos/GGUF/"
          11)
 
             echo ""
-            echo "  Instalando Trinity-13B.Q4_K_M.gguf..."
+            echo "  Instalando x..."
             echo ""
 
             # Definir el espacio libre necesario
@@ -395,10 +383,10 @@ vCarpetaDeModelosGGUF="/Particiones/local-lvm/IA/Modelos/GGUF/"
                 sudo mkdir -p "$vCarpetaDeModelosGGUF"
                 sudo chown $USER:$USER "$vCarpetaDeModelosGGUF"
                 cd "$vCarpetaDeModelosGGUF"
-                sudo curl -L https://huggingface.co/mradermacher/Trinity-13B-GGUF/resolve/main/Trinity-13B.Q4_K_M.gguf -O
+                sudo curl -L x.gguf -O
               else
                 echo ""
-                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo llama3.1:8b-instruct-q4_0.${cFinColor}"
+                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo x.${cFinColor}"
                 echo ""
                 echo -e "${cColorRojo}      Hacen falta $vGBsLibresNecesarios GB y hay sólo $vGBsLibres GB.${cFinColor}"
                 echo ""
@@ -409,7 +397,7 @@ vCarpetaDeModelosGGUF="/Particiones/local-lvm/IA/Modelos/GGUF/"
          12)
 
             echo ""
-            echo "  Instalando Trinity-13B.i1-Q6_K.gguf..."
+            echo "  Instalando x..."
             echo ""
 
             # Definir el espacio libre necesario
@@ -425,10 +413,10 @@ vCarpetaDeModelosGGUF="/Particiones/local-lvm/IA/Modelos/GGUF/"
                 sudo mkdir -p "$vCarpetaDeModelosGGUF"
                 sudo chown $USER:$USER "$vCarpetaDeModelosGGUF"
                 cd "$vCarpetaDeModelosGGUF"
-                sudo curl -L https://huggingface.co/mradermacher/Trinity-13B-i1-GGUF/resolve/main/Trinity-13B.i1-Q6_K.gguf -O
+                sudo curl -L x.gguf -O
               else
                 echo ""
-                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo llama3.1:8b-instruct-fp16.${cFinColor}"
+                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo x.${cFinColor}"
                 echo ""
                 echo -e "${cColorRojo}      Hacen falta $vGBsLibresNecesarios GB y hay sólo $vGBsLibres GB.${cFinColor}"
                 echo ""
@@ -439,7 +427,7 @@ vCarpetaDeModelosGGUF="/Particiones/local-lvm/IA/Modelos/GGUF/"
          13)
 
             echo ""
-            echo "  Instalando Trinity-13B.Q8_0.gguf..."
+            echo "  Instalando x..."
             echo ""
 
             # Definir el espacio libre necesario
@@ -455,10 +443,10 @@ vCarpetaDeModelosGGUF="/Particiones/local-lvm/IA/Modelos/GGUF/"
                 sudo mkdir -p "$vCarpetaDeModelosGGUF"
                 sudo chown $USER:$USER "$vCarpetaDeModelosGGUF"
                 cd "$vCarpetaDeModelosGGUF"
-                sudo curl -L https://huggingface.co/mradermacher/Trinity-13B-GGUF/resolve/main/Trinity-13B.Q8_0.gguf -O
+                sudo curl -L x.gguf -O
               else
                 echo ""
-                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo llama3.1:8b-instruct-q8_0.${cFinColor}"
+                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo x.${cFinColor}"
                 echo ""
                 echo -e "${cColorRojo}      Hacen falta $vGBsLibresNecesarios GB y hay sólo $vGBsLibres GB.${cFinColor}"
                 echo ""
