@@ -31,6 +31,7 @@
     echo "  Ollama no parece estar instalado en el sistema."
     echo "    Abortando script..."
     echo ""
+    exit 1
   fi
 
 # Crear una función para determinar cuál es la carpeta donde se instalan los modelos de Ollama
