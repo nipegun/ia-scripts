@@ -72,8 +72,8 @@
             echo ""
 
             # Definir el espacio libre necesario
-              vGBsLibresNecesarios=1
-              vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
+              vGBsLibresNecesarios=0.9
+              vEspacioNecesario=$(echo "$vGBsLibresNecesarios * 1024 * 1024" | bc) # Convertir a kilobytes (1GB = 1048576KB)
 
             # Obtener el espacio libre en la partición raíz en kilobytes
               vEspacioLibre=$(df / | grep '/' | tail -1 | sed -E 's/\s+/ /g' | cut -d ' ' -f 4)
@@ -100,7 +100,7 @@
 
             # Definir el espacio libre necesario
               vGBsLibresNecesarios=1.2
-              vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
+              vEspacioNecesario=$(echo "$vGBsLibresNecesarios * 1024 * 1024" | bc) # Convertir a kilobytes (1GB = 1048576KB)
 
             # Obtener el espacio libre en la partición raíz en kilobytes
               vEspacioLibre=$(df / | grep '/' | tail -1 | sed -E 's/\s+/ /g' | cut -d ' ' -f 4)
@@ -127,7 +127,7 @@
 
             # Definir el espacio libre necesario
               vGBsLibresNecesarios=2.1
-              vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
+              vEspacioNecesario=$(echo "$vGBsLibresNecesarios * 1024 * 1024" | bc) # Convertir a kilobytes (1GB = 1048576KB)
 
             # Obtener el espacio libre en la partición raíz en kilobytes
               vEspacioLibre=$(df / | grep '/' | tail -1 | sed -E 's/\s+/ /g' | cut -d ' ' -f 4)
@@ -154,7 +154,7 @@
 
             # Definir el espacio libre necesario
               vGBsLibresNecesarios=3.4
-              vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
+              vEspacioNecesario=$(echo "$vGBsLibresNecesarios * 1024 * 1024" | bc) # Convertir a kilobytes (1GB = 1048576KB)
 
             # Obtener el espacio libre en la partición raíz en kilobytes
               vEspacioLibre=$(df / | grep '/' | tail -1 | sed -E 's/\s+/ /g' | cut -d ' ' -f 4)
@@ -181,7 +181,7 @@
 
             # Definir el espacio libre necesario
               vGBsLibresNecesarios=5.1
-              vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
+              vEspacioNecesario=$(echo "$vGBsLibresNecesarios * 1024 * 1024" | bc) # Convertir a kilobytes (1GB = 1048576KB)
 
             # Obtener el espacio libre en la partición raíz en kilobytes
               vEspacioLibre=$(df / | grep '/' | tail -1 | sed -E 's/\s+/ /g' | cut -d ' ' -f 4)
@@ -208,7 +208,7 @@
 
             # Definir el espacio libre necesario
               vGBsLibresNecesarios=8.7
-              vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
+              vEspacioNecesario=$(echo "$vGBsLibresNecesarios * 1024 * 1024" | bc) # Convertir a kilobytes (1GB = 1048576KB)
 
             # Obtener el espacio libre en la partición raíz en kilobytes
               vEspacioLibre=$(df / | grep '/' | tail -1 | sed -E 's/\s+/ /g' | cut -d ' ' -f 4)
