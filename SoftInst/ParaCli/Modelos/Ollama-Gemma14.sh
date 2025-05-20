@@ -25,7 +25,7 @@
   cFinColor='\033[0m'
 
 # Comprobar si Ollama está instalado
-  vVersOllamaInstalada=$(ollam -v  2> /dev/null | cut -d' ' -f4)
+  vVersOllamaInstalada=$(ollama -v  2> /dev/null | cut -d' ' -f4)
   if [[ $vVersOllamaInstalada == "" ]]; then
     echo ""
     echo -e "${cColorRojo}  El binario de ollama no parece estar instalado en el sistema. Abortando script...${cFinColor}"
