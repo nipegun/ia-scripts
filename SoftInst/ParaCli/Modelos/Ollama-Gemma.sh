@@ -24,6 +24,24 @@
     #echo "$(tput setaf 1)Mensaje en color rojo. $(tput sgr 0)"
   cFinColor='\033[0m'
 
+# Función para calcular el espacio libre disponible
+  fCalcularEspacioLibre() {
+    local vGBsNecesarios="$1"
+    # Verificar que la variable global vCarpetaTemporal esté definida
+      if [ -z "$vCarpetaTemporal" ] || [ -z "$vGBsNecesarios" ]; then
+        false
+        return
+      fi
+    # Convertir GB necesarios a KB (1 GiB = 1024 * 1024 KB)
+      local vEspacioNecesarioEnKB
+      vEspacioNecesarioEnKB=$(echo "$vGBsNecesarios * 1024 * 1024" | bc | cut -d'.' -f1)
+    # Obtener espacio libre en KB de la partición correspondiente a la ruta
+      local vEspacioLibreEnKB
+      vEspacioLibreEnKB=$(df -k "$vCarpetaTemporal" | tail -1 | tr -s ' ' | cut -d ' ' -f 4)
+    # Comparar y retornar true o false
+      [ "$vEspacioLibreEnKB" -ge "$vEspacioNecesarioEnKB" ] && true || false
+  }
+
 # Indicar inicio de ejecución del script
   echo ""
   echo -e "${cColorAzulClaro}  Iniciando el script de instalación de modelos LLM de Gemma para Ollama...${cFinColor}"
@@ -72,21 +90,20 @@
             echo ""
 
             # Definir el espacio libre necesario
-              vGBsLibresNecesarios=0.9
-              vEspacioNecesario=$(echo "$vGBsLibresNecesarios * 1024 * 1024" | bc) # Convertir a kilobytes (1GB = 1048576KB)
+              vEspacioLibreNecesario=3000
 
-            # Obtener el espacio libre en la partición raíz en kilobytes
-              vEspacioLibre=$(df / | grep '/' | tail -1 | sed -E 's/\s+/ /g' | cut -d ' ' -f 4)
-              vGBsLibres=$(echo "scale=2; $vEspacioLibre/1024/1024" | bc)
-
-            # Comprobar si hay espacio libre disponible
-              if [ "$vEspacioLibre" -ge "$vEspacioNecesario" ]; then
-                ollama pull gemma3:1b-it-q4_K_M
+            # Calcular espacio libre disponible antes de instalar el modelo
+              if fCalcularEspacioLibre $vEspacioLibreNecesario; then
+                # Descargar archivo comprimido
+                  ollama pull gemma3:1b-it-q4_K_M
               else
+                # Obtener el espacio libre en la partición raíz en kilobytes
+                  vEspacioLibre=$(df / | grep '/' | tail -1 | sed -E 's/\s+/ /g' | cut -d ' ' -f 4)
+                  vGBsLibres=$(echo "scale=2; $vEspacioLibre/1024/1024" | bc)
                 echo ""
                 echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo gemma3:1b-it-q4_K_M.${cFinColor}"
                 echo ""
-                echo -e "${cColorRojo}      Hacen falta $vGBsLibresNecesarios GB y hay sólo $vGBsLibres GB.${cFinColor}"
+                echo -e "${cColorRojo}      Hacen falta $vEspacioLibreNecesario GB y hay sólo $vGBsLibres GB.${cFinColor}"
                 echo ""
               fi
 
