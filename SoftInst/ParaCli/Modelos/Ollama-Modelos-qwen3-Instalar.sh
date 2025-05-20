@@ -116,21 +116,37 @@
   menu=(dialog --checklist "Marca los modelos que quieras instalar:" 22 80 16)
     opciones=(
 
-      1 "qwen3 1b-it-q4_K_M  ( 0,9 GB en disco) ( 1,4 GB en RAM/VRAM)" off
-      2 "qwen3 1b-it-q8_0    ( 1,2 GB en disco) ( 1,6 GB en RAM/VRAM)" off
-      3 "qwen3 1b-it-fp16    ( 2,1 GB en disco) ( 2,8 GB en RAM/VRAM)" off
+       1 "qwen3:0.6b-q4_K_M ( 0,0 GB en disco) ( 0,0 GB en RAM/VRAM)" off
+       2 "qwen3:0.6b-q8_0   ( 0,0 GB en disco) ( 0,0 GB en RAM/VRAM)" off
+       3 "qwen3:0.6b-fp16   ( 0,0 GB en disco) ( 0,0 GB en RAM/VRAM)" off
 
-      4 "qwen3 4b-it-q4_K_M  ( 3,4 GB en disco) ( 4,4 GB en RAM/VRAM)" off
-      5 "qwen3 4b-it-q8_0    ( 5,1 GB en disco) ( 6,1 GB en RAM/VRAM)" off
-      6 "qwen3 4b-it-fp16    ( 8,7 GB en disco) (10,2 GB en RAM/VRAM)" off
+       4 "qwen3:1.7b-q4_K_M ( 0,0 GB en disco) ( 0,0 GB en RAM/VRAM)" off
+       5 "qwen3:1.7b-q8_0   ( 0,0 GB en disco) ( 0,0 GB en RAM/VRAM)" off
+       6 "qwen3:1.7b-fp16   ( 0,0 GB en disco) ( 0,0 GB en RAM/VRAM)" off
 
-      7 "qwen3 12b-it-q4_K_M ( 8,2 GB en disco) (10,1 GB en RAM/VRAM)" off
-      8 "qwen3 12b-it-q8_0   (13,2 GB en disco) (15,3 GB en RAM/VRAM)" off
-      9 "qwen3 12b-it-fp16   (24,2 GB en disco) (26,8 GB en RAM/VRAM)" off
+       7 "qwen3:4b-q4_K_M   ( 0,0 GB en disco) ( 0,0 GB en RAM/VRAM)" off
+       8 "qwen3:4b-q8_0     ( 0,0 GB en disco) ( 0,0 GB en RAM/VRAM)" off
+       9 "qwen3:4b-fp16     ( 0,0 GB en disco) ( 0,0 GB en RAM/VRAM)" off
 
-     10 "qwen3 27b-it-q4_K_M (17,2 GB en disco) (19,7 GB en RAM/VRAM)" off
-     11 "qwen3 27b-it-q8_0   (29,2 GB en disco) (31,6 GB en RAM/VRAM)" off
-     12 "qwen3 27b-it-fp16   (54,2 GB en disco) (57,1 GB en RAM/VRAM)" off
+      10 "qwen3:8b-q4_K_M   ( 0,0 GB en disco) ( 0,0 GB en RAM/VRAM)" off
+      11 "qwen3:8b-q8_0     ( 0,0 GB en disco) ( 0,0 GB en RAM/VRAM)" off
+      12 "qwen3:8b-fp16     ( 0,0 GB en disco) ( 0,0 GB en RAM/VRAM)" off
+
+      13 "qwen3:14b-q4_K_M  ( 0,0 GB en disco) ( 0,0 GB en RAM/VRAM)" off
+      14 "qwen3:14b-q8_0    ( 0,0 GB en disco) ( 0,0 GB en RAM/VRAM)" off
+      15 "qwen3:14b-fp16    ( 0,0 GB en disco) ( 0,0 GB en RAM/VRAM)" off
+
+      16 "qwen3:30b-a3b-q4_K_M ( 0,0 GB en disco) ( 0,0 GB en RAM/VRAM)" off
+      17 "qwen3:30b-a3b-q8_0   ( 0,0 GB en disco) ( 0,0 GB en RAM/VRAM)" off
+      18 "qwen3:30b-a3b-fp16   ( 0,0 GB en disco) ( 0,0 GB en RAM/VRAM)" off
+
+      19 "qwen3:32b-q4_K_M ( 0,0 GB en disco) ( 0,0 GB en RAM/VRAM)" off
+      20 "qwen3:32b-q8_0   ( 0,0 GB en disco) ( 0,0 GB en RAM/VRAM)" off
+      21 "qwen3:32b-fp16   ( 0,0 GB en disco) ( 0,0 GB en RAM/VRAM)" off
+
+      22 "qwen3:235b-a22b-q4_K_M ( 0,0 GB en disco) ( 0,0 GB en RAM/VRAM)" off
+      23 "qwen3:235b-a22b-q8_0   ( 0,0 GB en disco) ( 0,0 GB en RAM/VRAM)" off
+      24 "qwen3:235b-a22b-fp16   ( 0,0 GB en disco) ( 0,0 GB en RAM/VRAM)" off
 
     )
   choices=$("${menu[@]}" "${opciones[@]}" 2>&1 >/dev/tty)
