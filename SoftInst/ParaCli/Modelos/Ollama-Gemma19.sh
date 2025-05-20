@@ -60,11 +60,13 @@
     vCarpetaDeModelos="$vRutaACarpetaDeModelos/"
   else
     #vCarpetaDeModelos="/tmp/"
+    echo ""
     echo -e "${cColorRojo}  No se ha encontrado la carpeta donde se instalan los modelos de Ollama.${cFinColor}"
-    echo -e "${cColorRojo}  Se ha buscado en las siguiente ubicaciones:${cFinColor}"
+    echo ""
+    echo -e "${cColorRojo}  Se comprobó las posibles siguientes carpetas:${cFinColor}"
     echo ""
     for vCarpeta in "${aCarpetasPosiblesDeModelos[@]}"; do
-      echo -e "${cColorRojo}    $vCarpeta ${cFinColor}"
+      echo -e "${cColorRojo}    $vCarpeta/ ${cFinColor}"
     done
     echo ""
     echo -e "${cColorRojo}  Abortando script...${cFinColor}"
