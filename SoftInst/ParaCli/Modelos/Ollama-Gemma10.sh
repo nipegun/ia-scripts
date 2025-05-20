@@ -50,7 +50,13 @@
   if [ $? -eq 0 ]; then
     vCarpetaDeModelos="$vRutaACarpetaDeModelos/"
   else
-    vCarpetaDeModelos="/tmp/"
+    #vCarpetaDeModelos="/tmp/"
+    echo "No se ha encontrado la carpeta donde se instalan los modelos de Ollama."
+    echo "Se ha buscado en las siguiente ubicaciones:"
+    echo "${vRutasPosibles[@]}"
+    echo ""
+    "  Abortando script..."
+    echo ""
   fi
 
 # Función para calcular el espacio libre disponible
