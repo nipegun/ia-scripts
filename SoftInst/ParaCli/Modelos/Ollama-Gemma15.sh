@@ -33,23 +33,23 @@
     exit 1
   fi
 
+# Definir carpetas donde buscar modelos
+  aCarpetasPosiblesDeModelos=(
+    "$HOME/.ollama/models/blobs"
+    "/usr/share/ollama/.ollama/models/blobs"
+    "/usr/share/ollama/models/blobs"
+    "/opt/ollama/models/blobs"
+    "/var/lib/ollama/models/blobs"
+  )
+
 # Crear una función para determinar cuál es la carpeta donde se instalan los modelos de Ollama
   fBuscarCarpetaDeModelos() {
-    vRutasPosibles=(
-      "$HOME/.ollama/models/blobs"
-      "/usr/share/ollama/.ollama/models/blobs"
-      "/usr/share/ollama/models/blobs"
-      "/opt/ollama/models/blobs"
-      "/var/lib/ollama/models/blobs"
-    )
-
-    for vRuta in "${vRutasPosibles[@]}"; do
+    for vRuta in "${aCarpetasPosiblesDeModelos[@]}"; do
       if [ -d "$vRuta" ]; then
         echo "$vRuta"
         return 0
       fi
     done
-
     echo ""
     return 1
 }
@@ -62,7 +62,7 @@
     #vCarpetaDeModelos="/tmp/"
     echo "No se ha encontrado la carpeta donde se instalan los modelos de Ollama."
     echo "Se ha buscado en las siguiente ubicaciones:"
-    echo "${vRutasPosibles[@]}"
+    echo "${aCarpetasPosiblesDeModelos[@]}"
     echo ""
     echo "  Abortando script..."
     echo ""
