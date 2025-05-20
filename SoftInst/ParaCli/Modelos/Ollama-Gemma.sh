@@ -63,7 +63,7 @@
     echo ""
     echo -e "${cColorRojo}  No se ha encontrado la carpeta donde se instalan los modelos de Ollama.${cFinColor}"
     echo ""
-    echo -e "${cColorRojo}  Se comprobó las posible existencia de las siguientes carpetas:${cFinColor}"
+    echo -e "${cColorRojo}  Se comprobó la posible existencia de las siguientes carpetas:${cFinColor}"
     echo ""
     for vCarpeta in "${aCarpetasPosiblesDeModelos[@]}"; do
       echo -e "${cColorRojo}    $vCarpeta/ ${cFinColor}"
