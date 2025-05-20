@@ -8,8 +8,11 @@
 # ----------
 # Script de NiPeGun para instalar y configurar los diferentes modelos de Gemma en Ollama para Debian
 #
-# Ejecución remota:
+# Ejecución remota (Puede requerir permisos sudo):
 #   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCli/Modelos/Ollama-Gemma.sh | bash
+#
+# Ejecución remota como root (Para sistemas sin sudo):
+#   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCli/Modelos/Ollama-Gemma.sh | 's-sudo--g' | bash
 # ----------
 
 # Definir constantes de color
@@ -26,25 +29,16 @@
   echo -e "${cColorAzulClaro}  Iniciando el script de instalación de modelos LLM de Gemma para Ollama...${cFinColor}"
   echo ""
 
-# Comprobar si el script está corriendo como root
-  if [ $(id -u) -ne 0 ]; then
-    echo ""
-    echo -e "${cColorRojo}    Este script está preparado para ejecutarse como root y no lo has ejecutado como root...${cFinColor}"
-    echo ""
-    exit
-  fi
-
-# Comprobar si el paquete dialog está instalado. Si no lo está, instalarlo.
-  if [[ $(dpkg-query -s dialog 2>/dev/null | grep installed) == "" ]]; then
-    echo ""
-    echo -e "${cColorRojo}    El paquete dialog no está instalado. Iniciando su instalación...${cFinColor}"
-    echo ""
-    apt-get -y update
-    apt-get -y install dialog
-    echo ""
-  fi
-
 # Crear el menú
+  # Comprobar si el paquete dialog está instalado. Si no lo está, instalarlo.
+    if [[ $(dpkg-query -s dialog 2>/dev/null | grep installed) == "" ]]; then
+      echo ""
+      echo -e "${cColorRojo}    El paquete dialog no está instalado. Iniciando su instalación...${cFinColor}"
+      echo ""
+      sudo apt-get -y update
+      sudo apt-get -y install dialog
+      echo ""
+    fi
   menu=(dialog --checklist "Marca los modelos que quieras instalar:" 22 80 16)
     opciones=(
 
