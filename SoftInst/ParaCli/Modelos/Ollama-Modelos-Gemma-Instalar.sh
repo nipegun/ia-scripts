@@ -9,10 +9,10 @@
 # Script de NiPeGun para instalar y configurar los diferentes modelos de Gemma en Ollama para Debian
 #
 # Ejecución remota (Puede requerir permisos sudo):
-#   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCli/Modelos/Ollama-Gemma.sh | bash
+#   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCli/Modelos/Ollama-Modelos-Gemma-Instalar.sh | bash
 #
 # Ejecución remota como root (Para sistemas sin sudo):
-#   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCli/Modelos/Ollama-Gemma.sh | sed 's-sudo--g' | bash
+#   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCli/Modelos/Ollama-Modelos-Gemma-Instalar.sh | sed 's-sudo--g' | bash
 # ----------
 
 # Definir constantes de color
