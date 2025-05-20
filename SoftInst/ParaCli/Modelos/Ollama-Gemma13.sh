@@ -28,8 +28,7 @@
   vVersOllamaInstalada=$(ollam -v  2> /dev/null | cut -d' ' -f4)
   if [[ $vVersOllamaInstalada == "" ]]; then
     echo ""
-    echo "  Ollama no parece estar instalado en el sistema."
-    echo "    Abortando script..."
+    echo -e "${cColorAzulClaro}  El binario de ollama no parece estar instalado en el sistema. Abortando script...${cFinColor}"
     echo ""
     exit 1
   fi
