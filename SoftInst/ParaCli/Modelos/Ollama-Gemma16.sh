@@ -56,9 +56,7 @@
 
 # Guardar en una variable la ruta de la carpeta donde se instalan los modelos
   vRutaACarpetaDeModelos=$(fBuscarCarpetaDeModelos)
-  if [ $? -eq 0 ]; then
-    vCarpetaDeModelos="$vRutaACarpetaDeModelos/"
-  else
+  if [[ $vRutaACarpetaDeModelos == "" ]]; then
     #vCarpetaDeModelos="/tmp/"
     echo "No se ha encontrado la carpeta donde se instalan los modelos de Ollama."
     echo "Se ha buscado en las siguiente ubicaciones:"
@@ -66,6 +64,9 @@
     echo ""
     echo "  Abortando script..."
     echo ""
+    exit 1
+  else
+    vCarpetaDeModelos="$vRutaACarpetaDeModelos/"
   fi
 
 # Función para calcular el espacio libre disponible
