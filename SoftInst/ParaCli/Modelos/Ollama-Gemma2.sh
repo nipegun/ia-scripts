@@ -42,7 +42,7 @@
   menu=(dialog --checklist "Marca los modelos que quieras instalar:" 22 80 16)
     opciones=(
 
-      1 "gemma3 1b-it-q4_K_M  ( 0,9 GB en disco) (0,97 GB en RAM/VRAM)" off
+      1 "gemma3 1b-it-q4_K_M  ( 1,0 GB en disco) (0,97 GB en RAM/VRAM)" off
       2 "gemma3 1b-it-q8_0    ( 1,2 GB en disco) (x,x GB en RAM/VRAM)" off
       3 "gemma3 1b-it-fp16    ( 2,1 GB en disco) (x,x GB en RAM/VRAM)" off
 
@@ -72,7 +72,7 @@
             echo ""
 
             # Definir el espacio libre necesario
-              vGBsLibresNecesarios=0.9
+              vGBsLibresNecesarios=1
               vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
 
             # Obtener el espacio libre en la partición raíz en kilobytes
