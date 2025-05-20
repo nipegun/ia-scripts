@@ -12,7 +12,7 @@
 #   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCli/Modelos/Ollama-Gemma.sh | bash
 #
 # Ejecución remota como root (Para sistemas sin sudo):
-#   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCli/Modelos/Ollama-Gemma.sh | 's-sudo--g' | bash
+#   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCli/Modelos/Ollama-Gemma.sh | sed 's-sudo--g' | bash
 # ----------
 
 # Definir la carpeta donde se instalarán los modelos
