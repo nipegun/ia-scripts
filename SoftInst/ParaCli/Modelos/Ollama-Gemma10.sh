@@ -24,6 +24,15 @@
     #echo "$(tput setaf 1)Mensaje en color rojo. $(tput sgr 0)"
   cFinColor='\033[0m'
 
+# Comprobar si Ollama está instalado
+  vVersOllamaInstalada=$(ollam -v  2> /dev/null | cut -d' ' -f4)
+  if [[ $vVersOllamaInstalada == "" ]]; then
+    echo ""
+    echo "  Ollama no parece estar instalado en el sistema."
+    echo "    Abortando script..."
+    echo ""
+  fi
+
 # Crear una función para determinar cuál es la carpeta donde se instalan los modelos de Ollama
   fBuscarCarpetaDeModelos() {
     vRutasPosibles=(
