@@ -15,9 +15,6 @@
 #   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCli/Modelos/Ollama-Gemma.sh | sed 's-sudo--g' | bash
 # ----------
 
-# Definir la carpeta donde se instalarán los modelos
-  vCarpetaDeModelos="/tmp/"
-
 # Definir constantes de color
   cColorAzul="\033[0;34m"
   cColorAzulClaro="\033[1;34m"
@@ -26,6 +23,35 @@
   # Para el color rojo también:
     #echo "$(tput setaf 1)Mensaje en color rojo. $(tput sgr 0)"
   cFinColor='\033[0m'
+
+# Crear una función para determinar cuál es la carpeta donde se instalan los modelos de Ollama
+  fBuscarCarpetaDeModelos() {
+    vRutasPosibles=(
+      "$HOME/.ollama/models/blobs"
+      "/usr/share/ollama/.ollama/models/blobs"
+      "/usr/share/ollama/models/blobs"
+      "/opt/ollama/models/blobs"
+      "/var/lib/ollama/models/blobs"
+    )
+
+    for vRuta in "${vRutasPosibles[@]}"; do
+      if [ -d "$vRuta" ]; then
+        echo "$vRuta"
+        return 0
+      fi
+    done
+
+    echo ""
+    return 1
+}
+
+# Guardar en una variable la ruta de la carpeta donde se instalan los modelos
+  vRutaACarpetaDeModelos=$(fBuscarCarpetaDeModelos)
+  if [ $? -eq 0 ]; then
+    vCarpetaDeModelos="$vRutaACarpetaDeModelos/"
+  else
+    vCarpetaDeModelos="/tmp/"
+  fi
 
 # Función para calcular el espacio libre disponible
   fCalcularEspacioLibreEnCarpetaDeModelos() {
