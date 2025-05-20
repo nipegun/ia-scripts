@@ -28,7 +28,7 @@
   vVersOllamaInstalada=$(ollam -v  2> /dev/null | cut -d' ' -f4)
   if [[ $vVersOllamaInstalada == "" ]]; then
     echo ""
-    echo -e "${cColorAzulClaro}  El binario de ollama no parece estar instalado en el sistema. Abortando script...${cFinColor}"
+    echo -e "${cColorRojo}  El binario de ollama no parece estar instalado en el sistema. Abortando script...${cFinColor}"
     echo ""
     exit 1
   fi
@@ -64,7 +64,7 @@
     echo "Se ha buscado en las siguiente ubicaciones:"
     echo "${vRutasPosibles[@]}"
     echo ""
-    "  Abortando script..."
+    echo "  Abortando script..."
     echo ""
   fi
 
