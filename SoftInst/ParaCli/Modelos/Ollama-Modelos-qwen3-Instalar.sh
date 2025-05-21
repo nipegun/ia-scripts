@@ -110,24 +110,24 @@
   menu=(dialog --checklist "Marca los modelos que quieras instalar:" 22 80 16)
     opciones=(
 
-       1 "qwen3:0.6b-q4_K_M ( 0,0 GB en disco) ( 0,0 GB en RAM/VRAM)" off
-       2 "qwen3:0.6b-q8_0   ( 0,0 GB en disco) ( 0,0 GB en RAM/VRAM)" off
-       3 "qwen3:0.6b-fp16   ( 0,0 GB en disco) ( 0,0 GB en RAM/VRAM)" off
+       1 "qwen3:0.6b-q4_K_M ( 0,6 GB en disco) ( 0,0 GB en RAM/VRAM)" off
+       2 "qwen3:0.6b-q8_0   ( 0,9 GB en disco) ( 0,0 GB en RAM/VRAM)" off
+       3 "qwen3:0.6b-fp16   ( 1,6 GB en disco) ( 0,0 GB en RAM/VRAM)" off
 
-       4 "qwen3:1.7b-q4_K_M ( 0,0 GB en disco) ( 0,0 GB en RAM/VRAM)" off
-       5 "qwen3:1.7b-q8_0   ( 0,0 GB en disco) ( 0,0 GB en RAM/VRAM)" off
-       6 "qwen3:1.7b-fp16   ( 0,0 GB en disco) ( 0,0 GB en RAM/VRAM)" off
+       4 "qwen3:1.7b-q4_K_M ( 1,5 GB en disco) ( 0,0 GB en RAM/VRAM)" off
+       5 "qwen3:1.7b-q8_0   ( 2,3 GB en disco) ( 0,0 GB en RAM/VRAM)" off
+       6 "qwen3:1.7b-fp16   ( 4,2 GB en disco) ( 0,0 GB en RAM/VRAM)" off
 
-       7 "qwen3:4b-q4_K_M   ( 0,0 GB en disco) ( 0,0 GB en RAM/VRAM)" off
-       8 "qwen3:4b-q8_0     ( 0,0 GB en disco) ( 0,0 GB en RAM/VRAM)" off
-       9 "qwen3:4b-fp16     ( 0,0 GB en disco) ( 0,0 GB en RAM/VRAM)" off
+       7 "qwen3:4b-q4_K_M   ( 2,7 GB en disco) ( 0,0 GB en RAM/VRAM)" off
+       8 "qwen3:4b-q8_0     ( 4,5 GB en disco) ( 0,0 GB en RAM/VRAM)" off
+       9 "qwen3:4b-fp16     ( 8,2 GB en disco) ( 0,0 GB en RAM/VRAM)" off
 
-      10 "qwen3:8b-q4_K_M   ( 0,0 GB en disco) ( 0,0 GB en RAM/VRAM)" off
-      11 "qwen3:8b-q8_0     ( 0,0 GB en disco) ( 0,0 GB en RAM/VRAM)" off
-      12 "qwen3:8b-fp16     ( 0,0 GB en disco) ( 0,0 GB en RAM/VRAM)" off
+      10 "qwen3:8b-q4_K_M   ( 5,3 GB en disco) ( 0,0 GB en RAM/VRAM)" off
+      11 "qwen3:8b-q8_0     ( 9,1 GB en disco) ( 0,0 GB en RAM/VRAM)" off
+      12 "qwen3:8b-fp16     (16,1 GB en disco) ( 0,0 GB en RAM/VRAM)" off
 
-      13 "qwen3:14b-q4_K_M  ( 0,0 GB en disco) ( 0,0 GB en RAM/VRAM)" off
-      14 "qwen3:14b-q8_0    ( 0,0 GB en disco) ( 0,0 GB en RAM/VRAM)" off
+      13 "qwen3:14b-q4_K_M  ( 9,4 GB en disco) ( 0,0 GB en RAM/VRAM)" off
+      14 "qwen3:14b-q8_0    (15,1 GB en disco) ( 0,0 GB en RAM/VRAM)" off
       15 "qwen3:14b-fp16    ( 0,0 GB en disco) ( 0,0 GB en RAM/VRAM)" off
 
       16 "qwen3:30b-a3b-q4_K_M ( 0,0 GB en disco) ( 0,0 GB en RAM/VRAM)" off
@@ -156,7 +156,7 @@
             echo ""
 
             # Definir el espacio que ocupa el modelo
-              vEspacioQueOcupaElModelo=0
+              vEspacioQueOcupaElModelo=0.6
 
             # Calcular espacio libre disponible antes de instalar el modelo
               if fCalcularEspacioLibreEnCarpetaDeModelos $vEspacioQueOcupaElModelo; then
@@ -182,7 +182,7 @@
             echo ""
 
             # Definir el espacio que ocupa el modelo
-              vEspacioQueOcupaElModelo=0
+              vEspacioQueOcupaElModelo=0.9
 
             # Calcular espacio libre disponible antes de instalar el modelo
               if fCalcularEspacioLibreEnCarpetaDeModelos $vEspacioQueOcupaElModelo; then
