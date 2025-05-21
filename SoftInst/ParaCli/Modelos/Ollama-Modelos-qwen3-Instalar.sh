@@ -1,9 +1,3 @@
-
-#
-#  Script no terminado.....
-#
-
-
 #!/bin/bash
 
 # Pongo a disposición pública este script bajo el término de "software de dominio público".
@@ -158,22 +152,22 @@
           1)
 
             echo ""
-            echo "  Instalando qwen3:1b-it-q4_K_M..."
+            echo "  Instalando qwen3:0.6b-q4_K_M..."
             echo ""
 
             # Definir el espacio que ocupa el modelo
-              vEspacioQueOcupaElModelo=0.9
+              vEspacioQueOcupaElModelo=0
 
             # Calcular espacio libre disponible antes de instalar el modelo
               if fCalcularEspacioLibreEnCarpetaDeModelos $vEspacioQueOcupaElModelo; then
                 # Descargar
-                  ollama pull qwen3:1b-it-q4_K_M
+                  ollama pull qwen3:0.6b-q4_K_M
               else
                 # Obtener el espacio libre en la partición raíz en kilobytes
                   vEspacioLibre=$(df / | grep '/' | tail -1 | sed -E 's/\s+/ /g' | cut -d ' ' -f 4)
                   vGBsLibres=$(echo "scale=2; $vEspacioLibre/1024/1024" | bc)
                 echo ""
-                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo qwen3:1b-it-q4_K_M.${cFinColor}"
+                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo qwen3:0.6b-q4_K_M.${cFinColor}"
                 echo ""
                 echo -e "${cColorRojo}      Hacen falta $vEspacioQueOcupaElModelo GB y hay sólo $vGBsLibres GB.${cFinColor}"
                 echo ""
@@ -184,22 +178,22 @@
           2)
 
             echo ""
-            echo "  Instalando qwen3:1b-it-q8_0..."
+            echo "  Instalando qwen3:0.6b-q8_0..."
             echo ""
 
             # Definir el espacio que ocupa el modelo
-              vEspacioQueOcupaElModelo=1.2
+              vEspacioQueOcupaElModelo=0
 
             # Calcular espacio libre disponible antes de instalar el modelo
               if fCalcularEspacioLibreEnCarpetaDeModelos $vEspacioQueOcupaElModelo; then
                 # Descargar
-                ollama pull qwen3:1b-it-q8_0
+                ollama pull qwen3:0.6b-q8_0
               else
                 # Obtener el espacio libre en la partición raíz en kilobytes
                   vEspacioLibre=$(df / | grep '/' | tail -1 | sed -E 's/\s+/ /g' | cut -d ' ' -f 4)
                   vGBsLibres=$(echo "scale=2; $vEspacioLibre/1024/1024" | bc)
                 echo ""
-                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo qwen3:1b-it-q8_0.${cFinColor}"
+                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo qwen3:0.6b-q8_0.${cFinColor}"
                 echo ""
                 echo -e "${cColorRojo}      Hacen falta $vEspacioQueOcupaElModelo GB y hay sólo $vGBsLibres GB.${cFinColor}"
                 echo ""
@@ -210,22 +204,22 @@
           3)
 
             echo ""
-            echo "  Instalando qwen3:1b-it-fp16..."
+            echo "  Instalando qwen3:0.6b-fp16..."
             echo ""
 
             # Definir el espacio que ocupa el modelo
-              vEspacioQueOcupaElModelo=2.1
+              vEspacioQueOcupaElModelo=0
 
             # Calcular espacio libre disponible antes de instalar el modelo
               if fCalcularEspacioLibreEnCarpetaDeModelos $vEspacioQueOcupaElModelo; then
                 # Descargar
-                ollama pull qwen3:1b-it-fp16
+                ollama pull qwen3:0.6b-fp16
               else
                 # Obtener el espacio libre en la partición raíz en kilobytes
                   vEspacioLibre=$(df / | grep '/' | tail -1 | sed -E 's/\s+/ /g' | cut -d ' ' -f 4)
                   vGBsLibres=$(echo "scale=2; $vEspacioLibre/1024/1024" | bc)
                 echo ""
-                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo qwen3:1b-it-fp16.${cFinColor}"
+                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo qwen3:0.6b-fp16.${cFinColor}"
                 echo ""
                 echo -e "${cColorRojo}      Hacen falta $vEspacioQueOcupaElModelo GB y hay sólo $vGBsLibres GB.${cFinColor}"
                 echo ""
@@ -236,22 +230,22 @@
           4)
 
             echo ""
-            echo "  Instalando qwen3:4b-it-q4_K_M..."
+            echo "  Instalando qwen3:1.7b-q4_K_M..."
             echo ""
 
             # Definir el espacio que ocupa el modelo
-              vEspacioQueOcupaElModelo=3.4
+              vEspacioQueOcupaElModelo=0
 
             # Calcular espacio libre disponible antes de instalar el modelo
               if fCalcularEspacioLibreEnCarpetaDeModelos $vEspacioQueOcupaElModelo; then
                 # Descargar
-                ollama pull qwen3:4b-it-q4_K_M
+                ollama pull qwen3:1.7b-q4_K_M
               else
                 # Obtener el espacio libre en la partición raíz en kilobytes
                   vEspacioLibre=$(df / | grep '/' | tail -1 | sed -E 's/\s+/ /g' | cut -d ' ' -f 4)
                   vGBsLibres=$(echo "scale=2; $vEspacioLibre/1024/1024" | bc)
                 echo ""
-                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo qwen3:4b-it-q4_K_M.${cFinColor}"
+                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo qwen3:1.7b-q4_K_M.${cFinColor}"
                 echo ""
                 echo -e "${cColorRojo}      Hacen falta $vEspacioQueOcupaElModelo GB y hay sólo $vGBsLibres GB.${cFinColor}"
                 echo ""
@@ -262,22 +256,22 @@
           5)
 
             echo ""
-            echo "  Instalando qwen3:4b-it-q8_0..."
+            echo "  Instalando qwen3:1.7b-q8_0..."
             echo ""
 
             # Definir el espacio que ocupa el modelo
-              vEspacioQueOcupaElModelo=5.1
+              vEspacioQueOcupaElModelo=0
 
             # Calcular espacio libre disponible antes de instalar el modelo
               if fCalcularEspacioLibreEnCarpetaDeModelos $vEspacioQueOcupaElModelo; then
                 # Descargar
-                ollama pull qwen3:4b-it-q8_0
+                ollama pull qwen3:1.7b-q8_0
               else
                 # Obtener el espacio libre en la partición raíz en kilobytes
                   vEspacioLibre=$(df / | grep '/' | tail -1 | sed -E 's/\s+/ /g' | cut -d ' ' -f 4)
                   vGBsLibres=$(echo "scale=2; $vEspacioLibre/1024/1024" | bc)
                 echo ""
-                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo qwen3:4b-it-q8_0.${cFinColor}"
+                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo qwen3:1.7b-q8_0.${cFinColor}"
                 echo ""
                 echo -e "${cColorRojo}      Hacen falta $vEspacioQueOcupaElModelo GB y hay sólo $vGBsLibres GB.${cFinColor}"
                 echo ""
@@ -288,22 +282,22 @@
           6)
 
             echo ""
-            echo "  Instalando qwen3:4b-it-fp16..."
+            echo "  Instalando qwen3:1.7b-fp16..."
             echo ""
 
             # Definir el espacio que ocupa el modelo
-              vEspacioQueOcupaElModelo=8.7
+              vEspacioQueOcupaElModelo=0
 
             # Calcular espacio libre disponible antes de instalar el modelo
               if fCalcularEspacioLibreEnCarpetaDeModelos $vEspacioQueOcupaElModelo; then
                 # Descargar
-                ollama pull qwen3:4b-it-fp16
+                ollama pull qwen3:1.7b-fp16
               else
                 # Obtener el espacio libre en la partición raíz en kilobytes
                   vEspacioLibre=$(df / | grep '/' | tail -1 | sed -E 's/\s+/ /g' | cut -d ' ' -f 4)
                   vGBsLibres=$(echo "scale=2; $vEspacioLibre/1024/1024" | bc)
                 echo ""
-                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo qwen3:4b-it-fp16.${cFinColor}"
+                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo qwen3:1.7b-fp16.${cFinColor}"
                 echo ""
                 echo -e "${cColorRojo}      Hacen falta $vEspacioQueOcupaElModelo GB y hay sólo $vGBsLibres GB.${cFinColor}"
                 echo ""
@@ -314,22 +308,22 @@
           7)
 
             echo ""
-            echo "  Instalando qwen3:12b-it-q4_K_M..."
+            echo "  Instalando qwen3:4b-q4_K_M..."
             echo ""
 
             # Definir el espacio que ocupa el modelo
-              vEspacioQueOcupaElModelo=8.2
+              vEspacioQueOcupaElModelo=0
 
             # Calcular espacio libre disponible antes de instalar el modelo
               if fCalcularEspacioLibreEnCarpetaDeModelos $vEspacioQueOcupaElModelo; then
                 # Descargar
-                ollama pull qwen3:12b-it-q4_K_M
+                ollama pull qwen3:4b-q4_K_M
               else
                 # Obtener el espacio libre en la partición raíz en kilobytes
                   vEspacioLibre=$(df / | grep '/' | tail -1 | sed -E 's/\s+/ /g' | cut -d ' ' -f 4)
                   vGBsLibres=$(echo "scale=2; $vEspacioLibre/1024/1024" | bc)
                 echo ""
-                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo qwen3:12b-it-q4_K_M.${cFinColor}"
+                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo qwen3:4b-q4_K_M.${cFinColor}"
                 echo ""
                 echo -e "${cColorRojo}      Hacen falta $vEspacioQueOcupaElModelo GB y hay sólo $vGBsLibres GB.${cFinColor}"
                 echo ""
@@ -340,22 +334,22 @@
           8)
 
             echo ""
-            echo "  Instalando qwen3:12b-it-q8_0..."
+            echo "  Instalando qwen3:4b-q8_0..."
             echo ""
 
             # Definir el espacio que ocupa el modelo
-              vEspacioQueOcupaElModelo=13.2
+              vEspacioQueOcupaElModelo=0
 
             # Calcular espacio libre disponible antes de instalar el modelo
               if fCalcularEspacioLibreEnCarpetaDeModelos $vEspacioQueOcupaElModelo; then
                 # Descargar
-                ollama pull qwen3:12b-it-q8_0
+                ollama pull qwen3:4b-q8_0
               else
                 # Obtener el espacio libre en la partición raíz en kilobytes
                   vEspacioLibre=$(df / | grep '/' | tail -1 | sed -E 's/\s+/ /g' | cut -d ' ' -f 4)
                   vGBsLibres=$(echo "scale=2; $vEspacioLibre/1024/1024" | bc)
                 echo ""
-                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo qwen3:12b-it-q8_0.${cFinColor}"
+                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo qwen3:4b-q8_0.${cFinColor}"
                 echo ""
                 echo -e "${cColorRojo}      Hacen falta $vEspacioQueOcupaElModelo GB y hay sólo $vGBsLibres GB.${cFinColor}"
                 echo ""
@@ -366,22 +360,22 @@
           9)
 
             echo ""
-            echo "  Instalando qwen3:12b-it-fp16..."
+            echo "  Instalando qwen3:4b-fp16..."
             echo ""
 
             # Definir el espacio que ocupa el modelo
-              vEspacioQueOcupaElModelo=24.2
+              vEspacioQueOcupaElModelo=0
 
             # Calcular espacio libre disponible antes de instalar el modelo
               if fCalcularEspacioLibreEnCarpetaDeModelos $vEspacioQueOcupaElModelo; then
                 # Descargar
-                ollama pull qwen3:12b-it-fp16
+                ollama pull qwen3:4b-fp16
               else
                 # Obtener el espacio libre en la partición raíz en kilobytes
                   vEspacioLibre=$(df / | grep '/' | tail -1 | sed -E 's/\s+/ /g' | cut -d ' ' -f 4)
                   vGBsLibres=$(echo "scale=2; $vEspacioLibre/1024/1024" | bc)
                 echo ""
-                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo qwen3:12b-it-fp16.${cFinColor}"
+                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo qwen3:4b-fp16.${cFinColor}"
                 echo ""
                 echo -e "${cColorRojo}      Hacen falta $vEspacioQueOcupaElModelo GB y hay sólo $vGBsLibres GB.${cFinColor}"
                 echo ""
@@ -392,22 +386,22 @@
          10)
 
             echo ""
-            echo "  Instalando qwen3:27b-it-q4_K_M..."
+            echo "  Instalando qwen3:8b-q4_K_M..."
             echo ""
 
             # Definir el espacio que ocupa el modelo
-              vEspacioQueOcupaElModelo=17.2
+              vEspacioQueOcupaElModelo=0
 
             # Calcular espacio libre disponible antes de instalar el modelo
               if fCalcularEspacioLibreEnCarpetaDeModelos $vEspacioQueOcupaElModelo; then
                 # Descargar
-                ollama pull qwen3:27b-it-q4_K_M
+                ollama pull qwen3:8b-q4_K_M
               else
                 # Obtener el espacio libre en la partición raíz en kilobytes
                   vEspacioLibre=$(df / | grep '/' | tail -1 | sed -E 's/\s+/ /g' | cut -d ' ' -f 4)
                   vGBsLibres=$(echo "scale=2; $vEspacioLibre/1024/1024" | bc)
                 echo ""
-                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo qwen3:27b-it-q4_K_M.${cFinColor}"
+                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo qwen3:8b-q4_K_M.${cFinColor}"
                 echo ""
                 echo -e "${cColorRojo}      Hacen falta $vEspacioQueOcupaElModelo GB y hay sólo $vGBsLibres GB.${cFinColor}"
                 echo ""
@@ -418,22 +412,22 @@
          11)
 
             echo ""
-            echo "  Instalando qwen3:27b-it-q8_0..."
+            echo "  Instalando qwen3:8b-q8_0..."
             echo ""
 
             # Definir el espacio que ocupa el modelo
-              vEspacioQueOcupaElModelo=29.2
+              vEspacioQueOcupaElModelo=0
 
             # Calcular espacio libre disponible antes de instalar el modelo
               if fCalcularEspacioLibreEnCarpetaDeModelos $vEspacioQueOcupaElModelo; then
                 # Descargar
-                ollama pull qwen3:27b-it-q8_0
+                ollama pull qwen3:8b-q8_0
               else
                 # Obtener el espacio libre en la partición raíz en kilobytes
                   vEspacioLibre=$(df / | grep '/' | tail -1 | sed -E 's/\s+/ /g' | cut -d ' ' -f 4)
                   vGBsLibres=$(echo "scale=2; $vEspacioLibre/1024/1024" | bc)
                 echo ""
-                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo qwen3:27b-it-q8_0.${cFinColor}"
+                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo qwen3:8b-q8_0.${cFinColor}"
                 echo ""
                 echo -e "${cColorRojo}      Hacen falta $vEspacioQueOcupaElModelo GB y hay sólo $vGBsLibres GB.${cFinColor}"
                 echo ""
@@ -444,22 +438,334 @@
          12)
 
             echo ""
-            echo "  Instalando qwen3:27b-it-fp16..."
+            echo "  Instalando qwen3:8b-fp16..."
             echo ""
 
             # Definir el espacio que ocupa el modelo
-              vEspacioQueOcupaElModelo=54.2
+              vEspacioQueOcupaElModelo=0
 
             # Calcular espacio libre disponible antes de instalar el modelo
               if fCalcularEspacioLibreEnCarpetaDeModelos $vEspacioQueOcupaElModelo; then
                 # Descargar
-                ollama pull qwen3:27b-it-fp16
+                ollama pull qwen3:8b-fp16
               else
                 # Obtener el espacio libre en la partición raíz en kilobytes
                   vEspacioLibre=$(df / | grep '/' | tail -1 | sed -E 's/\s+/ /g' | cut -d ' ' -f 4)
                   vGBsLibres=$(echo "scale=2; $vEspacioLibre/1024/1024" | bc)
                 echo ""
-                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo qwen3:27b-it-fp16.${cFinColor}"
+                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo qwen3:8b-fp16.${cFinColor}"
+                echo ""
+                echo -e "${cColorRojo}      Hacen falta $vEspacioQueOcupaElModelo GB y hay sólo $vGBsLibres GB.${cFinColor}"
+                echo ""
+              fi
+
+          ;;
+
+         13)
+
+            echo ""
+            echo "  Instalando qwen3:14b-q4_K_M..."
+            echo ""
+
+            # Definir el espacio que ocupa el modelo
+              vEspacioQueOcupaElModelo=0
+
+            # Calcular espacio libre disponible antes de instalar el modelo
+              if fCalcularEspacioLibreEnCarpetaDeModelos $vEspacioQueOcupaElModelo; then
+                # Descargar
+                  ollama pull qwen3:14b-q4_K_M
+              else
+                # Obtener el espacio libre en la partición raíz en kilobytes
+                  vEspacioLibre=$(df / | grep '/' | tail -1 | sed -E 's/\s+/ /g' | cut -d ' ' -f 4)
+                  vGBsLibres=$(echo "scale=2; $vEspacioLibre/1024/1024" | bc)
+                echo ""
+                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo qwen3:14b-q4_K_M.${cFinColor}"
+                echo ""
+                echo -e "${cColorRojo}      Hacen falta $vEspacioQueOcupaElModelo GB y hay sólo $vGBsLibres GB.${cFinColor}"
+                echo ""
+              fi
+
+          ;;
+
+         14)
+
+            echo ""
+            echo "  Instalando qwen3:14b-q8_0..."
+            echo ""
+
+            # Definir el espacio que ocupa el modelo
+              vEspacioQueOcupaElModelo=0
+
+            # Calcular espacio libre disponible antes de instalar el modelo
+              if fCalcularEspacioLibreEnCarpetaDeModelos $vEspacioQueOcupaElModelo; then
+                # Descargar
+                ollama pull qwen3:14b-q8_0
+              else
+                # Obtener el espacio libre en la partición raíz en kilobytes
+                  vEspacioLibre=$(df / | grep '/' | tail -1 | sed -E 's/\s+/ /g' | cut -d ' ' -f 4)
+                  vGBsLibres=$(echo "scale=2; $vEspacioLibre/1024/1024" | bc)
+                echo ""
+                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo qwen3:14b-q8_0.${cFinColor}"
+                echo ""
+                echo -e "${cColorRojo}      Hacen falta $vEspacioQueOcupaElModelo GB y hay sólo $vGBsLibres GB.${cFinColor}"
+                echo ""
+              fi
+
+          ;;
+
+         15)
+
+            echo ""
+            echo "  Instalando qwen3:14b-fp16..."
+            echo ""
+
+            # Definir el espacio que ocupa el modelo
+              vEspacioQueOcupaElModelo=0
+
+            # Calcular espacio libre disponible antes de instalar el modelo
+              if fCalcularEspacioLibreEnCarpetaDeModelos $vEspacioQueOcupaElModelo; then
+                # Descargar
+                ollama pull qwen3:14b-fp16
+              else
+                # Obtener el espacio libre en la partición raíz en kilobytes
+                  vEspacioLibre=$(df / | grep '/' | tail -1 | sed -E 's/\s+/ /g' | cut -d ' ' -f 4)
+                  vGBsLibres=$(echo "scale=2; $vEspacioLibre/1024/1024" | bc)
+                echo ""
+                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo qwen3:14b-fp16.${cFinColor}"
+                echo ""
+                echo -e "${cColorRojo}      Hacen falta $vEspacioQueOcupaElModelo GB y hay sólo $vGBsLibres GB.${cFinColor}"
+                echo ""
+              fi
+
+          ;;
+
+         16)
+
+            echo ""
+            echo "  Instalando qwen3:30b-a3b-q4_K_M..."
+            echo ""
+
+            # Definir el espacio que ocupa el modelo
+              vEspacioQueOcupaElModelo=0
+
+            # Calcular espacio libre disponible antes de instalar el modelo
+              if fCalcularEspacioLibreEnCarpetaDeModelos $vEspacioQueOcupaElModelo; then
+                # Descargar
+                ollama pull qwen3:30b-a3b-q4_K_M
+              else
+                # Obtener el espacio libre en la partición raíz en kilobytes
+                  vEspacioLibre=$(df / | grep '/' | tail -1 | sed -E 's/\s+/ /g' | cut -d ' ' -f 4)
+                  vGBsLibres=$(echo "scale=2; $vEspacioLibre/1024/1024" | bc)
+                echo ""
+                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo qwen3:30b-a3b-q4_K_M.${cFinColor}"
+                echo ""
+                echo -e "${cColorRojo}      Hacen falta $vEspacioQueOcupaElModelo GB y hay sólo $vGBsLibres GB.${cFinColor}"
+                echo ""
+              fi
+
+          ;;
+
+         17)
+
+            echo ""
+            echo "  Instalando qwen3:30b-a3b-q8_0..."
+            echo ""
+
+            # Definir el espacio que ocupa el modelo
+              vEspacioQueOcupaElModelo=0
+
+            # Calcular espacio libre disponible antes de instalar el modelo
+              if fCalcularEspacioLibreEnCarpetaDeModelos $vEspacioQueOcupaElModelo; then
+                # Descargar
+                ollama pull qwen3:30b-a3b-q8_0
+              else
+                # Obtener el espacio libre en la partición raíz en kilobytes
+                  vEspacioLibre=$(df / | grep '/' | tail -1 | sed -E 's/\s+/ /g' | cut -d ' ' -f 4)
+                  vGBsLibres=$(echo "scale=2; $vEspacioLibre/1024/1024" | bc)
+                echo ""
+                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo qwen3:30b-a3b-q8_0.${cFinColor}"
+                echo ""
+                echo -e "${cColorRojo}      Hacen falta $vEspacioQueOcupaElModelo GB y hay sólo $vGBsLibres GB.${cFinColor}"
+                echo ""
+              fi
+
+          ;;
+
+         18)
+
+            echo ""
+            echo "  Instalando qwen3:30b-a3b-fp16..."
+            echo ""
+
+            # Definir el espacio que ocupa el modelo
+              vEspacioQueOcupaElModelo=0
+
+            # Calcular espacio libre disponible antes de instalar el modelo
+              if fCalcularEspacioLibreEnCarpetaDeModelos $vEspacioQueOcupaElModelo; then
+                # Descargar
+                ollama pull qwen3:30b-a3b-fp16
+              else
+                # Obtener el espacio libre en la partición raíz en kilobytes
+                  vEspacioLibre=$(df / | grep '/' | tail -1 | sed -E 's/\s+/ /g' | cut -d ' ' -f 4)
+                  vGBsLibres=$(echo "scale=2; $vEspacioLibre/1024/1024" | bc)
+                echo ""
+                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo qwen3:30b-a3b-fp16.${cFinColor}"
+                echo ""
+                echo -e "${cColorRojo}      Hacen falta $vEspacioQueOcupaElModelo GB y hay sólo $vGBsLibres GB.${cFinColor}"
+                echo ""
+              fi
+
+          ;;
+
+         19)
+
+            echo ""
+            echo "  Instalando qwen3:32b-q4_K_M..."
+            echo ""
+
+            # Definir el espacio que ocupa el modelo
+              vEspacioQueOcupaElModelo=0
+
+            # Calcular espacio libre disponible antes de instalar el modelo
+              if fCalcularEspacioLibreEnCarpetaDeModelos $vEspacioQueOcupaElModelo; then
+                # Descargar
+                ollama pull qwen3:32b-q4_K_M
+              else
+                # Obtener el espacio libre en la partición raíz en kilobytes
+                  vEspacioLibre=$(df / | grep '/' | tail -1 | sed -E 's/\s+/ /g' | cut -d ' ' -f 4)
+                  vGBsLibres=$(echo "scale=2; $vEspacioLibre/1024/1024" | bc)
+                echo ""
+                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo qwen3:32b-q4_K_M.${cFinColor}"
+                echo ""
+                echo -e "${cColorRojo}      Hacen falta $vEspacioQueOcupaElModelo GB y hay sólo $vGBsLibres GB.${cFinColor}"
+                echo ""
+              fi
+
+          ;;
+
+         20)
+
+            echo ""
+            echo "  Instalando qwen3:32b-q8_0..."
+            echo ""
+
+            # Definir el espacio que ocupa el modelo
+              vEspacioQueOcupaElModelo=0
+
+            # Calcular espacio libre disponible antes de instalar el modelo
+              if fCalcularEspacioLibreEnCarpetaDeModelos $vEspacioQueOcupaElModelo; then
+                # Descargar
+                ollama pull qwen3:32b-q8_0
+              else
+                # Obtener el espacio libre en la partición raíz en kilobytes
+                  vEspacioLibre=$(df / | grep '/' | tail -1 | sed -E 's/\s+/ /g' | cut -d ' ' -f 4)
+                  vGBsLibres=$(echo "scale=2; $vEspacioLibre/1024/1024" | bc)
+                echo ""
+                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo qwen3:32b-q8_0.${cFinColor}"
+                echo ""
+                echo -e "${cColorRojo}      Hacen falta $vEspacioQueOcupaElModelo GB y hay sólo $vGBsLibres GB.${cFinColor}"
+                echo ""
+              fi
+
+          ;;
+
+         21)
+
+            echo ""
+            echo "  Instalando qwen3:32b-fp16..."
+            echo ""
+
+            # Definir el espacio que ocupa el modelo
+              vEspacioQueOcupaElModelo=0
+
+            # Calcular espacio libre disponible antes de instalar el modelo
+              if fCalcularEspacioLibreEnCarpetaDeModelos $vEspacioQueOcupaElModelo; then
+                # Descargar
+                ollama pull qwen3:32b-fp16
+              else
+                # Obtener el espacio libre en la partición raíz en kilobytes
+                  vEspacioLibre=$(df / | grep '/' | tail -1 | sed -E 's/\s+/ /g' | cut -d ' ' -f 4)
+                  vGBsLibres=$(echo "scale=2; $vEspacioLibre/1024/1024" | bc)
+                echo ""
+                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo qwen3:32b-fp16.${cFinColor}"
+                echo ""
+                echo -e "${cColorRojo}      Hacen falta $vEspacioQueOcupaElModelo GB y hay sólo $vGBsLibres GB.${cFinColor}"
+                echo ""
+              fi
+
+          ;;
+
+         22)
+
+            echo ""
+            echo "  Instalando qwen3:235b-a22b-q4_K_M..."
+            echo ""
+
+            # Definir el espacio que ocupa el modelo
+              vEspacioQueOcupaElModelo=0
+
+            # Calcular espacio libre disponible antes de instalar el modelo
+              if fCalcularEspacioLibreEnCarpetaDeModelos $vEspacioQueOcupaElModelo; then
+                # Descargar
+                ollama pull qwen3:235b-a22b-q4_K_M
+              else
+                # Obtener el espacio libre en la partición raíz en kilobytes
+                  vEspacioLibre=$(df / | grep '/' | tail -1 | sed -E 's/\s+/ /g' | cut -d ' ' -f 4)
+                  vGBsLibres=$(echo "scale=2; $vEspacioLibre/1024/1024" | bc)
+                echo ""
+                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo qwen3:235b-a22b-q4_K_M.${cFinColor}"
+                echo ""
+                echo -e "${cColorRojo}      Hacen falta $vEspacioQueOcupaElModelo GB y hay sólo $vGBsLibres GB.${cFinColor}"
+                echo ""
+              fi
+
+          ;;
+
+         23)
+
+            echo ""
+            echo "  Instalando qwen3:235b-a22b-q8_0..."
+            echo ""
+
+            # Definir el espacio que ocupa el modelo
+              vEspacioQueOcupaElModelo=0
+
+            # Calcular espacio libre disponible antes de instalar el modelo
+              if fCalcularEspacioLibreEnCarpetaDeModelos $vEspacioQueOcupaElModelo; then
+                # Descargar
+                ollama pull qwen3:235b-a22b-q8_0
+              else
+                # Obtener el espacio libre en la partición raíz en kilobytes
+                  vEspacioLibre=$(df / | grep '/' | tail -1 | sed -E 's/\s+/ /g' | cut -d ' ' -f 4)
+                  vGBsLibres=$(echo "scale=2; $vEspacioLibre/1024/1024" | bc)
+                echo ""
+                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo qwen3:235b-a22b-q8_0.${cFinColor}"
+                echo ""
+                echo -e "${cColorRojo}      Hacen falta $vEspacioQueOcupaElModelo GB y hay sólo $vGBsLibres GB.${cFinColor}"
+                echo ""
+              fi
+
+          ;;
+
+         24)
+
+            echo ""
+            echo "  Instalando qwen3:235b-a22b-fp16..."
+            echo ""
+
+            # Definir el espacio que ocupa el modelo
+              vEspacioQueOcupaElModelo=0
+
+            # Calcular espacio libre disponible antes de instalar el modelo
+              if fCalcularEspacioLibreEnCarpetaDeModelos $vEspacioQueOcupaElModelo; then
+                # Descargar
+                ollama pull qwen3:235b-a22b-fp16
+              else
+                # Obtener el espacio libre en la partición raíz en kilobytes
+                  vEspacioLibre=$(df / | grep '/' | tail -1 | sed -E 's/\s+/ /g' | cut -d ' ' -f 4)
+                  vGBsLibres=$(echo "scale=2; $vEspacioLibre/1024/1024" | bc)
+                echo ""
+                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo qwen3:235b-a22b-fp16.${cFinColor}"
                 echo ""
                 echo -e "${cColorRojo}      Hacen falta $vEspacioQueOcupaElModelo GB y hay sólo $vGBsLibres GB.${cFinColor}"
                 echo ""
