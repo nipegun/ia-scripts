@@ -1,3 +1,7 @@
+#
+# script no terminado
+
+
 #!/bin/bash
 
 # Pongo a disposición pública este script bajo el término de "software de dominio público".
@@ -110,21 +114,30 @@
   menu=(dialog --checklist "Marca los modelos que quieras instalar:" 22 80 16)
     opciones=(
 
-      1 "ciberseguridad 1b-it-q4_K_M  ( 0,9 GB en disco) ( 1,4 GB en RAM/VRAM)" off
-      2 "ciberseguridad 1b-it-q8_0    ( 1,2 GB en disco) ( 1,6 GB en RAM/VRAM)" off
-      3 "ciberseguridad 1b-it-fp16    ( 2,1 GB en disco) ( 2,8 GB en RAM/VRAM)" off
+      1 "ciberseguridad saki007ster/CybersecurityRiskAnalyst ( 4,8 GB en disco) ( 0,0 GB en RAM/VRAM)" off
 
-      4 "ciberseguridad 4b-it-q4_K_M  ( 3,4 GB en disco) ( 4,4 GB en RAM/VRAM)" off
-      5 "ciberseguridad 4b-it-q8_0    ( 5,1 GB en disco) ( 6,1 GB en RAM/VRAM)" off
-      6 "ciberseguridad 4b-it-fp16    ( 8,7 GB en disco) (10,2 GB en RAM/VRAM)" off
+      2 "lazarevtill/Llama-3-WhiteRabbitNeo-8B-v2.0:q4_0  ( 5,1 GB en disco) ( 0,0 GB en RAM/VRAM)" off
+      3 "lazarevtill/Llama-3-WhiteRabbitNeo-8B-v2.0       (16,1 GB en disco) ( 0,0 GB en RAM/VRAM)" off
 
-      7 "ciberseguridad 12b-it-q4_K_M ( 8,2 GB en disco) (10,1 GB en RAM/VRAM)" off
-      8 "ciberseguridad 12b-it-q8_0   (13,2 GB en disco) (15,3 GB en RAM/VRAM)" off
-      9 "ciberseguridad 12b-it-fp16   (24,2 GB en disco) (26,8 GB en RAM/VRAM)" off
+      4 "lazarevtill/WhiteRabbitNeo-2.5-Qwen-2.5-Coder-7B:4b-it-q4_K_M ( 5,3 GB en disco) ( 0,0 GB en RAM/VRAM)" off
+      5 "lazarevtill/WhiteRabbitNeo-2.5-Qwen-2.5-Coder-7B:fp16         (15,1 GB en disco) ( 0,0 GB en RAM/VRAM)" off
 
-     10 "ciberseguridad 27b-it-q4_K_M (17,2 GB en disco) (19,7 GB en RAM/VRAM)" off
-     11 "ciberseguridad 27b-it-q8_0   (29,2 GB en disco) (31,6 GB en RAM/VRAM)" off
-     12 "ciberseguridad 27b-it-fp16   (54,2 GB en disco) (57,1 GB en RAM/VRAM)" off
+      6 "qingmian/Qwen2.5-14B-CyberSecurity            (29,1 GB en disco) ( 0,0 GB en RAM/VRAM)" off
+
+      7 "kala185/CyberKiller:0.1                       ( 2,1 GB en disco) ( 0,0 GB en RAM/VRAM)" off
+
+      8 "csalab/csai                                   ( 4,2 GB en disco) ( 0,0 GB en RAM/VRAM)" off
+
+      9 " pull kangali/room-coder                      ( 4,8 GB en disco) ( 0,0 GB en RAM/VRAM)" off
+
+     10 "kangali/room-research                         ( 4,2 GB en disco) ( 0,0 GB en RAM/VRAM)" off
+
+     11 "ALIENTELLIGENCE/cybersecuritymonitoring       (4,8 GB en disco) (0,0 GB en RAM/VRAM)" off
+     12 "ALIENTELLIGENCE/cyberaisecurity               (4,8 GB en disco) (0,0 GB en RAM/VRAM)" off
+     13 "ALIENTELLIGENCE/cyberaisecurityv2             (4,8 GB en disco) (0,0 GB en RAM/VRAM)" off
+     14 "ALIENTELLIGENCE/cybersecuritythreatanalysis   (4,8 GB en disco) (0,0 GB en RAM/VRAM)" off
+     15 "ALIENTELLIGENCE/cybersecuritythreatanalysisv2 (4,8 GB en disco) (0,0 GB en RAM/VRAM)" off
+     16 "ALIENTELLIGENCE/streamingdefenselevel3        (4,8 GB en disco) (0,0 GB en RAM/VRAM)" off
 
     )
   choices=$("${menu[@]}" "${opciones[@]}" 2>&1 >/dev/tty)
