@@ -9,10 +9,10 @@
 # Script de NiPeGun para instalar y configurar los diferentes modelos de razonamiento para LlamaCPP en Debian
 #
 # Ejecución remota (puede requerir permisos sudo):
-#   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCLI/Modelos/LlamaCPP-Modelos-Razonamiento.sh | bash
+#   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCLI/LlamaCPP-Modelos-Instalar-Razonamiento.sh | bash
 #
 # Ejecución remota como root:
-#   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCLI/Modelos/LlamaCPP-Modelos-Razonamiento.sh | sed 's-sudo--g' | bash
+#   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCLI/LlamaCPP-Modelos-Instalar-Razonamiento.sh | sed 's-sudo--g' | bash
 
 
 sudo curl -L https://huggingface.co/lmstudio-community/DeepSeek-R1-Distill-Qwen-1.5B-GGUF/resolve/main/DeepSeek-R1-Distill-Qwen-1.5B-Q8_0.gguf   -O
