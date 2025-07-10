@@ -265,19 +265,19 @@ elif [ $cVerSO == "12" ]; then
               echo ""
               echo "  Creando el servicio..."
               echo ""
-              echo "[Unit]"                                                        > /usr/lib/systemd/system/text-generation-webui.service
-              echo "Description=TextGeneration WebUI Service"                     >> /usr/lib/systemd/system/text-generation-webui.service
-              echo "After=network.target"                                         >> /usr/lib/systemd/system/text-generation-webui.service
-              echo ""                                                             >> /usr/lib/systemd/system/text-generation-webui.service
-              echo "[Service]"                                                    >> /usr/lib/systemd/system/text-generation-webui.service
-              echo "Type=simple"                                                  >> /usr/lib/systemd/system/text-generation-webui.service
-              echo "ExecStart=/opt/text-generation-webui/start_linux.sh --listen" >> /usr/lib/systemd/system/text-generation-webui.service
-              echo "ExecStop=/bin/kill -HUP $MAINPID"                             >> /usr/lib/systemd/system/text-generation-webui.service
-              echo "User=root"                                                    >> /usr/lib/systemd/system/text-generation-webui.service
-              echo "Group=root"                                                   >> /usr/lib/systemd/system/text-generation-webui.service
-              echo ""                                                             >> /usr/lib/systemd/system/text-generation-webui.service
-              echo "[Install]"                                                    >> /usr/lib/systemd/system/text-generation-webui.service
-              echo "WantedBy=multi-user.target"                                   >> /usr/lib/systemd/system/text-generation-webui.service
+              echo "[Unit]"                                                       | sudo tee    /usr/lib/systemd/system/text-generation-webui.service
+              echo "Description=TextGeneration WebUI Service"                     | sudo tee -a /usr/lib/systemd/system/text-generation-webui.service
+              echo "After=network.target"                                         | sudo tee -a /usr/lib/systemd/system/text-generation-webui.service
+              echo ""                                                             | sudo tee -a /usr/lib/systemd/system/text-generation-webui.service
+              echo "[Service]"                                                    | sudo tee -a /usr/lib/systemd/system/text-generation-webui.service
+              echo "Type=simple"                                                  | sudo tee -a /usr/lib/systemd/system/text-generation-webui.service
+              echo "ExecStart=/opt/text-generation-webui/start_linux.sh --listen" | sudo tee -a /usr/lib/systemd/system/text-generation-webui.service
+              echo "ExecStop=/bin/kill -HUP $MAINPID"                             | sudo tee -a /usr/lib/systemd/system/text-generation-webui.service
+              echo "User=root"                                                    | sudo tee -a /usr/lib/systemd/system/text-generation-webui.service
+              echo "Group=root"                                                   | sudo tee -a /usr/lib/systemd/system/text-generation-webui.service
+              echo ""                                                             | sudo tee -a /usr/lib/systemd/system/text-generation-webui.service
+              echo "[Install]"                                                    | sudo tee -a /usr/lib/systemd/system/text-generation-webui.service
+              echo "WantedBy=multi-user.target"                                   | sudo tee -a /usr/lib/systemd/system/text-generation-webui.service
 
             # Activar e iniciar el servicio
               echo ""
@@ -321,7 +321,7 @@ elif [ $cVerSO == "12" ]; then
                 sudo apt-get -y install curl
                 echo ""
               fi
-            curl -sL -H 'Cache-Control: no-cache, no-store' https://raw.githubusercontent.com/nipegun/ia-scripts/master/SoftInst/ParaCLI/ModelosLLM-Instalar-TextGenerationWebUI.sh | bash
+            curl -sL -H 'Cache-Control: no-cache, no-store' https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCLI/TextGenerationWebUI-Modelos-Instalar-LLM.sh | bash
 
           ;;
 
@@ -365,7 +365,7 @@ elif [ $cVerSO == "12" ]; then
                 sudo apt-get -y install curl
                 echo ""
               fi
-            curl -sL -H 'Cache-Control: no-cache, no-store' https://raw.githubusercontent.com/nipegun/ia-scripts/master/SoftInst/ParaCLI/ModelosLLM-Instalar-LMStudio.sh | bash
+            curl -sL -H 'Cache-Control: no-cache, no-store' https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCLI/LMStudio-Modelos-Instalar-LLM.sh | bash
 
           ;;
 
@@ -396,7 +396,7 @@ elif [ $cVerSO == "12" ]; then
                   sudo apt-get -y install curl
                   echo ""
                 fi
-              curl -sL https://raw.githubusercontent.com/nipegun/d-scripts/master/SoftInst/ParaCLI/NodeJS-InstalarYConfigurar.sh | sudo bash
+              curl -sL https://raw.githubusercontent.com/nipegun/d-scripts/refs/heads/master/SoftInst/ParaCLI/Node.js-InstalarYConfigurar.sh | sudo bash
 
             # Instalar FlowiseAI con NPM
               echo ""
