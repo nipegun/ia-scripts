@@ -9,7 +9,7 @@
 # Script de NiPeGun para instalar y configurar los diferentes modelos LLM de Llama para Ollama en Debian
 #
 # Ejecución remota:
-#   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCLI/Modelos/Ollama-Llama.sh | bash
+#   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCLI/Modelos/Ollama-Modelos-LLM-Llama.sh | bash
 # ----------
 
 # Definir constantes de color
