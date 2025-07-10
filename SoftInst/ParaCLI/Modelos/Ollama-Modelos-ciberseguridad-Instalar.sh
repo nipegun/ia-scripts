@@ -13,10 +13,10 @@
 # Script de NiPeGun para instalar y configurar los diferentes modelos de ciberseguridad en Ollama para Debian
 #
 # Ejecución remota (Puede requerir permisos sudo):
-#   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCli/Modelos/Ollama-Modelos-ciberseguridad-Instalar.sh | bash
+#   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCLI/Modelos/Ollama-Modelos-ciberseguridad-Instalar.sh | bash
 #
 # Ejecución remota como root (Para sistemas sin sudo):
-#   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCli/Modelos/Ollama-Modelos-ciberseguridad-Instalar.sh | sed 's-sudo--g' | bash
+#   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCLI/Modelos/Ollama-Modelos-ciberseguridad-Instalar.sh | sed 's-sudo--g' | bash
 # ----------
 
 # Definir constantes de color
