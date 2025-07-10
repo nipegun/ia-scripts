@@ -6,7 +6,7 @@
 # No tienes que aceptar ningún tipo de términos de uso o licencia para utilizarlo o modificarlo porque va sin CopyLeft.
 
 # ----------
-# Script de NiPeGun para instalar y configurar los diferentes modelos de qwen3 en Ollama para Debian
+# Script de NiPeGun para instalar y configurar los diferentes modelos LLM de qwen 3 para Ollama en Debian
 #
 # Ejecución remota (Puede requerir permisos sudo):
 #   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCLI/Modelos/Ollama-Modelos-LLM-qwen3-Instalar.sh | bash
