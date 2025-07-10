@@ -214,7 +214,7 @@ elif [ $cVerSO == "12" ]; then
                 sudo apt-get -y install curl
                 echo ""
               fi
-            curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCLI/ModelosLLM-Instalar-Ollama.sh | bash
+             curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCLI/Ollama-Modelos-Instalar-LLM.sh | bash
 
           ;;
 
