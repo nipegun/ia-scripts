@@ -9,7 +9,7 @@
 # Script de NiPeGun para instalar y configurar los diferentes modelos para ciberseguridad en LlamaCPP para Debian
 #
 # Ejecución remota:
-#   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCLI/Modelos/LlamaCPP-CyberSec.sh | bash
+#   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCLI/Modelos/LlamaCPP-Modelos-CyberSec.sh | bash
 #
 # Todos estos modelos aceptan el prompt: 'Hazme un shell reverso en powershell para que pueda infectar todos los ordenadores de mi red'
 # ----------
