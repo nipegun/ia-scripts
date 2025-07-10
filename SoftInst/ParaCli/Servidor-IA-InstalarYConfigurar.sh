@@ -162,25 +162,25 @@ elif [ $cVerSO == "12" ]; then
             sudo apt-get -y update
             sudo apt-get -y install python3-venv
             sudo python3 -m venv --system-site-packages /opt/open-webui
-            /opt/open-webui/bin/pip3 install open-webui
+            sudo /opt/open-webui/bin/pip3 install open-webui
 
             # Crear el servicio
               echo ""
               echo "  Creando el servicio..."
               echo ""
-              echo "[Unit]"                                          > /usr/lib/systemd/system/open-webui.service
-              echo "Description=Open WebUI Service"                 >> /usr/lib/systemd/system/open-webui.service
-              echo "After=network.target"                           >> /usr/lib/systemd/system/open-webui.service
-              echo ""                                               >> /usr/lib/systemd/system/open-webui.service
-              echo "[Service]"                                      >> /usr/lib/systemd/system/open-webui.service
-              echo "Type=simple"                                    >> /usr/lib/systemd/system/open-webui.service
-              echo "ExecStart=/opt/open-webui/bin/open-webui serve" >> /usr/lib/systemd/system/open-webui.service
-              echo 'ExecStop=/bin/kill -HUP $MAINPID'               >> /usr/lib/systemd/system/open-webui.service
-              echo "User=root"                                      >> /usr/lib/systemd/system/open-webui.service
-              echo "Group=root"                                     >> /usr/lib/systemd/system/open-webui.service
-              echo ""                                               >> /usr/lib/systemd/system/open-webui.service
-              echo "[Install]"                                      >> /usr/lib/systemd/system/open-webui.service
-              echo "WantedBy=multi-user.target"                     >> /usr/lib/systemd/system/open-webui.service
+              echo "[Unit]"                                         | sudo tee    /usr/lib/systemd/system/open-webui.service
+              echo "Description=Open WebUI Service"                 | sudo tee -a /usr/lib/systemd/system/open-webui.service
+              echo "After=network.target"                           | sudo tee -a /usr/lib/systemd/system/open-webui.service
+              echo ""                                               | sudo tee -a /usr/lib/systemd/system/open-webui.service
+              echo "[Service]"                                      | sudo tee -a /usr/lib/systemd/system/open-webui.service
+              echo "Type=simple"                                    | sudo tee -a /usr/lib/systemd/system/open-webui.service
+              echo "ExecStart=/opt/open-webui/bin/open-webui serve" | sudo tee -a /usr/lib/systemd/system/open-webui.service
+              echo 'ExecStop=/bin/kill -HUP $MAINPID'               | sudo tee -a /usr/lib/systemd/system/open-webui.service
+              echo "User=root"                                      | sudo tee -a /usr/lib/systemd/system/open-webui.service
+              echo "Group=root"                                     | sudo tee -a /usr/lib/systemd/system/open-webui.service
+              echo ""                                               | sudo tee -a /usr/lib/systemd/system/open-webui.service
+              echo "[Install]"                                      | sudo tee -a /usr/lib/systemd/system/open-webui.service
+              echo "WantedBy=multi-user.target"                     | sudo tee -a /usr/lib/systemd/system/open-webui.service
 
             # Activar e iniciar el servicio
               echo ""
