@@ -9,13 +9,13 @@
 # Script de NiPeGun para instalar modelos de whisper para whisper.cpp en Debian
 #
 # Ejecución remota:
-#   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCLI/WhisperCPP-InstalarModelos.sh | bash
+#   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCLI/WhisperCPP-Modelos-Instalar.sh | bash
 #
 # Ejecución remota como root:
-#   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCLI/WhisperCPP-InstalarModelos.sh | sed 's-sudo--g' | bash
+#   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCLI/WhisperCPP-Modelos-Instalar.sh | sed 's-sudo--g' | bash
 #
 # Bajar y editar directamente el archivo en nano
-#   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCLI/WhisperCPP-InstalarModelos.sh | nano -
+#   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCLI/WhisperCPP-Modelos-Instalar.sh | nano -
 # ----------
 
 # Definir constantes de color
