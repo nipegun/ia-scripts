@@ -9,10 +9,10 @@
 # Script de NiPeGun para instalar y configurar los diferentes modelos Coder de DeepSeek para Ollama en Debian
 #
 # Ejecución remota (puede requerir permisos sudo):
-#   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCLI/Modelos/Ollama-Modelos-CyberSec-WhiteRabbitNeo.sh | bash
+#   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCLI/Modelos/Ollama-Modelos-Coder-DeepSeek.sh | bash
 #
 # Ejecución remota como root:
-#   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCLI/Modelos/Ollama-Modelos-CyberSec-WhiteRabbitNeo.sh | sed 's-sudo--g' | bash
+#   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCLI/Modelos/Ollama-Modelos-Coder-DeepSeek.sh | sed 's-sudo--g' | bash
 # ----------
      
      49 "deepseek-coder-v2 16b-lite-instruct-q4_K_M (x,x GB en disco) (x,x GB en VRAM)" off
