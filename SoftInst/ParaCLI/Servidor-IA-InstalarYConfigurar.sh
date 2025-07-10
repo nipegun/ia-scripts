@@ -81,15 +81,15 @@ elif [ $cVerSO == "12" ]; then
       fi
     menu=(dialog --checklist "Marca las opciones que quieras instalar:" 22 96 16)
       opciones=(
-        1 "Instalar Ollama"                                  off
-        2 "  Instalar Open WebUI"                            off
-        3 "  Instalar modelos LLM para Ollama"               off
+        1 "Instalar Ollama"                                  on
+        2 "  Instalar Open WebUI"                            on
+        3 "  Instalar modelos LLM para Ollama"               on
         4 "Instalar TextGeneration WebUI"                    off
         5 "  Instalar modelos LLM para TextGeneration WebUI" off
         6 "Instalar LMStudio"                                off
         7 "  Instalar modelos LLM para LMStudio"             off
         8 "Instalar AnythingLLM"                             off
-        9 "Instalar FlowiseAI"                               off
+        9 "Instalar FlowiseAI"                               on
        10 "Instalar LibreChat"                               off
        11 "Instalar LiteLLM"                                 off 
       )
