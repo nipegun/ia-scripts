@@ -9,7 +9,7 @@
 # Script de NiPeGun para instalar y configurar los diferentes modelos de Llama Vision en Ollama para Debian
 #
 # Ejecución remota:
-#   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCli/Modelos/Ollama-Vision-Llama.sh | bash
+#   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCLI/Modelos/Ollama-Vision-Llama.sh | bash
 # ----------
 
 # Definir constantes de color
