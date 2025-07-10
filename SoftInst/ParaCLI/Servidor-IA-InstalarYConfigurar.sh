@@ -9,10 +9,10 @@
 # Script de NiPeGun para instalar y configurar un servidor de inteligencia artificial en Debian
 #
 # Ejecución remota (puede requerir permisos sudo):
-#   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCli/Servidor-IA-InstalarYConfigurar.sh | bash
+#   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCLI/Servidor-IA-InstalarYConfigurar.sh | bash
 #
 # Ejecución remota como root:
-#   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCli/Servidor-IA-InstalarYConfigurar.sh | sed 's-sudo--g' | bash
+#   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCLI/Servidor-IA-InstalarYConfigurar.sh | sed 's-sudo--g' | bash
 # ----------
 
 # Indicar cuál es el usuario no root
