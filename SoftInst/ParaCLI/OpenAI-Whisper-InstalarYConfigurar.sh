@@ -9,13 +9,13 @@
 # Script de NiPeGun para instalar OpenAI Whisper en Debian
 #
 # Ejecución remota:
-#   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCli/OpenAI-Whisper-InstalarYConfigurar.sh | bash
+#   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCLI/OpenAI-Whisper-InstalarYConfigurar.sh | bash
 #
 # Ejecución remota como root:
-#   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCli/OpenAI-Whisper-InstalarYConfigurar.sh | sed 's-sudo--g' | bash
+#   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCLI/OpenAI-Whisper-InstalarYConfigurar.sh | sed 's-sudo--g' | bash
 #
 # Descargar y editar directamente el archivo en nano
-#   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCli/OpenAI-Whisper-InstalarYConfigurar.sh | nano -
+#   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCLI/OpenAI-Whisper-InstalarYConfigurar.sh | nano -
 # ----------
 
 # Definir constantes de color
