@@ -45,7 +45,8 @@
     echo ""
     echo -e "${cColorRojo}    El paquete dialog no está instalado. Iniciando su instalación...${cFinColor}"
     echo ""
-    apt-get -y update && apt-get -y install dialog
+    sudo apt-get -y update
+    sudo apt-get -y install dialog
     echo ""
   fi
 
@@ -74,7 +75,7 @@
             echo "  Instalando modelos de dolphin-mistral..."
             echo ""
 
-            curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/master/SoftInst/ParaCLI/ModelosLLM-Instalar-Ollama-Dolphin-Mistral.sh | bash
+            curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCLI/Modelos/Ollama-Dolphin-Uncensored.sh | bash
 
           ;;
 
@@ -84,7 +85,7 @@
             echo "  Instalando modelos de Llama..."
             echo ""
 
-            curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/master/SoftInst/ParaCLI/ModelosLLM-Instalar-Ollama-Llama.sh | bash
+            curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCLI/Modelos/Ollama-Llama.sh | bash
 
           ;;
 
@@ -94,7 +95,7 @@
             echo "  Instalando modelos de Qwen..."
             echo ""
 
-            curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/master/SoftInst/ParaCLI/ModelosLLM-Instalar-Ollama-Qwen.sh | bash
+            curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCLI/Modelos/Ollama-Qwen.sh | bash
 
           ;;
 
@@ -104,7 +105,7 @@
             echo "  Instalando modelos de Mistral..."
             echo ""
 
-            curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/master/SoftInst/ParaCLI/ModelosLLM-Instalar-Ollama-Mistral.sh | bash
+            curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCLI/Modelos/Ollama-Mistral.sh | bash
 
           ;;
 
@@ -114,7 +115,7 @@
             echo "  Instalando modelos de Phi..."
             echo ""
 
-            curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/master/SoftInst/ParaCLI/ModelosLLM-Instalar-Ollama-Phi.sh | bash
+            curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCLI/Modelos/Ollama-Phi.sh | bash
 
           ;;
 
@@ -124,7 +125,7 @@
             echo "  Instalando modelos de DeepSeekCoder..."
             echo ""
 
-            curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/master/SoftInst/ParaCLI/ModelosLLM-Instalar-Ollama-DeepSeekCoder.sh | bash
+            curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCLI/Modelos/Ollama-Coder-DeepSeek.sh | bash
 
           ;;
 
@@ -134,7 +135,7 @@
             echo "  Instalando modelos de Gemma..."
             echo ""
 
-            curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/master/SoftInst/ParaCLI/ModelosLLM-Instalar-Ollama-Gemma.sh | bash
+            curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCLI/Modelos/Ollama-Gemma.sh | bash
 
           ;;
 
