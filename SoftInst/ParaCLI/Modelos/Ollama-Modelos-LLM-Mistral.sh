@@ -9,10 +9,10 @@
 # Script de NiPeGun para instalar y configurar los diferentes modelos LLM de Mistral para Ollama en Debian
 #
 # Ejecución remota (puede requerir permisos sudo):
-#   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCLI/Modelos/Ollama-Modelos-CyberSec-WhiteRabbitNeo.sh | bash
+#   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCLI/Modelos/Ollama-Modelos-LLM-Mistral.sh | bash
 #
 # Ejecución remota como root:
-#   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCLI/Modelos/Ollama-Modelos-CyberSec-WhiteRabbitNeo.sh | sed 's-sudo--g' | bash
+#   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCLI/Modelos/Ollama-Modelos-LLM-Mistral.sh | sed 's-sudo--g' | bash
 # ----------
 
      40 "mistral 7b-instruct-q4_0 ( 4,2 GB en disco) ( 7,2 GB en VRAM)" off
