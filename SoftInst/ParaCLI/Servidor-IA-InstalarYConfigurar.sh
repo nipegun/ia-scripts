@@ -214,7 +214,7 @@ elif [ $cVerSO == "12" ]; then
                 sudo apt-get -y install curl
                 echo ""
               fi
-            curl -sL -H 'Cache-Control: no-cache, no-store' https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCli/ModelosLLM-Instalar-Ollama.sh | bash
+            curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCLI/ModelosLLM-Instalar-Ollama.sh | bash
 
           ;;
 
