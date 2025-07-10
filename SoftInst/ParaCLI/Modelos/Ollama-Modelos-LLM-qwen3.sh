@@ -9,10 +9,10 @@
 # Script de NiPeGun para instalar y configurar los diferentes modelos LLM de qwen 3 para Ollama en Debian
 #
 # Ejecución remota (Puede requerir permisos sudo):
-#   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCLI/Modelos/Ollama-Modelos-LLM-qwen3-Instalar.sh | bash
+#   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCLI/Modelos/Ollama-Modelos-LLM-qwen3.sh | bash
 #
 # Ejecución remota como root (Para sistemas sin sudo):
-#   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCLI/Modelos/Ollama-Modelos-LLM-qwen3-Instalar.sh | sed 's-sudo--g' | bash
+#   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCLI/Modelos/Ollama-Modelos-LLM-qwen3.sh | sed 's-sudo--g' | bash
 # ----------
 
 # Definir constantes de color
