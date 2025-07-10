@@ -18,10 +18,6 @@
 # Indicar cuál es el usuario no root
   vUsuarioNoRoot="usuariox"
 
-# Indicar usuario y contraseña para conectarse a la web de Flowise
-  vUsuarioWebFlowise="flowise"
-  vContraWebFlowise="flowise"
-
 # -------------------------
 # NO TOCAR A PARTIR DE AQUÍ
 # -------------------------
@@ -418,27 +414,28 @@ elif [ $cVerSO == "12" ]; then
               echo ""
               sudo mkdir -p /opt/flowise/ 2> /dev/null
               sudo useradd -d /opt/flowise/ -s /bin/false flowise
-              sudo chown flowise:flowise /opt/flowise -R 2> /dev/null
+              sudo chown flowise:flowise /opt/flowise -Rv 2> /dev/null
 
             # Crear el servicio de systemd para flowiseai
-              echo "[Unit]"                                                                                                                | sudo tee    /etc/systemd/system/flowise.service
-              echo "Description=FlowiseAI"                                                                                                 | sudo tee -a /etc/systemd/system/flowise.service
-              echo "After=network.target"                                                                                                  | sudo tee -a /etc/systemd/system/flowise.service
-              echo ""                                                                                                                      | sudo tee -a /etc/systemd/system/flowise.service
-              echo "[Service]"                                                                                                             | sudo tee -a /etc/systemd/system/flowise.service
-              echo "Type=notify"                                                                                                           | sudo tee -a /etc/systemd/system/flowise.service
-              echo "ExecStart=/opt/flowise/bin/flowise start --FLOWISE_USERNAME=$vUsuarioWebFlowise --FLOWISE_PASSWORD=$vContraWebFlowise" | sudo tee -a /etc/systemd/system/flowise.service
-              echo "WorkingDirectory=/opt/flowise"                                                                                         | sudo tee -a /etc/systemd/system/flowise.service
-              echo "Restart=always"                                                                                                        | sudo tee -a /etc/systemd/system/flowise.service
-              echo "User=flowise"                                                                                                          | sudo tee -a /etc/systemd/system/flowise.service
-              echo "Group=flowise"                                                                                                         | sudo tee -a /etc/systemd/system/flowise.service
-              echo ""                                                                                                                      | sudo tee -a /etc/systemd/system/flowise.service
-              echo "[Install]"                                                                                                             | sudo tee -a /etc/systemd/system/flowise.service
-              echo "WantedBy=multi-user.target"                                                                                            | sudo tee -a /etc/systemd/system/flowise.service
+              echo "[Unit]"                                   | sudo tee    /etc/systemd/system/flowise.service
+              echo "Description=FlowiseAI"                    | sudo tee -a /etc/systemd/system/flowise.service
+              echo "After=network.target"                     | sudo tee -a /etc/systemd/system/flowise.service
+              echo ""                                         | sudo tee -a /etc/systemd/system/flowise.service
+              echo "[Service]"                                | sudo tee -a /etc/systemd/system/flowise.service
+              echo "Type=notify"                              | sudo tee -a /etc/systemd/system/flowise.service
+              echo "ExecStart=/opt/flowise/bin/flowise start" | sudo tee -a /etc/systemd/system/flowise.service
+              echo "WorkingDirectory=/opt/flowise"            | sudo tee -a /etc/systemd/system/flowise.service
+              echo "Restart=always"                           | sudo tee -a /etc/systemd/system/flowise.service
+              echo "User=flowise"                             | sudo tee -a /etc/systemd/system/flowise.service
+              echo "Group=flowise"                            | sudo tee -a /etc/systemd/system/flowise.service
+              echo ""                                         | sudo tee -a /etc/systemd/system/flowise.service
+              echo "[Install]"                                | sudo tee -a /etc/systemd/system/flowise.service
+              echo "WantedBy=multi-user.target"               | sudo tee -a /etc/systemd/system/flowise.service
 
             # Activar e iniciar el servicio
               sudo systemctl daemon-reload
-              sudo systemctl enable flowise.service --now
+              sudo systemctl enable flowise.service
+              sudo systemctl start flowise.service
 
             # Notificar fin de instalación
               echo ""
