@@ -19,8 +19,8 @@
   vUsuarioNoRoot="usuariox"
 
 # Indicar usuario y contraseña para conectarse a la web de Flowise
-  vUsuarioWebFlowise="usuariox"
-  vContraWebFlowise="UsuarioX"
+  vUsuarioWebFlowise="flowise"
+  vContraWebFlowise="flowise"
 
 # -------------------------
 # NO TOCAR A PARTIR DE AQUÍ
@@ -403,7 +403,14 @@ elif [ $cVerSO == "12" ]; then
               echo "    Continuando con la instalación de FlowiseAI..."
               echo ""
               # Hacer la instalación global (-g) en la carpeta /opt/flowise/
-                sudo npm install -g flowise --prefix /opt/flowise/
+                sudo npm install --prefix /opt/flowise/ -g flowise@latest
+                sudo npm install --prefix /opt/flowise/ -g turndown
+                sudo npm install --prefix /opt/flowise/ -g @opentelemetry/exporter-trace-otlp-grpc
+                sudo npm install --prefix /opt/flowise/ -g @opentelemetry/exporter-trace-otlp-proto
+                sudo npm install --prefix /opt/flowise/ -g @opentelemetry/sdk-trace-node
+                sudo npm install --prefix /opt/flowise/ -g langchainhub
+                sudo npm install --prefix /opt/flowise/ -g @langchain/community
+
 
             # Agregar el usuario mattermost
               echo ""
