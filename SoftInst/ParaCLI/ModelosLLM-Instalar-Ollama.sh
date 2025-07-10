@@ -9,13 +9,13 @@
 # Script de NiPeGun para instalar y configurar diferentes modelos LLM de Ollama en Debian
 #
 # Ejecución remota:
-#   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCli/ModelosLLM-Instalar-Ollama.sh | bash
+#   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCLI/ModelosLLM-Instalar-Ollama.sh | bash
 #
 # Ejecución remota sin caché:
-#   curl -sL -H 'Cache-Control: no-cache, no-store' https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCli/ModelosLLM-Instalar-Ollama.sh | bash
+#   curl -sL -H 'Cache-Control: no-cache, no-store' https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCLI/ModelosLLM-Instalar-Ollama.sh | bash
 #
 # Ejecución remota con parámetros:
-#   curl -sL x | bash -s Parámetro1 Parámetro2
+#   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCLI/ModelosLLM-Instalar-Ollama.sh | bash -s Parámetro1 Parámetro2
 # ----------
 
 # Definir constantes de color
