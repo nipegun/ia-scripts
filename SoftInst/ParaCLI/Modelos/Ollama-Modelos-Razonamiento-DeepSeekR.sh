@@ -9,7 +9,7 @@
 # Script de NiPeGun para instalar y configurar los diferentes modelos de DeepSeekR en Ollama para Debian
 #
 # Ejecución remota:
-#   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCLI/Modelos/Ollama-DeepSeekR.sh | bash
+#   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCLI/Modelos/Ollama-Modelos-Razonamiento-DeepSeekR.sh | bash
 # ----------
 
 # Definir constantes de color
