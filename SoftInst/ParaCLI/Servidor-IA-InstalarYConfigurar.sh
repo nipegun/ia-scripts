@@ -414,24 +414,24 @@ elif [ $cVerSO == "12" ]; then
               sudo chown flowise:flowise /opt/flowise -R 2> /dev/null
 
             # Crear el servicio de systemd para flowiseai
-              echo "[Unit]"                                                                                                                 > /etc/systemd/system/flowise.service
-              echo "Description=FlowiseAI"                                                                                                 >> /etc/systemd/system/flowise.service
-              echo "After=network.target"                                                                                                  >> /etc/systemd/system/flowise.service
-              echo ""                                                                                                                      >> /etc/systemd/system/flowise.service
-              echo "[Service]"                                                                                                             >> /etc/systemd/system/flowise.service
-              echo "Type=notify"                                                                                                           >> /etc/systemd/system/flowise.service
-              echo "ExecStart=/opt/flowise/bin/flowise start --FLOWISE_USERNAME=$vUsuarioWebFlowise --FLOWISE_PASSWORD=$vContraWebFlowise" >> /etc/systemd/system/flowise.service
-              echo "WorkingDirectory=/opt/flowise"                                                                                         >> /etc/systemd/system/flowise.service
-              echo "Restart=always"                                                                                                        >> /etc/systemd/system/flowise.service
-              echo "User=flowise"                                                                                                          >> /etc/systemd/system/flowise.service
-              echo "Group=flowise"                                                                                                         >> /etc/systemd/system/flowise.service
-              echo ""                                                                                                                      >> /etc/systemd/system/flowise.service
-              echo "[Install]"                                                                                                             >> /etc/systemd/system/flowise.service
-              echo "WantedBy=multi-user.target"                                                                                            >> /etc/systemd/system/flowise.service
+              echo "[Unit]"                                                                                                                | sudo tee    /etc/systemd/system/flowise.service
+              echo "Description=FlowiseAI"                                                                                                 | sudo tee -a /etc/systemd/system/flowise.service
+              echo "After=network.target"                                                                                                  | sudo tee -a /etc/systemd/system/flowise.service
+              echo ""                                                                                                                      | sudo tee -a /etc/systemd/system/flowise.service
+              echo "[Service]"                                                                                                             | sudo tee -a /etc/systemd/system/flowise.service
+              echo "Type=notify"                                                                                                           | sudo tee -a /etc/systemd/system/flowise.service
+              echo "ExecStart=/opt/flowise/bin/flowise start --FLOWISE_USERNAME=$vUsuarioWebFlowise --FLOWISE_PASSWORD=$vContraWebFlowise" | sudo tee -a /etc/systemd/system/flowise.service
+              echo "WorkingDirectory=/opt/flowise"                                                                                         | sudo tee -a /etc/systemd/system/flowise.service
+              echo "Restart=always"                                                                                                        | sudo tee -a /etc/systemd/system/flowise.service
+              echo "User=flowise"                                                                                                          | sudo tee -a /etc/systemd/system/flowise.service
+              echo "Group=flowise"                                                                                                         | sudo tee -a /etc/systemd/system/flowise.service
+              echo ""                                                                                                                      | sudo tee -a /etc/systemd/system/flowise.service
+              echo "[Install]"                                                                                                             | sudo tee -a /etc/systemd/system/flowise.service
+              echo "WantedBy=multi-user.target"                                                                                            | sudo tee -a /etc/systemd/system/flowise.service
 
             # Activar e iniciar el servicio
-              systemctl daemon-reload
-              systemctl enable flowise.service --now
+              sudo systemctl daemon-reload
+              sudo systemctl enable flowise.service --now
 
             # Notificar fin de instalación
               echo ""
@@ -475,7 +475,7 @@ elif [ $cVerSO == "12" ]; then
                   sudo apt-get -y install curl
                   echo ""
                 fi
-              curl -sL https://raw.githubusercontent.com/nipegun/d-scripts/master/SoftInst/ParaCLI/Node.js-InstalarYConfigurar.sh | sudo bash
+              curl -sL https://raw.githubusercontent.com/nipegun/d-scripts/refs/heads/master/SoftInst/ParaCLI/Node.js-InstalarYConfigurar.sh | sudo bash
 
             # Instalar MongoDB
               echo ""
