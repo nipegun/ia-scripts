@@ -9,13 +9,13 @@
 # Script de NiPeGun para consultar la API de Ollama desde bash
 #
 # Ejecución remota con parámetros (puede requerir permisos sudo):
-#   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/API-Ollama-Consultar.sh | sudo bash -s [IP] [Puerto] ['Modelo'] ['Prompt']
+#   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/API-Ollama-LanzarPrompt-CrearUnaFuncionEnPythonQue.sh | sudo bash -s [IP] [Puerto] ['Modelo'] ['Prompt']
 #
 # Ejecución remota con parámetros vomo root (para sistemas sin sudo):
-#   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/API-Ollama-Consultar.sh | sed 's-sudo--g' | bash -s [IP] [Puerto] ['Modelo'] ['Prompt']
+#   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/API-Ollama-LanzarPrompt-CrearUnaFuncionEnPythonQue.sh | sed 's-sudo--g' | bash -s [IP] [Puerto] ['Modelo'] ['Prompt']
 #
 # Bajar y editar directamente el archivo en nano
-#   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/API-Ollama-Consultar.sh | nano -
+#   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/API-Ollama-LanzarPrompt-CrearUnaFuncionEnPythonQue.sh | nano -
 # ----------
 
 # Definir constantes de color
