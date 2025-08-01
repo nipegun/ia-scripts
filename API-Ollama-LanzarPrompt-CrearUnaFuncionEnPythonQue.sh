@@ -9,24 +9,52 @@
 # Script de NiPeGun para consultar la API de Ollama desde bash
 #
 # Ejecución remota con parámetros (puede requerir permisos sudo):
-#   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/API-Ollama-Consultar.sh | sudo bash -s "prompt" Parámetro2 Parámetro3 Parámetro4
+#   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/API-Ollama-Consultar.sh | sudo bash -s [IP] [Puerto] ['Modelo'] ['Prompt']
 #
 # Ejecución remota con parámetros vomo root (para sistemas sin sudo):
-#   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/API-Ollama-Consultar.sh | sed 's-sudo--g' | bash -s "prompt" Parámetro2 Parámetro3 Parámetro4
+#   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/API-Ollama-Consultar.sh | sed 's-sudo--g' | bash -s [IP] [Puerto] ['Modelo'] ['Prompt']
 #
 # Bajar y editar directamente el archivo en nano
 #   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/API-Ollama-Consultar.sh | nano -
 # ----------
 
-vIP="$2"
-vIP=""
+# Definir constantes de color
+  cColorAzul="\033[0;34m"
+  cColorAzulClaro="\033[1;34m"
+  cColorVerde='\033[1;32m'
+  cColorRojo='\033[1;31m'
+  # Para el color rojo también:
+    #echo "$(tput setaf 1)Mensaje en color rojo. $(tput sgr 0)"
+  cFinColor='\033[0m'
 
-vPuerto="$3"
-vPuerto='11434'
+# Definir la cantidad de argumentos esperados
+  cCantParamEsperados=4
 
-vModelo="$4"
-vModelo='llama3.1:8b-instruct-q8_0'
+# Comprobar que se hayan pasado la cantidad de parámetros correctos. Abortar el script si no.
+  if [ $# -ne $cCantParamEsperados ]
+    then
+      echo ""
+      echo -e "${cColorRojo}  Mal uso del script. El uso correcto sería: ${cFinColor}"
+      echo ""
+      if [[ "$0" == "bash" ]]; then
+        vNombreDelScript="script.sh"
+      else
+        vNombreDelScript="$0"
+      fi
+      echo "    $vNombreDelScript [IP] [Puerto] ['Modelo'] ['Prompt']"
+      echo ""
+      echo "  Ejemplo:"
+      echo ""
+      echo "    $vNombreDelScript '10.5.0.254' '11434' 'llama3.1:8b-instruct-q8_0' 'Cuéntame un chiste'"
+      echo ""
+      exit
+  fi
 
+# Pasar parámetros a variables
+  vIP="$1"
+  vPuerto="$2"
+  vModelo="$3"
+  vPrompt="$4"
 
 # Comprobar si el paquete curl está instalado. Si no lo está, instalarlo.
   if [[ $(dpkg-query -s curl 2>/dev/null | grep installed) == "" ]]; then
@@ -49,6 +77,6 @@ vModelo='llama3.1:8b-instruct-q8_0'
   fi
 
 # Realizar la consulta
-  #curl -s http://"$vIP":"$vPuerto"/api/generate -d '{ "model": "$vModelo", "prompt": "Utilizando el lenguaje de programación Python crea una función que '"$1"'. No pongas ningún tipo de comentario en el código.", "stream": false }' | jq -r .response
-  curl -s http://"$vIP":"$vPuerto"/api/generate -d '{ "model": "$vModelo", "prompt": "Utilizando el lenguaje de programación Python crea una función que '"$1"'. No pongas ningún tipo de comentario en el código.", "stream": false }' | jq -r .response > pruebas.py
+  curl -s http://"$vIP":"$vPuerto"/api/generate -d '{ "model": "'"$vModelo"'", "prompt": "Utilizando el lenguaje de programación Python crea una función que '"$vPrompt"'. No pongas ningún tipo de comentario en el código.", "stream": false }' | jq -r .response
+  #curl -s http://"$vIP":"$vPuerto"/api/generate -d '{ "model": "'"$vModelo"'", "prompt": "Utilizando el lenguaje de programación Python crea una función que '"$vPrompt"'. No pongas ningún tipo de comentario en el código.", "stream": false }' | jq -r .response > pruebas.py
 
