@@ -8,17 +8,14 @@
 # ----------
 # Script de NiPeGun para consultar la API de Ollama desde bash
 #
-# Ejecución remota (puede requerir permisos sudo):
-#   curl -sL x | bash
+# Ejecución remota con parámetros (puede requerir permisos sudo):
+#   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/API-Ollama-Consultar.sh | sudo bash -s Parámetro1 Parámetro2 Parámetro3
 #
-# Ejecución remota como root (para sistemas sin sudo):
-#   curl -sL x | sed 's-sudo--g' | bash
-#
-# Ejecución remota con parámetros:
-#   curl -sL x | bash -s Parámetro1 Parámetro2
+# Ejecución remota con parámetros vomo root (para sistemas sin sudo):
+#   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/API-Ollama-Consultar.sh | sed 's-sudo--g' | bash -s Parámetro1 Parámetro2 Parámetro3
 #
 # Bajar y editar directamente el archivo en nano
-#   curl -sL x | nano -
+#   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/API-Ollama-Consultar.sh | nano -
 # ----------
 
 vIP="$2"
