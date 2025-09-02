@@ -336,11 +336,29 @@ if [ $cVerSO == "13" ]; then
               # Asignar permisos de ejecución
                 chmod +x $HOME/IA/LMStudio/LMStudio.AppImage
 
+            # Crear el lanzador gráfico
+              echo ""
+              echo "    Creando el lanzador gráfico..."
+              echo ""
+              echo '[Desktop Entry]'                                                 | tee    ~/.local/share/applications/lmstudio.desktop
+              echo 'Name=LMStudio'                                                   | tee -a ~/.local/share/applications/lmstudio.desktop
+              echo "Exec=setsid $HOME/IA/LMStudio/LMStudio.AppImage >/dev/null 2>&1" | tee -a ~/.local/share/applications/lmstudio.desktop
+              echo "Icon=$HOME/IA/LMStudio/LMStudioLogo.png"                         | tee -a ~/.local/share/applications/lmstudio.desktop
+              echo 'Type=Application'                                                | tee -a ~/.local/share/applications/lmstudio.desktop
+              echo 'Categories=Utility;'                                             | tee -a ~/.local/share/applications/lmstudio.desktop
+              echo 'Terminal=false'                                                  | tee -a ~/.local/share/applications/lmstudio.desktop
+              # Descargar el icono
+                curl -sL http://hacks4geeks.com/_/premium/descargas/Logos/LMStudioLogo.png --output $HOME/IA/LMStudio/LMStudioLogo.png
+
             # Notificar fin de la instalación
               echo ""
               echo "    La instalación de LMStudio ha finalizado. Para lanzarlo, ejecuta:"
               echo ""
               echo "      $HOME/IA/LMStudio/LMStudio.AppImage"
+              echo ""
+              echo "        o, preferiblemente"
+              echo ""
+              echo "      usa el lanzador gráfico."
               echo ""
 
           ;;
