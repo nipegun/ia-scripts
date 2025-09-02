@@ -243,10 +243,6 @@ if [ $cVerSO == "13" ]; then
 
             # Instalar ROCm SDK 6.1 (Para tarjetas AMD a partir de Radeon RX 6800 XT)
 
-            # Instalar el paquete
-              chmod +x /opt/text-generation-webui/start_linux.sh
-              /opt/text-generation-webui/start_linux.sh
-
             # Crear el servicio
               echo ""
               echo "  Creando el servicio..."
@@ -290,6 +286,10 @@ if [ $cVerSO == "13" ]; then
               echo "    Se ha creado el servicio. Para activarlo, ejecuta:"
               echo "      systemctl enable --now text-generation-webui.service"
               echo ""
+
+            # Instalar el paquete e iniciar
+              chmod +x /opt/text-generation-webui/start_linux.sh
+              /opt/text-generation-webui/start_linux.sh
 
           ;;
 
