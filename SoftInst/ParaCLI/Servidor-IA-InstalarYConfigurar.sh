@@ -316,23 +316,31 @@ if [ $cVerSO == "13" ]; then
             echo ""
             echo "  Instalando LM Studio.."
             echo ""
-            # Obtener el enlace de descarga
-              #vEnlace=$(curl -sL )
-              vEnlaceAppImage=$(curl -sL https://lmstudio.ai/ | sed 's->->\n-g' | sed 's-http-\nhttp-g' | sed 's-AppImage-AppImage\n-g' | grep -v win32|  grep staller | grep linux | grep x64 | head -n1)
             echo ""
-            echo "    Descargando paquete AppImage..."
-            echo ""
-            curl -L -o /tmp/LMStudio.AppImage $vEnlaceAppImage
-            chmod +x /tmp/LMStudio.AppImage
-            mkdir -p /home/$USER/IA/LMStudio 2> /dev/null
-            mv /tmp/LMStudio.AppImage /home/$USER/IA/LMStudio
-            chown $USER:$USER /home/$USER/IA/ -R
+
+            # Instalando paquetes necesarios
+              sudo apt-get -y update
+              sudo apt-get -y install libfuse2
+
+            # Descargar el archivo AppImage
+              echo ""
+              echo "    Descargando paquete AppImage..."
+              echo ""
+              # Borrar el paquete anterior, si es que existe
+                rm -f $HOME/IA/LMStudio/LMStudio.AppImage 2> /dev/null
+              # Obtener el enlace de descarga
+                vEnlaceAppImage=$(curl -sL https://lmstudio.ai/ | sed 's->->\n-g' | sed 's-http-\nhttp-g' | sed 's-AppImage-AppImage\n-g' | grep -v win32|  grep staller | grep linux | grep x64 | head -n1)
+              # Descargar
+                mkdir -p $HOME/IA/LMStudio 2> /dev/null
+                curl -L -o $HOME/IA/LMStudio/LMStudio.AppImage $vEnlaceAppImage
+              # Asignar permisos de ejecución
+                chmod +x $HOME/IA/LMStudio/LMStudio.AppImage
 
             # Notificar fin de la instalación
               echo ""
               echo "    La instalación de LMStudio ha finalizado. Para lanzarlo, ejecuta:"
               echo ""
-              echo "      /home/$USER/IA/LMStudio/LMStudio.AppImage"
+              echo "      $HOME/IA/LMStudio/LMStudio.AppImage"
               echo ""
 
           ;;
