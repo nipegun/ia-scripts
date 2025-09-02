@@ -318,11 +318,11 @@ if [ $cVerSO == "13" ]; then
             echo ""
             # Obtener el enlace de descarga
               #vEnlace=$(curl -sL )
-              vEnlace="https://installers.lmstudio.ai/linux/x64/0.3.8-4/LM-Studio-0.3.8-4-x64.AppImage"
+              vEnlaceAppImage=$(curl -sL https://lmstudio.ai/ | sed 's->->\n-g' | sed 's-http-\nhttp-g' | sed 's-AppImage-AppImage\n-g' | grep -v win32|  grep staller | grep linux | grep x64 | head -n1)
             echo ""
             echo "    Descargando paquete AppImage..."
             echo ""
-            curl -L -o /tmp/LMStudio.AppImage $vEnlace
+            curl -L -o /tmp/LMStudio.AppImage $vEnlaceAppImage
             chmod +x /tmp/LMStudio.AppImage
             mkdir -p /home/$USER/IA/LMStudio 2> /dev/null
             mv /tmp/LMStudio.AppImage /home/$USER/IA/LMStudio
