@@ -8,26 +8,20 @@
 # ----------
 # Script de NiPeGun para instalar y configurar diferentes modelos GGUF para Text Generation Web UI en Debian
 #
-# Ejecución remota:
-#   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCLI/LMStudio-Modelos-Instalar-LLM.sh | bash
+# Ejecución remota (puede requerir permisos sudo):
+#   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCLI/TextGenerationWebUI-Modelos-Instalar-LLM.sh | bash
 #
-# Ejecución remota sin caché:
-#   curl -sL -H 'Cache-Control: no-cache, no-store' https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCLI/LMStudio-Modelos-Instalar-LLM.sh | bash
+# Ejecución remota como root (para sistemas sin sudo):
+#   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCLI/TextGenerationWebUI-Modelos-Instalar-LLM.sh | sed 's-sudo--g' | bash
 # ----------
 
-vCarpeta="/opt/text-generation-webui/models/"
-
-
-            #Use the download-model.py script to automatically download a model from Hugging Face. /opt/text-generation-webui/download-model.py
-
-chmod +x /opt/text-generation-webui/download-model.py
-cd /opt/text-generation-webui/
 
 # Instalar requisitos
   sudo apt-get update
   sudo apt-get -y install python3-pip
   pip3 install tqdm --break-system-packages
 
+# Asegurarse de que el script sea ejecutable
+  chmod +x /opt/text-generation-webui/download-model.py
 
 
-python3 ./download-model.py
