@@ -1,6 +1,24 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+# Pongo a disposición pública este script bajo el término de "software de dominio público".
+# Puedes hacer lo que quieras con él porque es libre de verdad; no libre con condiciones como las licencias GNU y otras patrañas similares.
+# Si se te llena la boca hablando de libertad entonces hazlo realmente libre.
+# No tienes que aceptar ningún tipo de términos de uso o licencia para utilizarlo o modificarlo porque va sin CopyLeft.
+
+# ----------
+# Script de NiPeGun para convertir texto a audio utilizando la API de OpenAI
+#
+# Ejecución remota con parámetros (puede requerir permisos sudo):
+#   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/API-Ollama-LanzarPrompt-Python-CrearUnaFuncionQue.sh | sudo bash -s [IP] [Puerto] ['Modelo'] ['Prompt']
+#
+# Ejecución remota con parámetros vomo root (para sistemas sin sudo):
+#   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/API-Ollama-LanzarPrompt-Python-CrearUnaFuncionQue.sh | sed 's-sudo--g' | bash -s [IP] [Puerto] ['Modelo'] ['Prompt']
+#
+# Bajar y editar directamente el archivo en nano
+#   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/API-Ollama-LanzarPrompt-Python-CrearUnaFuncionQue.sh | nano -
+# ----------
+
 # Requisitos:
 #   sudo apt-get -y install python3-pip
 #   python3 -m pip install --upgrade openai --break-system-packages
