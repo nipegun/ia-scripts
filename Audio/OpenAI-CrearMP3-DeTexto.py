@@ -5,6 +5,12 @@
 #   sudo apt-get -y install python3-pip
 #   python3 -m pip install --upgrade openai --break-system-packages
 
+# Uso:
+#   Parametros minimos:
+#     OpenAI-CrearMP3-DeTexto.py --apikey "xxx" --texto "Este es un test en español"
+#   Parametros completos:
+#     OpenAI-CrearMP3-DeTexto.py --apikey "xxx" --texto "Este es un test en español" --modelo "gpt-4o-mini-tts" --voz "coral" --instrucciones "Habla con tono alegre" --salida "TextoAVoz.mp3"
+
 import argparse
 from pathlib import Path
 from openai import OpenAI
