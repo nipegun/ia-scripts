@@ -22,6 +22,20 @@
 #     OpenAI-ReproducirTexto.py --apikey "xxx" --texto "Este es un test en español"
 #   Parametros completos:
 #     OpenAI-ReproducirTexto.py --apikey "xxx" --texto "Este es un test en español" --modelo "gpt-4o-mini-tts" --voz "coral" --instrucciones "Habla con tono alegre"
+#
+#   Voces a elegir:
+#     alloy
+#     ash
+#     ballad (ingles britanico)
+#     coral
+#     echo
+#     fable (ingles britanico)
+#     nova
+#     onyx
+#     sage
+#     shimmer
+#
+#   Las voces se pueden probar en: https://www.openai.fm/
 
 import asyncio
 import argparse
