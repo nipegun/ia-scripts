@@ -10,7 +10,7 @@
 # Script de NiPeGun para convertir texto a audio utilizando la API de OpenAI
 #
 # Ejecución remota con parámetros (puede requerir permisos sudo):
-#   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/Audio/OpenAI-CrearMP3-DeTexto.py | python3 - [APIKey] [Texto] [Modelo] [Voz] [Instrucciones] [ArchivoDeSalida]
+#   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/Audio/OpenAI-TTS-ToFile.py | python3 - [APIKey] [Texto] [Modelo] [Voz] [Instrucciones] [ArchivoDeSalida]
 # ----------
 
 # Requisitos:
