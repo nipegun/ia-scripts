@@ -24,16 +24,17 @@
 #     OpenAI-CrearMP3-DeTexto.py --apikey "xxx" --texto "Este es un test en español" --modelo "gpt-4o-mini-tts" --voz "coral" --instrucciones "Habla con tono alegre" --salida "TextoAVoz.mp3"
 #
 #   Voces a elegir:
-#     alloy
+#     alloy (mujer)
 #     ash
-#     ballad (ingles britanico)
-#     coral
-#     echo
-#     fable (ingles britanico)
+#     ballad (ingles britanico o español de españa)
+#     coral (mujer)
+#     echo (sudamericano)
+#     fable (ingles britanico o argentino)
 #     nova
 #     onyx
 #     sage
 #     shimmer
+#     verse
 #
 #   Las voces se pueden probar en: https://www.openai.fm/
 
