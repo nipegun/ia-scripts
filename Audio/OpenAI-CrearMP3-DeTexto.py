@@ -5,22 +5,34 @@
 #   sudo apt-get -y install python3-pip
 #   python3 -m pip install --upgrade openai --break-system-packages
 
+import argparse
 from pathlib import Path
 from openai import OpenAI
 
-vAPIKey = "xxx"
-vTexto = 'This is a test!'
-vModelo = 'gpt-4o-mini-tts'
-vVoz = 'coral'
-vInstrucciones = 'Speak in a cheerful and positive tone.'
+def main():
+  parser = argparse.ArgumentParser(description="Generar audio con OpenAI TTS")
+  parser.add_argument("--apikey",        required=True,             help="API Key de OpenAI")
+  parser.add_argument("--texto",         required=True,             help="Texto a convertir en audio")
+  parser.add_argument("--modelo",        default="gpt-4o-mini-tts", help="Modelo TTS a usar")
+  parser.add_argument("--voz",           default="coral",           help="Voz a usar")
+  parser.add_argument("--instrucciones", default="",                help="Instrucciones adicionales para la voz")
+  parser.add_argument("--salida",        default="AudioIA.mp3",     help="Archivo de salida")
 
-vCliente = OpenAI(api_key=vAPIKey)
-vArchivoDeAudio = Path(__file__).parent / "Audio.mp3"
+  args = parser.parse_args()
 
-with vCliente.audio.speech.with_streaming_response.create(
-    model=vModelo,
-    voice=vVoz,
-    input=vTexto,
-    instructions=vInstrucciones,
-) as response:
+  vCliente = OpenAI(api_key=args.apikey)
+  vArchivoDeAudio = Path(args.salida)
+
+  with vCliente.audio.speech.with_streaming_response.create(
+    model=args.modelo,
+    voice=args.voz,
+    input=args.texto,
+    instructions=args.instrucciones,
+  ) as response:
     response.stream_to_file(vArchivoDeAudio)
+
+  print(f"Audio generado en: {vArchivoDeAudio}")
+
+if __name__ == "__main__":
+  main()
+
