@@ -417,6 +417,7 @@
                 echo ""
                 echo -e "${cColorVerde}        whisper mi_video.mp4 --model medium   --language Spanish ${cFinColor}"
                 echo -e "${cColorVerde}        whisper mi_video.vob --model large-v2 --language Spanish ${cFinColor}"
+                echo -e "${cColorVerde}        whisper mi_video.vob --model large-v3 --language English ${cFinColor}"
                 echo ""
                 echo -e "${cColorVerde}      deactivate${cFinColor}"
                 echo ""
