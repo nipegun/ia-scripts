@@ -80,9 +80,11 @@
       mkdir build
       cd build
       # Instalar paquetes necesarios para compilar
-        sudo apt -y update
-        sudo apt -y install cmake
-        sudo apt -y install build-essential
+        sudo apt-get -y update
+        sudo apt-get -y install cmake
+        sudo apt-get -y install build-essential
+        sudo apt-get -y install libcurl4-openssl-dev
+        sudo apt-get -y install ccache
 
     # Crear el menú
       # Comprobar si el paquete dialog está instalado. Si no lo está, instalarlo.
