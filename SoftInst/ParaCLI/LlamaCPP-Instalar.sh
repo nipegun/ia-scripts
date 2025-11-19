@@ -146,6 +146,19 @@
 
             ;;
 
+
+            15)
+
+              echo ""
+              echo "    Compilando para uso con Threadripper 3970X..."
+              echo ""
+              cd ~/repos/ia/llama.cpp/build
+              cmake .. -DCMAKE_CXX_FLAGS="-march=znver2 -mtune=znver2 -O3"
+              cmake --build . --config Release -- -j$(nproc)
+
+            ;;
+
+
             4)
 
               echo ""
