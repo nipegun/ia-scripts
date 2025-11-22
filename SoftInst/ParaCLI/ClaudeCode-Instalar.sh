@@ -1,3 +1,6 @@
 #!/bin/bash
 curl -fsSL https://claude.ai/install.sh | bash
 echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc && source ~/.bashrc
+
+# Run /init to create a CLAUDE.md file with instructions for Claude
+
