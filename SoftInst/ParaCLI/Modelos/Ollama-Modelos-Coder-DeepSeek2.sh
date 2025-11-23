@@ -6,10 +6,13 @@
 # No tienes que aceptar ningún tipo de términos de uso o licencia para utilizarlo o modificarlo porque va sin CopyLeft.
 
 # ----------
-# Script de NiPeGun para instalar y configurar los diferentes modelos de razonamiento de DeepSeekR para Ollama en Debian
+# Script de NiPeGun para instalar y configurar los diferentes modelos de razonamiento de magistral para Ollama en Debian
 #
-# Ejecución remota:
+# Ejecución remota (puede requerir permisos sudo):
 #   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCLI/Modelos/Ollama-Modelos-Coder-DeepSeek2.sh | bash
+#
+# Ejecución remota (como root):
+#   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCLI/Modelos/Ollama-Modelos-Coder-DeepSeek2.sh | 's-sudo--g' | bash
 # ----------
 
 # Definir constantes de color
