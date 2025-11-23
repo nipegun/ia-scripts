@@ -9,10 +9,10 @@
 # Script de NiPeGun para instalar y configurar los diferentes modelos de razonamiento de magistral para Ollama en Debian
 #
 # Ejecución remota (puede requerir permisos sudo):
-#   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCLI/Modelos/Ollama-Modelos-Razonamiento-magistral.sh | bash
+#   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCLI/Modelos/Ollama-Modelos-Razonamiento-Magistral.sh | bash
 #
 # Ejecución remota (como root):
-#   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCLI/Modelos/Ollama-Modelos-Razonamiento-magistral.sh | 's-sudo--g' | bash
+#   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCLI/Modelos/Ollama-Modelos-Razonamiento-Magistral.sh | 's-sudo--g' | bash
 # ----------
 
 # Definir constantes de color
