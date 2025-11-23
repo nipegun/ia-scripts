@@ -70,7 +70,7 @@
             echo ""
 
             # Definir el espacio libre necesario
-              vGBsLibresNecesarios=0.5
+              vGBsLibresNecesarios=19.1
               vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
 
             # Obtener el espacio libre en la partición raíz en kilobytes
@@ -97,7 +97,7 @@
             echo ""
 
             # Definir el espacio libre necesario
-              vGBsLibresNecesarios=0.6
+              vGBsLibresNecesarios=31.1
               vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
 
             # Obtener el espacio libre en la partición raíz en kilobytes
@@ -124,7 +124,7 @@
             echo ""
 
             # Definir el espacio libre necesario
-              vGBsLibresNecesarios=1.1
+              vGBsLibresNecesarios=62.1
               vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
 
             # Obtener el espacio libre en la partición raíz en kilobytes
@@ -151,7 +151,7 @@
             echo ""
 
             # Definir el espacio libre necesario
-              vGBsLibresNecesarios=1.1
+              vGBsLibresNecesarios=291.1
               vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
 
             # Obtener el espacio libre en la partición raíz en kilobytes
@@ -178,7 +178,7 @@
             echo ""
 
             # Definir el espacio libre necesario
-              vGBsLibresNecesarios=1.7
+              vGBsLibresNecesarios=511.1
               vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
 
             # Obtener el espacio libre en la partición raíz en kilobytes
@@ -205,7 +205,7 @@
             echo ""
 
             # Definir el espacio libre necesario
-              vGBsLibresNecesarios=3.1
+              vGBsLibresNecesarios=961.1
               vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
 
             # Obtener el espacio libre en la partición raíz en kilobytes
