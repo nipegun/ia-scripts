@@ -6,7 +6,7 @@
 # No tienes que aceptar ningún tipo de términos de uso o licencia para utilizarlo o modificarlo porque va sin CopyLeft.
 
 # ----------
-# Script de NiPeGun para instalar y configurar los diferentes modelos de razonamiento de magistral para Ollama en Debian
+# Script de NiPeGun para instalar y configurar los diferentes modelos coder de DeepSeek 2 para Ollama en Debian
 #
 # Ejecución remota (puede requerir permisos sudo):
 #   curl -sL https://raw.githubusercontent.com/nipegun/ia-scripts/refs/heads/main/SoftInst/ParaCLI/Modelos/Ollama-Modelos-Coder-DeepSeek2.sh | bash
