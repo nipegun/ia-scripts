@@ -41,9 +41,9 @@
     fi
   menu=(dialog --checklist "Marca los modelos que quieras instalar:" 22 96 16)
     opciones=(
-      1 "magistral:24b-small-2506-q4_K_M (xx,x GB en disco) (xx,x GB en RAM/VRAM)" off
-      2 "magistral:24b-small-2506-q8_0   (xx,x GB en disco) (xx,x GB en RAM/VRAM)" off
-      3 "magistral:24b-small-2506-fp16   (xx,x GB en disco) (xx,x GB en RAM/VRAM)" off
+      1 "magistral:24b-small-2506-q4_K_M (39K tokens) (xx,x GB en disco) (xx,x GB en RAM/VRAM)" off
+      2 "magistral:24b-small-2506-q8_0   (39K tokens) (xx,x GB en disco) (xx,x GB en RAM/VRAM)" off
+      3 "magistral:24b-small-2506-fp16   (39K tokens) (xx,x GB en disco) (xx,x GB en RAM/VRAM)" off
     )
   choices=$("${menu[@]}" "${opciones[@]}" 2>&1 >/dev/tty)
 
