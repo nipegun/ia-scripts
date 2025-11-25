@@ -50,12 +50,12 @@
   menu=(dialog --checklist "Marca los modelos que quieras instalar:" 22 96 16)
     opciones=(
 
-      1 "deepseek-coder-v2:16b-lite-instruct-q4_K_M ( 11,1 GB en disco) ( xx,x GB en RAM/VRAM)" off
-      2 "deepseek-coder-v2:16b-lite-instruct-q8_0   ( 18,1 GB en disco) ( xx,x GB en RAM/VRAM)" off
-      3 "deepseek-coder-v2:16b-lite-instruct-fp16   ( 32,1 GB en disco) ( xx,x GB en RAM/VRAM)" off
-      4 "deepseek-coder-v2:236b-instruct-q4_K_M     (143,1 GB en disco) ( xx,x GB en RAM/VRAM)" off
-      5 "deepseek-coder-v2:236b-instruct-q8_0       (251,1 GB en disco) ( xx,x GB en RAM/VRAM)" off
-      6 "deepseek-coder-v2:236b-instruct-fp16       (473,1 GB en disco) ( xx,x GB en RAM/VRAM)" off
+      1 "deepseek-coder-v2:16b-lite-instruct-q4_K_M (4K tokens) ( 11,1 GB en disco) ( xx,x GB en RAM/VRAM)" off
+      2 "deepseek-coder-v2:16b-lite-instruct-q8_0   (4K tokens) ( 18,1 GB en disco) ( xx,x GB en RAM/VRAM)" off
+      3 "deepseek-coder-v2:16b-lite-instruct-fp16   (4K tokens) ( 32,1 GB en disco) ( xx,x GB en RAM/VRAM)" off
+      4 "deepseek-coder-v2:236b-instruct-q4_K_M     (4K tokens) (143,1 GB en disco) ( xx,x GB en RAM/VRAM)" off
+      5 "deepseek-coder-v2:236b-instruct-q8_0       (4K tokens) (251,1 GB en disco) ( xx,x GB en RAM/VRAM)" off
+      6 "deepseek-coder-v2:236b-instruct-fp16       (4K tokens) (473,1 GB en disco) ( xx,x GB en RAM/VRAM)" off
     )
   choices=$("${menu[@]}" "${opciones[@]}" 2>&1 >/dev/tty)
 
