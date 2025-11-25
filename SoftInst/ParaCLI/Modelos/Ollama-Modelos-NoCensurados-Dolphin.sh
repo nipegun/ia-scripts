@@ -42,27 +42,27 @@
   menu=(dialog --checklist "Marca los modelos que quieras instalar:" 22 96 16)
     opciones=(
 
-      1 "dolphin-mistral 7b-v2.8-q4_0     ( 4,2 GB en disco) ( 5,1 GB en RAM/VRAM)" off
-      2 "dolphin-mistral 7b-v2.8-q8_0     ( 7,8 GB en disco) ( 8,6 GB en RAM/VRAM)" off
-      3 "dolphin-mistral 7b-v2.8-fp16     (14,3 GB en disco) (15,1 GB en RAM/VRAM)" off
+      1 "dolphin-mistral:7b-v2.8-q4_K_M     ( 4,6 GB en disco) ( 5,5 GB en RAM/VRAM)" off
+      2 "dolphin-mistral:7b-v2.8-q8_0       ( 7,8 GB en disco) ( 8,6 GB en RAM/VRAM)" off
+      3 "dolphin-mistral:7b-v2.8-fp16       (14,3 GB en disco) (15,1 GB en RAM/VRAM)" off
 
-      4 "dolphin-mixtral 8x7b-v2.7-q4_0   (xx,x GB en disco) (xx,x GB en VRAM)" off
-      5 "dolphin-mixtral 8x7b-v2.7-q8_0   (xx,x GB en disco) (xx,x GB en VRAM)" off
-      6 "dolphin-mixtral 8x7b-v2.7-fp16   (xx,x GB en disco) (xx,x GB en VRAM)" off
+      4 "dolphin-mixtral:8x7b-v2.7-q4_K_M   (xx,x GB en disco) (xx,x GB en VRAM)" off
+      5 "dolphin-mixtral:8x7b-v2.7-q8_0     (xx,x GB en disco) (xx,x GB en VRAM)" off
+      6 "dolphin-mixtral:8x7b-v2.7-fp16     (xx,x GB en disco) (xx,x GB en VRAM)" off
 
-      7 "dolphin-mixtral 8x22b-v2.9-q4_0  (xx,x GB en disco) (xx,x GB en VRAM)" off
-      8 "dolphin-mixtral 8x22b-v2.9-q8_0  (xx,x GB en disco) (xx,x GB en VRAM)" off
-      9 "dolphin-mixtral 8x22b-v2.9-fp16  (xx,x GB en disco) (xx,x GB en VRAM)" off
+      7 "dolphin-mixtral:8x22b-v2.9-q4_K_M  (xx,x GB en disco) (xx,x GB en VRAM)" off
+      8 "dolphin-mixtral:8x22b-v2.9-q8_0    (xx,x GB en disco) (xx,x GB en VRAM)" off
+      9 "dolphin-mixtral:8x22b-v2.9-fp16    (xx,x GB en disco) (xx,x GB en VRAM)" off
 
-     10 "dolphin-phi 2.7b-v2.6-q4_0       (xx,x GB en disco) (xx,x GB en VRAM)" off
-     11 "dolphin-phi 2.7b-v2.6-q8_0       (xx,x GB en disco) (xx,x GB en VRAM)" off
+     10 "dolphin-phi:2.7b-v2.6-q4_K_M         (xx,x GB en disco) (xx,x GB en VRAM)" off
+     11 "dolphin-phi:2.7b-v2.6-q8_0         (xx,x GB en disco) (xx,x GB en VRAM)" off
 
-     12 "dolphin-llama3 8b-256k-v2.9-q4_0 (xx,x GB en disco) (xx,x GB en VRAM)" off
-     13 "dolphin-llama3 8b-256k-v2.9-q8_0 (xx,x GB en disco) (xx,x GB en VRAM)" off
-     14 "dolphin-llama3 8b-256k-v2.9-fp16 (xx,x GB en disco) (xx,x GB en VRAM)" off
-     15 "dolphin-llama3 70b-v2.9-q4_0     (xx,x GB en disco) (xx,x GB en VRAM)" off
-     16 "dolphin-llama3 70b-v2.9-q8_0     (xx,x GB en disco) (xx,x GB en VRAM)" off
-     17 "dolphin-llama3 70b-v2.9-fp16     (xx,x GB en disco) (xx,x GB en VRAM)" off
+     12 "dolphin-llama3:8b-256k-v2.9-q4_K_M (xx,x GB en disco) (xx,x GB en VRAM)" off
+     13 "dolphin-llama3:8b-256k-v2.9-q8_0   (xx,x GB en disco) (xx,x GB en VRAM)" off
+     14 "dolphin-llama3:8b-256k-v2.9-fp16   (xx,x GB en disco) (xx,x GB en VRAM)" off
+     15 "dolphin-llama3:70b-v2.9-q4_K_M       (xx,x GB en disco) (xx,x GB en VRAM)" off
+     16 "dolphin-llama3:70b-v2.9-q8_0       (xx,x GB en disco) (xx,x GB en VRAM)" off
+     17 "dolphin-llama3:70b-v2.9-fp16       (xx,x GB en disco) (xx,x GB en VRAM)" off
 
     )
   choices=$("${menu[@]}" "${opciones[@]}" 2>&1 >/dev/tty)
@@ -74,7 +74,7 @@
           1)
 
             echo ""
-            echo "  Instalando dolphin-mistral:7b-v2.8-q4_0..."
+            echo "  Instalando dolphin-mistral:7b-v2.8-q4_K_M..."
             echo ""
 
             # Definir el espacio libre necesario
@@ -87,10 +87,10 @@
 
             # Comprobar si hay espacio libre disponible
               if [ "$vEspacioLibre" -ge "$vEspacioNecesario" ]; then
-                ollama pull dolphin-mistral:7b-v2.8-q4_0
+                ollama pull dolphin-mistral:7b-v2.8-q4_K_M
               else
                 echo ""
-                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo dolphin-mistral:7b-v2.8-q4_0.${cFinColor}"
+                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo dolphin-mistral:7b-v2.8-q4_K_M.${cFinColor}"
                 echo ""
                 echo -e "${cColorRojo}      Hacen falta $vGBsLibresNecesarios GB y hay sólo $vGBsLibres GB.${cFinColor}"
                 echo ""
@@ -155,7 +155,7 @@
           4)
 
             echo ""
-            echo "  Instalando dolphin-mixtral:8x7b-v2.7-q4_0..."
+            echo "  Instalando dolphin-mixtral:8x7b-v2.7-q4_K_M..."
             echo ""
 
             # Definir el espacio libre necesario
@@ -168,10 +168,10 @@
 
             # Comprobar si hay espacio libre disponible
               if [ "$vEspacioLibre" -ge "$vEspacioNecesario" ]; then
-                ollama pull dolphin-mixtral:8x7b-v2.7-q4_0
+                ollama pull dolphin-mixtral:8x7b-v2.7-q4_K_M
               else
                 echo ""
-                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo dolphin-mixtral:8x7b-v2.7-q4_0.${cFinColor}"
+                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo dolphin-mixtral:8x7b-v2.7-q4_K_M.${cFinColor}"
                 echo ""
                 echo -e "${cColorRojo}      Hacen falta $vGBsLibresNecesarios GB y hay sólo $vGBsLibres GB.${cFinColor}"
                 echo ""
@@ -236,7 +236,7 @@
           7)
 
             echo ""
-            echo "  Instalando dolphin-mixtral:8x22b-v2.9-q4_0..."
+            echo "  Instalando dolphin-mixtral:8x22b-v2.9-q4_K_M..."
             echo ""
 
             # Definir el espacio libre necesario
@@ -249,10 +249,10 @@
 
             # Comprobar si hay espacio libre disponible
               if [ "$vEspacioLibre" -ge "$vEspacioNecesario" ]; then
-                ollama pull dolphin-mixtral:8x22b-v2.9-q4_0
+                ollama pull dolphin-mixtral:8x22b-v2.9-q4_K_M
               else
                 echo ""
-                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo dolphin-mixtral:8x22b-v2.9-q4_0.${cFinColor}"
+                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo dolphin-mixtral:8x22b-v2.9-q4_K_M.${cFinColor}"
                 echo ""
                 echo -e "${cColorRojo}      Hacen falta $vGBsLibresNecesarios GB y hay sólo $vGBsLibres GB.${cFinColor}"
                 echo ""
@@ -318,7 +318,7 @@
          10)
 
             echo ""
-            echo "  Instalando dolphin-phi:2.7b-v2.6-q4_0..."
+            echo "  Instalando dolphin-phi:2.7b-v2.6-q4_K_M..."
             echo ""
 
             # Definir el espacio libre necesario
@@ -331,10 +331,10 @@
 
             # Comprobar si hay espacio libre disponible
               if [ "$vEspacioLibre" -ge "$vEspacioNecesario" ]; then
-                ollama pull dolphin-phi:2.7b-v2.6-q4_0
+                ollama pull dolphin-phi:2.7b-v2.6-q4_K_M
               else
                 echo ""
-                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo dolphin-phi:2.7b-v2.6-q4_0.${cFinColor}"
+                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo dolphin-phi:2.7b-v2.6-q4_K_M.${cFinColor}"
                 echo ""
                 echo -e "${cColorRojo}      Hacen falta $vGBsLibresNecesarios GB y hay sólo $vGBsLibres GB.${cFinColor}"
                 echo ""
@@ -372,7 +372,7 @@
          12)
 
             echo ""
-            echo "  Instalando dolphin-llama3:8b-256k-v2.9-q4_0..."
+            echo "  Instalando dolphin-llama3:8b-256k-v2.9-q4_K_M..."
             echo ""
 
             # Definir el espacio libre necesario
@@ -385,10 +385,10 @@
 
             # Comprobar si hay espacio libre disponible
               if [ "$vEspacioLibre" -ge "$vEspacioNecesario" ]; then
-                ollama pull dolphin-llama3:8b-256k-v2.9-q4_0
+                ollama pull dolphin-llama3:8b-256k-v2.9-q4_K_M
               else
                 echo ""
-                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo dolphin-llama3:8b-256k-v2.9-q4_0.${cFinColor}"
+                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo dolphin-llama3:8b-256k-v2.9-q4_K_M.${cFinColor}"
                 echo ""
                 echo -e "${cColorRojo}      Hacen falta $vGBsLibresNecesarios GB y hay sólo $vGBsLibres GB.${cFinColor}"
                 echo ""
@@ -453,7 +453,7 @@
          15)
 
             echo ""
-            echo "  Instalando dolphin-llama3:70b-v2.9-q4_0..."
+            echo "  Instalando dolphin-llama3:70b-v2.9-q4_K_M..."
             echo ""
 
             # Definir el espacio libre necesario
@@ -466,10 +466,10 @@
 
             # Comprobar si hay espacio libre disponible
               if [ "$vEspacioLibre" -ge "$vEspacioNecesario" ]; then
-                ollama pull dolphin-llama3:70b-v2.9-q4_0
+                ollama pull dolphin-llama3:70b-v2.9-q4_K_M
               else
                 echo ""
-                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo dolphin-llama3:70b-v2.9-q4_0.${cFinColor}"
+                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo dolphin-llama3:70b-v2.9-q4_K_M.${cFinColor}"
                 echo ""
                 echo -e "${cColorRojo}      Hacen falta $vGBsLibresNecesarios GB y hay sólo $vGBsLibres GB.${cFinColor}"
                 echo ""
