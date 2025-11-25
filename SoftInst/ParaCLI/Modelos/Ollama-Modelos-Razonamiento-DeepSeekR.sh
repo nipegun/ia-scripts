@@ -47,13 +47,33 @@
   menu=(dialog --checklist "Marca los modelos que quieras instalar:" 22 96 16)
     opciones=(
 
-      1 "deepseek-r1     1.5b (Q4_K_M) (  1,2 GB en disco) (  1,5 GB en RAM/VRAM)" off
-      2 "deepseek-r1     7b   (Q4_K_M) (  4,8 GB en disco) (  5,1 GB en RAM/VRAM)" off
-      3 "deepseek-r1     8b   (Q4_K_M) (  5,1 GB en disco) (  5,9 GB en RAM/VRAM)" off
-      4 "deepseek-r1    14b   (Q4_K_M) (  9,1 GB en disco) ( 10,3 GB en RAM/VRAM)" off
-      5 "deepseek-r1    32b   (Q4_K_M) ( 20,1 GB en disco) ( 21,2 GB en RAM/VRAM)" off
-      6 "deepseek-r1    70b   (Q4_K_M) ( 42,6 GB en disco) ( 43,4 GB en RAM/VRAM)" off
-      7 "deepseek-r1   671b   (Q4_K_M) (404,9 GB en disco) (xxx,x GB en RAM/VRAM)" off
+      1 "deepseek-r1:1.5b-qwen-distill-q4_K_M (  xx,x GB en disco) (xxx,x GB en RAM/VRAM)" off
+      2 "deepseek-r1:1.5b-qwen-distill-q8_0   (  xx,x GB en disco) (xxx,x GB en RAM/VRAM)" off
+      3 "deepseek-r1:1.5b-qwen-distill-fp16   (  xx,x GB en disco) (xxx,x GB en RAM/VRAM)" off
+
+      4 "deepseek-r1:7b-qwen-distill-q4_K_M   (  xx,x GB en disco) (xxx,x GB en RAM/VRAM)" off
+      5 "deepseek-r1:7b-qwen-distill-q8_0     (  xx,x GB en disco) (xxx,x GB en RAM/VRAM)" off
+      6 "deepseek-r1:7b-qwen-distill-fp16     (  xx,x GB en disco) (xxx,x GB en RAM/VRAM)" off
+
+      7 "deepseek-r1:8b-llama-distill-q4_K_M  (  xx,x GB en disco) (xxx,x GB en RAM/VRAM)" off
+      8 "deepseek-r1:8b-llama-distill-q8_0    (  xx,x GB en disco) (xxx,x GB en RAM/VRAM)" off
+      9 "deepseek-r1:8b-llama-distill-fp16    (  xx,x GB en disco) (xxx,x GB en RAM/VRAM)" off
+
+     10 "deepseek-r1:14b-qwen-distill-q4_K_M  (  xx,x GB en disco) (xxx,x GB en RAM/VRAM)" off
+     11 "deepseek-r1:14b-qwen-distill-q8_0    (  xx,x GB en disco) (xxx,x GB en RAM/VRAM)" off
+     12 "deepseek-r1:14b-qwen-distill-fp16    (  xx,x GB en disco) (xxx,x GB en RAM/VRAM)" off
+
+     13 "deepseek-r1:32b-qwen-distill-q4_K_M  (  xx,x GB en disco) (xxx,x GB en RAM/VRAM)" off
+     14 "deepseek-r1:32b-qwen-distill-q8_0    (  xx,x GB en disco) (xxx,x GB en RAM/VRAM)" off
+     15 "deepseek-r1:32b-qwen-distill-fp16    (  xx,x GB en disco) (xxx,x GB en RAM/VRAM)" off
+
+     16 "deepseek-r1:70b-llama-distill-q4_K_M (  xx,x GB en disco) (xxx,x GB en RAM/VRAM)" off
+     17 "deepseek-r1:70b-llama-distill-q8_0   (  xx,x GB en disco) (xxx,x GB en RAM/VRAM)" off
+     18 "deepseek-r1:70b-llama-distill-fp16   (  xx,x GB en disco) (xxx,x GB en RAM/VRAM)" off
+
+     19 "deepseek-r1:671b-q4_K_M              ( 405,9 GB en disco) (xxx,x GB en RAM/VRAM)" off
+     20 "deepseek-r1:671b-q8_0                ( 714,9 GB en disco) (xxx,x GB en RAM/VRAM)" off
+     21 "deepseek-r1:671b-fp16                (1400,9 GB en disco) (xxx,x GB en RAM/VRAM)" off
 
     )
   choices=$("${menu[@]}" "${opciones[@]}" 2>&1 >/dev/tty)
@@ -65,11 +85,11 @@
           1)
 
             echo ""
-            echo "  Instalando deepseek-r1:1.5b..."
+            echo "  Instalando deepseek-r1:1.5b-qwen-distill-q4_K_M..."
             echo ""
 
             # Definir el espacio libre necesario
-              vGBsLibresNecesarios=1.2
+              vGBsLibresNecesarios=1.1
               vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
 
             # Obtener el espacio libre en la partición raíz en kilobytes
@@ -78,10 +98,10 @@
 
             # Comprobar si hay espacio libre disponible
               if [ "$vEspacioLibre" -ge "$vEspacioNecesario" ]; then
-                ollama pull deepseek-r1:1.5b
+                ollama pull deepseek-r1:1.5b-qwen-distill-q4_K_M
               else
                 echo ""
-                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo deepseek-r1:1.5b.${cFinColor}"
+                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo deepseek-r1:1.5b-qwen-distill-q4_K_M.${cFinColor}"
                 echo ""
                 echo -e "${cColorRojo}      Hacen falta $vGBsLibresNecesarios GB y hay sólo $vGBsLibres GB.${cFinColor}"
                 echo ""
@@ -89,14 +109,15 @@
 
           ;;
 
+
           2)
 
             echo ""
-            echo "  Instalando deepseek-r1:7b..."
+            echo "  Instalando deepseek-r1:1.5b-qwen-distill-q8_0..."
             echo ""
 
             # Definir el espacio libre necesario
-              vGBsLibresNecesarios=4.8
+              vGBsLibresNecesarios=1.1
               vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
 
             # Obtener el espacio libre en la partición raíz en kilobytes
@@ -105,10 +126,10 @@
 
             # Comprobar si hay espacio libre disponible
               if [ "$vEspacioLibre" -ge "$vEspacioNecesario" ]; then
-                ollama pull deepseek-r1:7b
+                ollama pull deepseek-r1:1.5b-qwen-distill-q8_0
               else
                 echo ""
-                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo deepseek-r1:7b.${cFinColor}"
+                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo deepseek-r1:1.5b-qwen-distill-q8_0.${cFinColor}"
                 echo ""
                 echo -e "${cColorRojo}      Hacen falta $vGBsLibresNecesarios GB y hay sólo $vGBsLibres GB.${cFinColor}"
                 echo ""
@@ -119,11 +140,11 @@
           3)
 
             echo ""
-            echo "  Instalando deepseek-r1:8b..."
+            echo "  Instalando deepseek-r1:1.5b-qwen-distill-fp16..."
             echo ""
 
             # Definir el espacio libre necesario
-              vGBsLibresNecesarios=5.1
+              vGBsLibresNecesarios=1.1
               vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
 
             # Obtener el espacio libre en la partición raíz en kilobytes
@@ -132,10 +153,10 @@
 
             # Comprobar si hay espacio libre disponible
               if [ "$vEspacioLibre" -ge "$vEspacioNecesario" ]; then
-                ollama pull deepseek-r1:8b
+                ollama pull deepseek-r1:1.5b-qwen-distill-fp16
               else
                 echo ""
-                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo deepseek-r1:8b.${cFinColor}"
+                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo deepseek-r1:1.5b-qwen-distill-fp16.${cFinColor}"
                 echo ""
                 echo -e "${cColorRojo}      Hacen falta $vGBsLibresNecesarios GB y hay sólo $vGBsLibres GB.${cFinColor}"
                 echo ""
@@ -146,11 +167,11 @@
           4)
 
             echo ""
-            echo "  Instalando deepseek-r1:14b..."
+            echo "  Instalando deepseek-r1:7b-qwen-distill-q4_K_M..."
             echo ""
 
             # Definir el espacio libre necesario
-              vGBsLibresNecesarios=9.1
+              vGBsLibresNecesarios=1.1
               vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
 
             # Obtener el espacio libre en la partición raíz en kilobytes
@@ -159,10 +180,10 @@
 
             # Comprobar si hay espacio libre disponible
               if [ "$vEspacioLibre" -ge "$vEspacioNecesario" ]; then
-                ollama pull deepseek-r1:14b
+                ollama pull deepseek-r1:7b-qwen-distill-q4_K_M
               else
                 echo ""
-                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo deepseek-r1:14b.${cFinColor}"
+                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo deepseek-r1:7b-qwen-distill-q4_K_M.${cFinColor}"
                 echo ""
                 echo -e "${cColorRojo}      Hacen falta $vGBsLibresNecesarios GB y hay sólo $vGBsLibres GB.${cFinColor}"
                 echo ""
@@ -173,11 +194,11 @@
           5)
 
             echo ""
-            echo "  Instalando deepseek-r1:32b..."
+            echo "  Instalando deepseek-r1:7b-qwen-distill-q8_0..."
             echo ""
 
             # Definir el espacio libre necesario
-              vGBsLibresNecesarios=20.1
+              vGBsLibresNecesarios=1.1
               vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
 
             # Obtener el espacio libre en la partición raíz en kilobytes
@@ -186,10 +207,10 @@
 
             # Comprobar si hay espacio libre disponible
               if [ "$vEspacioLibre" -ge "$vEspacioNecesario" ]; then
-                ollama pull deepseek-r1:32b
+                ollama pull deepseek-r1:7b-qwen-distill-q8_0
               else
                 echo ""
-                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo deepseek-r1:32b.${cFinColor}"
+                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo deepseek-r1:7b-qwen-distill-q8_0.${cFinColor}"
                 echo ""
                 echo -e "${cColorRojo}      Hacen falta $vGBsLibresNecesarios GB y hay sólo $vGBsLibres GB.${cFinColor}"
                 echo ""
@@ -200,11 +221,11 @@
           6)
 
             echo ""
-            echo "  Instalando deepseek-r1:70b..."
+            echo "  Instalando deepseek-r1:7b-qwen-distill-fp16..."
             echo ""
 
             # Definir el espacio libre necesario
-              vGBsLibresNecesarios=42.6
+              vGBsLibresNecesarios=1.1
               vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
 
             # Obtener el espacio libre en la partición raíz en kilobytes
@@ -213,10 +234,10 @@
 
             # Comprobar si hay espacio libre disponible
               if [ "$vEspacioLibre" -ge "$vEspacioNecesario" ]; then
-                ollama pull deepseek-r1:70b
+                ollama pull deepseek-r1:7b-qwen-distill-fp16
               else
                 echo ""
-                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo deepseek-r1:70b.${cFinColor}"
+                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo deepseek-r1:7b-qwen-distill-fp16.${cFinColor}"
                 echo ""
                 echo -e "${cColorRojo}      Hacen falta $vGBsLibresNecesarios GB y hay sólo $vGBsLibres GB.${cFinColor}"
                 echo ""
@@ -227,11 +248,11 @@
           7)
 
             echo ""
-            echo "  Instalando deepseek-r1:671b..."
+            echo "  Instalando deepseek-r1:8b-llama-distill-q4_K_M..."
             echo ""
 
             # Definir el espacio libre necesario
-              vGBsLibresNecesarios=404.9
+              vGBsLibresNecesarios=1.1
               vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
 
             # Obtener el espacio libre en la partición raíz en kilobytes
@@ -240,16 +261,395 @@
 
             # Comprobar si hay espacio libre disponible
               if [ "$vEspacioLibre" -ge "$vEspacioNecesario" ]; then
-                ollama pull deepseek-r1:671b
+                ollama pull deepseek-r1:8b-llama-distill-q4_K_M
               else
                 echo ""
-                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo deepseek-r1:671b.${cFinColor}"
+                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo deepseek-r1:8b-llama-distill-q4_K_M.${cFinColor}"
                 echo ""
                 echo -e "${cColorRojo}      Hacen falta $vGBsLibresNecesarios GB y hay sólo $vGBsLibres GB.${cFinColor}"
                 echo ""
               fi
 
           ;;
+
+          8)
+
+            echo ""
+            echo "  Instalando deepseek-r1:8b-llama-distill-q8_0..."
+            echo ""
+
+            # Definir el espacio libre necesario
+              vGBsLibresNecesarios=1.1
+              vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
+
+            # Obtener el espacio libre en la partición raíz en kilobytes
+              vEspacioLibre=$(df / | grep '/' | tail -1 | sed -E 's/\s+/ /g' | cut -d ' ' -f 4)
+              vGBsLibres=$(echo "scale=2; $vEspacioLibre/1024/1024" | bc)
+
+            # Comprobar si hay espacio libre disponible
+              if [ "$vEspacioLibre" -ge "$vEspacioNecesario" ]; then
+                ollama pull deepseek-r1:8b-llama-distill-q8_0
+              else
+                echo ""
+                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo deepseek-r1:8b-llama-distill-q8_0.${cFinColor}"
+                echo ""
+                echo -e "${cColorRojo}      Hacen falta $vGBsLibresNecesarios GB y hay sólo $vGBsLibres GB.${cFinColor}"
+                echo ""
+              fi
+
+          ;;
+
+          9)
+
+            echo ""
+            echo "  Instalando deepseek-r1:8b-llama-distill-fp16..."
+            echo ""
+
+            # Definir el espacio libre necesario
+              vGBsLibresNecesarios=1.1
+              vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
+
+            # Obtener el espacio libre en la partición raíz en kilobytes
+              vEspacioLibre=$(df / | grep '/' | tail -1 | sed -E 's/\s+/ /g' | cut -d ' ' -f 4)
+              vGBsLibres=$(echo "scale=2; $vEspacioLibre/1024/1024" | bc)
+
+            # Comprobar si hay espacio libre disponible
+              if [ "$vEspacioLibre" -ge "$vEspacioNecesario" ]; then
+                ollama pull deepseek-r1:8b-llama-distill-fp16
+              else
+                echo ""
+                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo deepseek-r1:8b-llama-distill-fp16.${cFinColor}"
+                echo ""
+                echo -e "${cColorRojo}      Hacen falta $vGBsLibresNecesarios GB y hay sólo $vGBsLibres GB.${cFinColor}"
+                echo ""
+              fi
+
+          ;;
+
+         10)
+
+            echo ""
+            echo "  Instalando deepseek-r1:14b-qwen-distill-q4_K_M..."
+            echo ""
+
+            # Definir el espacio libre necesario
+              vGBsLibresNecesarios=1.1
+              vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
+
+            # Obtener el espacio libre en la partición raíz en kilobytes
+              vEspacioLibre=$(df / | grep '/' | tail -1 | sed -E 's/\s+/ /g' | cut -d ' ' -f 4)
+              vGBsLibres=$(echo "scale=2; $vEspacioLibre/1024/1024" | bc)
+
+            # Comprobar si hay espacio libre disponible
+              if [ "$vEspacioLibre" -ge "$vEspacioNecesario" ]; then
+                ollama pull deepseek-r1:14b-qwen-distill-q4_K_M
+              else
+                echo ""
+                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo deepseek-r1:14b-qwen-distill-q4_K_M.${cFinColor}"
+                echo ""
+                echo -e "${cColorRojo}      Hacen falta $vGBsLibresNecesarios GB y hay sólo $vGBsLibres GB.${cFinColor}"
+                echo ""
+              fi
+
+          ;;
+
+         11)
+
+            echo ""
+            echo "  Instalando deepseek-r1:14b-qwen-distill-q8_0..."
+            echo ""
+
+            # Definir el espacio libre necesario
+              vGBsLibresNecesarios=1.1
+              vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
+
+            # Obtener el espacio libre en la partición raíz en kilobytes
+              vEspacioLibre=$(df / | grep '/' | tail -1 | sed -E 's/\s+/ /g' | cut -d ' ' -f 4)
+              vGBsLibres=$(echo "scale=2; $vEspacioLibre/1024/1024" | bc)
+
+            # Comprobar si hay espacio libre disponible
+              if [ "$vEspacioLibre" -ge "$vEspacioNecesario" ]; then
+                ollama pull deepseek-r1:14b-qwen-distill-q8_0
+              else
+                echo ""
+                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo deepseek-r1:14b-qwen-distill-q8_0.${cFinColor}"
+                echo ""
+                echo -e "${cColorRojo}      Hacen falta $vGBsLibresNecesarios GB y hay sólo $vGBsLibres GB.${cFinColor}"
+                echo ""
+              fi
+
+          ;;
+
+         12)
+
+            echo ""
+            echo "  Instalando deepseek-r1:14b-qwen-distill-fp16..."
+            echo ""
+
+            # Definir el espacio libre necesario
+              vGBsLibresNecesarios=1.1
+              vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
+
+            # Obtener el espacio libre en la partición raíz en kilobytes
+              vEspacioLibre=$(df / | grep '/' | tail -1 | sed -E 's/\s+/ /g' | cut -d ' ' -f 4)
+              vGBsLibres=$(echo "scale=2; $vEspacioLibre/1024/1024" | bc)
+
+            # Comprobar si hay espacio libre disponible
+              if [ "$vEspacioLibre" -ge "$vEspacioNecesario" ]; then
+                ollama pull deepseek-r1:14b-qwen-distill-fp16
+              else
+                echo ""
+                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo deepseek-r1:14b-qwen-distill-fp16.${cFinColor}"
+                echo ""
+                echo -e "${cColorRojo}      Hacen falta $vGBsLibresNecesarios GB y hay sólo $vGBsLibres GB.${cFinColor}"
+                echo ""
+              fi
+
+          ;;
+
+         13)
+
+            echo ""
+            echo "  Instalando deepseek-r1:32b-qwen-distill-q4_K_M..."
+            echo ""
+
+            # Definir el espacio libre necesario
+              vGBsLibresNecesarios=1.1
+              vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
+
+            # Obtener el espacio libre en la partición raíz en kilobytes
+              vEspacioLibre=$(df / | grep '/' | tail -1 | sed -E 's/\s+/ /g' | cut -d ' ' -f 4)
+              vGBsLibres=$(echo "scale=2; $vEspacioLibre/1024/1024" | bc)
+
+            # Comprobar si hay espacio libre disponible
+              if [ "$vEspacioLibre" -ge "$vEspacioNecesario" ]; then
+                ollama pull deepseek-r1:32b-qwen-distill-q4_K_M
+              else
+                echo ""
+                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo deepseek-r1:32b-qwen-distill-q4_K_M.${cFinColor}"
+                echo ""
+                echo -e "${cColorRojo}      Hacen falta $vGBsLibresNecesarios GB y hay sólo $vGBsLibres GB.${cFinColor}"
+                echo ""
+              fi
+
+          ;;
+
+         14)
+
+            echo ""
+            echo "  Instalando deepseek-r1:32b-qwen-distill-q8_0..."
+            echo ""
+
+            # Definir el espacio libre necesario
+              vGBsLibresNecesarios=1.1
+              vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
+
+            # Obtener el espacio libre en la partición raíz en kilobytes
+              vEspacioLibre=$(df / | grep '/' | tail -1 | sed -E 's/\s+/ /g' | cut -d ' ' -f 4)
+              vGBsLibres=$(echo "scale=2; $vEspacioLibre/1024/1024" | bc)
+
+            # Comprobar si hay espacio libre disponible
+              if [ "$vEspacioLibre" -ge "$vEspacioNecesario" ]; then
+                ollama pull deepseek-r1:32b-qwen-distill-q8_0
+              else
+                echo ""
+                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo deepseek-r1:32b-qwen-distill-q8_0.${cFinColor}"
+                echo ""
+                echo -e "${cColorRojo}      Hacen falta $vGBsLibresNecesarios GB y hay sólo $vGBsLibres GB.${cFinColor}"
+                echo ""
+              fi
+
+          ;;
+
+         15)
+
+            echo ""
+            echo "  Instalando deepseek-r1:32b-qwen-distill-fp16..."
+            echo ""
+
+            # Definir el espacio libre necesario
+              vGBsLibresNecesarios=1.1
+              vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
+
+            # Obtener el espacio libre en la partición raíz en kilobytes
+              vEspacioLibre=$(df / | grep '/' | tail -1 | sed -E 's/\s+/ /g' | cut -d ' ' -f 4)
+              vGBsLibres=$(echo "scale=2; $vEspacioLibre/1024/1024" | bc)
+
+            # Comprobar si hay espacio libre disponible
+              if [ "$vEspacioLibre" -ge "$vEspacioNecesario" ]; then
+                ollama pull deepseek-r1:32b-qwen-distill-fp16
+              else
+                echo ""
+                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo deepseek-r1:32b-qwen-distill-fp16.${cFinColor}"
+                echo ""
+                echo -e "${cColorRojo}      Hacen falta $vGBsLibresNecesarios GB y hay sólo $vGBsLibres GB.${cFinColor}"
+                echo ""
+              fi
+
+          ;;
+
+         16)
+
+            echo ""
+            echo "  Instalando deepseek-r1:70b-llama-distill-q4_K_M..."
+            echo ""
+
+            # Definir el espacio libre necesario
+              vGBsLibresNecesarios=1.1
+              vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
+
+            # Obtener el espacio libre en la partición raíz en kilobytes
+              vEspacioLibre=$(df / | grep '/' | tail -1 | sed -E 's/\s+/ /g' | cut -d ' ' -f 4)
+              vGBsLibres=$(echo "scale=2; $vEspacioLibre/1024/1024" | bc)
+
+            # Comprobar si hay espacio libre disponible
+              if [ "$vEspacioLibre" -ge "$vEspacioNecesario" ]; then
+                ollama pull deepseek-r1:70b-llama-distill-q4_K_M
+              else
+                echo ""
+                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo deepseek-r1:70b-llama-distill-q4_K_M.${cFinColor}"
+                echo ""
+                echo -e "${cColorRojo}      Hacen falta $vGBsLibresNecesarios GB y hay sólo $vGBsLibres GB.${cFinColor}"
+                echo ""
+              fi
+
+          ;;
+
+         17)
+
+            echo ""
+            echo "  Instalando deepseek-r1:70b-llama-distill-q8_0..."
+            echo ""
+
+            # Definir el espacio libre necesario
+              vGBsLibresNecesarios=1.1
+              vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
+
+            # Obtener el espacio libre en la partición raíz en kilobytes
+              vEspacioLibre=$(df / | grep '/' | tail -1 | sed -E 's/\s+/ /g' | cut -d ' ' -f 4)
+              vGBsLibres=$(echo "scale=2; $vEspacioLibre/1024/1024" | bc)
+
+            # Comprobar si hay espacio libre disponible
+              if [ "$vEspacioLibre" -ge "$vEspacioNecesario" ]; then
+                ollama pull deepseek-r1:70b-llama-distill-q8_0
+              else
+                echo ""
+                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo deepseek-r1:70b-llama-distill-q8_0.${cFinColor}"
+                echo ""
+                echo -e "${cColorRojo}      Hacen falta $vGBsLibresNecesarios GB y hay sólo $vGBsLibres GB.${cFinColor}"
+                echo ""
+              fi
+
+          ;;
+
+         18)
+
+            echo ""
+            echo "  Instalando deepseek-r1:70b-llama-distill-fp16..."
+            echo ""
+
+            # Definir el espacio libre necesario
+              vGBsLibresNecesarios=1.1
+              vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
+
+            # Obtener el espacio libre en la partición raíz en kilobytes
+              vEspacioLibre=$(df / | grep '/' | tail -1 | sed -E 's/\s+/ /g' | cut -d ' ' -f 4)
+              vGBsLibres=$(echo "scale=2; $vEspacioLibre/1024/1024" | bc)
+
+            # Comprobar si hay espacio libre disponible
+              if [ "$vEspacioLibre" -ge "$vEspacioNecesario" ]; then
+                ollama pull deepseek-r1:70b-llama-distill-fp16
+              else
+                echo ""
+                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo deepseek-r1:70b-llama-distill-fp16.${cFinColor}"
+                echo ""
+                echo -e "${cColorRojo}      Hacen falta $vGBsLibresNecesarios GB y hay sólo $vGBsLibres GB.${cFinColor}"
+                echo ""
+              fi
+
+          ;;
+
+         19)
+
+            echo ""
+            echo "  Instalando deepseek-r1:671b-q4_K_M..."
+            echo ""
+
+            # Definir el espacio libre necesario
+              vGBsLibresNecesarios=1.1
+              vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
+
+            # Obtener el espacio libre en la partición raíz en kilobytes
+              vEspacioLibre=$(df / | grep '/' | tail -1 | sed -E 's/\s+/ /g' | cut -d ' ' -f 4)
+              vGBsLibres=$(echo "scale=2; $vEspacioLibre/1024/1024" | bc)
+
+            # Comprobar si hay espacio libre disponible
+              if [ "$vEspacioLibre" -ge "$vEspacioNecesario" ]; then
+                ollama pull deepseek-r1:671b-q4_K_M
+              else
+                echo ""
+                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo deepseek-r1:671b-q4_K_M.${cFinColor}"
+                echo ""
+                echo -e "${cColorRojo}      Hacen falta $vGBsLibresNecesarios GB y hay sólo $vGBsLibres GB.${cFinColor}"
+                echo ""
+              fi
+
+          ;;
+
+         20)
+
+            echo ""
+            echo "  Instalando deepseek-r1:671b-q8_0..."
+            echo ""
+
+            # Definir el espacio libre necesario
+              vGBsLibresNecesarios=1.1
+              vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
+
+            # Obtener el espacio libre en la partición raíz en kilobytes
+              vEspacioLibre=$(df / | grep '/' | tail -1 | sed -E 's/\s+/ /g' | cut -d ' ' -f 4)
+              vGBsLibres=$(echo "scale=2; $vEspacioLibre/1024/1024" | bc)
+
+            # Comprobar si hay espacio libre disponible
+              if [ "$vEspacioLibre" -ge "$vEspacioNecesario" ]; then
+                ollama pull deepseek-r1:671b-q8_0
+              else
+                echo ""
+                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo deepseek-r1:671b-q8_0.${cFinColor}"
+                echo ""
+                echo -e "${cColorRojo}      Hacen falta $vGBsLibresNecesarios GB y hay sólo $vGBsLibres GB.${cFinColor}"
+                echo ""
+              fi
+
+          ;;
+
+         21)
+
+            echo ""
+            echo "  Instalando deepseek-r1:671b-fp16..."
+            echo ""
+
+            # Definir el espacio libre necesario
+              vGBsLibresNecesarios=1.1
+              vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
+
+            # Obtener el espacio libre en la partición raíz en kilobytes
+              vEspacioLibre=$(df / | grep '/' | tail -1 | sed -E 's/\s+/ /g' | cut -d ' ' -f 4)
+              vGBsLibres=$(echo "scale=2; $vEspacioLibre/1024/1024" | bc)
+
+            # Comprobar si hay espacio libre disponible
+              if [ "$vEspacioLibre" -ge "$vEspacioNecesario" ]; then
+                ollama pull deepseek-r1:671b-fp16
+              else
+                echo ""
+                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo deepseek-r1:671b-fp16.${cFinColor}"
+                echo ""
+                echo -e "${cColorRojo}      Hacen falta $vGBsLibresNecesarios GB y hay sólo $vGBsLibres GB.${cFinColor}"
+                echo ""
+              fi
+
+          ;;
+
 
       esac
 
