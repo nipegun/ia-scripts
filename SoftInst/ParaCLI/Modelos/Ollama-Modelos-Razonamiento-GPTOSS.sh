@@ -41,8 +41,8 @@
     fi
   menu=(dialog --checklist "Marca los modelos que quieras instalar:" 22 96 16)
     opciones=(
-      1 "gpt-oss:20b  (MXFP4) (xx,x GB en disco) (xx,x GB en RAM/VRAM)" off
-      2 "gpt-oss:120b (MXFP4) (xx,x GB en disco) (xx,x GB en RAM/VRAM)" off
+      1 "gpt-oss:20b  (MXFP4) (128K tokens) (xx,x GB en disco) (xx,x GB en RAM/VRAM)" off
+      2 "gpt-oss:120b (MXFP4) (128K tokens) (xx,x GB en disco) (xx,x GB en RAM/VRAM)" off
     )
   choices=$("${menu[@]}" "${opciones[@]}" 2>&1 >/dev/tty)
 
