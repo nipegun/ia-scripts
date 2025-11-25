@@ -110,21 +110,25 @@
   menu=(dialog --checklist "Marca los modelos que quieras instalar:" 22 80 16)
     opciones=(
 
-      1 "gemma3 1b-it-q4_K_M  ( 32K tokens) ( 0,9 GB en disco) ( 1,4 GB en RAM/VRAM)" off
-      2 "gemma3 1b-it-q8_0    ( 32K tokens) ( 1,2 GB en disco) ( 1,6 GB en RAM/VRAM)" off
-      3 "gemma3 1b-it-fp16    ( 32K tokens) ( 2,1 GB en disco) ( 2,8 GB en RAM/VRAM)" off
+      1 "gemma3:270m-it-qat   ( 32K tokens) ( x,x GB en disco) ( x,x GB en RAM/VRAM)" off
+      2 "gemma3:270m-it-q8_0  ( 32K tokens) ( x,x GB en disco) ( x,x GB en RAM/VRAM)" off
+      3 "gemma3:270m-it-fp16  ( 32K tokens) ( x,x GB en disco) ( x,x GB en RAM/VRAM)" off
 
-      4 "gemma3 4b-it-q4_K_M  (128K tokens) ( 3,4 GB en disco) ( 4,4 GB en RAM/VRAM)" off
-      5 "gemma3 4b-it-q8_0    (128K tokens) ( 5,1 GB en disco) ( 6,1 GB en RAM/VRAM)" off
-      6 "gemma3 4b-it-fp16    (128K tokens) ( 8,7 GB en disco) (10,2 GB en RAM/VRAM)" off
+      4 "gemma3:1b-it-q4_K_M  ( 32K tokens) ( 0,9 GB en disco) ( 1,4 GB en RAM/VRAM)" off
+      5 "gemma3:1b-it-q8_0    ( 32K tokens) ( 1,2 GB en disco) ( 1,6 GB en RAM/VRAM)" off
+      6 "gemma3:1b-it-fp16    ( 32K tokens) ( 2,1 GB en disco) ( 2,8 GB en RAM/VRAM)" off
 
-      7 "gemma3 12b-it-q4_K_M (128K tokens) ( 8,2 GB en disco) (10,1 GB en RAM/VRAM)" off
-      8 "gemma3 12b-it-q8_0   (128K tokens) (13,2 GB en disco) (15,3 GB en RAM/VRAM)" off
-      9 "gemma3 12b-it-fp16   (128K tokens) (24,2 GB en disco) (26,8 GB en RAM/VRAM)" off
+      7 "gemma3:4b-it-q4_K_M  (128K tokens) ( 3,4 GB en disco) ( 4,4 GB en RAM/VRAM)" off
+      8 "gemma3:4b-it-q8_0    (128K tokens) ( 5,1 GB en disco) ( 6,1 GB en RAM/VRAM)" off
+      9 "gemma3:4b-it-fp16    (128K tokens) ( 8,7 GB en disco) (10,2 GB en RAM/VRAM)" off
 
-     10 "gemma3 27b-it-q4_K_M (128K tokens) (17,2 GB en disco) (19,7 GB en RAM/VRAM)" off
-     11 "gemma3 27b-it-q8_0   (128K tokens) (29,2 GB en disco) (31,6 GB en RAM/VRAM)" off
-     12 "gemma3 27b-it-fp16   (128K tokens) (54,2 GB en disco) (57,1 GB en RAM/VRAM)" off
+     10 "gemma3:12b-it-q4_K_M (128K tokens) ( 8,2 GB en disco) (10,1 GB en RAM/VRAM)" off
+     11 "gemma3:12b-it-q8_0   (128K tokens) (13,2 GB en disco) (15,3 GB en RAM/VRAM)" off
+     12 "gemma3:12b-it-fp16   (128K tokens) (24,2 GB en disco) (26,8 GB en RAM/VRAM)" off
+
+     13 "gemma3:27b-it-q4_K_M (128K tokens) (17,2 GB en disco) (19,7 GB en RAM/VRAM)" off
+     14 "gemma3:27b-it-q8_0   (128K tokens) (29,2 GB en disco) (31,6 GB en RAM/VRAM)" off
+     15 "gemma3:27b-it-fp16   (128K tokens) (54,2 GB en disco) (57,1 GB en RAM/VRAM)" off
 
     )
   choices=$("${menu[@]}" "${opciones[@]}" 2>&1 >/dev/tty)
@@ -134,6 +138,84 @@
         case $choice in
 
           1)
+
+            echo ""
+            echo "  Instalando gemma3:270m-it-qat..."
+            echo ""
+
+            # Definir el espacio que ocupa el modelo
+              vEspacioQueOcupaElModelo=0.9
+
+            # Calcular espacio libre disponible antes de instalar el modelo
+              if fCalcularEspacioLibreEnCarpetaDeModelos $vEspacioQueOcupaElModelo; then
+                # Descargar
+                  ollama pull gemma3:270m-it-qat
+              else
+                # Obtener el espacio libre en la partición raíz en kilobytes
+                  vEspacioLibre=$(df / | grep '/' | tail -1 | sed -E 's/\s+/ /g' | cut -d ' ' -f 4)
+                  vGBsLibres=$(echo "scale=2; $vEspacioLibre/1024/1024" | bc)
+                echo ""
+                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo gemma3:270m-it-qat.${cFinColor}"
+                echo ""
+                echo -e "${cColorRojo}      Hacen falta $vEspacioQueOcupaElModelo GB y hay sólo $vGBsLibres GB.${cFinColor}"
+                echo ""
+              fi
+
+          ;;
+
+          2)
+
+            echo ""
+            echo "  Instalando gemma3:270m-it-q8_0..."
+            echo ""
+
+            # Definir el espacio que ocupa el modelo
+              vEspacioQueOcupaElModelo=0.9
+
+            # Calcular espacio libre disponible antes de instalar el modelo
+              if fCalcularEspacioLibreEnCarpetaDeModelos $vEspacioQueOcupaElModelo; then
+                # Descargar
+                  ollama pull gemma3:270m-it-q8_0
+              else
+                # Obtener el espacio libre en la partición raíz en kilobytes
+                  vEspacioLibre=$(df / | grep '/' | tail -1 | sed -E 's/\s+/ /g' | cut -d ' ' -f 4)
+                  vGBsLibres=$(echo "scale=2; $vEspacioLibre/1024/1024" | bc)
+                echo ""
+                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo gemma3:270m-it-q8_0.${cFinColor}"
+                echo ""
+                echo -e "${cColorRojo}      Hacen falta $vEspacioQueOcupaElModelo GB y hay sólo $vGBsLibres GB.${cFinColor}"
+                echo ""
+              fi
+
+          ;;
+
+          3)
+
+            echo ""
+            echo "  Instalando gemma3:270m-it-fp16..."
+            echo ""
+
+            # Definir el espacio que ocupa el modelo
+              vEspacioQueOcupaElModelo=0.9
+
+            # Calcular espacio libre disponible antes de instalar el modelo
+              if fCalcularEspacioLibreEnCarpetaDeModelos $vEspacioQueOcupaElModelo; then
+                # Descargar
+                  ollama pull gemma3:270m-it-fp16
+              else
+                # Obtener el espacio libre en la partición raíz en kilobytes
+                  vEspacioLibre=$(df / | grep '/' | tail -1 | sed -E 's/\s+/ /g' | cut -d ' ' -f 4)
+                  vGBsLibres=$(echo "scale=2; $vEspacioLibre/1024/1024" | bc)
+                echo ""
+                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo gemma3:270m-it-fp16.${cFinColor}"
+                echo ""
+                echo -e "${cColorRojo}      Hacen falta $vEspacioQueOcupaElModelo GB y hay sólo $vGBsLibres GB.${cFinColor}"
+                echo ""
+              fi
+
+          ;;
+
+          4)
 
             echo ""
             echo "  Instalando gemma3:1b-it-q4_K_M..."
@@ -159,7 +241,7 @@
 
           ;;
 
-          2)
+          5)
 
             echo ""
             echo "  Instalando gemma3:1b-it-q8_0..."
@@ -185,7 +267,7 @@
 
           ;;
 
-          3)
+          6)
 
             echo ""
             echo "  Instalando gemma3:1b-it-fp16..."
@@ -211,7 +293,7 @@
 
           ;;
 
-          4)
+          7)
 
             echo ""
             echo "  Instalando gemma3:4b-it-q4_K_M..."
@@ -237,7 +319,7 @@
 
           ;;
 
-          5)
+          8)
 
             echo ""
             echo "  Instalando gemma3:4b-it-q8_0..."
@@ -263,7 +345,7 @@
 
           ;;
 
-          6)
+          9)
 
             echo ""
             echo "  Instalando gemma3:4b-it-fp16..."
@@ -289,7 +371,7 @@
 
           ;;
 
-          7)
+         10)
 
             echo ""
             echo "  Instalando gemma3:12b-it-q4_K_M..."
@@ -315,7 +397,7 @@
 
           ;;
 
-          8)
+         11)
 
             echo ""
             echo "  Instalando gemma3:12b-it-q8_0..."
@@ -341,7 +423,7 @@
 
           ;;
 
-          9)
+         12)
 
             echo ""
             echo "  Instalando gemma3:12b-it-fp16..."
@@ -367,7 +449,7 @@
 
           ;;
 
-         10)
+         13)
 
             echo ""
             echo "  Instalando gemma3:27b-it-q4_K_M..."
@@ -393,7 +475,7 @@
 
           ;;
 
-         11)
+         14)
 
             echo ""
             echo "  Instalando gemma3:27b-it-q8_0..."
@@ -419,7 +501,7 @@
 
           ;;
 
-         12)
+         15)
 
             echo ""
             echo "  Instalando gemma3:27b-it-fp16..."
