@@ -49,29 +49,29 @@
     fi
   menu=(dialog --checklist "Marca los modelos que quieras instalar:" 22 96 16)
     opciones=(
-      1 "qwen2.5-coder:0.5b-instruct-q4_K_M ( 0,5 GB en disco) ( xx,x GB en RAM/VRAM)" off
-      2 "qwen2.5-coder:0.5b-instruct-q8_0   ( 0,6 GB en disco) ( xx,x GB en RAM/VRAM)" off
-      3 "qwen2.5-coder:0.5b-instruct-fp16   ( 1,1 GB en disco) ( xx,x GB en RAM/VRAM)" off
+      1 "qwen2.5-coder:0.5b-instruct-q4_K_M (32K tokens) ( 0,5 GB en disco) ( xx,x GB en RAM/VRAM)" off
+      2 "qwen2.5-coder:0.5b-instruct-q8_0   (32K tokens) ( 0,6 GB en disco) ( xx,x GB en RAM/VRAM)" off
+      3 "qwen2.5-coder:0.5b-instruct-fp16   (32K tokens) ( 1,1 GB en disco) ( xx,x GB en RAM/VRAM)" off
 
-      4 "qwen2.5-coder:1.5b-instruct-q4_K_M ( 1,1 GB en disco) ( xx,x GB en RAM/VRAM)" off
-      5 "qwen2.5-coder:1.5b-instruct-q8_0   ( 1,7 GB en disco) ( xx,x GB en RAM/VRAM)" off
-      6 "qwen2.5-coder:1.5b-instruct-fp16   ( 3,1 GB en disco) ( xx,x GB en RAM/VRAM)" off
+      4 "qwen2.5-coder:1.5b-instruct-q4_K_M (32K tokens) ( 1,1 GB en disco) ( xx,x GB en RAM/VRAM)" off
+      5 "qwen2.5-coder:1.5b-instruct-q8_0   (32K tokens) ( 1,7 GB en disco) ( xx,x GB en RAM/VRAM)" off
+      6 "qwen2.5-coder:1.5b-instruct-fp16   (32K tokens) ( 3,1 GB en disco) ( xx,x GB en RAM/VRAM)" off
 
-      7 "qwen2.5-coder:3b-instruct-q4_K_M   ( 2,1 GB en disco) ( xx,x GB en RAM/VRAM)" off
-      8 "qwen2.5-coder:3b-instruct-q8_0     ( 3,4 GB en disco) ( xx,x GB en RAM/VRAM)" off
-      9 "qwen2.5-coder:3b-instruct-fp16     ( 6,4 GB en disco) ( xx,x GB en RAM/VRAM)" off
+      7 "qwen2.5-coder:3b-instruct-q4_K_M   (32K tokens) ( 2,1 GB en disco) ( xx,x GB en RAM/VRAM)" off
+      8 "qwen2.5-coder:3b-instruct-q8_0     (32K tokens) ( 3,4 GB en disco) ( xx,x GB en RAM/VRAM)" off
+      9 "qwen2.5-coder:3b-instruct-fp16     (32K tokens) ( 6,4 GB en disco) ( xx,x GB en RAM/VRAM)" off
 
-     10 "qwen2.5-coder:7b-instruct-q4_K_M   ( 4,9 GB en disco) ( xx,x GB en RAM/VRAM)" off
-     11 "qwen2.5-coder:7b-instruct-q8_0     ( 8,3 GB en disco) ( xx,x GB en RAM/VRAM)" off
-     12 "qwen2.5-coder:7b-instruct-fp16     (15,3 GB en disco) ( xx,x GB en RAM/VRAM)" off
+     10 "qwen2.5-coder:7b-instruct-q4_K_M   (32K tokens) ( 4,9 GB en disco) ( xx,x GB en RAM/VRAM)" off
+     11 "qwen2.5-coder:7b-instruct-q8_0     (32K tokens) ( 8,3 GB en disco) ( xx,x GB en RAM/VRAM)" off
+     12 "qwen2.5-coder:7b-instruct-fp16     (32K tokens) (15,3 GB en disco) ( xx,x GB en RAM/VRAM)" off
 
-     13 "qwen2.5-coder:14b-instruct-q4_K_M  ( 9,2 GB en disco) ( xx,x GB en RAM/VRAM)" off
-     14 "qwen2.5-coder:14b-instruct-q8_0    (16,3 GB en disco) ( xx,x GB en RAM/VRAM)" off
-     15 "qwen2.5-coder:14b-instruct-fp16    (30,2 GB en disco) ( xx,x GB en RAM/VRAM)" off
+     13 "qwen2.5-coder:14b-instruct-q4_K_M  (32K tokens) ( 9,2 GB en disco) ( xx,x GB en RAM/VRAM)" off
+     14 "qwen2.5-coder:14b-instruct-q8_0    (32K tokens) (16,3 GB en disco) ( xx,x GB en RAM/VRAM)" off
+     15 "qwen2.5-coder:14b-instruct-fp16    (32K tokens) (30,2 GB en disco) ( xx,x GB en RAM/VRAM)" off
 
-     16 "qwen2.5-coder:32b-instruct-q4_K_M  (20,9 GB en disco) ( xx,x GB en RAM/VRAM)" off
-     17 "qwen2.5-coder:32b-instruct-q8_0    (35,5 GB en disco) ( xx,x GB en RAM/VRAM)" off
-     18 "qwen2.5-coder:32b-instruct-fp16    (66,3 GB en disco) ( xx,x GB en RAM/VRAM)" off
+     16 "qwen2.5-coder:32b-instruct-q4_K_M  (32K tokens) (20,9 GB en disco) ( xx,x GB en RAM/VRAM)" off
+     17 "qwen2.5-coder:32b-instruct-q8_0    (32K tokens) (35,5 GB en disco) ( xx,x GB en RAM/VRAM)" off
+     18 "qwen2.5-coder:32b-instruct-fp16    (32K tokens) (66,3 GB en disco) ( xx,x GB en RAM/VRAM)" off
     )
   choices=$("${menu[@]}" "${opciones[@]}" 2>&1 >/dev/tty)
 
