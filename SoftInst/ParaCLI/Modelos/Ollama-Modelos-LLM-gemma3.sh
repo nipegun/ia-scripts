@@ -110,21 +110,21 @@
   menu=(dialog --checklist "Marca los modelos que quieras instalar:" 22 80 16)
     opciones=(
 
-      1 "gemma3 1b-it-q4_K_M  ( 0,9 GB en disco) ( 1,4 GB en RAM/VRAM)" off
-      2 "gemma3 1b-it-q8_0    ( 1,2 GB en disco) ( 1,6 GB en RAM/VRAM)" off
-      3 "gemma3 1b-it-fp16    ( 2,1 GB en disco) ( 2,8 GB en RAM/VRAM)" off
+      1 "gemma3 1b-it-q4_K_M  ( 32K tokens) ( 0,9 GB en disco) ( 1,4 GB en RAM/VRAM)" off
+      2 "gemma3 1b-it-q8_0    ( 32K tokens) ( 1,2 GB en disco) ( 1,6 GB en RAM/VRAM)" off
+      3 "gemma3 1b-it-fp16    ( 32K tokens) ( 2,1 GB en disco) ( 2,8 GB en RAM/VRAM)" off
 
-      4 "gemma3 4b-it-q4_K_M  ( 3,4 GB en disco) ( 4,4 GB en RAM/VRAM)" off
-      5 "gemma3 4b-it-q8_0    ( 5,1 GB en disco) ( 6,1 GB en RAM/VRAM)" off
-      6 "gemma3 4b-it-fp16    ( 8,7 GB en disco) (10,2 GB en RAM/VRAM)" off
+      4 "gemma3 4b-it-q4_K_M  (128K tokens) ( 3,4 GB en disco) ( 4,4 GB en RAM/VRAM)" off
+      5 "gemma3 4b-it-q8_0    (128K tokens) ( 5,1 GB en disco) ( 6,1 GB en RAM/VRAM)" off
+      6 "gemma3 4b-it-fp16    (128K tokens) ( 8,7 GB en disco) (10,2 GB en RAM/VRAM)" off
 
-      7 "gemma3 12b-it-q4_K_M ( 8,2 GB en disco) (10,1 GB en RAM/VRAM)" off
-      8 "gemma3 12b-it-q8_0   (13,2 GB en disco) (15,3 GB en RAM/VRAM)" off
-      9 "gemma3 12b-it-fp16   (24,2 GB en disco) (26,8 GB en RAM/VRAM)" off
+      7 "gemma3 12b-it-q4_K_M (128K tokens) ( 8,2 GB en disco) (10,1 GB en RAM/VRAM)" off
+      8 "gemma3 12b-it-q8_0   (128K tokens) (13,2 GB en disco) (15,3 GB en RAM/VRAM)" off
+      9 "gemma3 12b-it-fp16   (128K tokens) (24,2 GB en disco) (26,8 GB en RAM/VRAM)" off
 
-     10 "gemma3 27b-it-q4_K_M (17,2 GB en disco) (19,7 GB en RAM/VRAM)" off
-     11 "gemma3 27b-it-q8_0   (29,2 GB en disco) (31,6 GB en RAM/VRAM)" off
-     12 "gemma3 27b-it-fp16   (54,2 GB en disco) (57,1 GB en RAM/VRAM)" off
+     10 "gemma3 27b-it-q4_K_M (128K tokens) (17,2 GB en disco) (19,7 GB en RAM/VRAM)" off
+     11 "gemma3 27b-it-q8_0   (128K tokens) (29,2 GB en disco) (31,6 GB en RAM/VRAM)" off
+     12 "gemma3 27b-it-fp16   (128K tokens) (54,2 GB en disco) (57,1 GB en RAM/VRAM)" off
 
     )
   choices=$("${menu[@]}" "${opciones[@]}" 2>&1 >/dev/tty)
