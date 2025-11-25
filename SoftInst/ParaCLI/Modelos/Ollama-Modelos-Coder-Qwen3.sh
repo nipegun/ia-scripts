@@ -49,13 +49,13 @@
     fi
   menu=(dialog --checklist "Marca los modelos que quieras instalar:" 22 96 16)
     opciones=(
-      1 "qwen3-coder:30b-a3b-q4_K_M   ( 19,1 GB en disco) ( xx,x GB en RAM/VRAM)" off
-      2 "qwen3-coder:30b-a3b-q8_0     ( 31,1 GB en disco) ( xx,x GB en RAM/VRAM)" off
-      3 "qwen3-coder:30b-a3b-fp16     ( 62,1 GB en disco) ( xx,x GB en RAM/VRAM)" off
+      1 "qwen3-coder:30b-a3b-q4_K_M   (256K tokens) ( 19,1 GB en disco) ( xx,x GB en RAM/VRAM)" off
+      2 "qwen3-coder:30b-a3b-q8_0     (256K tokens) ( 31,1 GB en disco) ( xx,x GB en RAM/VRAM)" off
+      3 "qwen3-coder:30b-a3b-fp16     (256K tokens) ( 62,1 GB en disco) ( xx,x GB en RAM/VRAM)" off
 
-      4 "qwen3-coder:480b-a35b-q4_K_M (291,1 GB en disco) ( xx,x GB en RAM/VRAM)" off
-      5 "qwen3-coder:480b-a35b-q8_0   (511,1 GB en disco) ( xx,x GB en RAM/VRAM)" off
-      6 "qwen3-coder:480b-a35b-fp16   (961,1 GB en disco) ( xx,x GB en RAM/VRAM)" off
+      4 "qwen3-coder:480b-a35b-q4_K_M (256K tokens) (291,1 GB en disco) ( xx,x GB en RAM/VRAM)" off
+      5 "qwen3-coder:480b-a35b-q8_0   (256K tokens) (511,1 GB en disco) ( xx,x GB en RAM/VRAM)" off
+      6 "qwen3-coder:480b-a35b-fp16   (256K tokens) (961,1 GB en disco) ( xx,x GB en RAM/VRAM)" off
     )
   choices=$("${menu[@]}" "${opciones[@]}" 2>&1 >/dev/tty)
 
