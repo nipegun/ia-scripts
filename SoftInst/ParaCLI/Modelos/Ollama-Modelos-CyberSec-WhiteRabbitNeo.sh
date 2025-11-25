@@ -42,8 +42,8 @@
   menu=(dialog --checklist "Marca los modelos que quieras instalar:" 22 96 16)
     opciones=(
 
-      1 "monotykamary/whiterabbitneo-v1.5a:7b (4,2 GB en disco) ( 8,2 GB en RAM/VRAM)" off
-      2 "jimscard/whiterabbit-neo:13b         (9,3 GB en disco) (15,5 GB en RAM/VRAM)" off
+      1 "monotykamary/whiterabbitneo-v1.5a:7b (16K tokens) (4,2 GB en disco) ( 8,2 GB en RAM/VRAM)" off
+      2 "jimscard/whiterabbit-neo:13b         (16K tokens) (9,3 GB en disco) (15,5 GB en RAM/VRAM)" off
 
     )
   choices=$("${menu[@]}" "${opciones[@]}" 2>&1 >/dev/tty)
