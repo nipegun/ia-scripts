@@ -48,33 +48,32 @@
   menu=(dialog --checklist "Marca los modelos que quieras instalar:" 22 96 16)
     opciones=(
 
+     16 "llama4:17b-scout-16e-instruct-q4_K_M     (1M tokens)   (  x,x GB en disco) (x,x GB en RAM/VRAM)" off
+     17 "llama4:17b-scout-16e-instruct-q8_0       (1M tokens)   (  x,0 GB en disco) (x,x GB en RAM/VRAM)" off
+     18 "llama4:17b-scout-16e-instruct-fp16       (1M tokens)   (  x,x GB en disco) (x,x GB en RAM/VRAM)" off
 
-     16 "llama4:17b-scout-16e-instruct-q4_K_M     (1M tokens) (x GB en disco) (x,x GB en RAM/VRAM)" off
-     17 "llama4:17b-scout-16e-instruct-q8_0       (1M tokens) (x GB en disco) (x,x GB en RAM/VRAM)" off
-     18 "llama4:17b-scout-16e-instruct-fp16       (1M tokens) (x GB en disco) (x,x GB en RAM/VRAM)" off
-
-     19 "llama4:17b-maverick-128e-instruct-q4_K_M (1M tokens) (x GB en disco) (x,x GB en RAM/VRAM)" off
-     20 "llama4:17b-maverick-128e-instruct-q8_0   (1M tokens) (x GB en disco) (x,x GB en RAM/VRAM)" off
-     21 "llama4:17b-maverick-128e-instruct-fp16   (1M tokens) (x GB en disco) (x,x GB en RAM/VRAM)" off
-
-
-     13 "llama3.3:70b-instruct-q4_0               (128K tokens) (x GB en disco) (x,x GB en RAM/VRAM)" off
-     14 "llama3.3:70b-instruct-q8_0               (128K tokens) (x GB en disco) (x,x GB en RAM/VRAM)" off
-     15 "llama3.3:70b-instruct-fp16               (128K tokens) (x GB en disco) (x,x GB en RAM/VRAM)" off
+     19 "llama4:17b-maverick-128e-instruct-q4_K_M (1M tokens)   (  x,x GB en disco) (x,x GB en RAM/VRAM)" off
+     20 "llama4:17b-maverick-128e-instruct-q8_0   (1M tokens)   (  x,x GB en disco) (x,x GB en RAM/VRAM)" off
+     21 "llama4:17b-maverick-128e-instruct-fp16   (1M tokens)   (  x,x GB en disco) (x,x GB en RAM/VRAM)" off
 
 
-      7 "llama3.2:1b-instruct-q4_0                (128K tokens) (0,9 GB en disco) (1,2 GB en RAM/VRAM)" off
-      8 "llama3.2:1b-instruct-q8_0                (128K tokens) (1,5 GB en disco) (1,7 GB en RAM/VRAM)" off
-      9 "llama3.2:1b-instruct-fp16                (128K tokens) (2,7 GB en disco) (2,8 GB en RAM/VRAM)" off
-
-     10 "llama3.2:3b-instruct-q4_0                (128K tokens) (2,0 GB en disco) (2,9 GB en RAM/VRAM)" off
-     11 "llama3.2:3b-instruct-q8_0                (128K tokens) (3,6 GB en disco) (4,4 GB en RAM/VRAM)" off
-     12 "llama3.2:3b-instruct-fp16                (128K tokens) (6,6 GB en disco) (7,3 GB en RAM/VRAM)" off
+     13 "llama3.3:70b-instruct-q4_0               (128K tokens) (  x,x GB en disco) (x,x GB en RAM/VRAM)" off
+     14 "llama3.3:70b-instruct-q8_0               (128K tokens) (  x,x GB en disco) (x,x GB en RAM/VRAM)" off
+     15 "llama3.3:70b-instruct-fp16               (128K tokens) (  x,x GB en disco) (x,x GB en RAM/VRAM)" off
 
 
-      1 "llama3.1:8b-instruct-q4_0                (128K tokens) ( 4,8 GB en disco) ( 5,7 GB en RAM/VRAM)" off
-      2 "llama3.1:8b-instruct-q8_0                (128K tokens) ( 8,6 GB en disco) ( 9,4 GB en RAM/VRAM)" off
-      3 "llama3.1:8b-instruct-fp16                (128K tokens) (16,2 GB en disco) (16,7 GB en RAM/VRAM)" off
+      7 "llama3.2:1b-instruct-q4_0                (128K tokens) (  0,9 GB en disco) (1,2 GB en RAM/VRAM)" off
+      8 "llama3.2:1b-instruct-q8_0                (128K tokens) (  1,5 GB en disco) (1,7 GB en RAM/VRAM)" off
+      9 "llama3.2:1b-instruct-fp16                (128K tokens) (  2,7 GB en disco) (2,8 GB en RAM/VRAM)" off
+
+     10 "llama3.2:3b-instruct-q4_0                (128K tokens) (  2,0 GB en disco) (2,9 GB en RAM/VRAM)" off
+     11 "llama3.2:3b-instruct-q8_0                (128K tokens) (  3,6 GB en disco) (4,4 GB en RAM/VRAM)" off
+     12 "llama3.2:3b-instruct-fp16                (128K tokens) (  6,6 GB en disco) (7,3 GB en RAM/VRAM)" off
+
+
+      1 "llama3.1:8b-instruct-q4_0                (128K tokens) (  4,8 GB en disco) ( 5,7 GB en RAM/VRAM)" off
+      2 "llama3.1:8b-instruct-q8_0                (128K tokens) (  8,6 GB en disco) ( 9,4 GB en RAM/VRAM)" off
+      3 "llama3.1:8b-instruct-fp16                (128K tokens) ( 16,2 GB en disco) (16,7 GB en RAM/VRAM)" off
 
       4 "llama3.1:405b-instruct-q4_0              (128K tokens) (230,0 GB en disco) (x,x GB en RAM/VRAM)" off
       5 "llama3.1:405b-instruct-q8_0              (128K tokens) (433,0 GB en disco) (x,x GB en RAM/VRAM)" off
@@ -492,6 +491,167 @@
 
           ;;
 
+         16)
+
+            echo ""
+            echo "  Instalando llama4:17b-scout-16e-instruct-q4_K_M..."
+            echo ""
+
+            # Definir el espacio libre necesario
+              vGBsLibresNecesarios=142
+              vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
+
+            # Obtener el espacio libre en la partición raíz en kilobytes
+              vEspacioLibre=$(df / | grep '/' | tail -1 | sed -E 's/\s+/ /g' | cut -d ' ' -f 4)
+              vGBsLibres=$(echo "scale=2; $vEspacioLibre/1024/1024" | bc)
+
+            # Comprobar si hay espacio libre disponible
+              if [ "$vEspacioLibre" -ge "$vEspacioNecesario" ]; then
+                ollama pull llama4:17b-scout-16e-instruct-q4_K_M
+              else
+                echo ""
+                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo llama4:17b-scout-16e-instruct-q4_K_M.${cFinColor}"
+                echo ""
+                echo -e "${cColorRojo}      Hacen falta $vGBsLibresNecesarios GB y hay sólo $vGBsLibres GB.${cFinColor}"
+                echo ""
+              fi
+
+          ;;
+
+         17)
+
+            echo ""
+            echo "  Instalando llama4:17b-scout-16e-instruct-q8_0..."
+            echo ""
+
+            # Definir el espacio libre necesario
+              vGBsLibresNecesarios=142
+              vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
+
+            # Obtener el espacio libre en la partición raíz en kilobytes
+              vEspacioLibre=$(df / | grep '/' | tail -1 | sed -E 's/\s+/ /g' | cut -d ' ' -f 4)
+              vGBsLibres=$(echo "scale=2; $vEspacioLibre/1024/1024" | bc)
+
+            # Comprobar si hay espacio libre disponible
+              if [ "$vEspacioLibre" -ge "$vEspacioNecesario" ]; then
+                ollama pull llama4:17b-scout-16e-instruct-q8_0
+              else
+                echo ""
+                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo llama4:17b-scout-16e-instruct-q8_0.${cFinColor}"
+                echo ""
+                echo -e "${cColorRojo}      Hacen falta $vGBsLibresNecesarios GB y hay sólo $vGBsLibres GB.${cFinColor}"
+                echo ""
+              fi
+
+          ;;
+
+         18)
+
+            echo ""
+            echo "  Instalando llama4:17b-scout-16e-instruct-fp16..."
+            echo ""
+
+            # Definir el espacio libre necesario
+              vGBsLibresNecesarios=142
+              vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
+
+            # Obtener el espacio libre en la partición raíz en kilobytes
+              vEspacioLibre=$(df / | grep '/' | tail -1 | sed -E 's/\s+/ /g' | cut -d ' ' -f 4)
+              vGBsLibres=$(echo "scale=2; $vEspacioLibre/1024/1024" | bc)
+
+            # Comprobar si hay espacio libre disponible
+              if [ "$vEspacioLibre" -ge "$vEspacioNecesario" ]; then
+                ollama pull llama4:17b-scout-16e-instruct-fp16
+              else
+                echo ""
+                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo llama4:17b-scout-16e-instruct-fp16.${cFinColor}"
+                echo ""
+                echo -e "${cColorRojo}      Hacen falta $vGBsLibresNecesarios GB y hay sólo $vGBsLibres GB.${cFinColor}"
+                echo ""
+              fi
+
+          ;;
+
+         19)
+
+            echo ""
+            echo "  Instalando llama4:17b-maverick-128e-instruct-q4_K_M..."
+            echo ""
+
+            # Definir el espacio libre necesario
+              vGBsLibresNecesarios=142
+              vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
+
+            # Obtener el espacio libre en la partición raíz en kilobytes
+              vEspacioLibre=$(df / | grep '/' | tail -1 | sed -E 's/\s+/ /g' | cut -d ' ' -f 4)
+              vGBsLibres=$(echo "scale=2; $vEspacioLibre/1024/1024" | bc)
+
+            # Comprobar si hay espacio libre disponible
+              if [ "$vEspacioLibre" -ge "$vEspacioNecesario" ]; then
+                ollama pull llama4:17b-maverick-128e-instruct-q4_K_M
+              else
+                echo ""
+                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo llama4:17b-maverick-128e-instruct-q4_K_M.${cFinColor}"
+                echo ""
+                echo -e "${cColorRojo}      Hacen falta $vGBsLibresNecesarios GB y hay sólo $vGBsLibres GB.${cFinColor}"
+                echo ""
+              fi
+
+          ;;
+
+         20)
+
+            echo ""
+            echo "  Instalando llama4:17b-maverick-128e-instruct-q8_0..."
+            echo ""
+
+            # Definir el espacio libre necesario
+              vGBsLibresNecesarios=142
+              vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
+
+            # Obtener el espacio libre en la partición raíz en kilobytes
+              vEspacioLibre=$(df / | grep '/' | tail -1 | sed -E 's/\s+/ /g' | cut -d ' ' -f 4)
+              vGBsLibres=$(echo "scale=2; $vEspacioLibre/1024/1024" | bc)
+
+            # Comprobar si hay espacio libre disponible
+              if [ "$vEspacioLibre" -ge "$vEspacioNecesario" ]; then
+                ollama pull llama4:17b-maverick-128e-instruct-q8_0
+              else
+                echo ""
+                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo llama4:17b-maverick-128e-instruct-q8_0.${cFinColor}"
+                echo ""
+                echo -e "${cColorRojo}      Hacen falta $vGBsLibresNecesarios GB y hay sólo $vGBsLibres GB.${cFinColor}"
+                echo ""
+              fi
+
+          ;;
+
+         21)
+
+            echo ""
+            echo "  Instalando llama4:17b-maverick-128e-instruct-fp16..."
+            echo ""
+
+            # Definir el espacio libre necesario
+              vGBsLibresNecesarios=142
+              vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
+
+            # Obtener el espacio libre en la partición raíz en kilobytes
+              vEspacioLibre=$(df / | grep '/' | tail -1 | sed -E 's/\s+/ /g' | cut -d ' ' -f 4)
+              vGBsLibres=$(echo "scale=2; $vEspacioLibre/1024/1024" | bc)
+
+            # Comprobar si hay espacio libre disponible
+              if [ "$vEspacioLibre" -ge "$vEspacioNecesario" ]; then
+                ollama pull llama4:17b-maverick-128e-instruct-fp16
+              else
+                echo ""
+                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo llama4:17b-maverick-128e-instruct-fp16.${cFinColor}"
+                echo ""
+                echo -e "${cColorRojo}      Hacen falta $vGBsLibresNecesarios GB y hay sólo $vGBsLibres GB.${cFinColor}"
+                echo ""
+              fi
+
+          ;;
 
       esac
 
