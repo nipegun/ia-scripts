@@ -41,10 +41,15 @@
     fi
   menu=(dialog --checklist "Marca los modelos que quieras instalar:" 22 96 16)
     opciones=(
-      1 "phi3 3.8b-mini-128k-instruct-q8_0 ( 4,2 GB en disco) ( 7,1 GB en RAM/VRAM)" off
-      2 "phi3 3.8b-mini-128k-instruct-fp16 ( 7,7 GB en disco) (10,5 GB en RAM/VRAM)" off
-      3 "phi4 14b-q8_0                     (15,1 GB en disco) (16,7 GB en RAM/VRAM)" off
-      4 "phi4 14b-fp16                     (29,1 GB en disco) (29,8 GB en RAM/VRAM)" off
+
+      1 "phi3:3.8b-mini-128k-instruct-q4_K_M ( 4K tokens) ( x,x GB en disco) ( x,x GB en RAM/VRAM)" off
+      2 "phi3:3.8b-mini-128k-instruct-q8_0   ( 4K tokens) ( 4,2 GB en disco) ( 7,1 GB en RAM/VRAM)" off
+      3 "phi3:3.8b-mini-128k-instruct-fp16   ( 4K tokens) ( 7,7 GB en disco) (10,5 GB en RAM/VRAM)" off
+
+      4 "phi4:14b-q4_K_M                     (16K tokens) (xx,x GB en disco) (xx,x GB en RAM/VRAM)" off
+      5 "phi4:14b-q8_0                       (16K tokens) (15,1 GB en disco) (16,7 GB en RAM/VRAM)" off
+      6 "phi4:14b-fp16                       (16K tokens) (29,1 GB en disco) (29,8 GB en RAM/VRAM)" off
+
     )
   choices=$("${menu[@]}" "${opciones[@]}" 2>&1 >/dev/tty)
 
@@ -53,6 +58,33 @@
         case $choice in
 
           1)
+
+            echo ""
+            echo "  Instalando phi3:3.8b-mini-128k-instruct-q4_K_M..."
+            echo ""
+
+            # Definir el espacio libre necesario
+              vGBsLibresNecesarios=1
+              vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
+
+            # Obtener el espacio libre en la partición raíz en kilobytes
+              vEspacioLibre=$(df / | grep '/' | tail -1 | sed -E 's/\s+/ /g' | cut -d ' ' -f 4)
+              vGBsLibres=$(echo "scale=2; $vEspacioLibre/1024/1024" | bc)
+
+            # Comprobar si hay espacio libre disponible
+              if [ "$vEspacioLibre" -ge "$vEspacioNecesario" ]; then
+                ollama pull phi3:3.8b-mini-128k-instruct-q4_K_M
+              else
+                echo ""
+                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo phi3:3.8b-mini-128k-instruct-q4_K_M.${cFinColor}"
+                echo ""
+                echo -e "${cColorRojo}      Hacen falta $vGBsLibresNecesarios GB y hay sólo $vGBsLibres GB.${cFinColor}"
+                echo ""
+              fi
+
+          ;;
+
+          2)
 
             echo ""
             echo "  Instalando phi3:3.8b-mini-128k-instruct-q8_0..."
@@ -79,7 +111,7 @@
 
           ;;
 
-          2)
+          3)
 
             echo ""
             echo "  Instalando phi3:3.8b-mini-128k-instruct-fp16..."
@@ -106,7 +138,34 @@
 
           ;;
 
-          3)
+          4)
+
+            echo ""
+            echo "  Instalando phi4:14b-q4_K_M..."
+            echo ""
+
+            # Definir el espacio libre necesario
+              vGBsLibresNecesarios=1
+              vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
+
+            # Obtener el espacio libre en la partición raíz en kilobytes
+              vEspacioLibre=$(df / | grep '/' | tail -1 | sed -E 's/\s+/ /g' | cut -d ' ' -f 4)
+              vGBsLibres=$(echo "scale=2; $vEspacioLibre/1024/1024" | bc)
+
+            # Comprobar si hay espacio libre disponible
+              if [ "$vEspacioLibre" -ge "$vEspacioNecesario" ]; then
+                ollama pull phi4:14b-q4_K_M
+              else
+                echo ""
+                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo phi4:14b-q4_K_M.${cFinColor}"
+                echo ""
+                echo -e "${cColorRojo}      Hacen falta $vGBsLibresNecesarios GB y hay sólo $vGBsLibres GB.${cFinColor}"
+                echo ""
+              fi
+
+          ;;
+
+          5)
 
             echo ""
             echo "  Instalando phi4:14b-q8_0..."
@@ -133,7 +192,7 @@
 
           ;;
 
-          4)
+          6)
 
             echo ""
             echo "  Instalando phi4:14b-fp16..."
