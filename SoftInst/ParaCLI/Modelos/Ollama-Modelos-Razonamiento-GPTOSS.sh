@@ -41,8 +41,8 @@
     fi
   menu=(dialog --checklist "Marca los modelos que quieras instalar:" 22 96 16)
     opciones=(
-      1 "gpt-oss:20b  (MXFP4) (128K tokens) (xx,x GB en disco) (xx,x GB en RAM/VRAM)" off
-      2 "gpt-oss:120b (MXFP4) (128K tokens) (xx,x GB en disco) (xx,x GB en RAM/VRAM)" off
+      1 "gpt-oss:20b  (MXFP4) (128K tokens) (14,9 GB en disco) (xx,x GB en RAM/VRAM)" off
+      2 "gpt-oss:120b (MXFP4) (128K tokens) (65,9 GB en disco) (xx,x GB en RAM/VRAM)" off
     )
   choices=$("${menu[@]}" "${opciones[@]}" 2>&1 >/dev/tty)
 
@@ -57,7 +57,7 @@
             echo ""
 
             # Definir el espacio libre necesario
-              vGBsLibresNecesarios=14
+              vGBsLibresNecesarios=14.9
               vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
 
             # Obtener el espacio libre en la partición raíz en kilobytes
@@ -84,7 +84,7 @@
             echo ""
 
             # Definir el espacio libre necesario
-              vGBsLibresNecesarios=70
+              vGBsLibresNecesarios=65.9
               vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
 
             # Obtener el espacio libre en la partición raíz en kilobytes
