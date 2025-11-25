@@ -49,7 +49,6 @@
       4 "dolphin-mixtral:8x7b-v2.7-q4_K_M   (xx,x GB en disco) (xx,x GB en VRAM)" off
       5 "dolphin-mixtral:8x7b-v2.7-q8_0     (xx,x GB en disco) (xx,x GB en VRAM)" off
       6 "dolphin-mixtral:8x7b-v2.7-fp16     (xx,x GB en disco) (xx,x GB en VRAM)" off
-
       7 "dolphin-mixtral:8x22b-v2.9-q4_K_M  (xx,x GB en disco) (xx,x GB en VRAM)" off
       8 "dolphin-mixtral:8x22b-v2.9-q8_0    (xx,x GB en disco) (xx,x GB en VRAM)" off
       9 "dolphin-mixtral:8x22b-v2.9-fp16    (xx,x GB en disco) (xx,x GB en VRAM)" off
