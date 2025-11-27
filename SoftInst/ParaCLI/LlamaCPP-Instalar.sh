@@ -102,11 +102,15 @@
           1 "Compilar con los valores por defecto"                                                       off
           2 "Configurar y compilar para uso únicamente con procesador Intel Core i7-7700K"               off
           3 "Configurar y compilar para uso únicamente con procesador AMD Ryzen 9 5950x"                 off
-          4 "Configurar y compilar para uso prioritario con CUDA (tarjetas nVidia) y secundario con CPU" off
-          5 "Configurar y compilar únicamente para uso con CUDA (tarjetas nVidia)"                       off
-          6 "Configurar y compilar para uso prioritario con ROCm (tarjetas AMD) y secundario con CPU"    off
-          7 "Configurar y compilar únicamente para uso con ROCm (tarjetas AMD)"                          off
-          8 "Abortar compilación e interrumpir script"                                                   off
+          4 "Configurar y compilar para uso únicamente con procesador AMD Ryzen Threadripper 3970X"      off
+          5 "Configurar y compilar para uso únicamente con procesador AMD Ryzen AI 7 PRO 350"            off
+          
+          6 "Configurar y compilar para uso prioritario con CUDA (tarjetas nVidia) y secundario con CPU" off
+          7 "Configurar y compilar únicamente para uso con CUDA (tarjetas nVidia)"                       off
+          8 "Configurar y compilar para uso prioritario con ROCm (tarjetas AMD) y secundario con CPU"    off
+          9 "Configurar y compilar únicamente para uso con ROCm (tarjetas AMD)"                          off
+
+         10 "Abortar compilación e interrumpir script"                                                   off
         )
       choices=$("${menu[@]}" "${opciones[@]}" 2>&1 >/dev/tty)
       #clear
@@ -149,10 +153,10 @@
             ;;
 
 
-            15)
+            4)
 
               echo ""
-              echo "    Compilando para uso con Threadripper 3970X..."
+              echo "    Compilando para uso con Ryzen Threadripper 3970X..."
               echo ""
               cd ~/repos/ia/llama.cpp/build
               cmake .. -DCMAKE_CXX_FLAGS="-march=znver2 -mtune=znver2 -O3"
@@ -160,8 +164,18 @@
 
             ;;
 
+            5)
 
-            4)
+              echo ""
+              echo "    Compilando para uso con Ryzen AI 7 PRO 350..."
+              echo ""
+              cd ~/repos/ia/llama.cpp/build
+              cmake .. -DCMAKE_CXX_FLAGS="-march=znver4 -mtune=znver4 -O3"
+              cmake --build . --config Release -- -j$(nproc)
+
+            ;;
+
+            6)
 
               echo ""
               echo "    Compilando para uso prioritario de CUDA (tarjetas nVidia) y secundario CPU genérico..."
@@ -177,7 +191,7 @@
 
             ;;
 
-            5)
+            7)
 
               echo ""
               echo "    Compilando únicamente para uso con CUDA (tarjetas nVidia)..."
@@ -201,7 +215,7 @@
 
             ;;
 
-            6)
+            8)
 
               echo ""
               echo "    Compilando para uso prioritario de ROCm (tarjetas AMD) y secundario CPU genérico......"
@@ -217,7 +231,7 @@
 
             ;;
 
-            7)
+            9)
 
               echo ""
               echo "    Compilando únicamente para uso con ROCm (tarjetas AMD)..."
@@ -243,7 +257,7 @@
 
             ;;
 
-            8)
+            10)
 
               echo ""
               echo "    Abortando compilación e interrumpiendo el script..."
