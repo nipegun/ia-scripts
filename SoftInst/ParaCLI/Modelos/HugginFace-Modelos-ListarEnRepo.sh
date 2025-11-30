@@ -13,5 +13,4 @@ vRepo='gpt-oss-20b-GGUF'
 
 
 
-curl -s https://huggingface.co/api/models/"$vUsuario"/"$vRepo" | grep -i gguf | jq
-
+curl -s https://huggingface.co/api/models/"$vUsuario"/"$vRepo" | jq | grep .gguf
