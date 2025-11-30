@@ -271,8 +271,8 @@
     done
 
   # Crear carpeta
-    mkdir -p $HOME/LlamaCPP/
-    cp $HOME/Git/llama.cpp/build/bin/* $HOME/LlamaCPP/
+    mkdir -p $HOME/IA/LlamaCPP/
+    cp $HOME/Git/llama.cpp/build/bin/* $HOME/IA/LlamaCPP/
 
     # Notificar fin de ejecución del script
       echo ""
@@ -280,30 +280,30 @@
       echo ""
       echo "    Para ejecutar llama.cpp y realizar una consulta, cerrando la conversación:"
       echo ""
-      echo "      $HOME/LlamaCPP/llama-cli -m $HOME/Modelos/GGUF/Llama-3.2-3B-Instruct-Q8_0.gguf -p 'Hazme un script de python que diga hola?' -no-cnv"
+      echo "      $HOME/IA/LlamaCPP/llama-cli -m $HOME/IA/Modelos/GGUF/Llama-3.2-3B-Instruct-Q8_0.gguf -p 'Hazme un script de python que diga hola?' -no-cnv"
       echo ""
       echo "      Podemos hacer que cierre la conversación, aunque no responda por completo, limitando el nro de tokens de respuesta:"
       echo ""
-      echo "        $HOME/LlamaCPP/llama-cli -m $HOME/Modelos/GGUF/Llama-3.2-3B-Instruct-Q8_0.gguf -p 'Hazme un script de python que diga hola?' -n 128 -no-cnv"
+      echo "        $HOME/IA/LlamaCPP/llama-cli -m $HOME/IA/Modelos/GGUF/Llama-3.2-3B-Instruct-Q8_0.gguf -p 'Hazme un script de python que diga hola?' -n 128 -no-cnv"
       echo ""
       echo "    Para indicarle cuanta VRAM usar (en el caso de haber compilado con soporte CUDA):"
       echo ""
-      echo "      $HOME/LlamaCPP/llama-cli -m $HOME/Modelos/GGUF/Llama-3.2-3B-Instruct-Q8_0.gguf -ngl 100 --n-gpu-layers 32"
+      echo "      $HOME/IA/LlamaCPP/llama-cli -m $HOME/IA/Modelos/GGUF/Llama-3.2-3B-Instruct-Q8_0.gguf -ngl 100 --n-gpu-layers 32"
       echo ""
       echo "        -ngl 100: Usa la GPU completamente."
       echo "        --n-gpu-layers 32: Define cuántas capas del modelo se ejecutarán en la GPU (ajústalo según la VRAM disponible)."
       echo ""
       echo "    Para ejecutar en modo conversación:"
       echo ""
-      echo "      $HOME/LlamaCPP/llama-cli -m $HOME/Modelos/GGUF/Llama-3.2-3B-Instruct-Q8_0.gguf"
+      echo "      $HOME/IA/LlamaCPP/llama-cli -m $HOME/IA/Modelos/GGUF/Llama-3.2-3B-Instruct-Q8_0.gguf"
       echo ""
       echo "    Para ejecutar como API/servidor:"
       echo ""
-      echo "      $HOME/LlamaCPP/llama-server --port 9000 -m $HOME/Modelos/GGUF/Llama-3.2-3B-Instruct-Q8_0.gguf"
+      echo "      $HOME/IA/LlamaCPP/llama-server --port 9000 -m $HOME/IA/Modelos/GGUF/Llama-3.2-3B-Instruct-Q8_0.gguf"
       echo ""
       echo "      Crear un servidor para 4 usuarios simultáneos y contexto de 4096 para cada uno:"
       echo ""
-      echo "        $HOME/LlamaCPP/llama-server --port 9000 -m $HOME/Modelos/GGUF/Llama-3.2-3B-Instruct-Q8_0.gguf -c 16384 -np 4"
+      echo "        $HOME/IA/LlamaCPP/llama-server --port 9000 -m $HOME/IA/Modelos/GGUF/Llama-3.2-3B-Instruct-Q8_0.gguf -c 16384 -np 4"
       echo ""
       echo "      Luego podemos tirarle consultas con:"
       echo ""
