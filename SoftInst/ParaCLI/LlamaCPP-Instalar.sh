@@ -65,14 +65,14 @@
     echo -e "${cColorAzulClaro}  Iniciando el script de instalación de llama.cpp para Debian 13 (x)...${cFinColor}"
     echo ""
 
-    # Crear carpeta de repos
-      mkdir -p ~/repos/ia/ 2> /dev/null
+    # Crear carpeta de Git
+      mkdir -p $HOME/Git/ 2> /dev/null
 
     # Borrar versión ya instalada
-      rm -rf ~/repos/ia/llama.cpp
+      rm -rf $HOME/Git/llama.cpp
 
-    # Clonar repositorio
-      cd ~/repos/ia/
+    # Clonar Gititorio
+      cd $HOME/Git/
       git clone https://github.com/ggerganov/llama.cpp.git
 
     # Compilar
@@ -124,7 +124,7 @@
               echo ""
               echo "    Compilando para uso con procesadores genéricos..."
               echo ""
-              cd ~/repos/ia/llama.cpp/build
+              cd $HOME/Git/llama.cpp/build
               cmake ..
               cmake --build . --config Release -- -j$(nproc)
 
@@ -135,7 +135,7 @@
               echo ""
               echo "    Compilando para uso con i7-7700K..."
               echo ""
-              cd ~/repos/ia/llama.cpp/build
+              cd $HOME/Git/llama.cpp/build
               cmake .. -DCMAKE_CXX_FLAGS="-march=skylake -mtune=skylake -O3"
               cmake --build . --config Release -- -j$(nproc)
 
@@ -146,7 +146,7 @@
               echo ""
               echo "    Compilando para uso con Ryzen 9 5950x..."
               echo ""
-              cd ~/repos/ia/llama.cpp/build
+              cd $HOME/Git/llama.cpp/build
               cmake .. -DCMAKE_CXX_FLAGS="-march=znver3 -mtune=znver3 -O3"
               cmake --build . --config Release -- -j$(nproc)
 
@@ -158,7 +158,7 @@
               echo ""
               echo "    Compilando para uso con Ryzen Threadripper 3970X..."
               echo ""
-              cd ~/repos/ia/llama.cpp/build
+              cd $HOME/Git/llama.cpp/build
               cmake .. -DCMAKE_CXX_FLAGS="-march=znver2 -mtune=znver2 -O3"
               cmake --build . --config Release -- -j$(nproc)
 
@@ -169,7 +169,7 @@
               echo ""
               echo "    Compilando para uso con Ryzen AI 7 PRO 350..."
               echo ""
-              cd ~/repos/ia/llama.cpp/build
+              cd $HOME/Git/llama.cpp/build
               cmake .. -DCMAKE_CXX_FLAGS="-march=znver4 -mtune=znver4 -O3"
               cmake --build . --config Release -- -j$(nproc)
 
@@ -182,11 +182,11 @@
               echo ""
               sudo apt -y update
               sudo apt -y install -y build-essential cmake libcuda1 libncurses-dev
-              cd ~/repos/ia/llama.cpp/build
+              cd $HOME/Git/llama.cpp/build
               cmake .. -DGGLM_CUDA=ON -DGGML_CUDA_FORCE=ON -DGGML_NATIVE=ON -DCMAKE_CXX_FLAGS="-O3"
               cmake --build . --config Release -- -j$(nproc)
               # Para limitar la cantidad de memoria VRAM usada, ajusta --n-gpu-layers:
-              # Por ejemplo: ~/IA/LlamaCPP/llama-cli -m ~/IA/Modelos/GGUF/Llama-3.2-3B-Instruct-Q8_0.gguf -ngl 100 -n-gpu-layers 32
+              # Por ejemplo: $HOME/LlamaCPP/llama-cli -m $HOME/Modelos/GGUF/Llama-3.2-3B-Instruct-Q8_0.gguf -ngl 100 -n-gpu-layers 32
               # El modelo se cargará 32 capas en VRAM y el resto en RAM 
 
             ;;
@@ -198,7 +198,7 @@
               echo ""
               sudo apt -y update
               sudo apt -y install -y build-essential cmake libcuda1 libncurses-dev
-              cd ~/repos/ia/llama.cpp/build
+              cd $HOME/Git/llama.cpp/build
               cmake .. -DLLAMA_CUDA=ON -DLLAMA_CUDA_FORCE=ON -DLLAMA_CUDA_ONLY=ON -DCMAKE_CXX_FLAGS="-O3"
               cmake --build . --config Release -- -j$(nproc)
               # -DLLAMA_CUDA=ON: Habilita soporte para CUDA.
@@ -209,7 +209,7 @@
               # Si cmake no detecta CUDA, asegúrate de que la variable CUDA_HOME está correctamente configurada:
               # export CUDA_HOME=/usr/local/cuda
               #
-              # Para ejecutar: ~/IA/LlamaCPP/llama-cli -m ~/IA/Modelos/GGUF/Llama-3.2-3B-Instruct-Q8_0.gguf -ngl 100
+              # Para ejecutar: $HOME/LlamaCPP/llama-cli -m $HOME/Modelos/GGUF/Llama-3.2-3B-Instruct-Q8_0.gguf -ngl 100
               #   -ngl 100 indica que se usarán todas las capas en la GPU.
               # Si llama.cpp no tiene CPU activada, este comando fallará si la GPU no puede manejar la carga, lo cual confirma que la CPU está deshabilitada.
 
@@ -222,11 +222,11 @@
               echo ""
               sudo apt -y update
               sudo apt -y install -y build-essential cmake libcuda1 libncurses-dev
-              cd ~/repos/ia/llama.cpp/build
+              cd $HOME/Git/llama.cpp/build
               cmake .. -DLLAMA_CUDA=ON -DLLAMA_CUDA_FORCE=ON -DLLAMA_NATIVE=ON -DCMAKE_CXX_FLAGS="-O3"
               cmake --build . --config Release -- -j$(nproc)
               # Para limitar la cantidad de memoria VRAM usada, ajusta --n-gpu-layers:
-              # Por ejemplo: ~/IA/LlamaCPP/llama-cli -m ~/IA/Modelos/GGUF/Llama-3.2-3B-Instruct-Q8_0.gguf -ngl 100 -n-gpu-layers 32
+              # Por ejemplo: $HOME/LlamaCPP/llama-cli -m $HOME/Modelos/GGUF/Llama-3.2-3B-Instruct-Q8_0.gguf -ngl 100 -n-gpu-layers 32
               # El modelo se cargará 32 capas en VRAM y el resto en RAM
 
             ;;
@@ -238,7 +238,7 @@
               echo ""
               sudo apt -y update
               sudo apt -y install -y build-essential cmake
-              cd ~/repos/ia/llama.cpp/build
+              cd $HOME/Git/llama.cpp/build
               cmake .. -DLLAMA_HIPBLAS=ON -DLLAMA_HIP=ON -DLLAMA_HIP_ONLY=ON -DCMAKE_CXX_FLAGS="-O3"
               cmake --build . --config Release -- -j$(nproc)
               # -DLLAMA_HIPBLAS=ON: Habilita el soporte para HIPBLAS (equivalente a cuBLAS en CUDA).
@@ -251,7 +251,7 @@
               #   export PATH=$HIP_PATH/bin:$PATH
               #   export LD_LIBRARY_PATH=$HIP_PATH/lib:$LD_LIBRARY_PATH
               #
-              # Para ejecutar: ~/IA/LlamaCPP/llama-cli -m ~/IA/Modelos/GGUF/Llama-3.2-3B-Instruct-Q8_0.gguf -ngl 100
+              # Para ejecutar: $HOME/LlamaCPP/llama-cli -m $HOME/Modelos/GGUF/Llama-3.2-3B-Instruct-Q8_0.gguf -ngl 100
               #   -ngl 100 indica que se usarán todas las capas en la GPU.
               # Si llama.cpp no tiene CPU activada, este comando fallará si la GPU no puede manejar la carga, lo cual confirma que la CPU está deshabilitada.
 
@@ -271,8 +271,8 @@
     done
 
   # Crear carpeta
-    mkdir -p $HOME/IA/LlamaCPP/
-    cp $HOME/repos/ia/llama.cpp/build/bin/* ~/IA/LlamaCPP/
+    mkdir -p $HOME/LlamaCPP/
+    cp $HOME/Git/llama.cpp/build/bin/* $HOME/LlamaCPP/
 
     # Notificar fin de ejecución del script
       echo ""
@@ -280,30 +280,30 @@
       echo ""
       echo "    Para ejecutar llama.cpp y realizar una consulta, cerrando la conversación:"
       echo ""
-      echo "      ~/IA/LlamaCPP/llama-cli -m ~/IA/Modelos/GGUF/Llama-3.2-3B-Instruct-Q8_0.gguf -p 'Hazme un script de python que diga hola?' -no-cnv"
+      echo "      $HOME/LlamaCPP/llama-cli -m $HOME/Modelos/GGUF/Llama-3.2-3B-Instruct-Q8_0.gguf -p 'Hazme un script de python que diga hola?' -no-cnv"
       echo ""
       echo "      Podemos hacer que cierre la conversación, aunque no responda por completo, limitando el nro de tokens de respuesta:"
       echo ""
-      echo "        ~/IA/LlamaCPP/llama-cli -m ~/IA/Modelos/GGUF/Llama-3.2-3B-Instruct-Q8_0.gguf -p 'Hazme un script de python que diga hola?' -n 128 -no-cnv"
+      echo "        $HOME/LlamaCPP/llama-cli -m $HOME/Modelos/GGUF/Llama-3.2-3B-Instruct-Q8_0.gguf -p 'Hazme un script de python que diga hola?' -n 128 -no-cnv"
       echo ""
       echo "    Para indicarle cuanta VRAM usar (en el caso de haber compilado con soporte CUDA):"
       echo ""
-      echo "      ~/IA/LlamaCPP/llama-cli -m ~/IA/Modelos/GGUF/Llama-3.2-3B-Instruct-Q8_0.gguf -ngl 100 --n-gpu-layers 32"
+      echo "      $HOME/LlamaCPP/llama-cli -m $HOME/Modelos/GGUF/Llama-3.2-3B-Instruct-Q8_0.gguf -ngl 100 --n-gpu-layers 32"
       echo ""
       echo "        -ngl 100: Usa la GPU completamente."
       echo "        --n-gpu-layers 32: Define cuántas capas del modelo se ejecutarán en la GPU (ajústalo según la VRAM disponible)."
       echo ""
       echo "    Para ejecutar en modo conversación:"
       echo ""
-      echo "      ~/IA/LlamaCPP/llama-cli -m ~/IA/Modelos/GGUF/Llama-3.2-3B-Instruct-Q8_0.gguf"
+      echo "      $HOME/LlamaCPP/llama-cli -m $HOME/Modelos/GGUF/Llama-3.2-3B-Instruct-Q8_0.gguf"
       echo ""
       echo "    Para ejecutar como API/servidor:"
       echo ""
-      echo "      ~/IA/LlamaCPP/llama-server --port 9000 -m ~/IA/Modelos/GGUF/Llama-3.2-3B-Instruct-Q8_0.gguf"
+      echo "      $HOME/LlamaCPP/llama-server --port 9000 -m $HOME/Modelos/GGUF/Llama-3.2-3B-Instruct-Q8_0.gguf"
       echo ""
       echo "      Crear un servidor para 4 usuarios simultáneos y contexto de 4096 para cada uno:"
       echo ""
-      echo "        ~/IA/LlamaCPP/llama-server --port 9000 -m ~/IA/Modelos/GGUF/Llama-3.2-3B-Instruct-Q8_0.gguf -c 16384 -np 4"
+      echo "        $HOME/LlamaCPP/llama-server --port 9000 -m $HOME/Modelos/GGUF/Llama-3.2-3B-Instruct-Q8_0.gguf -c 16384 -np 4"
       echo ""
       echo "      Luego podemos tirarle consultas con:"
       echo ""
@@ -316,14 +316,14 @@
     echo -e "${cColorAzulClaro}  Iniciando el script de instalación de llama.cpp para Debian 12 (Bookworm)...${cFinColor}"
     echo ""
 
-    # Crear carpeta de repos
-      mkdir -p ~/repos/ia/
+    # Crear carpeta de Git
+      mkdir -p $HOME/Git/
 
     # Borrar versión ya instalada
-      rm -rf ~/repos/ia/llama.cpp
+      rm -rf $HOME/Git/llama.cpp
 
-    # Clonar repositorio
-      cd ~/repos/ia/
+    # Clonar Gititorio
+      cd $HOME/Git/
       git clone https://github.com/ggerganov/llama.cpp.git
 
     # Compilar
@@ -369,7 +369,7 @@
               echo ""
               echo "    Compilando para uso con procesadores genéricos..."
               echo ""
-              cd ~/repos/ia/llama.cpp/build
+              cd $HOME/Git/llama.cpp/build
               cmake ..
               cmake --build . --config Release -- -j$(nproc)
 
@@ -380,7 +380,7 @@
               echo ""
               echo "    Compilando para uso con i7-7700K..."
               echo ""
-              cd ~/repos/ia/llama.cpp/build
+              cd $HOME/Git/llama.cpp/build
               cmake .. -DCMAKE_CXX_FLAGS="-march=skylake -mtune=skylake -O3"
               cmake --build . --config Release -- -j$(nproc)
 
@@ -391,7 +391,7 @@
               echo ""
               echo "    Compilando para uso con Ryzen 9 5950x..."
               echo ""
-              cd ~/repos/ia/llama.cpp/build
+              cd $HOME/Git/llama.cpp/build
               cmake .. -DCMAKE_CXX_FLAGS="-march=znver3 -mtune=znver3 -O3"
               cmake --build . --config Release -- -j$(nproc)
 
@@ -404,11 +404,11 @@
               echo ""
               sudo apt -y update
               sudo apt -y install -y build-essential cmake libcuda1 libncurses-dev
-              cd ~/repos/ia/llama.cpp/build
+              cd $HOME/Git/llama.cpp/build
               cmake .. -DLLAMA_CUDA=ON -DLLAMA_CUDA_FORCE=ON -DLLAMA_NATIVE=ON -DCMAKE_CXX_FLAGS="-O3"
               cmake --build . --config Release -- -j$(nproc)
               # Para limitar la cantidad de memoria VRAM usada, ajusta --n-gpu-layers:
-              # Por ejemplo: ~/IA/LlamaCPP/llama-cli -m ~/IA/Modelos/GGUF/Llama-3.2-3B-Instruct-Q8_0.gguf -ngl 100 -n-gpu-layers 32
+              # Por ejemplo: $HOME/LlamaCPP/llama-cli -m $HOME/Modelos/GGUF/Llama-3.2-3B-Instruct-Q8_0.gguf -ngl 100 -n-gpu-layers 32
               # El modelo se cargará 32 capas en VRAM y el resto en RAM 
 
             ;;
@@ -420,7 +420,7 @@
               echo ""
               sudo apt -y update
               sudo apt -y install -y build-essential cmake libcuda1 libncurses-dev
-              cd ~/repos/ia/llama.cpp/build
+              cd $HOME/Git/llama.cpp/build
               cmake .. -DLLAMA_CUDA=ON -DLLAMA_CUDA_FORCE=ON -DLLAMA_CUDA_ONLY=ON -DCMAKE_CXX_FLAGS="-O3"
               cmake --build . --config Release -- -j$(nproc)
               # -DLLAMA_CUDA=ON: Habilita soporte para CUDA.
@@ -431,7 +431,7 @@
               # Si cmake no detecta CUDA, asegúrate de que la variable CUDA_HOME está correctamente configurada:
               # export CUDA_HOME=/usr/local/cuda
               #
-              # Para ejecutar: ~/IA/LlamaCPP/llama-cli -m ~/IA/Modelos/GGUF/Llama-3.2-3B-Instruct-Q8_0.gguf -ngl 100
+              # Para ejecutar: $HOME/LlamaCPP/llama-cli -m $HOME/Modelos/GGUF/Llama-3.2-3B-Instruct-Q8_0.gguf -ngl 100
               #   -ngl 100 indica que se usarán todas las capas en la GPU.
               # Si llama.cpp no tiene CPU activada, este comando fallará si la GPU no puede manejar la carga, lo cual confirma que la CPU está deshabilitada.
 
@@ -444,11 +444,11 @@
               echo ""
               sudo apt -y update
               sudo apt -y install -y build-essential cmake libcuda1 libncurses-dev
-              cd ~/repos/ia/llama.cpp/build
+              cd $HOME/Git/llama.cpp/build
               cmake .. -DLLAMA_CUDA=ON -DLLAMA_CUDA_FORCE=ON -DLLAMA_NATIVE=ON -DCMAKE_CXX_FLAGS="-O3"
               cmake --build . --config Release -- -j$(nproc)
               # Para limitar la cantidad de memoria VRAM usada, ajusta --n-gpu-layers:
-              # Por ejemplo: ~/IA/LlamaCPP/llama-cli -m ~/IA/Modelos/GGUF/Llama-3.2-3B-Instruct-Q8_0.gguf -ngl 100 -n-gpu-layers 32
+              # Por ejemplo: $HOME/LlamaCPP/llama-cli -m $HOME/Modelos/GGUF/Llama-3.2-3B-Instruct-Q8_0.gguf -ngl 100 -n-gpu-layers 32
               # El modelo se cargará 32 capas en VRAM y el resto en RAM
 
             ;;
@@ -460,7 +460,7 @@
               echo ""
               sudo apt -y update
               sudo apt -y install -y build-essential cmake
-              cd ~/repos/ia/llama.cpp/build
+              cd $HOME/Git/llama.cpp/build
               cmake .. -DLLAMA_HIPBLAS=ON -DLLAMA_HIP=ON -DLLAMA_HIP_ONLY=ON -DCMAKE_CXX_FLAGS="-O3"
               cmake --build . --config Release -- -j$(nproc)
               # -DLLAMA_HIPBLAS=ON: Habilita el soporte para HIPBLAS (equivalente a cuBLAS en CUDA).
@@ -473,7 +473,7 @@
               #   export PATH=$HIP_PATH/bin:$PATH
               #   export LD_LIBRARY_PATH=$HIP_PATH/lib:$LD_LIBRARY_PATH
               #
-              # Para ejecutar: ~/IA/LlamaCPP/llama-cli -m ~/IA/Modelos/GGUF/Llama-3.2-3B-Instruct-Q8_0.gguf -ngl 100
+              # Para ejecutar: $HOME/LlamaCPP/llama-cli -m $HOME/Modelos/GGUF/Llama-3.2-3B-Instruct-Q8_0.gguf -ngl 100
               #   -ngl 100 indica que se usarán todas las capas en la GPU.
               # Si llama.cpp no tiene CPU activada, este comando fallará si la GPU no puede manejar la carga, lo cual confirma que la CPU está deshabilitada.
 
@@ -493,12 +493,12 @@
     done
 
     # Crear carpeta
-      mkdir -p ~/IA/LlamaCPP/
-      cp ~/repos/ia/llama.cpp/build/bin/* ~/IA/LlamaCPP/
+      mkdir -p $HOME/LlamaCPP/
+      cp $HOME/Git/llama.cpp/build/bin/* $HOME/LlamaCPP/
 
     # Descargar modelos
-      mkdir -p ~/IA/Modelos/GGUF/
-      cd ~/IA/Modelos/GGUF/
+      mkdir -p $HOME/Modelos/GGUF/
+      cd $HOME/Modelos/GGUF/
       curl -L https://huggingface.co/lmstudio-community/Llama-3.2-3B-Instruct-GGUF/resolve/main/Llama-3.2-3B-Instruct-Q8_0.gguf -O
 
     # Notificar fin de ejecución del script
@@ -507,30 +507,30 @@
       echo ""
       echo "    Para ejecutar llama.cpp y realizar una consulta, cerrando la conversación:"
       echo ""
-      echo "      ~/IA/LlamaCPP/llama-cli -m ~/IA/Modelos/GGUF/Llama-3.2-3B-Instruct-Q8_0.gguf -p 'Hazme un script de python que diga hola?' -no-cnv"
+      echo "      $HOME/LlamaCPP/llama-cli -m $HOME/Modelos/GGUF/Llama-3.2-3B-Instruct-Q8_0.gguf -p 'Hazme un script de python que diga hola?' -no-cnv"
       echo ""
       echo "      Podemos hacer que cierre la conversación, aunque no responda por completo, limitando el nro de tokens de respuesta:"
       echo ""
-      echo "        ~/IA/LlamaCPP/llama-cli -m ~/IA/Modelos/GGUF/Llama-3.2-3B-Instruct-Q8_0.gguf -p 'Hazme un script de python que diga hola?' -n 128 -no-cnv"
+      echo "        $HOME/LlamaCPP/llama-cli -m $HOME/Modelos/GGUF/Llama-3.2-3B-Instruct-Q8_0.gguf -p 'Hazme un script de python que diga hola?' -n 128 -no-cnv"
       echo ""
       echo "    Para indicarle cuanta VRAM usar (en el caso de haber compilado con soporte CUDA):"
       echo ""
-      echo "      ~/IA/LlamaCPP/llama-cli -m ~/IA/Modelos/GGUF/Llama-3.2-3B-Instruct-Q8_0.gguf -ngl 100 --n-gpu-layers 32"
+      echo "      $HOME/LlamaCPP/llama-cli -m $HOME/Modelos/GGUF/Llama-3.2-3B-Instruct-Q8_0.gguf -ngl 100 --n-gpu-layers 32"
       echo ""
       echo "        -ngl 100: Usa la GPU completamente."
       echo "        --n-gpu-layers 32: Define cuántas capas del modelo se ejecutarán en la GPU (ajústalo según la VRAM disponible)."
       echo ""
       echo "    Para ejecutar en modo conversación:"
       echo ""
-      echo "      ~/IA/LlamaCPP/llama-cli -m ~/IA/Modelos/GGUF/Llama-3.2-3B-Instruct-Q8_0.gguf"
+      echo "      $HOME/LlamaCPP/llama-cli -m $HOME/Modelos/GGUF/Llama-3.2-3B-Instruct-Q8_0.gguf"
       echo ""
       echo "    Para ejecutar como API/servidor:"
       echo ""
-      echo "      ~/IA/LlamaCPP/llama-server --port 9000 -m ~/IA/Modelos/GGUF/Llama-3.2-3B-Instruct-Q8_0.gguf"
+      echo "      $HOME/LlamaCPP/llama-server --port 9000 -m $HOME/Modelos/GGUF/Llama-3.2-3B-Instruct-Q8_0.gguf"
       echo ""
       echo "      Crear un servidor para 4 usuarios simultáneos y contexto de 4096 para cada uno:"
       echo ""
-      echo "        ~/IA/LlamaCPP/llama-server --port 9000 -m ~/IA/Modelos/GGUF/Llama-3.2-3B-Instruct-Q8_0.gguf -c 16384 -np 4"
+      echo "        $HOME/LlamaCPP/llama-server --port 9000 -m $HOME/Modelos/GGUF/Llama-3.2-3B-Instruct-Q8_0.gguf -c 16384 -np 4"
       echo ""
       echo "      Luego podemos tirarle consultas con:"
       echo ""
