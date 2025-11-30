@@ -8,5 +8,10 @@
 vUsuario='DavidAU'
 vRepo='OpenAi-GPT-oss-20b-abliterated-uncensored-NEO-Imatrix-gguf'
 
+vUsuario='lmstudio-community'
+vRepo='gpt-oss-20b-GGUF'
+
+
+
 curl -s https://huggingface.co/api/models/"$vUsuario"/"$vRepo" | grep -i gguf | jq
 
