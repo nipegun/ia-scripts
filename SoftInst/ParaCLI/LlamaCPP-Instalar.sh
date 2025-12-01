@@ -321,8 +321,9 @@
     done
 
   # Crear carpeta
-    mkdir -p $HOME/IA/LlamaCPP/
-    cp $HOME/Git/llama.cpp/build/bin/* $HOME/IA/LlamaCPP/
+    mkdir -p $HOME/IA/LlamaCPP/ 2> /dev/null
+    rm -rf $HOME/IA/LlamaCPP/* 2> /dev/null
+    cp -fv $HOME/Git/llama.cpp/build/bin/* $HOME/IA/LlamaCPP/
 
     # Notificar fin de ejecución del script
       echo ""
