@@ -13,6 +13,7 @@ curl -L https://huggingface.co/bartowski/dolphincoder-starcoder2-15b-GGUF/resolv
 
 
 # Cyber
+mkdir -p $HOME/IA/Modelos/GGUF/ 2> /dev/null
 cd $HOME/IA/Modelos/GGUF/
 curl -L https://huggingface.co/segolilylabs/Lily-Cybersecurity-7B-v0.2-GGUF/resolve/main/Lily-7B-Instruct-v0.2.Q5_K_M.gguf -O
 
@@ -30,6 +31,16 @@ curl -L https://huggingface.co/ggml-org/Qwen3-14B-GGUF/resolve/main/Qwen3-14B-Q8
 curl -L https://huggingface.co/ggml-org/Qwen3-14B-GGUF/resolve/main/Qwen3-14B-f16.gguf -O
 
 
-https://huggingface.co/ggml-org/gemma-3-12b-it-GGUF/resolve/main/gemma-3-12b-it-Q4_K_M.gguf
-https://huggingface.co/ggml-org/gemma-3-12b-it-GGUF/resolve/main/gemma-3-12b-it-Q8_0.gguf
-https://huggingface.co/ggml-org/gemma-3-12b-it-GGUF/resolve/main/gemma-3-12b-it-f16.gguf
+# Gemma 3 12b
+
+mkdir -p $HOME/IA/Modelos/GGUF/ 2> /dev/null
+cd $HOME/IA/Modelos/GGUF/
+curl -L https://huggingface.co/ggml-org/gemma-3-12b-it-GGUF/resolve/main/gemma-3-12b-it-Q4_K_M.gguf -O
+
+mkdir -p $HOME/IA/Modelos/GGUF/ 2> /dev/null
+cd $HOME/IA/Modelos/GGUF/
+curl -L https://huggingface.co/ggml-org/gemma-3-12b-it-GGUF/resolve/main/gemma-3-12b-it-Q8_0.gguf -O
+
+mkdir -p $HOME/IA/Modelos/GGUF/ 2> /dev/null
+cd $HOME/IA/Modelos/GGUF/
+curl -L https://huggingface.co/ggml-org/gemma-3-12b-it-GGUF/resolve/main/gemma-3-12b-it-f16.gguf -O
