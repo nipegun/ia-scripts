@@ -204,11 +204,11 @@
               sudo apt-get -y install -y build-essential cmake libcuda1 libncurses-dev
               mkdir $HOME/Git/llama.cpp/build
               cd $HOME/Git/llama.cpp/build
-              cmake .. -DLLAMA_CUDA=ON -DLLAMA_CUDA_FORCE=ON -DLLAMA_CUDA_ONLY=ON -DCMAKE_CXX_FLAGS="-O3"
+              cmake .. -DGGLM_CUDA=ON -DGGML_CUDA_FORCE=ON -DGGML_CUDA_ONLY=ON -DGGML_NATIVE=ON -DCMAKE_CXX_FLAGS="-O3"
               cmake --build . --config Release -- -j$(nproc)
-              # -DLLAMA_CUDA=ON: Habilita soporte para CUDA.
-              # -DLLAMA_CUDA_FORCE=ON: Obliga a que se use CUDA, pero todavía permite CPU en caso de error.
-              # -DLLAMA_CUDA_ONLY=ON: Desactiva completamente el uso de CPU, forzando que todo se ejecute en la GPU.
+              # -DGGLM_CUDA=ON: Habilita soporte para CUDA.
+              # -DGGML_CUDA_FORCE=ON: Obliga a que se use CUDA, pero todavía permite CPU en caso de error.
+              # -DGGML_CUDA_ONLY=ON: Desactiva completamente el uso de CPU, forzando que todo se ejecute en la GPU.
               # -DCMAKE_CXX_FLAGS="-O3": Usa máxima optimización.
               #
               # Si cmake no detecta CUDA, asegúrate de que la variable CUDA_HOME está correctamente configurada:
@@ -229,7 +229,7 @@
               sudo apt -y install -y build-essential cmake libcuda1 libncurses-dev
               mkdir $HOME/Git/llama.cpp/build
               cd $HOME/Git/llama.cpp/build
-              cmake .. -DLLAMA_CUDA=ON -DLLAMA_CUDA_FORCE=ON -DLLAMA_NATIVE=ON -DCMAKE_CXX_FLAGS="-O3"
+              cmake .. -DGGLM_CUDA=ON -DGGML_CUDA_FORCE=ON -DGGML_NATIVE=ON -DCMAKE_CXX_FLAGS="-O3"
               cmake --build . --config Release -- -j$(nproc)
               # Para limitar la cantidad de memoria VRAM usada, ajusta --n-gpu-layers:
               # Por ejemplo: $HOME/LlamaCPP/llama-cli -m $HOME/Modelos/GGUF/Llama-3.2-3B-Instruct-Q8_0.gguf -ngl 100 -n-gpu-layers 32
