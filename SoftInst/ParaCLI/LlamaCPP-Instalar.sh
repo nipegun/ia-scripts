@@ -80,6 +80,7 @@
       sudo apt-get -y install build-essential
       sudo apt-get -y install libcurl4-openssl-dev
       sudo apt-get -y install ccache
+      sudo apt-get -y install libncurses-dev
 
     # Crear el menú
       # Comprobar si el paquete dialog está instalado. Si no lo está, instalarlo.
@@ -184,9 +185,12 @@
               echo "    Compilando para uso prioritario de CUDA (tarjetas nVidia) y secundario CPU genérico..."
               echo ""
               sudo apt-get -y update
-              sudo apt-get -y install -y build-essential cmake libcuda1 libncurses-dev
+              sudo apt-get -y install -y libcuda1
               mkdir $HOME/Git/llama.cpp/build
               cd $HOME/Git/llama.cpp/build
+              # Agregar CUDA compiler al path
+                export PATH=/usr/local/cuda/bin:$PATH
+                export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
               cmake .. -DGGML_CUDA=ON -DGGML_CUDA_FORCE=ON -DGGML_NATIVE=ON -DCMAKE_CXX_FLAGS="-O3"
               cmake --build . --config Release -- -j$(nproc)
               # Para limitar la cantidad de memoria VRAM usada, ajusta --n-gpu-layers:
@@ -201,9 +205,12 @@
               echo "    Compilando únicamente para uso con CUDA (tarjetas nVidia)..."
               echo ""
               sudo apt-get -y update
-              sudo apt-get -y install -y build-essential cmake libcuda1 libncurses-dev
+              sudo apt-get -y install -y libcuda1
               mkdir $HOME/Git/llama.cpp/build
               cd $HOME/Git/llama.cpp/build
+              # Agregar CUDA compiler al path
+                export PATH=/usr/local/cuda/bin:$PATH
+                export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
               cmake .. -DGGML_CUDA=ON -DGGML_CUDA_FORCE=ON -DGGML_CUDA_ONLY=ON -DGGML_NATIVE=ON -DCMAKE_CXX_FLAGS="-O3"
               cmake --build . --config Release -- -j$(nproc)
               # -DGGLM_CUDA=ON: Habilita soporte para CUDA.
@@ -225,11 +232,9 @@
               echo ""
               echo "    Compilando para uso prioritario de ROCm (tarjetas AMD) y secundario CPU genérico......"
               echo ""
-              sudo apt -y update
-              sudo apt -y install -y build-essential cmake libcuda1 libncurses-dev
               mkdir $HOME/Git/llama.cpp/build
               cd $HOME/Git/llama.cpp/build
-              cmake .. -DGGML_CUDA=ON -DGGML_CUDA_FORCE=ON -DGGML_NATIVE=ON -DCMAKE_CXX_FLAGS="-O3"
+              cmake .. -DGGML_HIPBLAS=ON -DGGML_HIP=ON -DGGML_HIP_ONLY=ON -DCMAKE_CXX_FLAGS="-O3"
               cmake --build . --config Release -- -j$(nproc)
               # Para limitar la cantidad de memoria VRAM usada, ajusta --n-gpu-layers:
               # Por ejemplo: $HOME/LlamaCPP/llama-cli -m $HOME/Modelos/GGUF/Llama-3.2-3B-Instruct-Q8_0.gguf -ngl 100 -n-gpu-layers 32
@@ -242,11 +247,9 @@
               echo ""
               echo "    Compilando únicamente para uso con ROCm (tarjetas AMD)..."
               echo ""
-              sudo apt -y update
-              sudo apt -y install -y build-essential cmake
               mkdir $HOME/Git/llama.cpp/build
               cd $HOME/Git/llama.cpp/build
-              cmake .. -DLLAMA_HIPBLAS=ON -DLLAMA_HIP=ON -DLLAMA_HIP_ONLY=ON -DCMAKE_CXX_FLAGS="-O3"
+              cmake .. -DGGML_HIPBLAS=ON -DGGML_HIP=ON -DGGML_HIP_ONLY=ON -DCMAKE_CXX_FLAGS="-O3"
               cmake --build . --config Release -- -j$(nproc)
               # -DLLAMA_HIPBLAS=ON: Habilita el soporte para HIPBLAS (equivalente a cuBLAS en CUDA).
               # -DLLAMA_HIP=ON: Activa HIP para usar GPU AMD.
@@ -270,9 +273,12 @@
               echo "    Compilando para uso prioritario de CUDA (tarjetas nVidia) y secundario CPU Ryzen 9 5950x..."
               echo ""
               sudo apt-get -y update
-              sudo apt-get -y install -y build-essential cmake libcuda1 libncurses-dev
+              sudo apt-get -y install -y libcuda1
               mkdir $HOME/Git/llama.cpp/build
               cd $HOME/Git/llama.cpp/build
+              # Agregar CUDA compiler al path
+                export PATH=/usr/local/cuda/bin:$PATH
+                export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
               cmake .. -DGGML_CUDA=ON -DGGML_CUDA_FORCE=ON -DGGML_NATIVE=ON -DCMAKE_CXX_FLAGS="-march=znver3 -mtune=znver3 -O3"
               cmake --build . --config Release -- -j$(nproc)
               # Para limitar la cantidad de memoria VRAM usada, ajusta --n-gpu-layers:
@@ -287,9 +293,12 @@
               echo "    Compilando para uso prioritario de CUDA (tarjetas nVidia) y secundario CPU Ryzen AI 7 PRO 350..."
               echo ""
               sudo apt-get -y update
-              sudo apt-get -y install -y build-essential cmake libcuda1 libncurses-dev
+              sudo apt-get -y install -y libcuda1
               mkdir $HOME/Git/llama.cpp/build
               cd $HOME/Git/llama.cpp/build
+              # Agregar CUDA compiler al path
+                export PATH=/usr/local/cuda/bin:$PATH
+                export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
               cmake .. -DGGML_CUDA=ON -DGGML_CUDA_FORCE=ON -DGGML_NATIVE=ON -DCMAKE_CXX_FLAGS="-march=znver4 -mtune=znver4 -O3"
               cmake --build . --config Release -- -j$(nproc)
               # Para limitar la cantidad de memoria VRAM usada, ajusta --n-gpu-layers:
