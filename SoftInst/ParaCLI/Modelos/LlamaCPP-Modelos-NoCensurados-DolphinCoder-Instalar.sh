@@ -30,3 +30,6 @@ curl -L https://huggingface.co/ggml-org/Qwen3-14B-GGUF/resolve/main/Qwen3-14B-Q8
 curl -L https://huggingface.co/ggml-org/Qwen3-14B-GGUF/resolve/main/Qwen3-14B-f16.gguf -O
 
 
+https://huggingface.co/ggml-org/gemma-3-12b-it-GGUF/resolve/main/gemma-3-12b-it-Q4_K_M.gguf
+https://huggingface.co/ggml-org/gemma-3-12b-it-GGUF/resolve/main/gemma-3-12b-it-Q8_0.gguf
+https://huggingface.co/ggml-org/gemma-3-12b-it-GGUF/resolve/main/gemma-3-12b-it-f16.gguf
