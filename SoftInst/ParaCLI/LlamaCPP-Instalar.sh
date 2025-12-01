@@ -68,23 +68,18 @@
     # Crear carpeta de Git
       mkdir -p $HOME/Git/ 2> /dev/null
 
-    # Borrar versión ya instalada
-      rm -rf $HOME/Git/llama.cpp
-
-    # Clonar Gititorio
+    # Clonar Git
       cd $HOME/Git/
-      git clone https://github.com/ggerganov/llama.cpp.git
+      # Borrar versión ya instalada
+        rm -rf $HOME/Git/llama.cpp/
+      git clone --depth 1 https://github.com/ggerganov/llama.cpp.git
 
-    # Compilar
-      cd llama.cpp
-      mkdir build
-      cd build
-      # Instalar paquetes necesarios para compilar
-        sudo apt-get -y update
-        sudo apt-get -y install cmake
-        sudo apt-get -y install build-essential
-        sudo apt-get -y install libcurl4-openssl-dev
-        sudo apt-get -y install ccache
+    # Instalar dependencias para compilar
+      sudo apt-get -y update
+      sudo apt-get -y install cmake
+      sudo apt-get -y install build-essential
+      sudo apt-get -y install libcurl4-openssl-dev
+      sudo apt-get -y install ccache
 
     # Crear el menú
       # Comprobar si el paquete dialog está instalado. Si no lo está, instalarlo.
@@ -99,18 +94,21 @@
       #menu=(dialog --timeout 5 --checklist "Marca las opciones que quieras instalar:" 22 96 16)
       menu=(dialog --checklist "Marca las opciones que quieras instalar:" 22 104 1)
         opciones=(
-          1 "Compilar con los valores por defecto"                                                       off
-          2 "Configurar y compilar para uso únicamente con procesador Intel Core i7-7700K"               off
-          3 "Configurar y compilar para uso únicamente con procesador AMD Ryzen 9 5950x"                 off
-          4 "Configurar y compilar para uso únicamente con procesador AMD Ryzen Threadripper 3970X"      off
-          5 "Configurar y compilar para uso únicamente con procesador AMD Ryzen AI 7 PRO 350"            off
+          1 "Compilar con los valores por defecto"                                                                          off
+          2 "Configurar y compilar para uso únicamente con procesador Intel Core i7-7700K"                                  off
+          3 "Configurar y compilar para uso únicamente con procesador AMD Ryzen 9 5950x"                                    off
+          4 "Configurar y compilar para uso únicamente con procesador AMD Ryzen Threadripper 3970X"                         off
+          5 "Configurar y compilar para uso únicamente con procesador AMD Ryzen AI 7 PRO 350"                               off
           
-          6 "Configurar y compilar para uso prioritario con CUDA (tarjetas nVidia) y secundario con CPU" off
-          7 "Configurar y compilar únicamente para uso con CUDA (tarjetas nVidia)"                       off
-          8 "Configurar y compilar para uso prioritario con ROCm (tarjetas AMD) y secundario con CPU"    off
-          9 "Configurar y compilar únicamente para uso con ROCm (tarjetas AMD)"                          off
+          6 "Configurar y compilar para uso prioritario con CUDA (tarjetas nVidia) y secundario con CPU"                    off
+          7 "Configurar y compilar únicamente para uso con CUDA (tarjetas nVidia)"                                          off
+          8 "Configurar y compilar para uso prioritario con ROCm (tarjetas AMD) y secundario con CPU"                       off
+          9 "Configurar y compilar únicamente para uso con ROCm (tarjetas AMD)"                                             off
 
-         10 "Abortar compilación e interrumpir script"                                                   off
+         10 "Configurar y compilar para uso prioritario con CUDA (tarjetas nVidia) y secundario con CPU Ryzen 9 5950x"      off
+         11 "Configurar y compilar para uso prioritario con CUDA (tarjetas nVidia) y secundario con CPU Ryzen AI 7 PRO 350" off
+
+         20 "Abortar compilación e interrumpir script"                                                                      off
         )
       choices=$("${menu[@]}" "${opciones[@]}" 2>&1 >/dev/tty)
       #clear
@@ -124,6 +122,7 @@
               echo ""
               echo "    Compilando para uso con procesadores genéricos..."
               echo ""
+              mkdir $HOME/Git/llama.cpp/build
               cd $HOME/Git/llama.cpp/build
               cmake ..
               cmake --build . --config Release -- -j$(nproc)
@@ -135,6 +134,7 @@
               echo ""
               echo "    Compilando para uso con i7-7700K..."
               echo ""
+              mkdir $HOME/Git/llama.cpp/build
               cd $HOME/Git/llama.cpp/build
               cmake .. -DCMAKE_CXX_FLAGS="-march=skylake -mtune=skylake -O3"
               cmake --build . --config Release -- -j$(nproc)
@@ -146,6 +146,7 @@
               echo ""
               echo "    Compilando para uso con Ryzen 9 5950x..."
               echo ""
+              mkdir $HOME/Git/llama.cpp/build
               cd $HOME/Git/llama.cpp/build
               cmake .. -DCMAKE_CXX_FLAGS="-march=znver3 -mtune=znver3 -O3"
               cmake --build . --config Release -- -j$(nproc)
@@ -158,6 +159,7 @@
               echo ""
               echo "    Compilando para uso con Ryzen Threadripper 3970X..."
               echo ""
+              mkdir $HOME/Git/llama.cpp/build
               cd $HOME/Git/llama.cpp/build
               cmake .. -DCMAKE_CXX_FLAGS="-march=znver2 -mtune=znver2 -O3"
               cmake --build . --config Release -- -j$(nproc)
@@ -169,6 +171,7 @@
               echo ""
               echo "    Compilando para uso con Ryzen AI 7 PRO 350..."
               echo ""
+              mkdir $HOME/Git/llama.cpp/build
               cd $HOME/Git/llama.cpp/build
               cmake .. -DCMAKE_CXX_FLAGS="-march=znver4 -mtune=znver4 -O3"
               cmake --build . --config Release -- -j$(nproc)
@@ -180,8 +183,9 @@
               echo ""
               echo "    Compilando para uso prioritario de CUDA (tarjetas nVidia) y secundario CPU genérico..."
               echo ""
-              sudo apt -y update
-              sudo apt -y install -y build-essential cmake libcuda1 libncurses-dev
+              sudo apt-get -y update
+              sudo apt-get -y install -y build-essential cmake libcuda1 libncurses-dev
+              mkdir $HOME/Git/llama.cpp/build
               cd $HOME/Git/llama.cpp/build
               cmake .. -DGGLM_CUDA=ON -DGGML_CUDA_FORCE=ON -DGGML_NATIVE=ON -DCMAKE_CXX_FLAGS="-O3"
               cmake --build . --config Release -- -j$(nproc)
@@ -196,8 +200,9 @@
               echo ""
               echo "    Compilando únicamente para uso con CUDA (tarjetas nVidia)..."
               echo ""
-              sudo apt -y update
-              sudo apt -y install -y build-essential cmake libcuda1 libncurses-dev
+              sudo apt-get -y update
+              sudo apt-get -y install -y build-essential cmake libcuda1 libncurses-dev
+              mkdir $HOME/Git/llama.cpp/build
               cd $HOME/Git/llama.cpp/build
               cmake .. -DLLAMA_CUDA=ON -DLLAMA_CUDA_FORCE=ON -DLLAMA_CUDA_ONLY=ON -DCMAKE_CXX_FLAGS="-O3"
               cmake --build . --config Release -- -j$(nproc)
@@ -222,6 +227,7 @@
               echo ""
               sudo apt -y update
               sudo apt -y install -y build-essential cmake libcuda1 libncurses-dev
+              mkdir $HOME/Git/llama.cpp/build
               cd $HOME/Git/llama.cpp/build
               cmake .. -DLLAMA_CUDA=ON -DLLAMA_CUDA_FORCE=ON -DLLAMA_NATIVE=ON -DCMAKE_CXX_FLAGS="-O3"
               cmake --build . --config Release -- -j$(nproc)
@@ -238,6 +244,7 @@
               echo ""
               sudo apt -y update
               sudo apt -y install -y build-essential cmake
+              mkdir $HOME/Git/llama.cpp/build
               cd $HOME/Git/llama.cpp/build
               cmake .. -DLLAMA_HIPBLAS=ON -DLLAMA_HIP=ON -DLLAMA_HIP_ONLY=ON -DCMAKE_CXX_FLAGS="-O3"
               cmake --build . --config Release -- -j$(nproc)
@@ -258,6 +265,40 @@
             ;;
 
             10)
+
+              echo ""
+              echo "    Compilando para uso prioritario de CUDA (tarjetas nVidia) y secundario CPU Ryzen 9 5950x..."
+              echo ""
+              sudo apt-get -y update
+              sudo apt-get -y install -y build-essential cmake libcuda1 libncurses-dev
+              mkdir $HOME/Git/llama.cpp/build
+              cd $HOME/Git/llama.cpp/build
+              cmake .. -DGGLM_CUDA=ON -DGGML_CUDA_FORCE=ON -DGGML_NATIVE=ON -DCMAKE_CXX_FLAGS="-march=znver3 -mtune=znver3 -O3"
+              cmake --build . --config Release -- -j$(nproc)
+              # Para limitar la cantidad de memoria VRAM usada, ajusta --n-gpu-layers:
+              # Por ejemplo: $HOME/LlamaCPP/llama-cli -m $HOME/Modelos/GGUF/Llama-3.2-3B-Instruct-Q8_0.gguf -ngl 100 -n-gpu-layers 32
+              # El modelo se cargará 32 capas en VRAM y el resto en RAM 
+
+            ;;
+
+            11)
+
+              echo ""
+              echo "    Compilando para uso prioritario de CUDA (tarjetas nVidia) y secundario CPU Ryzen AI 7 PRO 350..."
+              echo ""
+              sudo apt-get -y update
+              sudo apt-get -y install -y build-essential cmake libcuda1 libncurses-dev
+              mkdir $HOME/Git/llama.cpp/build
+              cd $HOME/Git/llama.cpp/build
+              cmake .. -DGGLM_CUDA=ON -DGGML_CUDA_FORCE=ON -DGGML_NATIVE=ON -DCMAKE_CXX_FLAGS="-march=znver4 -mtune=znver4 -O3"
+              cmake --build . --config Release -- -j$(nproc)
+              # Para limitar la cantidad de memoria VRAM usada, ajusta --n-gpu-layers:
+              # Por ejemplo: $HOME/LlamaCPP/llama-cli -m $HOME/Modelos/GGUF/Llama-3.2-3B-Instruct-Q8_0.gguf -ngl 100 -n-gpu-layers 32
+              # El modelo se cargará 32 capas en VRAM y el resto en RAM 
+
+            ;;
+
+            20)
 
               echo ""
               echo "    Abortando compilación e interrumpiendo el script..."
