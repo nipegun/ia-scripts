@@ -54,7 +54,7 @@
       9 "dolphin-mixtral:8x22b-v2.9-fp16    (32K tokens) (xx,x GB en disco) (xx,x GB en VRAM)" off
 
      10 "dolphin-phi:2.7b-v2.6-q4_K_M       (2K tokens) (xx,x GB en disco) (xx,x GB en VRAM)" off
-     11 "dolphin-phi:2.7b-v2.6-q8_0         (2K tokens) (xx,x GB en disco) (xx,x GB en VRAM)" off
+     11 "dolphin-phi:2.7b-v2.6-q8_0         (2K tokens) ( 3,1 GB en disco) (xx,x GB en VRAM)" off
 
      12 "dolphin-llama3:8b-256k-v2.9-q4_K_M (8K tokens) (xx,x GB en disco) (xx,x GB en VRAM)" off
      13 "dolphin-llama3:8b-256k-v2.9-q8_0   (8K tokens) (xx,x GB en disco) (xx,x GB en VRAM)" off
