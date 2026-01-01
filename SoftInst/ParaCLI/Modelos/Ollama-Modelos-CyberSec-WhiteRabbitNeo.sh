@@ -44,6 +44,7 @@
 
       1 "monotykamary/whiterabbitneo-v1.5a:7b (16K tokens) (4,2 GB en disco) ( 8,2 GB en RAM/VRAM)" off
       2 "jimscard/whiterabbit-neo:13b         (16K tokens) (9,3 GB en disco) (15,5 GB en RAM/VRAM)" off
+      3 "DeepHat/DeepHat-V1-7B:latest         (xxK tokens) (x,x GB en disco) (xx,x GB en RAM/VRAM)" off
 
     )
   choices=$("${menu[@]}" "${opciones[@]}" 2>&1 >/dev/tty)
@@ -99,6 +100,33 @@
               else
                 echo ""
                 echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo jimscard/whiterabbit-neo:13b.${cFinColor}"
+                echo ""
+                echo -e "${cColorRojo}      Hacen falta $vGBsLibresNecesarios GB y hay sólo $vGBsLibres GB.${cFinColor}"
+                echo ""
+              fi
+
+          ;;
+
+          3)
+
+            echo ""
+            echo "  Instalando DeepHat/DeepHat-V1-7B:latest..."
+            echo ""
+
+            # Definir el espacio libre necesario
+              vGBsLibresNecesarios=9.3
+              vEspacioNecesario=$(($vGBsLibresNecesarios * 1024 * 1024)) # Convertir a kilobytes (1GB = 1048576KB)
+
+            # Obtener el espacio libre en la partición raíz en kilobytes
+              vEspacioLibre=$(df / | grep '/' | tail -1 | sed -E 's/\s+/ /g' | cut -d ' ' -f 4)
+              vGBsLibres=$(echo "scale=2; $vEspacioLibre/1024/1024" | bc)
+
+            # Comprobar si hay espacio libre disponible
+              if [ "$vEspacioLibre" -ge "$vEspacioNecesario" ]; then
+                ollama pull DeepHat/DeepHat-V1-7B:latest
+              else
+                echo ""
+                echo -e "${cColorRojo}    No hay suficiente espacio libre para instalar el modelo DeepHat/DeepHat-V1-7B:latest.${cFinColor}"
                 echo ""
                 echo -e "${cColorRojo}      Hacen falta $vGBsLibresNecesarios GB y hay sólo $vGBsLibres GB.${cFinColor}"
                 echo ""
